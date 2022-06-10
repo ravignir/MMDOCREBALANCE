@@ -54,9 +54,13 @@ At the beginning of enchanted creature's controller's turn, deal 1 damage to the
         <Description>Until your next turn:
 Creatures with no adjacent friendly creature gain Cannot Attack.</Description>
     </Card>
-    <Card Rarity="Epic" Unique="True" Type="Spell" Name="Spe_Dar_042" DisplayName="The Silent Death" School="Dark" Cost="4" MagicLevel="4" ID="423">
+    <Card NotLocalized="True" Rarity="Epic" Unique="True" Type="Spell" Name="Spe_Dar_042" DisplayName="The Silent Death" School="Dark" Cost="5" MagicLevel="4" ID="423">
         <Ongoing Duration="Permanent" />
-        <Target Zone="Battleground" CardType="Unit" Amount="1" />
+      <Target Zone="Battleground" CardType="Unit" Amount="1">
+        <Effect Type="ModifyAbility" Ability="CannotAttack" />
+        <Effect Type="ModifyAbility" Ability="Phased" />
+        <Effect Type="ModifyAbility" Ability="Immobilized" />
+      </Target>
         <Trigger Type="OnTurnBegin" Side="Friendly">
             <Target Zone="Battleground" Amount="Self">
                 <Effect Type="MoveCardTo" Destination="Hand" />
@@ -67,8 +71,9 @@ Creatures with no adjacent friendly creature gain Cannot Attack.</Description>
                 </Subgroup>
             </Target>
         </Trigger>
-        <Description>Enchant Creature. Permanent:
-At the beginning of your turn, destroy enchanted creature and return The Silent Death to its owner's hand.</Description>
+        <Description>
+          Enchant Creature. Permanent:
+          Enchanted creature is Immobilized and gains Cannot Attack and Phased. At the beginning of your turn, destroy enchanted creature and return The Silent Death to its owner's hand.</Description>
     </Card>
     <!--....................................................................-->
     <!-- Spells - Earth -->
@@ -81,8 +86,9 @@ At the beginning of your turn, destroy enchanted creature and return The Silent 
         <Description>Enchant creature. Permanent:
 Enchanted creature gains Anchored.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Ear_041" DisplayName="Sylanna's Embrace" School="Earth" Cost="2" MagicLevel="3" ID="425">
+    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Ear_041" DisplayName="Sylanna's Embrace" School="Earth" Cost="2" MagicLevel="2" ID="425">
         <Ongoing Duration="Permanent" />
+        <Ability Type="Endurable"/>
         <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Any">
             <Effect Type="ModifyMaxHp" Value="2" />
             <Effect Type="ModifyAbility" Ability="Regenerate" Value="1" />
@@ -117,10 +123,10 @@ Damage dealt to friendly melee creatures in the front line is halved, rounded do
         <Description>Enchant creature. Permanent:
 Enchanted creature gains +[1:ATK] and Berserk.</Description>
     </Card>
-    <Card Rarity="Epic" Unique="True" Type="Spell" Name="Spe_Fir_042" DisplayName="The Forbidden Flame" School="Fire" Cost="4" MagicLevel="3" ID="429">
+    <Card Rarity="Epic" Unique="True" Type="Spell" Name="Spe_Fir_042" DisplayName="The Forbidden Flame" School="Fire" Cost="5" MagicLevel="3" ID="429">
         <Target Zone="Battleground" Side="Any" Amount="All" CardType="Unit">
             <Variable Type="Level" LevelType="Magic" ValueModifier="2.0x" Side="Friendly" />
-            <Effect Type="Damage" Value="Variable" />
+            <Effect Type="Damage" Value="Variable" DamageFlags="Spell|Fire|Magic|Enforced" />
         </Target>
         <Description>Deal damage to all creatures equal to double your [MAGIC] level.</Description>
     </Card>
@@ -157,7 +163,7 @@ At the beginning of your turn, take a non-unique creature card at random from yo
     <!--....................................................................-->
     <!-- Spells - Prime -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Spell" Name="Spe_Pri_040" DisplayName="Minor Recall" School="Prime" Cost="3" MagicLevel="3" ID="433">
+    <Card Rarity="Common" Type="Spell" Name="Spe_Pri_040" DisplayName="Minor Recall" School="Prime" Cost="1" MagicLevel="3" ID="433">
         <Target Zone="Battleground" Amount="1">
             <CardFilter IncludeCardType="Fortune|Spell" />
             <Effect Type="MoveCardTo" Destination="Hand" />
@@ -171,16 +177,20 @@ At the beginning of your turn, take a non-unique creature card at random from yo
         </Target>
         <Description>Look at opponent's hand and choose a non-unique fortune card from it. You can play this fortune for free. If you don't, put that card into opponent's graveyard.</Description>
     </Card>
-    <Card Rarity="Epic" Unique="True" Type="Spell" Name="Spe_Pri_042" DisplayName="The Gate to Nowhere" School="Prime" Cost="3" MagicLevel="3" ID="435">
+    <Card NotLocalized="True" Rarity="Epic" Unique="True" Type="Spell" Name="Spe_Pri_042" DisplayName="The Gate to Nowhere" School="Prime" Cost="3" MagicLevel="3" ID="435">
         <Ongoing Duration="Permanent" />
         <Target Zone="BattlegroundColumn" Amount="1" />
-        <Trigger Type="OnPostAttackThisRow" Side="Enemy">
-            <Target Zone="None" Amount="FromTrigger">
-                <Effect Type="Banish" />
+        <Trigger Type="OnTurnBegin" Side="Any">
+            <Target Zone="Battleground" CardType="Unit" Amount="1" Cancelable="True">
+              <CardFilter IncludeColumn="True" Value="Variable2">
+                <Variable2 Type="CardColumn" />
+              </CardFilter>
+              <Effect Type="Banish" />
             </Target>
         </Trigger>
-        <Description>Enchant Row. Permanent:
-After an enemy creature on enchanted row attacks, banish it.</Description>
+        <Description>
+          Enchant Row. Permanent:
+          At the beginning of the his turn, each player banish target creature on this row if he want.</Description>
     </Card>
     <!--....................................................................-->
     <!-- Spells - Water -->
