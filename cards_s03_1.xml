@@ -82,11 +82,11 @@
         <Ability Type="MagicChannel" Value="2" />
         <Ability Type="SpellResist" />
     </Card>
-    <Card Rarity="Common" Type="Unit" Name="Cre_Aca_014" DisplayName="Spinning Dervish" Faction="Academy" SubType="Melee" Race="Human|Dervish" Cost="4" MightLevel="4" Attack="2" Retaliate="0" HP="6" ID="469">
+    <Card Rarity="Common" Type="Unit" Name="Cre_Aca_014" DisplayName="Spinning Dervish" Faction="Academy" SubType="Melee" Race="Human|Dervish" Cost="3" MightLevel="3" Attack="2" Retaliate="0" HP="4" ID="469">
         <Ability Type="RangeReflect" Value="2" />
         <Ability Type="Evade" />
     </Card>
-    <Card  Rarity="Uncommon" Type="Unit" Name="Cre_Aca_015" DisplayName="Blade Mage" Faction="Academy" SubType="Magic|Melee|Shooter" Race="Human|Wizard" Cost="5" MightLevel="3" MagicLevel="5" Attack="3" Retaliate="2" HP="6" ID="470">
+    <Card  Rarity="Uncommon" Type="Unit" Name="Cre_Aca_015" DisplayName="Blade Mage" Faction="Academy" SubType="Magic|Melee|Shooter" Race="Human|Wizard" Cost="5" MightLevel="3" MagicLevel="3" Attack="3" Retaliate="2" HP="6" ID="470">
         <Trigger Type="OnUnitKillUnit" DamageIncludeFlags="Attack" Side="Friendly" ExecuteOncePerTurn="True">
 			<CardFilter IncludeRaces="Wizard"/>
             <Target Zone="Graveyard" Side="Friendly" Amount="1">
@@ -174,16 +174,21 @@ While there is a friendly wizard on battle ground, [THIS] gain Swift. </Descript
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Aca_020" DisplayName="Obsidian Gargoyle" Faction="Academy" School="Prime" SubType="Magic|Flyer" Race="Gargoyle|Construct" Cost="4" MightLevel="3" MagicLevel="4" Attack="2" Retaliate="2" HP="6" ID="475">
         <Ability Type="MagicGuard" Value="1" />
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Aca_021" DisplayName="Nethermancer" Faction="Academy" School="Prime" SubType="Magic|Shooter" Race="Human|Wizard" Cost="2" MightLevel="2" MagicLevel="1" DestinyLevel="1" Attack="1" Retaliate="0" HP="5" ID="476">
+    <Card NotLocalized="True" Rarity="Uncommon" Type="Unit" Name="Cre_Aca_021" DisplayName="Nethermancer" Faction="Academy" School="Prime" SubType="Magic|Shooter" Race="Human|Wizard" Cost="2" MightLevel="2" MagicLevel="1" DestinyLevel="1" Attack="1" Retaliate="0" HP="4" ID="476">
         <Ability Type="ImmuneToRetaliate" />
         <Trigger Type="OnThisDamageHero" Side="Enemy">
             <Target Zone="Library" Side="Enemy" Amount="3" AutoTakeFirstInputs="True">
                 <Effect Type="MoveCardTo" Destination="Graveyard" />
             </Target>
         </Trigger>
-        <Description>Whenever Nethermancer deals combat damage to the enemy hero, put the top 3 cards of opponent's library into their graveyard.</Description>
+        <Trigger Type="OnCardMill" Side="Enemy" ExecuteOncePerTransaction="True">
+          <Target Zone="Battleground" Amount="Self" ForceExecute="True">
+            <Effect Type="ModifyAttack" Value="1" Duration="UntilEndOfTurn" />
+          </Target>
+        </Trigger>
+        <Description>Whenever Nethermancer deals combat damage to the enemy hero, put the top 3 cards of opponent's library into their graveyard. Whenever an effect causes cards to go from your opponent's library to their graveyard, this gives +1 attack until end of turn.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Aca_022" DisplayName="Spellstealer Wizard" Faction="Academy" School="Prime" SubType="Magic|Shooter" Race="Human|Wizard" Cost="5" MightLevel="4" MagicLevel="3" Attack="2" Retaliate="1" HP="5" ID="477">
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Aca_022" DisplayName="Spellstealer Wizard" Faction="Academy" School="Prime" SubType="Magic|Shooter" Race="Human|Wizard" Cost="4" MightLevel="4" MagicLevel="3" Attack="2" Retaliate="1" HP="5" ID="477">
         <Ability Type="ImmuneToRetaliate" />
         <Trigger Type="OnThisCardDeploy">
             <Target Zone="Battleground" Side="Enemy" CardType="Spell" Amount="1" Cancelable="False">
@@ -202,7 +207,7 @@ While there is a friendly wizard on battle ground, [THIS] gain Swift. </Descript
         </Trigger>
         <Description>Whenever Void-Tainted Djinn destroys a creature, put the top 5 cards of opponent's library into their graveyard.</Description>
     </Card>
-    <Card Rarity="Common" Type="Unit" Name="Cre_Aca_024" DisplayName="Arcane Archer" Faction="Academy" School="Prime" SubType="Magic|Shooter" Race="Human|Archer" Cost="4" MightLevel="3" MagicLevel="2" Attack="3" Retaliate="3" HP="6" ID="479">
+    <Card Rarity="Common" Type="Unit" Name="Cre_Aca_024" DisplayName="Arcane Archer" Faction="Academy" School="Prime" SubType="Magic|Shooter" Race="Human|Archer|Wizard" Cost="4" MightLevel="3" MagicLevel="2" Attack="3" Retaliate="3" HP="6" ID="479">
         <Ability Type="ImmuneToRetaliate" />
     </Card>
     <Card Rarity="Common" Type="Unit" Name="Cre_Aca_025" DisplayName="Sellspell Djinn" Faction="Academy" School="Prime" SubType="Magic|Shooter" Race="Spirit|Djinn" Cost="3" MightLevel="3" MagicLevel="2" Attack="3" Retaliate="3" HP="5" ID="480">
@@ -247,7 +252,7 @@ While there is a friendly wizard on battle ground, [THIS] gain Swift. </Descript
         </Trigger>
         <Description>When Djinn Mentor enters the battleground, increase your [MAGIC] level by 2.</Description>
     </Card>
-    <Card Rarity="Rare" Type="Unit" Name="Cre_Aca_030" DisplayName="Void Sycophant" Faction="Academy" School="Prime" SubType="Magic|Shooter" Race="Void|Spirit" Cost="3" MightLevel="3" MagicLevel="1" DestinyLevel="1" Attack="2" Retaliate="0" HP="6" ID="485">
+    <Card Rarity="Rare" Type="Unit" Name="Cre_Aca_030" DisplayName="Void Sycophant" Faction="Academy" School="Prime" SubType="Magic|Shooter" Race="Void|Spirit" Cost="3" MightLevel="2" MagicLevel="1" DestinyLevel="1" Attack="2" Retaliate="0" HP="6" ID="485">
         <Ability Type="ImmuneToRetaliate" />
         <Variable Type="CardMilledCount" Side="Enemy" />
         <Trigger Type="OnCardMill" Side="Enemy" ExecuteOncePerTurn="True">
@@ -357,7 +362,7 @@ While there is a friendly wizard on battle ground, [THIS] gain Swift. </Descript
     <Card Rarity="Epic" Type="Unit" Name="Cre_Aca_034" DisplayName="Surging Titan" Faction="Academy" SubType="Magic|Shooter" Race="Titan|Construct" Cost="5" MightLevel="5" MagicLevel="5" Attack="4" Retaliate="4" HP="7" ID="489">
         <Ability Type="ImmuneToRetaliate" />
         <Ability Type="Shockwave" Value="3" />
-        <Ability Type="FocusedBlast" Value="3" />
+        <Ability Type="FocusedBlast" Value="2" />
     </Card>
     <Card Rarity="Epic" Type="Unit" Name="Cre_Aca_035" DisplayName="Dervish Master" Faction="Academy" SubType="Magic|Melee" Race="Human|Dervish" Cost="5" MightLevel="4" MagicLevel="1" Attack="3" Retaliate="0" HP="5" ID="490">
         <Ability Type="Swift" />
@@ -384,7 +389,103 @@ While there is a friendly wizard on battle ground, [THIS] gain Swift. </Descript
     <!--...............................................................................-->
     <!-- Creatures - Haven -->
     <!--...............................................................................-->
-    <Card Rarity="Common" Type="Unit" Name="Cre_Hav_050" DisplayName="Crusader Commander" Faction="Haven" SubType="Melee" Race="Human|Soldier" Cost="5" MightLevel="5" Attack="4" Retaliate="5" HP="8" ID="492" />
+    <Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Hav_050" DisplayName="Crusader Commander" Faction="Haven" SubType="Melee" Race="Human|Soldier" Cost="5" MightLevel="5" Attack="4" Retaliate="5" HP="7" ID="492">
+      <!--this script works properly only for Melee creature (creature on front line)-->
+      <!--Deployed on row 0:-->
+      <Trigger Type="OnThisCardDeploy">
+        <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="AllOther"  ForceExecute="True">
+          <Variable Type="CardColumn"/>
+          <Condition Operator="EqualTo"	ValueA="Variable"	ValueB="0" />
+          <CardFilter IncludeColumn="True" Value="0" IncludeBackLine="True"/>
+          <Effect Type="ModifyAttack" Value="1" Duration="UntilEndOfTurn"/>
+        </Target>
+      </Trigger>
+      <Trigger Type="OnThisCardDeploy">
+        <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="AllOther"  ForceExecute="True">
+          <Variable Type="CardColumn"/>
+          <Condition Operator="EqualTo"	ValueA="Variable"	ValueB="0" />
+          <CardFilter IncludeColumn="True" Value="1" IncludeFrontLine="True"/>
+          <Effect Type="ModifyAttack" Value="1" Duration="UntilEndOfTurn"/>
+        </Target>
+      </Trigger>
+      <!--Deployed on row 1:-->
+      <Trigger Type="OnThisCardDeploy">
+        <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="AllOther"  ForceExecute="True">
+          <Variable Type="CardColumn"/>
+          <Condition Operator="EqualTo"	ValueA="Variable"	ValueB="1" />
+          <CardFilter IncludeColumn="True" Value="0" IncludeFrontLine="True"/>
+          <Effect Type="ModifyAttack" Value="1" Duration="UntilEndOfTurn"/>
+        </Target>
+      </Trigger>
+      <Trigger Type="OnThisCardDeploy">
+        <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="AllOther"  ForceExecute="True">
+          <Variable Type="CardColumn"/>
+          <Condition Operator="EqualTo"	ValueA="Variable"	ValueB="1" />
+          <CardFilter IncludeColumn="True" Value="1" IncludeBackLine="True"/>
+          <Effect Type="ModifyAttack" Value="1" Duration="UntilEndOfTurn"/>
+        </Target>
+      </Trigger>
+      <Trigger Type="OnThisCardDeploy">
+        <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="AllOther"  ForceExecute="True">
+          <Variable Type="CardColumn"/>
+          <Condition Operator="EqualTo"	ValueA="Variable"	ValueB="1" />
+          <CardFilter IncludeColumn="True" Value="2" IncludeFrontLine="True"/>
+          <Effect Type="ModifyAttack" Value="1" Duration="UntilEndOfTurn"/>
+        </Target>
+      </Trigger>
+      <!--Deployed on row 2:-->
+      <Trigger Type="OnThisCardDeploy">
+        <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="AllOther"  ForceExecute="True">
+          <Variable Type="CardColumn"/>
+          <Condition Operator="EqualTo"	ValueA="Variable"	ValueB="2" />
+          <CardFilter IncludeColumn="True" Value="1" IncludeFrontLine="True"/>
+          <Effect Type="ModifyAttack" Value="1" Duration="UntilEndOfTurn"/>
+        </Target>
+      </Trigger>
+      <Trigger Type="OnThisCardDeploy">
+        <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="AllOther"  ForceExecute="True">
+          <Variable Type="CardColumn"/>
+          <Condition Operator="EqualTo"	ValueA="Variable"	ValueB="2" />
+          <CardFilter IncludeColumn="True" Value="2" IncludeBackLine="True"/>
+          <Effect Type="ModifyAttack" Value="1" Duration="UntilEndOfTurn"/>
+        </Target>
+      </Trigger>
+      <Trigger Type="OnThisCardDeploy">
+        <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="AllOther"  ForceExecute="True">
+          <Variable Type="CardColumn"/>
+          <Condition Operator="EqualTo"	ValueA="Variable"	ValueB="2" />
+          <CardFilter IncludeColumn="True" Value="3" IncludeFrontLine="True"/>
+          <Effect Type="ModifyAttack" Value="1" Duration="UntilEndOfTurn"/>
+        </Target>
+      </Trigger>
+      <!--Deployed on row 3:-->
+      <Trigger Type="OnThisCardDeploy">
+        <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="AllOther"  ForceExecute="True">
+          <Variable Type="CardColumn"/>
+          <Condition Operator="EqualTo"	ValueA="Variable"	ValueB="3" />
+          <CardFilter IncludeColumn="True" Value="2" IncludeFrontLine="True"/>
+          <Effect Type="ModifyAttack" Value="1" Duration="UntilEndOfTurn"/>
+        </Target>
+      </Trigger>
+      <Trigger Type="OnThisCardDeploy">
+        <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="AllOther"  ForceExecute="True">
+          <Variable Type="CardColumn"/>
+          <Condition Operator="EqualTo"	ValueA="Variable"	ValueB="3" />
+          <CardFilter IncludeColumn="True" Value="3" IncludeBackLine="True"/>
+          <Effect Type="ModifyAttack" Value="1" Duration="UntilEndOfTurn"/>
+        </Target>
+      </Trigger>
+      <Description>When [THIS] enters the battleground, adjacent friendly creatures gains +[1:ATK] until end of turn.</Description>
+      <DescriptionChinese>当[THIS]进入战场时，相邻生物获得+[1:ATK]直到回合结束。</DescriptionChinese>
+      <DescriptionEnglish>When [THIS] enters the battleground, adjacent friendly creatures gains +[1:ATK] until end of turn.</DescriptionEnglish>
+      <DescriptionFrench>Lorsque le [THIS] entre sur le champ de bataille, les créatures alliées adjacentes gagnent +[1:ATK] jusqu'à la fin du tour.</DescriptionFrench>
+		  <DescriptionGerman>Wenn [THIS] ausgespielt wird, benachbarte verbündete Kreaturen erhalten +[1:ATK] bis zum Ende der Runde.</DescriptionGerman>
+		  <DescriptionPolish>Gdy [THIS] wkracza na pole bitwy, sąsiednie sojusznicze stworzenia zyskują +[1:ATK].</DescriptionPolish>				
+		  <DescriptionItalian>Quando [THIS] entra nel campo di battaglia, le creature alleate adiacenti ricevono +[1:ATK].</DescriptionItalian>
+		  <DescriptionSpanish>En cuanto el [THIS] entra en el campo de batalla, las criaturas aliadas adyacentes obtienen +[1:ATK] hasta el final del turno.</DescriptionSpanish>
+      <DescriptionRussian>Когда [THIS] выходит на поле боя, соседние дружественные существа получают +[1:ATK] до конца хода.</DescriptionRussian>
+		  <DescriptionPortuguese>Quando [THIS] entrar no campo de batalha, criaturas aliadas adjacentes ganham +[1:ATK] até o final do turno.</DescriptionPortuguese>
+    </Card>
     <Card Rarity="Common" Type="Unit" Name="Cre_Hav_051" DisplayName="Crusader Watchman" Faction="Haven" SubType="Magic|Shooter" Race="Human|Archer" Cost="2" MightLevel="2" MagicLevel="1" Attack="0" Retaliate="1" HP="5" ID="493">
         <Ability Type="ImmuneToRetaliate" />
         <Variable Type="CardDamage" />
@@ -438,7 +539,7 @@ While Crusader Chaplain has no damage, it cannot be targeted.</Description>
     <!--...............................................................................-->
     <!-- Creatures - Inferno -->
     <!--...............................................................................-->
-    <Card Rarity="Common" Type="Unit" Name="Cre_Inf_050" DisplayName="Lashing Lilim" Faction="Inferno" SubType="Magic|Shooter" Race="Demon|Succubus" Cost="4" MightLevel="4" MagicLevel="1" Attack="2" Retaliate="2" HP="6" ID="498">
+    <Card Rarity="Common" Type="Unit" Name="Cre_Inf_050" DisplayName="Lashing Lilim" Faction="Inferno" School="Fire" SubType="Magic|Shooter" Race="Demon|Succubus" Cost="4" MightLevel="4" MagicLevel="1" Attack="2" Retaliate="2" HP="6" ID="498">
         <Ability Type="ImmuneToRetaliate" />
         <Ability Type="SweepAttack" />
     </Card>
@@ -526,7 +627,7 @@ Putrid Ghoul's [ATK] is equal to the number of poison counters on friendly creat
 		<DescriptionChinese>在本方回合开始时，给腐毒食尸鬼放置1个中毒指示物。
 腐毒食尸鬼的[ATK]等于本方生物身上中毒指示物的总数量。</DescriptionChinese>
 	</Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Nec_053" DisplayName="Sahaar Mummy" Faction="Necropolis" SubType="Melee" Race="Zombie" Cost="2" MightLevel="1" Attack="2" Retaliate="0" HP="3" ID="507">
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Nec_053" DisplayName="Sahaar Mummy" Faction="Necropolis" SubType="Melee" Race="Zombie" Cost="2" MightLevel="2" Attack="2" Retaliate="0" HP="3" ID="507">
         <Trigger Type="OnSupplyPhaseBegin" Side="Friendly" Location="Graveyard">
             <Target Zone="Graveyard" Amount="Self">
                 <Variable Type="TargetCount">
@@ -556,7 +657,7 @@ When [THIS] dies with poison counters on it, put the same number of poison count
 		<DescriptionChinese>在每回合结束时，给[THIS]放置1个中毒指示物。
 当[THIS]在有中毒指示物时死亡，给其他生物随机分配放置等量的中毒指示物。</DescriptionChinese>
 	</Card>
-    <Card Rarity="Epic" Type="Unit" Name="Cre_Nec_055" DisplayName="Damran, the Tainted" Faction="Necropolis" School="Earth" SubType="Melee" Race="DarkElf" Unique="True" Cost="6" MightLevel="5" Attack="3" Retaliate="3" HP="7" ID="509">
+    <Card Rarity="Epic" Type="Unit" Name="Cre_Nec_055" DisplayName="Damran, the Tainted" Faction="Necropolis" School="Earth" SubType="Melee" Race="DarkElf" Unique="True" Cost="5" MightLevel="4" Attack="3" Retaliate="3" HP="7" ID="509">
         <Ability Type="Infect" Value="2" />
         <Trigger Type="OnThisCardDeploy">
             <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Friendly" CantTargetSelf="True" ForceExecute="True" Persistent="True" Cancelable="False">
@@ -586,7 +687,7 @@ When [THIS] dies with poison counters on it, put the same number of poison count
         <Ability Type="Ambush" />
         <Trigger Type="OnAmbush" Side="Enemy">
             <Target Zone="Battleground" Amount="FromTrigger" CardType="Unit">
-                <Effect Type="Damage" Value="2" />
+                <Effect Type="Damage" Value="1" />
             </Target>
         </Trigger>
         <Description>Ambush: Deal 2 damage to ambushed creature.
@@ -619,7 +720,7 @@ When [THIS] dies with poison counters on it, put the same number of poison count
         </Trigger>
         <Description>Whenever another friendly Sanctuary creature is returned to your hand, that creature costs [2:RESOURCES] less to play until end of turn.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_San_054" DisplayName="Sayama Dune Prowler" Faction="Sanctuary" SubType="Melee" Race="Naga|Warrior" Cost="4" MightLevel="4" Attack="3" Retaliate="0" HP="5" ID="514">
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_San_054" DisplayName="Sayama Dune Prowler" Faction="Sanctuary" SubType="Melee" Race="Naga|Warrior" Cost="4" MightLevel="4" Attack="3" Retaliate="1" HP="4" ID="514">
         <Ability Type="Outmaneuver" />
         <Ability Type="Ambush" />
         <Trigger Type="OnAmbush" Side="Enemy">
@@ -702,8 +803,16 @@ When [THIS] dies with poison counters on it, put the same number of poison count
     <!--...............................................................................-->
     <!-- Creatures - Neutral -->
     <!--...............................................................................-->
-    <Card Rarity="Common" Type="Unit" Name="Cre_Neu_050" DisplayName="Burning Sand Elemental" Faction="Neutral" School="Fire" SubType="Magic|Melee" Race="Spirit" Cost="5" MightLevel="2" MagicLevel="3" Attack="2" Retaliate="0" HP="4" ID="522">
+    <Card NotLocalized="True" Rarity="Common" Type="Unit" Name="Cre_Neu_050" DisplayName="Burning Sand Elemental" Faction="Neutral" School="Fire" SubType="Magic|Melee" Race="Spirit" Cost="4" MightLevel="2" MagicLevel="3" Attack="2" Retaliate="0" HP="4" ID="522">
         <Ability Type="FireBurst" Value="3" />
+        <Ability Type="Ambush" />
+        <Trigger Type="OnAmbush" Side="Enemy">
+            <Target Zone="Battleground" Amount="FromTrigger" CardType="Unit">
+                <Effect Type="Damage" DamageFlags="Fire" Value="2" />
+            </Target>
+        </Trigger>
+    <Description>Ambush: Deal 2 Fire damage to ambushed creature.
+(Ambush abilities trigger when an enemy creature is deployed in the same row as this creature.)</Description>
     </Card>
     <Card Rarity="Common" Type="Unit" Name="Cre_Neu_051" DisplayName="Sahaar Bedouin" Faction="Neutral" SubType="Melee" Race="Human" Cost="3" MightLevel="3" Attack="2" Retaliate="2" HP="4" ID="523" />
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Neu_052" DisplayName="Soothsayer" Faction="Neutral" SubType="Melee" Race="Human" Cost="2" MightLevel="1" DestinyLevel="2" Attack="1" Retaliate="0" HP="1" ID="524">

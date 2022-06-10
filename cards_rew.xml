@@ -127,17 +127,15 @@
     <Card Rarity="Heroic" Type="Hero" Name="Her_Inf_005" DisplayName="Phrias, Prince of Annihilation" Faction="Inferno" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="257">
         <School Name="Fire" />
         <School Name="Prime" />
-        <Description>[2:RESOURCES]: Target friendly creature gains Sweep Attack until end of turn.</Description>
+        <Description>Discard a card: Target friendly creature gains Sweep Attack until end of turn.</Description>
         <Target Zone="None" Side="Friendly">
             <Effect Type="ChoiceOption" />
             <Subgroup>
                 <TemplateEffect Name="HeroAbilities" />
                 <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
-                <Target Zone="None" Side="Friendly">
-                    <Variable Type="Resources" Side="Friendly" />
-                    <Condition Operator="GreaterThan" ValueA="Variable" ValueB="1" />
-                    <Option Value="4" DisplayText="[2:RESOURCES]: Creature gain Sweep Attack." />
-                    <Effect Type="GainResources" Value="-2" Duration="Immediate" />
+                <Target Zone="Hand" Amount="1" Side="Friendly">
+                  <Option Value="4" DisplayText="Discard: creature gains Sweep Attack." />
+                  <Effect Type="MoveCardTo" Destination="Graveyard" Duration="Immediate" />
                 </Target>
                 <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="1" ForceExecute="True">
                     <Option Value="4" />
@@ -146,10 +144,10 @@
             </Subgroup>
         </Target>
     </Card>
-    <Card Rarity="Heroic" Type="Hero" Name="Her_Inf_007" DisplayName="Ignatius" Faction="Inferno" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="452">
+    <Card NotLocalized="True" Rarity="Heroic" Type="Hero" Name="Her_Inf_007" DisplayName="Ignatius" Faction="Inferno" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="452">
         <School Name="Dark" />
         <School Name="Fire" />
-        <Description>The first time opponent discards a card in a turn, if your [DESTINY] level is 5 or more, deal 2 damage to their hero.</Description>
+        <Description>The first time opponent discards a card in a turn, if your [MIGHT] level is 3 or more and your [DESTINY] level is 4 or more, deal 2 damage to their hero.</Description>
         <Target Zone="None" Side="Friendly">
             <Effect Type="ChoiceOption" />
             <Subgroup>
@@ -159,9 +157,13 @@
         </Target>
         <Trigger Type="OnCardDiscard" Side="Enemy" ExecuteOncePerTurn="True">
             <Target Zone="Hero" Amount="All" Side="Enemy">
-                <Variable Type="Level" Side="Friendly" LevelType="Destiny" />
-                <Condition Operator="GreaterThan" ValueA="Variable" ValueB="4" />
-                <Effect Type="Damage" Value="2" />
+              <Variable Type="Level" Side="Friendly" LevelType="Might" />
+              <Variable2 Type="Level" Side="Friendly" LevelType="Destiny" />
+              <Condition Operator="And" ValueA="Condition" ValueB="Condition">
+                <Condition Operator="GreaterThan" ValueA="Variable" ValueB="2" />
+                <Condition Operator="GreaterThan" ValueA="Variable2" ValueB="3" />
+              </Condition>
+              <Effect Type="Damage" Value="2" />
             </Target>
         </Trigger>
     </Card>
@@ -219,7 +221,7 @@
     <!--...............................................................................-->
     <!-- Heroes Sanctuary -->
     <!--...............................................................................-->
-    <Card Rarity="Heroic" Type="Hero" Name="Her_San_005" DisplayName="Akane, Mourner of Lost Memories" Faction="Sanctuary" MightLevel="1" MagicLevel="2" HP="20" ID="258">
+    <Card Rarity="Heroic" Type="Hero" Name="Her_San_005" DisplayName="Akane, Mourner of Lost Memories" Faction="Sanctuary" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="258">
         <School Name="Air" />
         <School Name="Prime" />
         <Description>[1:RESOURCES]: Remove all counters and destroy all ongoing spells on target creature.</Description>
@@ -269,7 +271,7 @@
     <!--...............................................................................-->
     <!-- Heroes Stronghold -->
     <!--...............................................................................-->
-    <Card Rarity="Heroic" Type="Hero" Name="Her_Str_005" DisplayName="Crag Hack" Faction="Stronghold" MightLevel="2" MagicLevel="0" DestinyLevel="0" HP="20" ID="21">
+    <Card Rarity="Heroic" Type="Hero" Name="Her_Str_005" DisplayName="Crag Hack" Faction="Stronghold" MightLevel="2" MagicLevel="0" DestinyLevel="1" HP="20" ID="21">
         <School Name="Earth" />
         <Description>[0:RESOURCES]: Neutral creatures cost [1:RESOURCES] less to play until end of turn.</Description>
         <Target Zone="None" Side="Friendly">
@@ -286,7 +288,7 @@
             </Subgroup>
         </Target>
     </Card>
-    <Card Rarity="Heroic" Type="Hero" Name="Her_Str_007" DisplayName="Zouleika, Renegade Wizard" Faction="Stronghold" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="455">
+    <Card Rarity="Heroic" Type="Hero" Name="Her_Str_007" DisplayName="Zouleika, Renegade Wizard" Faction="Stronghold" MightLevel="1" MagicLevel="2" DestinyLevel="0" HP="20" ID="455">
         <School Name="Air" />
         <School Name="Earth" />
         <Description>At the beginning of your turn, if your [MIGHT] level is 5 or more and your [MAGIC] level is 4 or more, target friendly creature gains Magic Resist until your next turn.</Description>

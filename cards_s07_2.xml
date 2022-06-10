@@ -310,7 +310,7 @@ While a Wizard creature is at Crimson Tower, friendly Beastmen cannot be targert
 				<Effect Type="Damage" Value="FromTrigger"/>
 			</Target>
 		</Trigger>
-		<Description>Whenever an enemy spell deals damage, prevent that damage and deal that much damage to the creature at Hall of Memories.</Description>
+		<Description>Whenever an enemy spell deals damage, prevent that damage and deal that much damage to the creature at Angel's Temple.</Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Building - Inferno -->
@@ -402,7 +402,7 @@ While a Wizard creature is at Crimson Tower, friendly Beastmen cannot be targert
 		</Target>
 		<Description>Mercenaries at Mercenary Hill Fort gain Double Attack.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_Neu_091" DisplayName="Free Mage Altar" Faction="Neutral" Cost="2" MightLevel="2" MagicLevel="2" DestinyLevel="0" ID="980">
+	<Card Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_Neu_091" DisplayName="Free Mage Altar" Faction="Neutral" Cost="3" MightLevel="2" MagicLevel="2" DestinyLevel="0" ID="980">
 		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
 			<Variable Type="InPlaySchoolsCount" Side="Friendly">
 				<CardFilter IncludeCardType="Unit"/>

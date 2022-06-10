@@ -69,11 +69,12 @@ Enemy creatures with no adjacent friendly creatures gains -[2:ATK].</Description
 	<!--....................................................................-->
 	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Ear_090" DisplayName="Nature's Fortitude" School="Earth" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="988">
 		<Ongoing Duration="Permanent"/>
-		<Target Zone="Battleground" Amount="1" CardType="Unit">
-			<Effect Type="ModifyMaxHp" Value="4"/>
+    <Ability Type="Endurable"/>
+    <Target Zone="Battleground" Amount="1" CardType="Unit">
+			<Effect Type="ModifyMaxHp" Value="3"/>
 		</Target>
 		<Description>Enchant creature. Permanent:
-Enchanted creature gains +[4:HEALTH].</Description>
+Enchanted creature gains +[3:HEALTH].</Description>
 	</Card>
 	<Card Rarity="Uncommon" Unique="False" Type="Spell" Name="Spe_Ear_091" DisplayName="Vine Trap" School="Earth" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="989">
 		<Target Zone="Battleground" Amount="1" CardType="Unit">
@@ -97,7 +98,7 @@ Enchanted creature gains +[4:HEALTH].</Description>
 		</Target>
 		<Description>Deal 1 damage to target creature and all adjacent creatures.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Unique="False" Type="Spell" Name="Spe_Fir_091" DisplayName="Fire Rain" School="Fire" Cost="4" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="992">
+	<Card Rarity="Uncommon" Unique="False" Type="Spell" Name="Spe_Fir_091" DisplayName="Fire Rain" School="Fire" Cost="4" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="992">
 		<Target Zone="BattlegroundColumn" CardType="Unit" Amount="2">
 			<Effect Type="Damage" Value="3"/>
 		</Target>
@@ -116,7 +117,7 @@ Whenever a creature attacks, put a +[1:ATK] counter on it.</Description>
 	<!--....................................................................-->
 	<!-- Spells - Light -->
 	<!--....................................................................-->
-	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Lig_090" DisplayName="Holy Light" School="Light" Cost="3" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="994">
+	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Lig_090" DisplayName="Holy Light" School="Light" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="994">
 		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
 			<CardFilter IncludeSchool="Light"/>
 			<Effect Type="AddCounter" CounterType="Fierce" Value="1"/>
@@ -189,7 +190,7 @@ When a magic creature is about to be played, negate that creature and then destr
 Enchanted creature gains +[1:ATK].
 At end of turn, return Ice Spear to its owner hand.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Unique="False" Type="Spell" Name="Spe_Wat_091" DisplayName="Ice Curse" School="Water" Cost="4" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="1001">
+	<Card Rarity="Uncommon" Unique="False" Type="Spell" Name="Spe_Wat_091" DisplayName="Ice Curse" School="Water" Cost="3" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="1001">
 		<Ongoing Duration="Permanent"/>
 		<Target Zone="Battleground" Amount="1" CardType="Unit"/>
 		<Trigger Type="OnTurnBegin">

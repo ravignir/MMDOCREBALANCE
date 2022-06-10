@@ -42,20 +42,26 @@
 		</Target>
 		<Description>Friendly Prime creatures cannot be enchanted by enemy spells.</Description>
 	</Card>
-	<Card Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Aca_082" DisplayName="Generator Titan" Faction="Academy" School="Prime" SubType="Magic|Melee" Race="Construct|Titan" Cost="6" MightLevel="5" MagicLevel="5" DestinyLevel="0" Attack="4" Retaliate="4" HP="8" ID="810">
+	<Card NotLocalized="True" Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Aca_082" DisplayName="Generator Titan" Faction="Academy" School="Prime" SubType="Magic|Melee" Race="Construct|Titan" Cost="6" MightLevel="5" MagicLevel="5" DestinyLevel="0" Attack="4" Retaliate="4" HP="8" ID="810">
 		<Ability Type="Shockwave" Value="3"/>
-		<Trigger Type="OnUnitDeath" Side="Friendly">
+		<Trigger Type="OnUnitDeath" Side="Friendly" ExecuteOncePerTurn="True">
 			<CardFilter IncludeRaces="Construct"/>
 			<Target Zone="BattlegroundColumn" CardType="Unit" Amount="FromTrigger" BattlegroundPositionState="DontCare">
 				<CardFilter ExcludeRaces="Construct"/>
 				<Effect Type="Damage" Value="4"/>
 			</Target>
 		</Trigger>
-		<Description>When Generator Titan or another friendly construct creature dies, it deals 4 damage to all non-construct creature of the same row.</Description>
+		<Description>When Generator Titan or another friendly construct creature dies for the first time in a turn, it deals 4 damage to all non-construct creature of the same row.</Description>
 	</Card>
 	<Card Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Aca_083" DisplayName="Masterpiece Titan" Faction="Academy" School="Prime" SubType="Magic|Melee" Race="Construct|Titan" Cost="5" MightLevel="4" MagicLevel="5" DestinyLevel="0" Attack="4" Retaliate="3" HP="7" ID="811">
 		<Ability Type="Shockwave" Value="3"/>
 		<Trigger Type="OnThisCardDeploy">
+<!--
+			<Target Zone="Library" Side="Friendly" Amount="1" AmountVisible="3">
+				<CardFilter IncludeFaction="Sylvan"/>
+				<Effect Type="MoveCardTo" Destination="Hand" />
+			</Target>
+-->
 			<Target Zone="Library" Side="Friendly" AmountVisible="3">
 				<Effect Type="Look"/>
 			</Target>
@@ -66,8 +72,7 @@
 		</Trigger>
 		<Description>When Masterpiece Titan enters the battleground, look at the top 3 cards of your library and put all Construct cards from among them into your hand.</Description>
 	</Card>
-	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Aca_084" DisplayName="Dervish Diva" Faction="Academy" SubType="Shooter" Race="Human|Dervish" Cost="5" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="3" HP="7" ID="812">
-		<Ability Type="ImmuneToRetaliate"/>
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Aca_084" DisplayName="Dervish Diva" Faction="Academy" SubType="Shooter" Race="Human|Dervish" Cost="4" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="3" HP="7" ID="812">
 		<Ability Type="RangeReflect" Value="2"/>
 	</Card>
 	<!--...............................................................................-->
@@ -129,10 +134,11 @@
 	<Card Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Hav_085" DisplayName="Angel Protector" Faction="Haven" School="Light" SubType="Magic|Flyer" Race="Angel" Cost="4" MightLevel="4" MagicLevel="3" DestinyLevel="0" Attack="3" Retaliate="2" HP="7" ID="818">
 		<Trigger Type="OnThisCardDeploy">
 			<Target Zone="Battleground" Amount="1" CardType="Spell" Side="Enemy">
+				<CardFilter IncludeCardType="Spell" IncludeOngoingType="Ongoing" ExcludeUnique="True"/>
 				<Effect Type="Kill"/>
 			</Target>
 		</Trigger>
-		<Description>When Angel Protector enters the battleground, destroy target enemy ongoing spell.</Description>
+		<Description>When Angel Protector enters the battleground, destroy target enemy non-unique ongoing spell.</Description>
 	</Card>
 	<!--...............................................................................-->
 	<!-- Creatures - Inferno -->
@@ -186,7 +192,7 @@
 		</Target>
 		<Description>Breeder Matron's [ATK] is equal to the number of friendly battleground positions with at least one Breeder.</Description>
 	</Card>
-	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Inf_084" DisplayName="Hatching Breeder" Faction="Inferno" SubType="Magic|Melee|Shooter" Race="Demon|Breeder" Cost="2" MightLevel="2" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="0" HP="4" ID="823">
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Inf_084" DisplayName="Hatching Breeder" Faction="Inferno" SubType="Magic|Melee|Shooter" Race="Demon|Breeder" Cost="2" MightLevel="2" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="0" HP="3" ID="823">
 		<Trigger Type="OnThisCardDeath">
 			<Target Zone="BattlegroundPosition" Amount="FromTrigger">
 				<Effect Type="PopulateStack" Name="s06_Tok_Inf_001"/>
@@ -268,7 +274,7 @@
 		</Trigger>
 		<Description>The first time a Spy creature deals combat damage to enemy hero during your turn, take target Sanctuary fortune card from your graveyard and put it into your hand.</Description>
 	</Card>
-	<Card Rarity="Rare" Unique="False" Type="Unit" Name="Cre_San_083" DisplayName="Blessed Lake Spirit" Faction="Sanctuary" SubType="Magic|Melee" Race="Spirit" Cost="2" MightLevel="2" MagicLevel="2" DestinyLevel="0" Attack="1" Retaliate="0" HP="4" ID="832" School="Water">
+	<Card Rarity="Rare" Unique="False" Type="Unit" Name="Cre_San_083" DisplayName="Blessed Lake Spirit" Faction="Sanctuary" SubType="Magic|Melee" Race="Spirit" Cost="2" MightLevel="2" MagicLevel="2" DestinyLevel="0" Attack="1" Retaliate="0" HP="3" ID="832" School="Water">
 		<Target Zone="Battleground" Amount="All" Side="Friendly" CardType="Unit">
 			<Effect Type="ModifyDamage" Value="0.0x" DamageIncludeFlags="Spell" Side="Enemy"/>
 		</Target>

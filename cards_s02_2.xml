@@ -33,13 +33,18 @@ Elrath's Blessing can only be played if your hero's remaining health is 5 or les
         </Target>
         <Description>For each friendly creature on the battleground, heal 1 damage from your hero.</Description>
     </Card>
-    <Card Rarity="Rare" Type="Fortune" Name="For_Hav_043" DisplayName="Offensive Stance" Faction="Haven" Cost="1" DestinyLevel="2" ID="395">
-        <Ongoing Duration="UntilYourNextTurn" />
+    <Card NotLocalized="True" Rarity="Rare" Type="Fortune" Name="For_Hav_043" DisplayName="Offensive Stance" Faction="Haven" Cost="3" DestinyLevel="2" ID="395">
+        <Ongoing Duration="Permanent" />
         <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="All">
             <Effect Type="ModifyAbility" Ability="PerfectRetaliate" />
         </Target>
-        <Description>Until your next turn:
-All Friendly creatures gain Perfect Retaliation.</Description>
+        <Trigger Type="OnTurnBegin" Side="Friendly">
+          <Target Zone="Battleground" Amount="Self">
+            <Effect Type="MoveCardTo" Destination="Hand" />
+          </Target>
+        </Trigger>
+      <Description>All Friendly creatures gain Perfect Retaliation.
+At the beginning of your turn, return [THIS] to its owner's hand.</Description>
     </Card>
     <!--....................................................................-->
     <!-- Fortune - Inferno -->

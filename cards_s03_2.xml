@@ -525,11 +525,13 @@ Target creature gains +[X:ATK], where X is equal to 1 plus the number of cards n
         <Description>Until end of turn:
 Target creature gains +[1:ATK]. If your hero has 5 or less health remaining, target creature gains +[4:ATK] instead.</Description>
     </Card>
-    <Card Rarity="Rare" Type="Fortune" Name="For_Str_053" DisplayName="Rushing Assault" Faction="Stronghold" Cost="4" DestinyLevel="4" ID="565">
+    <Card Rarity="Rare" Type="Fortune" Name="For_Str_053" DisplayName="Rushing Assault" Faction="Stronghold" Cost="3" DestinyLevel="3" ID="565">
         <Ongoing Duration="UntilEndOfTurn" />
-        <Trigger Type="OnDeploy" UseTriggererAsInitiator="True">
-            <Target Zone="BattlegroundColumn" CardType="Unit" Amount="FromTrigger">
-                <CardFilter Side="Enemy" />
+        <Trigger Type="OnDeploy" DamageIncludeFlags="Combat" UseTriggererAsInitiator="True">
+            <Target Zone="Battleground" Side="Enemy" CardType="Unit" Amount="2" CantTargetPrevious="True" Random="True">
+				<CardFilter IncludeColumn="True" Value="Variable3">
+					<Variable3 Type="CardColumn"/>
+				</CardFilter>
                 <Variable Type="CardAttack" FromTrigger="True" />
                 <Effect Type="Damage" Value="Variable" />
             </Target>

@@ -53,7 +53,7 @@
         <School Name="Fire" />
         <School Name="Water" />
         <School Name="Light" />
-        <Description>[2:RESOURCES], discard a card: Friendly creatures gain +[1:ATK] until end of turn for each enchant creature spell affecting them.</Description>
+        <Description>[0:RESOURCES]: Discard a card: Friendly creatures gain +[1:ATK] until end of turn for each enchant creature spell affecting them.</Description>
         <Target Zone="None" Side="Friendly">
             <Effect Type="ChoiceOption" />
             <Subgroup>
@@ -61,9 +61,9 @@
                 <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
                 <Target Zone="None" Side="Friendly">
                     <Variable Type="Resources" Side="Friendly" />
-                    <Condition Operator="GreaterThan" ValueA="Variable" ValueB="1" />
-                    <Option Value="4" DisplayText="[2:RESOURCES]: Discard a card: Creatures you control gains +[1:ATK] for each ongoing spell attached to them." />
-                    <Effect Type="GainResources" Value="-2" Duration="Immediate" />
+                    <Condition Operator="GreaterThan" ValueA="Variable" ValueB="-1" />
+                    <Option Value="4" DisplayText="[0:RESOURCES]: Discard: Creatures gain [ATK]" />
+                    <!--Effect Type="GainResources" Value="-2" Duration="Immediate" /-->
                 </Target>
                 <Target Zone="Hand" Amount="1" Side="Friendly">
                     <Option Value="4" />
@@ -80,7 +80,7 @@
     <Card Rarity="Heroic" Type="Hero" Name="Her_Aca_004" DisplayName="Myranda, Blademage Champion" Faction="Academy" MightLevel="2" MagicLevel="1" DestinyLevel="0" HP="20" ID="447">
         <School Name="Air" />
         <School Name="Prime" />
-        <Description>[4:RESOURCES]: Relocate target friendly magic creature.</Description>
+        <Description>[3:RESOURCES]: Relocate target friendly magic creature.</Description>
         <Target Zone="None" Side="Friendly">
             <Effect Type="ChoiceOption" />
             <Subgroup>
@@ -88,9 +88,9 @@
                 <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
                 <Target Zone="None" Side="Friendly">
                     <Variable Type="Resources" Side="Friendly" />
-                    <Condition Operator="GreaterThan" ValueA="Variable" ValueB="3" />
-                    <Option Value="4" DisplayText="[4:RESOURCES]: Relocate target friendly magic creature." />
-                    <Effect Type="GainResources" Value="-4" Duration="Immediate" />
+                    <Condition Operator="GreaterThan" ValueA="Variable" ValueB="2" />
+                    <Option Value="4" DisplayText="[3:RESOURCES]: Relocate target friendly magic creature." />
+                    <Effect Type="GainResources" Value="-3" Duration="Immediate" />
                 </Target>
                 <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Friendly">
                     <Option Value="4" />

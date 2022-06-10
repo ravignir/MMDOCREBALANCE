@@ -359,13 +359,7 @@ All creatures gain +[1:ATK] and +[1:RET] for each other creature with the same n
         <Target Zone="Battleground" CardType="Unit" Amount="Occupant">
             <Effect Type="ModifyAbility" Ability="MagicResist" />
         </Target>
-        <Trigger Type="OnOccupantCardDeathByDamage" DamageIncludeFlags="Combat">
-            <Target Zone="None" Amount="Self">
-                <Effect Type="Kill" />
-            </Target>
-        </Trigger>
-        <Description>Creatures at Arcane Orb gain Magic Resist.
-When a creature at Arcane Orb dies from combat damage, destroy Arcane Orb.</Description>
+        <Description>Creatures at Arcane Orb gain Magic Resist.</Description>
     </Card>
     <!--....................................................................-->
     <!-- Building - Haven -->
@@ -392,13 +386,7 @@ When a creature at Watchtower dies from combat damage, destroy Watchtower.</Desc
         <Target Zone="Battleground" CardType="Unit" Amount="Occupant">
             <Effect Type="ModifyAbility" Ability="Fear" Value="3" />
         </Target>
-        <Trigger Type="OnOccupantCardDeathByDamage" DamageIncludeFlags="Combat">
-            <Target Zone="None" Amount="Self">
-                <Effect Type="Kill" />
-            </Target>
-        </Trigger>
-        <Description>Creatures at Hall of Nightmares gain Fear 3.
-When a creature at Hall of Nightmares dies from combat damage, destroy Hall of Nightmares.</Description>
+        <Description>Creatures at Hall of Nightmares gain Fear 3.</Description>
     </Card>
     <!--....................................................................-->
     <!-- Building - Necropolis -->
@@ -422,13 +410,7 @@ When a creature at Soul Spire dies from combat damage, destroy Soul Spire.</Desc
         <Target Zone="Battleground" CardType="Unit" Amount="Occupant">
             <Effect Type="ModifyAbility" Ability="Honor" Value="1" />
         </Target>
-        <Trigger Type="OnOccupantCardDeathByDamage" DamageIncludeFlags="Combat">
-            <Target Zone="None" Amount="Self">
-                <Effect Type="Kill" />
-            </Target>
-        </Trigger>
-        <Description>Creatures at Hidden Dojo gain Honor 1.
-When a creature at Hidden Dojo dies from combat damage, destroy Hidden Dojo.</Description>
+        <Description>Creatures at Hidden Dojo gain Honor 1.</Description>
     </Card>
     <!--....................................................................-->
     <!-- Building - Stronghold -->
@@ -448,7 +430,7 @@ When a creature at War Tent dies from combat damage, destroy War Tent.</Descript
     <!--....................................................................-->
     <!-- Building - Neutral -->
     <!--....................................................................-->
-    <Card Rarity="Epic" Unique="True" Type="Building" Name="Bui_Neu_060" DisplayName="Tower of the Dreamer" Faction="Neutral" Cost="4" DestinyLevel="4" ID="630">
+    <Card Rarity="Epic" Unique="True" Type="Building" Name="Bui_Neu_060" DisplayName="Tower of the Dreamer" Faction="Neutral" Cost="3" DestinyLevel="3" ID="630">
         <Trigger Type="OnTurnBegin" Side="Friendly">
             <Target Zone="None" Side="Friendly">
                 <Variable Type="OccupantCount" />

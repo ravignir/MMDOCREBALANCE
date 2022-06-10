@@ -36,7 +36,7 @@ While there is a friendly Wizard creature on the battleground, friendly Beastman
 	<!--....................................................................-->
 	<!-- Fortune - Haven -->
 	<!--....................................................................-->
-	<Card Rarity="Uncommon" Type="Fortune" Name="For_Hav_070" DisplayName="Imperial Expansion" Faction="Haven" Cost="4" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="750" Unique="False">
+	<Card Rarity="Uncommon" Type="Fortune" Name="For_Hav_070" DisplayName="Imperial Expansion" Faction="Haven" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="750" Unique="False">
 		<Target Zone="Battleground" CardType="Building" Side="Friendly" Amount="1">
 			<Effect Type="Clone"/>
 		</Target>
@@ -302,9 +302,9 @@ When an enemy creature attacks, opponent cannot deploy creatures.</Description>
 		</Target>
 		<Description>Creatures at Emperor's Wall gain Perfect Retaliation and gain +[1:RET] for each card named Emperor's Wall on the battleground.</Description>
 	</Card>
-	<Card Rarity="Common" Type="Building" Name="Bui_Hav_072" DisplayName="Treasury" Faction="Haven" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="2" ID="768" Unique="False">
+	<Card NotLocalized="True" Rarity="Common" Type="Building" Name="Bui_Hav_072" DisplayName="Treasury" Faction="Haven" Cost="2" MightLevel="0" MagicLevel="0" DestinyLevel="2" ID="768" Unique="False">
 		<Variable Type="OccupantCount">
-			<CardFilter IncludeAbility="Income"/>
+			<CardFilter IncludeFaction="Haven"/>
 		</Variable>
 		<Target Zone="Hero" Amount="All" Side="Friendly">
 			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
@@ -313,9 +313,9 @@ When an enemy creature attacks, opponent cannot deploy creatures.</Description>
 		<!-- The following target is necessary to display the right value in the Income icon. -->
 		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
 			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
-			<Effect Type="ModifyAbility" Ability="Income" Value="1"/>
+			<Effect Type="ModifyAbility" Ability="Income" Value="2"/>
 		</Target>
-		<Description>Friendly creatures with Income at Treasury gain +1 to their Income value.</Description>
+		<Description>Friendly haven creatures at Treasury gain +1 Income.</Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Building - Inferno -->
@@ -363,14 +363,22 @@ When an enemy creature attacks, opponent cannot deploy creatures.</Description>
 	<!--....................................................................-->
 	<!-- Building - Necropolis -->
 	<!--....................................................................-->
-	<Card Rarity="Uncommon" Type="Building" Name="Bui_Nec_070" DisplayName="Boneyard" Faction="Necropolis" Cost="4" MightLevel="3" MagicLevel="0" DestinyLevel="0" ID="772" Unique="False">
-		<Trigger Type="OnPreTurnEnd" Side="Friendly">
+	<Card UseXmlDescription="False" Rarity="Uncommon" Type="Building" Name="Bui_Nec_070" DisplayName="Boneyard" Faction="Necropolis" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" ID="772" Unique="False">
+    <Trigger Type="OnPreTurnEnd" Side="Friendly">
 			<Target Zone="Graveyard" Amount="1" Side="Friendly" Random="True">
 				<CardFilter BaseMaxCost="True" Value="2" IncludeCardType="Unit" IncludeFaction="Necropolis"/>
 				<Effect Type="DeployOnBuilding"/>
 			</Target>
 		</Trigger>
-		<Description>At the end of your turn, take a card at random from your graveyard among all the necropolis creatures with a cost of [2:RESOURCES] or less that can be deployed at Boneyard and deploy it at Boneyard for free.</Description>
+    <Trigger Type="OnOccupantCardDeath" >
+      <Target Zone="Graveyard" Amount="fromTrigger" Side="Friendly" ForceExecute="True" Cancelable="False"> 
+        <CardFilter BaseMaxCost="True" Value="2" IncludeCardType="Unit" IncludeFaction="Necropolis"/>
+        <Effect Type="Banish"/>
+      </Target>
+    </Trigger>
+      <Description>At the end of your turn, take a card at random from your graveyard among all the necropolis creatures with a cost of [2:RESOURCES] or less that can be deployed at Boneyard and deploy it at Boneyard for free.
+If such creature dies in Boneyard, then banish it.
+      </Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Building - Sanctuary -->
@@ -388,7 +396,7 @@ When an enemy creature attacks, opponent cannot deploy creatures.</Description>
 		</Trigger>
 		<Description>Whenever a creature at Kabuki Dojo dies, shuffle it in its owner's library instead, then draw a card.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Type="Building" Name="Bui_San_071" DisplayName="Kensei Dojo" Faction="Sanctuary" Cost="5" MightLevel="3" MagicLevel="0" DestinyLevel="3" ID="774" Unique="False">
+	<Card Rarity="Uncommon" Type="Building" Name="Bui_San_071" DisplayName="Kensei Dojo" Faction="Sanctuary" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="3" ID="774" Unique="False">
 		<Variable Type="TargetCount">
 			<Target Zone="Battleground" Side="Any" Amount="All">
 				<CardFilter IncludeCardID="Bui_San_071"/>

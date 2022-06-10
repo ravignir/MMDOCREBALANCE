@@ -9,8 +9,7 @@
     <!--...............................................................................-->
     <!-- Creatures - Academy -->
     <!--...............................................................................-->
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Aca_060" DisplayName="Spirit Traveller" Faction="Academy" School="Prime" SubType="Magic|Shooter" Race="Human|Wizard" Cost="4" MightLevel="2" MagicLevel="1" DestinyLevel="2" Attack="2" Retaliate="0" HP="5" ID="600">
-        <Ability Type="ImmuneToRetaliate" />
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Aca_060" DisplayName="Spirit Traveller" Faction="Academy" School="Prime" SubType="Magic|Melee|Shooter" Race="Human|Wizard" Cost="3" MightLevel="2" MagicLevel="1" DestinyLevel="2" Attack="2" Retaliate="0" HP="5" ID="600">
         <Ability Type="Ambush" />
         <Trigger Type="OnAmbush" Side="Enemy">
             <Target Zone="Library" Amount="2" Side="Enemy" AutoTakeFirstInputs="True">
@@ -69,15 +68,15 @@
         </Target>
         <Description>While friendly Haven creatures have no damage, they gain +[1:ATK].</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_061" DisplayName="Vindicator" Faction="Haven" SubType="Melee" Race="Human|Soldier" Cost="2" MightLevel="2" Attack="2" Retaliate="0" HP="4" ID="603">
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_061" DisplayName="Vindicator" Faction="Haven" SubType="Melee" Race="Human|Soldier" Cost="2" MightLevel="2" Attack="2" Retaliate="0" HP="5" ID="603">
         <Trigger Type="OnThisDamageUnit" Side="Enemy" DamageIncludeFlags="Combat">
             <Target Zone="Battleground" CardType="Unit" Amount="FromTrigger">
                 <Variable Type="CardAttack" UseCurrentTarget="True" />
-                <Condition Operator="GreaterThan" ValueA="Variable" ValueB="4" />
+                <Condition Operator="GreaterThan" ValueA="Variable" ValueB="3" />
                 <Effect Type="Kill" />
             </Target>
         </Trigger>
-        <Description>When Vindicator deals combat damage to a creature with 5 or more [ATK], destroy that creature.</Description>
+        <Description>When Vindicator deals combat damage to a creature with 4 or more [ATK], destroy that creature.</Description>
     </Card>
     <Card Rarity="Common" Type="Unit" Name="Cre_Hav_062" DisplayName="Crusader Vanguard" Faction="Haven" SubType="Melee" Race="Human|Soldier" Cost="3" MightLevel="3" Attack="2" Retaliate="1" HP="6" ID="669">
         <Target Zone="Battleground" Amount="Self">
@@ -92,20 +91,19 @@
         </Target>
         <Description>While Crusader Vanguard has no damage, it gains +[1:ATK] and +[1:RET].</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_064" DisplayName="Angel of Mourning" Faction="Haven" School="Light" SubType="Magic|Flyer" Race="Angel" Cost="4" MightLevel="4" MagicLevel="2" Attack="2" Retaliate="3" HP="6" ID="671">
-        <Variable Type="TargetCount" ValueModifier="0.2xd">
+    <Card NotLocalized="True" Rarity="Uncommon" Type="Unit" Name="Cre_Hav_064" DisplayName="Angel of Mourning" Faction="Haven" School="Light" SubType="Magic|Flyer" Race="Angel" Cost="4" MightLevel="4" MagicLevel="2" Attack="2" Retaliate="3" HP="6" ID="671">
+        <Variable Type="TargetCount" ValueModifier="-0.2xu">
             <Target Zone="Graveyard" Amount="All" Side="Friendly" />
         </Variable>
-        <Target Zone="Battleground" Amount="Self">
-            <Condition Operator="GreaterThan" ValueA="Variable" ValueB="0" />
-            <Effect Type="ModifyAbility" Ability="Heal" Value="Variable" />
+        <Target Zone="Hand" Amount="Self">
+            <Effect Type="ModifyCost" Value="Variable" />
         </Target>
-        <Description>For every 5 cards in your graveyard, Angel of Mourning gains Heal 1.</Description>
+        <Description>For every 5 cards in your graveyard, [THIS] cost [1:RESOURCES] less.</Description>
     </Card>
     <!--...............................................................................-->
     <!-- Creatures - Inferno -->
     <!--...............................................................................-->
-    <Card Rarity="Rare" Type="Unit" Name="Cre_Inf_060" DisplayName="Fate Bender" Faction="Inferno" School="Prime" SubType="Magic|Shooter" Race="Human|Wizard" Cost="3" MightLevel="3" MagicLevel="1" DestinyLevel="1" Attack="2" Retaliate="2" HP="5" ID="604">
+    <Card Rarity="Rare" Type="Unit" Name="Cre_Inf_060" DisplayName="Fate Bender" Faction="Inferno" School="Prime" SubType="Magic|Shooter" Race="Human|Wizard|Demon" Cost="3" MightLevel="3" MagicLevel="1" DestinyLevel="1" Attack="2" Retaliate="2" HP="5" ID="604">
         <Ability Type="ImmuneToRetaliate" />
         <Trigger Type="OnCardDiscard" Side="Enemy" ExecuteOncePerTurn="True">
             <Target Zone="Battleground" Amount="Self" ForceExecute="True">
@@ -178,7 +176,7 @@
     <!--...............................................................................-->
     <!-- Creatures - Sanctuary -->
     <!--...............................................................................-->
-    <Card Rarity="Rare" Type="Unit" Name="Cre_San_060" DisplayName="Sayama Predator" Faction="Sanctuary" SubType="Melee" Race="Naga|Warrior" Cost="5" MightLevel="4" Attack="3" Retaliate="0" HP="5" ID="608">
+    <Card Rarity="Rare" Type="Unit" Name="Cre_San_060" DisplayName="Sayama Predator" Faction="Sanctuary" SubType="Melee" Race="Naga|Warrior" Cost="4" MightLevel="4" Attack="2" Retaliate="0" HP="5" ID="608">
         <Target Zone="Hero" Amount="All" Side="Enemy">
             <Effect Type="GlobalEffect" GlobalEffectType="AmbushOnRelocate" />
         </Target>
@@ -199,7 +197,15 @@
         <Description>For every 5 cards in your graveyard, Honor Bound Kami gains Honor 1.</Description>
 		<DescriptionChinese>本方墓地中每有5张牌，荣耀之神获得荣耀1。</DescriptionChinese>
 	</Card>
-    <Card Rarity="Common" Type="Unit" Name="Cre_San_064" DisplayName="Sand Kame" Faction="Sanctuary" SubType="Melee" Race="Beast" Cost="5" MightLevel="5" Attack="4" Retaliate="4" HP="8" ID="680" />
+  <Card NotLocalized="True" Rarity="Common" Type="Unit" Name="Cre_San_064" DisplayName="Sand Kame" Faction="Sanctuary" SubType="Melee" Race="Beast" Cost="5" MightLevel="5" Attack="4" Retaliate="4" HP="8" ID="680">
+    <Trigger Type="OnThisCardDeploy">
+      <Target Zone="Battleground" CardType="Unit" Side="Any" Amount="AllOther" ForceExecute="True">
+        <CardFilter ExcludeUnitType="Flyer"/>
+        <Effect Type="Damage" Value="1"/>
+      </Target>
+    </Trigger>
+    <Description>When [THIS] enters the battleground, deal 1 damage to all other not flying creatures</Description>
+  </Card>
     <!--...............................................................................-->
     <!-- Creatures - Stronghold -->
     <!--...............................................................................-->
@@ -212,7 +218,7 @@
         </Target>
         <Description>All friendly creatures with ambush gain +[1:ATK].</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Str_061" DisplayName="Suicide Goblin" Faction="Stronghold" SubType="Melee" Race="Goblin|Warrior" Cost="2" MightLevel="3" Attack="2" Retaliate="0" HP="3" ID="611">
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Str_061" DisplayName="Suicide Goblin" Faction="Stronghold" SubType="Melee|Shooter" Race="Goblin|Warrior" Cost="2" MightLevel="3" Attack="2" Retaliate="0" HP="3" ID="611">
         <Ability Type="Ambush" />
         <Trigger Type="OnAmbush" Side="Enemy">
             <Target Zone="Battleground" Amount="FromTrigger" CardType="Unit">

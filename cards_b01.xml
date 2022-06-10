@@ -145,7 +145,7 @@
             </Subgroup>
         </Target>
     </Card>
-    <Card Rarity="Heroic" Type="Hero" Name="Her_Inf_003" DisplayName="Kal-Azaar, Invoker of Agony" Faction="Inferno" MightLevel="1" MagicLevel="2" DestinyLevel="0" HP="18" ID="8">
+    <Card Rarity="Heroic" Type="Hero" Name="Her_Inf_003" DisplayName="Kal-Azaar, Invoker of Agony" Faction="Inferno" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="18" ID="8">
         <School Name="Fire" />
         <School Name="Dark" />
         <School Name="Prime" />
@@ -206,7 +206,7 @@
     <Card Rarity="Heroic" Type="Hero" Name="Her_Nec_001" DisplayName="Nergal, Lord of Pestilence" Faction="Necropolis" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="11">
         <School Name="Earth" />
         <School Name="Prime" />
-        <Description>[1:RESOURCES]: Put 1 poison counter on target creature.</Description>
+        <Description>[0:RESOURCES]: Put 1 poison counter on target creature.</Description>
         <Target Zone="None" Side="Friendly">
             <Effect Type="ChoiceOption" />
             <Subgroup>
@@ -214,18 +214,17 @@
                 <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
                 <Target Zone="None" Side="Friendly">
                     <Variable Type="Resources" Side="Friendly" />
-                    <Condition Operator="GreaterThan" ValueA="Variable" ValueB="0" />
-                    <Option Value="4" DisplayText="1 poison counter." />
-                    <Effect Type="GainResources" Value="-1" Duration="Immediate" />
+                    <Condition Operator="GreaterThan" ValueA="Variable" ValueB="-1" />
+                    <Option Value="4" DisplayText="[0:RESOURCES]: 1 poison counter." />
                 </Target>
                 <Target Zone="Battleground" CardType="Unit" Side="Any" Amount="1">
-                    <Option Value="4" DisplayText="1 poison counter." />
+                    <Option Value="4" DisplayText="[0:RESOURCES]: 1 poison counter." />
                     <Effect Type="AddCounter" CounterType="Poison" Value="1" Duration="Immediate" />
                 </Target>
             </Subgroup>
         </Target>
     </Card>
-    <Card Rarity="Heroic" Type="Hero" Name="Her_Nec_003" DisplayName="Mother Namtaru, Invoker of Death" Faction="Necropolis" MightLevel="1" MagicLevel="2" DestinyLevel="0" HP="18" ID="12">
+    <Card Rarity="Heroic" Type="Hero" Name="Her_Nec_003" DisplayName="Mother Namtaru, Invoker of Death" Faction="Necropolis" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="18" ID="12">
         <School Name="Dark" />
         <School Name="Water" />
         <School Name="Prime" />

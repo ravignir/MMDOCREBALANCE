@@ -45,13 +45,22 @@ All creatures gain Swift.</Description>
 		</Target>
 		<Description>Destroy target creature with [1:ATK] or less.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Unique="False" Type="Spell" Name="Spe_Dar_081" DisplayName="Flaying Darkness" School="Dark" Cost="3" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="883">
-		<Target Zone="Battleground" CardType="Unit" Amount="All">
-			<Variable Type="CardAttack" UseCurrentTarget="True"/>
-			<Condition Operator="LesserThan" ValueA="Variable" ValueB="2"/>
-			<Effect Type="Damage" Value="2"/>
-		</Target>
-		<Description>Deal 2 damage to all creatures with [1:ATK] or less.</Description>
+	<Card NotLocalized="True" Rarity="Uncommon" Unique="False" Type="Spell" Name="Spe_Dar_081" DisplayName="Flaying Darkness" School="Dark" Cost="3" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="883">
+    <Ongoing Duration="Permanent"/>
+    <Ability Type="Endurable" />
+    <Target Zone="Battleground" Amount="1" CardType="Unit">
+        <Variable Type="CardAttack" UseCurrentTarget="True"/>
+        <Condition Operator="LesserThan" ValueA="Variable" ValueB="3"/>
+       <Effect Type="ModifyAbility" Ability="CannotAttack">
+       </Effect>
+    </Target>
+    <Trigger Type="OnTurnBegin" Side="Friendly">
+      <Target Zone="Battleground" Amount="Self">
+        <Effect Type="AdjacentMovement" Side="Friendly" />
+      </Target>
+    </Trigger>
+    <Description>Enchant Creature. Permanent:
+      Creature with attack 2 or less gains Cannot Attack. At the start of owners turn [THIS] enchants an random adjacent creature from same side.</Description>
 	</Card>
 	<Card Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Dar_082" DisplayName="Creeping Darkness" School="Dark" Cost="4" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="884">
 		<Ongoing Duration="Permanent"/>
@@ -105,7 +114,7 @@ At the beginning of each player's turn, deal 2 damage to all creatures at a buil
 		</Target>
 		<Description>Deal 2 damage to 2 target creatures.</Description>
 	</Card>
-	<Card Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Fir_081" DisplayName="Collateral Damage" School="Fire" Cost="4" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="889">
+	<Card Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Fir_081" DisplayName="Collateral Damage" School="Fire" Cost="3" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="889">
 		<Ongoing Duration="Permanent"/>
 		<Target Zone="Battleground" Amount="1" CardType="Unit">
 			<Effect Type="ModifyAbility" Ability="Tremple"/>
@@ -113,7 +122,7 @@ At the beginning of each player's turn, deal 2 damage to all creatures at a buil
 		<Description>Enchant Creature. Permanent:
 Whenever enchanted creature attacks and destroys a creature, overkill damage is redirected to enemy Hero.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Unique="False" Type="Spell" Name="Spe_Fir_082" DisplayName="Ragefire" School="Fire" Cost="5" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="890">
+	<Card Rarity="Uncommon" Unique="False" Type="Spell" Name="Spe_Fir_082" DisplayName="Ragefire" School="Fire" Cost="4" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="890">
 		<Ongoing Duration="Permanent"/>
 		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
 			<CardFilter IncludeSchool="Fire"/>
@@ -189,7 +198,7 @@ When an instant spell is about to be played, negate that spell and destroy Spell
 	<!--....................................................................-->
 	<!-- Spells - Water -->
 	<!--....................................................................-->
-	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Wat_080" DisplayName="Spirit Wave" School="Water" Cost="4" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="897">
+	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Wat_080" DisplayName="Spirit Wave" School="Water" Cost="3" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="897">
 		<Ongoing Duration="Permanent"/>
 		<Target Zone="Battleground" Amount="1" CardType="Unit"/>
 		<Trigger Type="OnCardDraw" Side="Friendly">

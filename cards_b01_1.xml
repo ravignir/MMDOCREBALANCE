@@ -17,9 +17,14 @@
         <Ability Type="ImmuneToRetaliate" />
 		<Ability Type="Stackable" />
     </Card>
-    <Card Rarity="Common" Type="Unit" Name="Cre_Hav_017" DisplayName="Devoted Sister" Faction="Haven" School="Light" SubType="Magic|Shooter" Race="Human|Priest" Cost="2" MightLevel="1" MagicLevel="1" Attack="1" Retaliate="1" HP="4" ID="42">
+    <Card NotLocalized="True" Rarity="Common" Type="Unit" Name="Cre_Hav_017" DisplayName="Devoted Sister" Faction="Haven" School="Light" SubType="Magic|Shooter" Race="Human|Priest" Cost="2" MightLevel="1" MagicLevel="1" Attack="1" Retaliate="1" HP="5" ID="42">
         <Ability Type="ImmuneToRetaliate" />
-        <Ability Type="Heal" Value="2" />
+      <Target Zone="Hero" Amount="All" Side="Friendly">
+        <Effect Type="GlobalEffect" GlobalEffectType="ModifyCost" Value="-1">
+          <CardFilter IncludeCardType="Spell" IncludeSchool="Light" IncludeOngoingType="Ongoing"/>
+        </Effect>
+      </Target>
+    <Description>Light ongoing spells in your hand cost [1:RESOURCES] less.</Description>
     </Card>
     <Card Rarity="Common" Type="Unit" Name="Cre_Hav_007" DisplayName="Loyal Griffin" Faction="Haven" SubType="Flyer" Race="Griffin" Cost="2" MightLevel="2" Attack="2" Retaliate="1" HP="4" ID="43" />
     <Card Rarity="Common" Type="Unit" Name="Cre_Hav_011" DisplayName="Radiant Glory" Faction="Haven" School="Light" SubType="Magic|Flyer" Race="Spirit" Cost="3" MightLevel="3" MagicLevel="1" Attack="3" Retaliate="2" HP="5" ID="44" />
@@ -29,6 +34,7 @@
     </Card>
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_013" DisplayName="Warrior Seraph" Faction="Haven" School="Light" SubType="Flyer" Race="Angel" Cost="4" MightLevel="4" Attack="3" Retaliate="2" HP="6" ID="46">
         <Ability Type="Regenerate" Value="2" />
+        <Ability Type="Taunt" />
     </Card>
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_018" DisplayName="Holy Praetorian" Faction="Haven" SubType="Melee" Race="Human|Soldier" Cost="2" MightLevel="2" Attack="1" Retaliate="1" HP="4" ID="47">
         <Ability Type="MeleeGuard" Value="2" />
@@ -41,7 +47,7 @@
         <Ability Type="Heal" Value="3" />
 		<Ability Type="Mending" />
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_008" DisplayName="Imperial Griffin" Faction="Haven" SubType="Flyer" Race="Griffin" Cost="4" MightLevel="4" Attack="2" Retaliate="2" HP="6" ID="50">
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_008" DisplayName="Imperial Griffin" Faction="Haven" SubType="Flyer" Race="Griffin" Cost="4" MightLevel="4" Attack="3" Retaliate="1" HP="6" ID="50">
         <Ability Type="ImmuneToRetaliate" />
         <Ability Type="Charge" />
     </Card>
@@ -80,7 +86,7 @@
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_009" DisplayName="Tithe Collector" Faction="Haven" SubType="Melee" Race="Human" Cost="1" DestinyLevel="1" Attack="0" Retaliate="0" HP="2" ID="54">
         <Ability Type="Income" Value="1" />
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_015" DisplayName="Elite Squire" Faction="Haven" SubType="Melee" Race="Human|Soldier" Cost="2" MightLevel="2" Attack="1" Retaliate="2" HP="3" ID="55">
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_015" DisplayName="Elite Squire" Faction="Haven" SubType="Melee" Race="Human|Soldier" Cost="2" MightLevel="2" Attack="1" Retaliate="1" HP="4" ID="55">
         <Ability Type="RangedGuard" Value="2" />
     </Card>
     <Card Rarity="Epic" Type="Unit" Name="Cre_Hav_001" DisplayName="Imperial Guard" Faction="Haven" SubType="Shooter" Race="Human|Soldier" Cost="5" MightLevel="4" Attack="0" Retaliate="2" HP="8" ID="56">
@@ -89,13 +95,19 @@
         <Description>Redirect all damage dealt to your hero to Imperial Guard instead.</Description>
     </Card>
     <Card Rarity="Epic" Type="Unit" Name="Cre_Hav_002" DisplayName="Eleonore, the Voice of Harmony" Faction="Haven" School="Light" SubType="Magic|Shooter" Race="Human|Priest" Unique="True" Cost="5" MightLevel="3" MagicLevel="3" Attack="2" Retaliate="0" HP="5" ID="57">
-        <Ability Type="ImmuneToRetaliate" />
-        <Description>At the beginning of your turn, heal all damage from all friendly creatures.</Description>
-        <Trigger Type="OnTurnBegin" Side="Friendly">
-            <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
-                <Effect Type="Heal" Value="infinite" />
-            </Target>
-        </Trigger>
+      <Ability Type="ImmuneToRetaliate" />
+      <Trigger Type="OnTurnBegin" Side="Friendly">
+        <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+          <Effect Type="Heal" Value="infinite" />
+        </Target>
+      </Trigger>
+      <Trigger Type="OnThisCardDeploy" Side="Friendly">
+        <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+          <Effect Type="Heal" Value="infinite" />
+        </Target>
+      </Trigger>
+      <Description>When [THIS] enter the battleground, heal all damage from all friendly creatures.
+At the beginning of your turn, heal all damage from all friendly creatures.</Description>
     </Card>
     <!--...............................................................................-->
     <!-- Creatures - Inferno -->
@@ -147,7 +159,7 @@
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Inf_008" DisplayName="Lacerator" Faction="Inferno" School="Fire" SubType="Magic|Melee|Shooter" Race="Demon|Tormentor" Cost="4" MightLevel="4" MagicLevel="1" Attack="3" Retaliate="2" HP="6" ID="33">
         <Ability Type="AreaBlast" Value="3" />
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Inf_006" DisplayName="Ravager" Faction="Inferno" SubType="Melee" Race="Demon|Juggernaut" Cost="4" MightLevel="4" Attack="6" Retaliate="4" HP="4" ID="34" />
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Inf_006" DisplayName="Ravager" Faction="Inferno" SubType="Melee" Race="Demon|Juggernaut" Cost="4" MightLevel="3" Attack="6" Retaliate="4" HP="4" ID="34" />
     <Card Rarity="Rare" Type="Unit" Name="Cre_Inf_003" DisplayName="Pit Lord" Faction="Inferno" SubType="Flyer" Race="Demon" Cost="6" MightLevel="5" Attack="4" Retaliate="3" HP="7" ID="35">
         <Ability Type="AttackAnywhere" />
     </Card>
@@ -189,12 +201,14 @@
     <Card Rarity="Common" Type="Unit" Name="Cre_Nec_010" DisplayName="Neophyte Lich" Faction="Necropolis" School="Dark" SubType="Magic|Shooter" Race="Lich" Cost="2" MightLevel="2" MagicLevel="1" Attack="2" Retaliate="0" HP="4" ID="61">
         <Ability Type="ImmuneToRetaliate" />
     </Card>
-    <Card Rarity="Common" Type="Unit" Name="Cre_Nec_009" DisplayName="Lamasu" Faction="Necropolis" SubType="Flyer" Race="Lamasu" Cost="3" MightLevel="3" Attack="2" Retaliate="2" HP="6" ID="62" />
+    <Card Rarity="Common" Type="Unit" Name="Cre_Nec_009" DisplayName="Lamasu" Faction="Necropolis" SubType="Flyer" Race="Lamasu" Cost="3" MightLevel="3" Attack="2" Retaliate="2" HP="5" ID="62">
+      <Ability Type="SpellResist"/>
+    </Card>
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Nec_016" DisplayName="Vampire Knight" Faction="Necropolis" SubType="Flyer" Race="Vampire" Cost="3" MightLevel="3" Attack="2" Retaliate="0" HP="5" ID="63">
         <Ability Type="ImmuneToRetaliate" />
         <Ability Type="LifeDrain" Value="2" />
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Nec_005" DisplayName="Fate Spinner" Faction="Necropolis" SubType="Melee" Race="Namtaru" Cost="4" MightLevel="4" Attack="2" Retaliate="2" HP="7" School="Prime" ID="64">
+    <Card NotLocalized="True" Rarity="Uncommon" Type="Unit" Name="Cre_Nec_005" DisplayName="Fate Spinner" Faction="Necropolis" SubType="Melee|Shooter" Race="Namtaru" Cost="3" MightLevel="3" Attack="2" Retaliate="2" HP="4" School="Prime" ID="64">
         <Ability Type="Infect" Value="2" />
     </Card>
     <Card Rarity="Common" Type="Unit" Name="Cre_Nec_018" DisplayName="Plague Skeleton" Faction="Necropolis" SubType="Shooter" Race="Skeleton" Cost="2" MightLevel="2" Attack="1" Retaliate="0" HP="3" ID="65">
@@ -206,7 +220,7 @@
         <Ability Type="Regenerate" Value="1" />
 		<Ability Type="Infect" Value="1" />
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Nec_013" DisplayName="Vengeful Spectre" Faction="Necropolis" School="Prime" SubType="Magic|Flyer" Race="Ghost" Cost="4" MightLevel="4" MagicLevel="1" Attack="3" Retaliate="2" HP="5" ID="67">
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Nec_013" DisplayName="Vengeful Spectre" Faction="Necropolis" School="Prime" SubType="Magic|Flyer" Race="Ghost" Cost="4" MightLevel="4" MagicLevel="1" Attack="3" Retaliate="3" HP="5" ID="67">
         <Ability Type="Incorporeal" />
     </Card>
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Nec_012" DisplayName="Archlich" Faction="Necropolis" School="Dark" SubType="Magic|Shooter" Race="Lich" Cost="4" MightLevel="4" MagicLevel="1" Attack="3" Retaliate="1" HP="6" ID="68">
@@ -215,23 +229,48 @@
     </Card>
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Nec_011" DisplayName="Putrid Lamasu" Faction="Necropolis" SubType="Flyer" Race="Lamasu" Cost="5" MightLevel="5" Attack="3" Retaliate="2" HP="8" ID="69">
         <Ability Type="Infect" Value="2" />
+        <Ability Type="SpellResist" />
     </Card>
-    <Card Rarity="Rare" Type="Unit" Name="Cre_Nec_004" DisplayName="Vampire Lord" Faction="Necropolis" SubType="Flyer" Race="Vampire" Cost="6" MightLevel="5" Attack="4" Retaliate="3" HP="8" ID="70">
+    <Card UseXmlDescription="True" Rarity="Rare" Type="Unit" Name="Cre_Nec_004" DisplayName="Vampire Lord" Faction="Necropolis" SubType="Flyer" Race="Vampire" Cost="6" MightLevel="5" Attack="4" Retaliate="3" HP="8" ID="70">
         <Ability Type="ImmuneToRetaliate" />
         <Ability Type="LifeDrain" Value="3" />
+        <Ability Type="SurviveOnce" />
+      <DescriptionChinese>若该生物在剩余生命值不小于2时将要死亡，则改为将其生命值设为1。</DescriptionChinese>
+      <DescriptionEnglish>While [THIS] has 2 remaining health or more, when it dies, set its remaining health to 1 instead.</DescriptionEnglish>
+      <DescriptionFrench>Tant que cette créature possède 2 points de santé restants ou plus, lorsque cette créature meurt, sa santé restante passe à 1.</DescriptionFrench>
+      <DescriptionGerman>Wenn [THIS] stirbt, solange sie 2 oder mehr Lebenspunkte übrig hat, wird die verbliebene Lebenskraft stattdessen auf 1 gesetzt.</DescriptionGerman>
+      <DescriptionItalian>Finché a questa creatura rimane una salute pari almeno a 2, quando muore ne imposti la salute rimanente a 1.</DescriptionItalian>
+      <DescriptionPolish>Jeśli [THIS] ma 2 lub więcej punktów zdrowia, w chwili śmierci zamiast zginąć, zostaje z jednym punktem zdrowia.</DescriptionPolish>
+      <DescriptionSpanish>Mientras a esta criatura le queden 2 de salud o más, en cuanto esta criatura queda destruida, su salud restante se queda en 1 en lugar de quedar destruida.</DescriptionSpanish>
+      <DescriptionRussian>Пока [THIS] имеет не менее 2 ед. оставшегося здоровья, когда он умирает, вместо этого его здоровье становится равным 1.</DescriptionRussian>
+      <DescriptionPortuguese>Enquanto [THIS] tiver saúde restante igual a 2 ou mais, quando ela for destruída, sua saúde restante será 1 ao invés disso.</DescriptionPortuguese>
     </Card>
-    <Card Rarity="Rare" Type="Unit" Name="Cre_Nec_003" DisplayName="Fate Weaver" Faction="Necropolis" SubType="Melee" Race="Namtaru" Cost="6" MightLevel="5" Attack="4" Retaliate="4" HP="8" School="Prime" ID="71">
-        <Ability Type="Regenerate" Value="1" />
-        <Ability Type="Infect" Value="2" />
+    <Card NotLocalized="True" Rarity="Rare" Type="Unit" Name="Cre_Nec_003" DisplayName="Fate Weaver" Faction="Necropolis" SubType="Melee|Shooter" Race="Namtaru" Cost="5" MightLevel="4" Attack="2" Retaliate="2" HP="6" School="Prime" ID="71">
+      <Ability Type="Infect" Value="1" />
+      <Ability Type="InfectBlast" Value="1" />
+      <Variable Type="BattleGroundCardsCount" Side="Friendly" ValueModifier="-1.0x">
+        <CardFilter IncludeCardType="Spell" />
+      </Variable>
+      <Target Zone="Hand" Amount="Self">
+        <Effect Type="ModifyCost" Value="Variable" />
+      </Target>
+      <Description>[THIS] cost [1:RESOURCES] less for each ongoing spell on your side.</Description>
     </Card>
     <Card Rarity="Common" Type="Unit" Name="Cre_Nec_017" DisplayName="Plague Zombie" Faction="Necropolis" SubType="Melee" Race="Zombie" Cost="3" MightLevel="3" Attack="2" Retaliate="1" HP="6" ID="72">
         <Ability Type="Infect" Value="1" />
     </Card>
-    <Card Rarity="Rare" Type="Unit" Name="Cre_Nec_007" DisplayName="Ghost Dragon" Faction="Necropolis" School="Prime" SubType="Magic|Flyer" Race="Dragon|Ghost" Cost="7" MightLevel="6" MagicLevel="1" Attack="5" Retaliate="3" HP="7" ID="73">
+    <Card NotLocalized="True" Rarity="Rare" Type="Unit" Name="Cre_Nec_007" DisplayName="Ghost Dragon" Faction="Necropolis" School="Prime" SubType="Magic|Flyer" Race="Dragon|Ghost" Cost="7" MightLevel="6" MagicLevel="1" Attack="5" Retaliate="3" HP="7" ID="73">
         <Ability Type="ImmuneToRetaliate" />
         <Ability Type="Incorporeal" />
         <Ability Type="LifeDrain" Value="2" />
-    </Card>
+        <Target Zone="Battleground" CardType="Unit" Side="Enemy" Amount="All">
+          <CardFilter IncludeColumn="True" Value="Variable">
+            <Variable Type="CardColumn"/>
+          </CardFilter>
+          <Effect Type="ModifyMaxHp" Value="-1"/>
+        </Target>
+      <Description>Enemy creatures on this row gain -[1:HEALTH].</Description>
+      </Card>
     <Card Rarity="Epic" Type="Unit" Name="Cre_Nec_001" DisplayName="The Banshee" Faction="Necropolis" School="Dark" SubType="Magic|Melee" Race="Ghost" Cost="6" MightLevel="4" MagicLevel="4" Attack="2" Retaliate="0" HP="3" ID="74">
         <Ability Type="Incorporeal" />
         <Description>When The Banshee enters the battleground, destroy target enemy creature.</Description>
@@ -277,7 +316,7 @@
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Str_018" DisplayName="Cyclops Brawler" Faction="Stronghold" SubType="Melee" Race="Cyclops" Cost="4" MightLevel="4" Attack="2" Retaliate="2" HP="6" ID="82">
         <Ability Type="DoubleAttack" />
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Str_013" DisplayName="Crusher" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="4" MightLevel="4" Attack="2" Retaliate="1" HP="4" ID="83">
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Str_013" DisplayName="Crusher" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="4" MightLevel="4" Attack="2" Retaliate="1" HP="5" ID="83">
         <Ability Type="MagicResist" />
         <Ability Type="Enrage" Value="1" />
     </Card>

@@ -9,11 +9,21 @@
     <!--....................................................................-->
     <!-- Fortune - Haven -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Fortune" Name="For_Hav_030" DisplayName="Tree of Truth" Faction="Haven" Cost="1" DestinyLevel="2" ID="285">
-        <Target Zone="Battleground" CardType="Fortune" Amount="1">
+    <Card NotLocalized="True" Rarity="Common" Type="Fortune" Name="For_Hav_030" DisplayName="Tree of Truth" Faction="Haven" Cost="1" DestinyLevel="2" ID="285">
+      <Target Zone="None" Side="Friendly">
+        <Effect Type="ChoiceOption" />
+        <Subgroup>
+          <Target Zone="Battleground" CardType="Fortune" Amount="1">
+            <Option Value="0" DisplayText="Destroy fortune." />
             <Effect Type="Kill" />
-        </Target>
-        <Description>Destroy target Ongoing fortune.</Description>
+          </Target>
+          <Target Zone="None" Side="Friendly" Option="0">
+            <Option Value="1" DisplayText="Draw a card." />
+            <Effect Type="Draw" Value="1" />
+          </Target>
+        </Subgroup>
+      </Target>
+      <Description>Destroy target Ongoing fortune OR draw a card.</Description>
     </Card>
     <Card Rarity="Common" Type="Fortune" Name="For_Hav_031" DisplayName="Truce of Elrath" Faction="Haven" Cost="2" DestinyLevel="2" ID="286">
         <Ongoing Duration="UntilYourNextTurn" />
@@ -358,7 +368,7 @@ Inheritance can only be played if you have [0:RESOURCES] left.</Description>
         </Target>
         <Description>Gain [RESOURCES] equal to opponent's current [RESOURCES], then empty opponent's [RESOURCES].</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Fortune" Name="For_Neu_033" DisplayName="Pillage" Faction="Neutral" Cost="3" DestinyLevel="3" ID="303">
+    <Card Rarity="Uncommon" Type="Fortune" Name="For_Neu_033" DisplayName="Pillage" Faction="Neutral" Cost="3" DestinyLevel="4" ID="303">
         <Ongoing Duration="UntilEnemyEndOfTurn" />
         <Target Zone="Hero" Amount="All" Side="Enemy">
             <Effect Type="ModifyResourcesProduction" Value="0.5xd" />
@@ -381,7 +391,7 @@ During their supply phase, opponent only produce half of their [RESOURCES] produ
         </Target>
         <Description>Both players discard their entire hand and draw 5 cards.</Description>
     </Card>
-    <Card Rarity="Epic" Type="Fortune" Name="For_Neu_036" DisplayName="Throne of Renewal" Faction="Neutral" Cost="5" DestinyLevel="5" ID="306">
+    <Card Rarity="Epic" Type="Fortune" Name="For_Neu_036" DisplayName="Throne of Renewal" Faction="Neutral" Cost="6" DestinyLevel="5" ID="306">
         <Target Zone="Battleground" Side="Any" Amount="All">
             <CardType Exclude="Hero" />
             <Effect Type="MoveCardTo" Destination="Hand" />

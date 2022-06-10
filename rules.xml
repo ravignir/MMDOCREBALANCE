@@ -1,0 +1,1418 @@
+<Rules>
+
+    <!-- Tutorial C1 M0 E1_Rule -->
+    <Rule Name="C1M0E1_Rule">
+        <RuleModifier Type="DisableEmptyLibraryDamage" />
+        <RuleModifier Type="Battleground">
+            <Position Coordinate="CO_Logical" Player="0" QueryType="QT_Line" Line="1">
+                <Action Locked="true"/>
+            </Position>
+
+            <Position Coordinate="CO_Logical" Player="1" QueryType="QT_Line" Line="1">
+                <Action Locked="true"/>
+            </Position>
+
+            <Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="0" Column="1">
+                <Card Name="b01_Cre_Neu_012"/>
+            </Position>
+
+            <Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="0" Column="2">
+                <Card Name="b01_Cre_Hav_007"/>
+            </Position>
+
+            <Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="1">
+                <Card Name="b01_Cre_Nec_008"/>
+            </Position>
+
+            <Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="3">
+                <Card Name="b01_Cre_Nec_008"/>
+            </Position>
+        </RuleModifier>
+    </Rule>
+
+    <!-- Tutorial C1 M0 E2_Rule -->
+    <Rule Name="C1M0E2_Rule">
+        <RuleModifier Type="DisableEmptyLibraryDamage" />
+        <RuleModifier Type="StartingPlayer" Player="Player_2"/>
+
+        <RuleModifier Type="Battleground">
+		    <Position Coordinate="CO_Logical" Player="0" QueryType="QT_Line" Line="1">
+                <Action Locked="true"/>
+            </Position>
+
+            <Position Coordinate="CO_Logical" Player="1" QueryType="QT_Line" Line="1">
+                <Action Locked="true"/>
+            </Position>
+						
+        </RuleModifier>
+		
+		<RuleModifier Type="StartingHand" Player="Player_2" Amount="2">
+            <Card Name="b01_Cre_Nec_008"/>
+            <!-- Ghoul -->
+            <Card Name="b01_Cre_Nec_008"/>
+            <!-- Ghoul -->
+        </RuleModifier>
+
+        <RuleModifier Type="StartingHand" Player="Player_1" Amount="2">
+            <Card Name="b01_Cre_Hav_007"/>
+            <!-- Loyal Griffin -->
+            <Card Name="b01_Cre_Hav_011"/>
+            <!-- Radiant Glory -->
+        </RuleModifier>
+    </Rule>
+
+    <!-- Tutorial C1 M0 E3_Rule -->
+    <Rule Name="C1M0E3_Rule">
+        <RuleModifier Type="DisableEmptyLibraryDamage" />
+        <RuleModifier Type="StartingHand" Player="Player_1" Amount="3">
+            <Card Name="b01_Cre_Hav_007"/>
+            <!-- Griffin -->
+            <Card Name="b01_Cre_Hav_005"/>
+            <!-- Crossbowman -->
+            <Card Name="b01_Cre_Hav_011"/>
+            <!-- Radiant Glory -->
+        </RuleModifier>
+
+        <RuleModifier Type="StartingHand" Player="Player_2" Amount="2">
+            <Card Name="b01_Cre_Nec_008"/>
+            <!-- Ghoul -->
+            <Card Name="b01_Cre_Nec_015"/>
+            <!-- Skeleton -->
+        </RuleModifier>
+
+        <RuleModifier Type="IncreaseResources" Player="1" Amount="1"/>
+
+    </Rule>
+
+    <!-- Tutorial C1 M0 E4_Rule -->
+    <Rule Name="C1M0E4_Rule">
+        <RuleModifier Type="DisableEmptyLibraryDamage" />
+        <RuleModifier Type="StartingPlayer" Player="Player_2"/>
+
+        <RuleModifier Type="Battleground">
+            <Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="1" Column="2">
+                <Card Name="b01_Cre_Nec_015"/>
+            </Position>
+        </RuleModifier>
+
+        <RuleModifier Type="StartingHand" Player="Player_1" Amount="3">
+            <Card Name="b01_Spe_Lig_008"/>
+            <!-- Killing Rays -->
+            <Card Name="b01_Cre_Hav_007"/>
+            <!-- Griffin -->
+            <Card Name="b01_For_Neu_011"/>
+            <!-- Gold Piles -->
+        </RuleModifier>
+
+        <RuleModifier Type="StartingHand" Player="Player_2" Amount="3">
+            <Card Name="b01_Cre_Nec_008"/>
+            <!-- Ghoul -->
+            <Card Name="b01_Cre_Nec_008"/>
+            <!-- Ghoul -->
+            <Card Name="b01_Cre_Nec_015"/>
+            <!-- Skeleton -->
+        </RuleModifier>
+    </Rule>
+
+
+    <!-- Tutorial C1 M0 E5_Rule -->
+    <Rule Name="C1M0E5_Rule">
+        <RuleModifier Type="DisableEmptyLibraryDamage" />
+        <RuleModifier Type="StartingPlayer" Player="Player_2"/>
+        <RuleModifier Type="IncreaseResources" Player="0" Amount="1"/>
+        <RuleModifier Type="IncreaseResources" Player="1" Amount="1"/>
+
+        <RuleModifier Type="Battleground">
+            <Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="2">
+                <Card Name="b01_Cre_Inf_014"/>
+				<!-- Demented -->
+            </Position>
+
+            <Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="1" Column="2">
+                <Card Name="b01_Cre_Neu_003"/>
+				<!-- Sea Elf Archer -->
+            </Position>
+        </RuleModifier>
+
+        <RuleModifier Type="StartingHand" Player="Player_1" Amount="6">
+            <Card Name="b01_Cre_Hav_005"/>
+            <!-- Crossbowman -->
+            <Card Name="b01_Spe_Lig_001"/>
+            <!-- Bless -->
+            <Card Name="b01_Cre_Neu_003"/>
+            <!-- Sea Elf Archer -->
+            <Card Name="b01_Cre_Hav_007"/>
+            <!-- Griffin -->
+            <Card Name="b01_Cre_Neu_012"/>
+            <!-- Air Elemental -->
+            <Card Name="b01_Spe_Lig_004"/>
+            <!-- Cleansing - remove ongoing spells -->
+        </RuleModifier>
+
+        <RuleModifier Type="StartingHand" Player="Player_2" Amount="6">
+            <Card Name="b01_For_Neu_011"/>
+            <!-- Gold Pile -->
+            <Card Name="s04_For_Neu_060"/>
+            <!-- Calculated Sacrifice -->
+            <Card Name="s04_For_Neu_060"/>
+            <!-- Calculated Sacrifice -->
+            <Card Name="b01_Spe_Fir_006"/>
+            <!-- Fire Shield -->
+            <Card Name="b01_Cre_Inf_013"/>
+            <!-- Maniac -->
+            <Card Name="b01_Cre_Neu_016"/>
+            <!-- Griffin -->
+			
+        </RuleModifier>
+    </Rule>
+
+    <!-- Tutorial C1 M0 E6_Rule -->
+    <Rule Name="C1M0E6_Rule">
+        <RuleModifier Type="StartingPlayer" Player="Player_2"/>
+
+        <RuleModifier Type="StartingLife" Player="1" Value="10"/>
+
+        <RuleModifier Type="CardHolder" Zone="Events">
+            <Card Name="b01_Eve_Neu_013"/>
+            <Card Name="b01_Eve_Neu_013"/>
+        </RuleModifier>
+
+        <RuleModifier Type="StartingHand" Player="Player_2" Amount="6">
+            <Card Name="b01_For_Neu_011"/>
+            <!-- Gold Pile -->
+            <Card Name="b01_Cre_Inf_004"/>
+            <!-- Breeder -->
+        </RuleModifier>
+
+    </Rule>
+
+    <!-- Campaign 2 -->
+	
+	<Rule Name="C2E2_Rule">
+		<RuleModifier Type="StartingLife" Player="1" Value="12"/>
+	</Rule>
+	
+	<!-- Campaign 3 -->
+	<!-- C3 E1 -->
+	<Rule Name="C3E1_Rule">
+		<RuleModifier Type="Battleground">
+			<Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="0" Column="2">
+				<Card Name="b01_Cre_Hav_012"/>
+				<!-- Sentinel -->
+			</Position>
+		</RuleModifier>
+	</Rule>
+	
+	<!-- C3 E3 -->
+	<Rule Name="C3E3_Rule">
+		<RuleModifier Type="Battleground">
+			<Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="1" Column="0">
+				<Card Name="b01_Cre_Nec_010"/>
+				<!-- Lich -->
+			</Position>
+		</RuleModifier>
+	</Rule>
+	
+	<!-- C3 E4 -->
+	<Rule Name="C3E4_Rule">
+		<RuleModifier Type="Battleground">
+		
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="2">
+				<Card Name="b01_Cre_Str_016"/>
+				<!-- Mauler -->
+			</Position>
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="1">
+				<Card Name="b01_Cre_Str_016"/>
+				<!-- Mauler -->
+			</Position>
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="1" Column="2">
+				<Card Name="b01_Cre_Str_009"/>
+				<!-- Goblin Scout -->
+			</Position>
+		</RuleModifier>
+	</Rule>
+	
+	<!-- Campaign 4 -->
+	
+	<!-- C4 E1 -->
+	<Rule Name="C4E1_Rule">
+		<RuleModifier Type="Battleground">
+            <Position Coordinate="CO_Absolute" Player="1" QueryType="QT_Single" Line="4" Column="0">
+                <Card Name="b01_Spe_Ear_011"/>
+            </Position>
+			<Position Coordinate="CO_Absolute" Player="1" QueryType="QT_Single" Line="4" Column="1">
+                <Card Name="b01_Spe_Ear_011"/>
+            </Position>
+			<Position Coordinate="CO_Absolute" Player="1" QueryType="QT_Single" Line="4" Column="2">
+                <Card Name="b01_Spe_Ear_011"/>
+            </Position>
+			<Position Coordinate="CO_Absolute" Player="1" QueryType="QT_Single" Line="4" Column="3">
+                <Card Name="b01_Spe_Ear_011"/>
+            </Position>
+        </RuleModifier>
+	</Rule>
+	<!-- C4E2 -->
+	<Rule Name="C4E2_Rule">
+	<RuleModifier Type="CardHolder" Zone="Battleground" Player="Player_2">
+
+		<Card Name="s02_Spe_Lig_042"/>    <!--The Light of Tomorrow -->
+
+		<Ability Type="EnemyWard"/>
+	</RuleModifier> 
+	</Rule>
+	<!-- C4 E5 -->
+	<Rule Name="C4E5_Rule">
+		<RuleModifier Type="CardHolder" Zone="Battleground" Player="Player_2">
+			<Card Name="b01_Cre_Hav_009"/>    <!-- Tithe Collector -->
+			<Ability Type="EnemyWard"/>
+		</RuleModifier> 
+		<RuleModifier Type="CardHolder" Zone="Battleground" Player="Player_2">
+			<Card Name="s03_Spe_Fir_052"/>    <!-- Mass Rage -->
+			<Ability Type="EnemyWard"/>
+		</RuleModifier> 
+	</Rule>	
+	
+	<!-- Campaign 5 -->
+	<!-- C5 E1 -->
+	<Rule Name="C5E1_Rule">
+		<RuleModifier Type="Battleground">
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="1">
+				<Card Name="b01_Cre_Inf_013"/>
+				<!-- Maniac -->
+			</Position>
+		</RuleModifier>
+	</Rule>
+	<!-- C5 E2 -->
+	<!-- Rule Name="C5E2_Rule">
+		<RuleModifier Type="CardHolder" Zone="Battleground" Player="Player_2" >
+            <Card Name="b01_Spe_Ear_004"/>
+        </RuleModifier>
+	</Rule -->
+	<!-- C5 E3 -->
+	<Rule Name="C5E3_Rule">
+<!--
+		<RuleModifier Type="CardHolder" Zone="Battleground" Player="Player_2" >
+            <Card Name="s07_Spe_Wat_091"/>
+        </RuleModifier>
+-->
+		<RuleModifier Type="Battleground">
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="1" Column="0">
+				<Card Name="s04_Bui_Str_060"/>
+				<!-- War Tent -->
+			</Position>
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="1" Column="1">
+				<Card Name="s04_Bui_Str_060"/>
+				<!-- War Tent -->
+			</Position>
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="1" Column="2">
+				<Card Name="s04_Bui_Str_060"/>
+				<!-- War Tent -->
+			</Position>
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="1" Column="3">
+				<Card Name="s04_Bui_Str_060"/>
+				<!-- War Tent -->
+			</Position>
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="0">
+				<Card Name="s04_Bui_Str_060"/>
+				<!-- War Tent -->
+			</Position>
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="1">
+				<Card Name="s04_Bui_Str_060"/>
+				<!-- War Tent -->
+			</Position>
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="2">
+				<Card Name="s04_Bui_Str_060"/>
+				<!-- War Tent -->
+			</Position>
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="3">
+				<Card Name="s04_Bui_Str_060"/>
+				<!-- War Tent -->
+			</Position>
+		</RuleModifier>
+	</Rule>
+	<!-- C5 E4 -->
+	<Rule Name="C5E4_Rule">
+		<RuleModifier Type="Battleground">
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="1">
+				<Card Name="s01_Cre_San_016"/>
+				<!-- Wanizame -->
+			</Position>
+		</RuleModifier>
+	</Rule>
+		
+	<!-- Campaign 6 -->
+	<!-- C6 E1 -->
+	<Rule Name="C6E1_Rule">
+		<RuleModifier Type="Battleground">
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="1" Column="0">
+				<Card Name="s04_Bui_Neu_061"/>
+				<!-- Tower of the Gardener -->
+			</Position>
+		</RuleModifier>
+	</Rule>
+	<!-- C6 E2 -->
+	<Rule Name="C6E2_Rule">
+		<RuleModifier Type="SetLevels" Player="1" Might="2" Magic="1" Destiny="2"/>
+		<RuleModifier Type="Battleground">
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="1">
+				<Card Name="s04_Bui_Neu_062"/>
+				<!-- Tower of the Smith -->
+			</Position>
+		</RuleModifier>
+	</Rule>
+	<!-- C6 E3 -->
+	<Rule Name="C6E3_Rule">
+		<RuleModifier Type="Battleground">
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="0">
+				<Card Name="s04_Bui_Neu_060"/>
+				<!-- Tower of the Dreamer -->
+			</Position>
+		</RuleModifier>
+	</Rule>
+	<!-- C6 E4 -->
+	<Rule Name="C6E4_Rule">
+		<RuleModifier Type="SetLevels" Player="1" Might="2" Magic="1" Destiny="2"/>
+		<RuleModifier Type="Battleground">
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="2">
+				<Card Name="s04_Bui_Neu_063"/>
+				<!-- Tower of the Inventor -->
+			</Position>
+		</RuleModifier>
+	</Rule>
+	<!-- C6 E5 -->
+	<Rule Name="C6E5_Rule">
+		<RuleModifier Type="Battleground">
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="1" Column="2">
+				<Card Name="s04_Bui_Neu_064"/>
+				<!-- Tower of the Elders -->
+			</Position>
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="1" Column="0">
+                <Card Name="s01_Cre_Neu_022"/>
+				<!-- Blind Brother -->
+            </Position>
+
+            <Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="1" Column="2">
+                <Card Name="s03_Cre_Aca_006"/>
+				<!-- Gargoyle -->
+            </Position>			
+		</RuleModifier>
+	</Rule>
+		
+	<!-- Puzzles -->
+	
+	<!-- C1000 E1 Puzzle -->
+    <Rule Name="C1000E1_Rule">
+		<RuleModifier Type="StartingLife" Player="1" Value="5"/>
+		
+		<RuleModifier Type="StartingLife" Player="0" Value="1"/>
+		
+		<RuleModifier Type="IncreaseResources" Player="0" Amount="5"/>
+		
+		<RuleModifier Type="IncreaseResources" Player="1" Amount="5"/>
+	 
+		<RuleModifier Type="SetLevels" Player="0" Might="4" Magic="2" Destiny="3"/>
+	
+		<RuleModifier Type="SetLevels" Player="1" Might="3" Magic="3" Destiny="3"/>
+
+        <RuleModifier Type="Surrender" Surrenderer="Player_1" TurnOwner="Player_2" TurnCount="1" Phase="SupplyEnd" />
+	
+		<RuleModifier Type="CardHolder" Zone="Events">
+			<Card Name="b01_Eve_Neu_013"/>
+			<!-- Celebration -->
+            <Card Name="b01_Eve_Neu_003"/>
+			<!-- Week of Taxes -->
+        </RuleModifier>
+
+        <RuleModifier Type="StartingHand" Player="Player_1" Amount="5">
+            <Card Name="b01_Spe_Lig_005"/>
+            <!-- Divine Intervention -->
+            <Card Name="b01_Cre_Str_002"/>
+            <!-- Blood Caller -->
+            <Card Name="b01_For_Str_005"/>
+            <!-- Kat's Grand Finale -->
+            <Card Name="b01_Spe_Ear_001"/>
+            <!-- Insect Swarm -->
+		</RuleModifier>
+		
+		<RuleModifier Type="StartingHand" Player="Player_2" Amount="6">
+            <Card Name="b01_Cre_Neu_006"/>
+            <!-- Pao Deathseeker -->
+			<Card Name="b01_Spe_Air_008"/>
+            <!-- Storm Wind -->
+		</RuleModifier>
+    
+		<RuleModifier Type="Battleground">
+
+			<!-- Player -->
+            <Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="0" Column="0">
+                <Card Name="b01_Cre_Str_014"/>
+                <!-- Tainted Orc -->
+            </Position>
+
+            <Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="0" Column="1">
+                <Card Name="b01_Cre_Str_013"/>
+                <!-- Crusher -->
+            </Position>
+			<Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="1" Column="2">
+                <Card Name="b01_Cre_Str_007"/>
+                <!-- Dream Walker -->
+            </Position>
+
+            <Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="1" Column="3">
+                <Card Name="b01_Cre_Str_003"/>
+                <!-- Harpy -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="0" Column="4">
+                <Card Name="b01_Spe_Air_009" Owner="Player_2"/>
+				<!-- Cyclone -->
+            </Position>
+			
+			<!-- AI -->			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="1" Column="0">
+                <Card Name="b01_Cre_Hav_013"/>
+				<!-- Seraph -->
+            </Position>
+
+            <Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="1" Column="1">
+                <Card Name="s01_Cre_Hav_020"/>
+				<!-- Wolf Marksman -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="3">
+                <Card Name="s01_Cre_Hav_021"/>
+				<!-- Wolf Praetorian -->
+            </Position>
+			
+
+        </RuleModifier>
+    </Rule>
+	
+	<!-- C1000 E2 Puzzle -->
+	<Rule Name="C1000E2_Rule">
+		<RuleModifier Type="StartingLife" Player="1" Value="7"/>
+		
+		<RuleModifier Type="StartingLife" Player="0" Value="2"/>
+		
+		<RuleModifier Type="IncreaseResources" Player="0" Amount="5"/>
+	 
+		<RuleModifier Type="SetLevels" Player="0" Might="4" Magic="3" Destiny="1"/>
+		
+		<RuleModifier Type="IncreaseResources" Player="1" Amount="5"/>
+	 
+		<RuleModifier Type="SetLevels" Player="1" Might="6" Magic="6" Destiny="1"/>
+
+        <RuleModifier Type="Surrender" Surrenderer="Player_1" TurnOwner="Player_2" TurnCount="1" Phase="SupplyEnd" />
+	
+		<RuleModifier Type="CardHolder" Zone="Events">
+			<Card Name="s03_Eve_Neu_053"/>
+			<!-- Rise of the Nethermancer -->
+            <Card Name="s03_Eve_Neu_053"/>
+			<!-- Rise of the Nethermancer -->			
+        </RuleModifier>
+	
+		<RuleModifier Type="StartingHand" Player="Player_1" Amount="3">
+            <Card Name="s01_Spe_Air_030"/>
+            <!-- Lifting Wind -->
+            <Card Name="s01_Cre_San_003"/>
+            <!-- Kenshii -->
+			<Card Name="s01_Cre_San_018"/>
+            <!-- Coral Priestess -->
+		</RuleModifier>
+		
+		<RuleModifier Type="StartingHand" Player="Player_2" Amount="5">
+            <Card Name="s04_Spe_Pri_061"/>
+            <!-- Nether Curse -->
+            <Card Name="s03_Spe_Pri_052"/>
+			<!-- Void Ripple -->
+		</RuleModifier>
+    
+		<RuleModifier Type="Battleground">
+		
+			<!-- Player -->
+            <Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="0" Column="0">
+                <Card Name="s01_Cre_San_016"/>
+				<!-- Wanizame -->
+            </Position>
+
+            <Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="0" Column="2">
+                <Card Name="s01_Cre_San_013"/>
+				<!-- Mizu-Kami -->
+            </Position>
+			<Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="0" Column="3">
+                <Card Name="s01_Cre_Neu_020"/>
+				<!-- Dire Wolf -->
+            </Position>
+
+            <Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="1" Column="3">
+                <Card Name="s02_Cre_San_046"/>
+				<!-- Stream Singer -->
+            </Position>
+			
+			<!-- AI -->
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="0">
+                <Card Name="b01_Cre_Nec_014"/>
+				<!-- Ravenous Ghoul -->
+            </Position>
+
+            <Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="3">
+                <Card Name="b01_Cre_Nec_016"/>
+				<!-- Vampire Knight -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="1" Column="0">
+                <Card Name="b01_Cre_Nec_009"/>
+				<!-- Lamasu -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="1" Column="1">
+                <Card Name="b01_Cre_Nec_010"/>
+				<!-- Lich -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="1" Column="3">
+                <Card Name="b01_Cre_Nec_009"/>
+				<!-- Lamasu -->
+            </Position>
+
+        </RuleModifier>
+    </Rule>
+	
+		<!-- C1000 E3 Puzzle -->
+	<Rule Name="C1000E3_Rule">
+		
+		<RuleModifier Type="CardHolder" Zone="Graveyard" Player="Player_1">
+			<Card Name="s03_Spe_Dar_051"/>
+			<!-- Cursed Bound -->
+			<Card Name="s01_Spe_Fir_031"/>
+			<!-- Fiery Weapon -->
+			<Card Name="b01_Cre_Neu_006"/>
+			<!-- Pao Deathseeker -->
+			<Card Name="b01_Cre_Neu_006"/>
+			<!-- Pao Deathseeker -->
+			<Card Name="b01_Cre_Nec_002"/>
+			<!-- Atropos -->
+		</RuleModifier>
+		
+		<RuleModifier Type="StartingLife" Player="1" Value="5"/>
+		
+		<RuleModifier Type="StartingLife" Player="0" Value="5"/>
+		
+		<RuleModifier Type="IncreaseResources" Player="0" Amount="13"/>
+	 
+		<RuleModifier Type="SetLevels" Player="0" Might="6" Magic="4" Destiny="1"/>
+		
+		<RuleModifier Type="IncreaseResources" Player="1" Amount="13"/>
+	 
+		<RuleModifier Type="SetLevels" Player="0" Might="6" Magic="2" Destiny="5"/>
+
+        <RuleModifier Type="Surrender" Surrenderer="Player_1" TurnOwner="Player_2" TurnCount="1" Phase="SupplyEnd" />
+	
+		<RuleModifier Type="CardHolder" Zone="Events">
+			<Card Name="b01_Eve_Neu_012"/>
+			<!-- Week of the Weaponsmith -->
+            <Card Name="b01_Eve_Neu_013"/>
+			<!-- Celebration -->
+        </RuleModifier>
+	
+		<RuleModifier Type="StartingHand" Player="Player_1" Amount="5">
+            <Card Name="s03_Spe_Dar_050"/>
+            <!-- Shared Agony -->
+            <Card Name="b01_For_Nec_002"/>
+            <!-- Mass Grave -->
+            <Card Name="s01_Spe_Dar_030"/>
+            <!-- Moonsilk Fetters -->
+            <Card Name="s03_Spe_Dar_050"/>
+            <!-- Shared Agony -->
+			<Card Name="b01_For_Nec_006"/>
+            <!-- Shantiri Ruins -->
+		</RuleModifier>
+		
+		<RuleModifier Type="StartingHand" Player="Player_2" Amount="6">
+            <Card Name="b01_For_Inf_005"/>
+            <!-- Altar of Destruction -->
+			<Card Name="b01_For_Inf_005"/>
+            <!-- Altar of Destruction -->
+			<Card Name="b01_For_Inf_005"/>
+            <!-- Altar of Destruction -->
+			<Card Name="b01_For_Inf_005"/>
+            <!-- Altar of Destruction -->
+		</RuleModifier>
+    
+		<RuleModifier Type="Battleground">
+
+			<!-- Player -->
+            <Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="0" Column="3">
+                <Card Name="s02_Cre_Nec_045"/>
+				<!-- Namtaru Channeler -->
+            </Position>
+			<Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="1" Column="0">
+                <Card Name="b01_Cre_Nec_007"/>
+				<!-- Ghost Dragon -->
+            </Position>
+			
+			<!-- AI -->
+            <Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="0">
+                <Card Name="s03_Cre_Inf_054"/>
+				<!-- Abyssal Worm -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="1" Column="3">
+                <Card Name="s03_Cre_Inf_050"/>
+				<!-- Lashing Lilim -->
+            </Position>
+
+		</RuleModifier>
+    </Rule>
+	
+	<!-- C1000 E4 Puzzle -->
+	<Rule Name="C1000E4_Rule">
+		<RuleModifier Type="StartingLife" Player="1" Value="9"/>
+		
+		<RuleModifier Type="StartingLife" Player="0" Value="1"/>
+		
+		<RuleModifier Type="IncreaseResources" Player="0" Amount="12"/>
+	 
+		<RuleModifier Type="SetLevels" Player="0" Might="6" Magic="3" Destiny="1"/>
+		
+		<RuleModifier Type="IncreaseResources" Player="1" Amount="12"/>
+	 
+		<RuleModifier Type="SetLevels" Player="1" Might="6" Magic="6" Destiny="2"/>
+
+        <RuleModifier Type="Surrender" Surrenderer="Player_1" TurnOwner="Player_2" TurnCount="1" Phase="SupplyEnd" />
+	
+		<RuleModifier Type="CardHolder" Zone="Events">
+			<Card Name="s02_Eve_Neu_040"/>
+			<!-- Day of the Sanctuary -->
+            <Card Name="b01_Eve_Neu_010"/>
+			<!-- Week of the Dead -->
+        </RuleModifier>
+	
+		<RuleModifier Type="StartingHand" Player="Player_1" Amount="5">
+            <Card Name="s03_Cre_Aca_004"/>
+            <!-- Dragon Golem -->
+            <Card Name="s02_Spe_Fir_040"/>
+            <!-- Heat Wave -->
+            <Card Name="s01_Spe_Fir_031"/>
+            <!-- Fiery Weapon -->
+            <Card Name="s03_Spe_Fir_050"/>
+            <!-- Fiery Death -->
+			<Card Name="b01_Cre_Neu_006"/>
+            <!-- Pao Deathseeker -->
+		</RuleModifier>
+		
+		<RuleModifier Type="StartingHand" Player="Player_1" Amount="6">
+            <Card Name="b01_Spe_Dar_004"/>
+            <!-- Shadow Image -->
+			<Card Name="b01_Spe_Dar_004"/>
+            <!-- Shadow Image -->
+            <Card Name="b01_Spe_Dar_006"/>
+            <!-- Puppet Master -->
+			<Card Name="b01_Spe_Dar_006"/>
+            <!-- Puppet Master -->
+        </RuleModifier>
+    
+		<RuleModifier Type="Battleground">
+
+			<!-- Player -->
+            <Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="0" Column="0">
+                <Card Name="s02_Cre_Neu_040"/>
+				<!-- Dark Wood Treant -->
+            </Position>
+
+            <Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="0" Column="1">
+                <Card Name="s03_Cre_Aca_006"/>
+				<!-- Gargoyle -->
+				<Attachment Name="s02_Spe_Ear_040" />
+				<!-- Earth Bound -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="0" Column="2">
+                <Card Name="s03_Cre_Aca_026"/>
+				<!-- Shantiri Titan -->
+            </Position>
+
+            <Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="0" Column="3">
+                <Card Name="s03_Cre_Aca_035"/>
+				<!-- Dervish Master -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="1" Column="0">
+                <Card Name="s03_Cre_Aca_007"/>
+				<!-- Enslaved Harpy -->
+            </Position>
+
+            <Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="1" Column="2">
+                <Card Name="s04_Cre_Aca_063"/>
+				<!-- Sentinel of the Ages -->
+            </Position>
+
+			<!-- AI -->			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="0">
+                <Card Name="s03_Cre_Aca_019"/>
+				<!-- Djinn Catalyst -->
+            </Position>
+
+            <Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="2">
+                <Card Name="s03_Cre_Aca_003"/>
+				<!-- Rakshasa -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="3">
+                <Card Name="s03_Cre_Aca_016"/>
+				<!-- Guardian Golem -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="1" Column="1">
+                <Card Name="s03_Cre_Aca_010"/>
+				<!-- Wizard Tutor -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="1" Column="2">
+                <Card Name="s04_Cre_Aca_061"/>
+				<!-- Insatiable Djinn -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="1" Column="3">
+                <Card Name="s04_Cre_Aca_061"/>
+				<!-- Insatiable Djinn -->
+            </Position>
+
+		</RuleModifier>
+    </Rule>
+	
+	<!-- C1000 E5 Puzzle -->
+	<Rule Name="C1000E5_Rule">
+		<RuleModifier Type="StartingLife" Player="1" Value="20"/>
+		
+		<RuleModifier Type="StartingLife" Player="0" Value="1"/>
+		
+		<RuleModifier Type="IncreaseResources" Player="0" Amount="18"/>
+        <RuleModifier Type="IncreaseResources" Player="1" Amount="18"/>
+
+        <RuleModifier Type="SetLevels" Player="0" Might="6" Magic="5" Destiny="3"/>
+		<RuleModifier Type="SetLevels" Player="1" Might="6" Magic="5" Destiny="3"/>
+
+        <RuleModifier Type="Surrender" Surrenderer="Player_1" TurnOwner="Player_2" TurnCount="1" Phase="SupplyEnd" />
+	
+		<RuleModifier Type="CardHolder" Zone="Events">
+			<Card Name="s03_Eve_Neu_051"/>
+			<!-- Eye of the Mana Storm -->
+            <Card Name="s02_Eve_Neu_040"/>
+			<!-- Day of the Sanctuary -->
+        </RuleModifier>
+	
+		<RuleModifier Type="StartingHand" Player="Player_1" Amount="5">
+            <Card Name="b01_Spe_Pri_009"/>
+            <!-- Time Jump -->
+            <Card Name="b01_Spe_Fir_011"/>
+            <!-- Fire Storm -->
+            <Card Name="b01_Spe_Pri_008"/>
+            <!-- Teleport -->
+            <Card Name="s04_For_Inf_062"/>
+            <!-- Sacrifice -->
+			<Card Name="s02_Spe_Fir_040"/>
+			<!-- Heat Wave-->
+		</RuleModifier>
+		
+		<RuleModifier Type="StartingHand" Player="Player_2" Amount="6">
+            <Card Name="b01_Spe_Dar_004"/>
+            <!-- Shadow Image -->
+            <Card Name="b01_Spe_Dar_008"/>
+            <!-- Soul Reaver -->
+			<Card Name="s02_For_Nec_043"/>
+			<!-- Seria's Last Order -->			
+        </RuleModifier>
+    
+		<RuleModifier Type="Battleground">
+		
+			<!-- Player -->
+            <Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="0" Column="1">
+                <Card Name="b01_Cre_Inf_014"/>
+				<!-- Demented -->
+            </Position>
+
+            <Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="0" Column="2">
+                <Card Name="s02_Cre_Inf_042"/>
+				<!-- Chaos Lacerator -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="1" Column="0">
+                <Card Name="s02_Cre_Inf_041"/>
+				<!-- Hellfire Slave -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="1" Column="0">
+                <Card Name="s04_Bui_Neu_062"/>
+				<!-- Tower of the Smith -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="1" Column="1">
+                <Card Name="b01_Cre_Neu_003"/>
+				<!-- Sea Elf Archer -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="1" Column="2">
+                <Card Name="b01_Cre_Inf_009"/>
+				<!-- Chaos Sorceress -->
+            </Position>
+
+            <Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="1" Column="3">
+                <Card Name="b01_Cre_Inf_017"/>
+				<!-- Succubus -->
+            </Position>
+		
+			<!-- AI -->
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="0">
+                <Card Name="s01_Cre_Nec_022"/>
+				<!-- Fate Sealer -->
+            </Position>
+
+            <Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="1">
+                <Card Name="b01_Cre_Nec_001"/>
+				<!-- Banshee -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="2">
+                <Card Name="s02_Cre_Neu_040"/>
+				<!-- Dark Wood Treant -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="3">
+                <Card Name="s01_Cre_Nec_022"/>
+				<!-- Fate Sealer -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="1" Column="0">
+                <Card Name="s02_Cre_Nec_042"/>
+				<!-- Untamed Wraith -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="1" Column="1">
+                <Card Name="s01_Cre_Nec_022"/>
+				<!-- Fate Sealer -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="1" Column="2">
+                <Card Name="s01_Cre_Nec_022"/>
+				<!-- Fate Sealer -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="1" Column="3">
+                <Card Name="s02_Cre_Nec_042"/>
+				<!-- Untamed Wraith -->
+            </Position>
+
+		</RuleModifier>
+    </Rule>
+	
+    <!-- C1000 E6 Puzzle -->
+    <Rule Name="C1000E6_Rule">
+		<RuleModifier Type="StartingLife" Player="1" Value="6"/>
+		
+		<RuleModifier Type="StartingLife" Player="0" Value="1"/>
+		
+		<RuleModifier Type="IncreaseResources" Player="0" Amount="9"/>
+		
+		<RuleModifier Type="IncreaseResources" Player="1" Amount="9"/>
+	 
+		<RuleModifier Type="SetLevels" Player="0" Might="4" Magic="4" Destiny="4"/>
+	
+		<RuleModifier Type="SetLevels" Player="1" Might="3" Magic="3" Destiny="3"/>
+
+        <RuleModifier Type="Surrender" Surrenderer="Player_1" TurnOwner="Player_2" TurnCount="1" Phase="SupplyEnd" />
+	
+		<RuleModifier Type="CardHolder" Zone="Events">
+			<Card Name="b01_Eve_Neu_013"/>
+			<!-- Celebration -->
+            <Card Name="b01_Eve_Neu_003"/>
+			<!-- Week of Taxes -->
+        </RuleModifier>
+
+        <RuleModifier Type="StartingHand" Player="Player_1" Amount="3">
+            <Card Name="s04_Spe_Ear_061"/>
+            <!-- Landslide -->
+            <Card Name="s05_Spe_Lig_070"/>
+            <!-- Clease -->
+            <Card Name="b01_Spe_Lig_006"/>
+            <!-- Martyr -->
+		</RuleModifier>
+		
+		<RuleModifier Type="StartingHand" Player="Player_2" Amount="6">
+            <Card Name="b01_Cre_Neu_006"/>
+            <!-- Pao Deathseeker -->
+			<Card Name="b01_Spe_Air_008"/>
+            <!-- Storm Wind -->
+		</RuleModifier>
+
+		<RuleModifier Type="CardHolder" Zone="Battleground" Player="Player_2">
+			<Card Name="b01_Spe_Fir_002"/>    <!-- Immolation -->
+		</RuleModifier>		
+
+		<RuleModifier Type="Battleground">
+
+			<!-- Player -->
+            <Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="1" Column="0">
+				<Card Name="s03_Cre_Hav_051"/>
+				<!-- Crusader Watchmen -->
+			</Position>
+
+            <Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="1" Column="2">
+                <Card Name="s01_Cre_Hav_022"/>
+                <!-- Wolf Justicar -->   
+			</Position>
+			
+			<Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="0" Column="2">
+                <Card Name="s01_Cre_Hav_023"/>
+                <!-- Wolf Captain -->
+            </Position>
+            			
+			<!-- AI -->	
+			
+            <Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="0">
+                <Card Name="b01_Cre_Inf_013"/>
+				<!-- Maniac -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="1" Column="2">
+                <Card Name="s01_Cre_Inf_020"/>
+				<!-- Hellfire Imp -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="2">
+                <Card Name="s02_Cre_Inf_040"/>
+				<!-- Hellfire Bloater -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="2">
+				<Card Name="s05_Bui_Neu_070"/>
+				<!-- Make-shift Shelter -->
+			</Position>
+						
+        </RuleModifier>
+    </Rule>
+	
+	<!-- C1000 E7*** Puzzle -->
+    <Rule Name="C1000E7_Rule">
+		<RuleModifier Type="StartingLife" Player="1" Value="17"/>
+		
+		<RuleModifier Type="StartingLife" Player="0" Value="1"/>
+		
+		<RuleModifier Type="IncreaseResources" Player="0" Amount="10"/>
+		
+		<RuleModifier Type="IncreaseResources" Player="1" Amount="10"/>
+	 
+		<RuleModifier Type="SetLevels" Player="0" Might="5" Magic="4" Destiny="5"/>
+	
+		<RuleModifier Type="SetLevels" Player="1" Might="3" Magic="3" Destiny="3"/>
+
+        <RuleModifier Type="Surrender" Surrenderer="Player_1" TurnOwner="Player_2" TurnCount="1" Phase="SupplyEnd" />
+	
+		<RuleModifier Type="CardHolder" Zone="Events">
+			<Card Name="b01_Eve_Neu_013"/>
+			<!-- Celebration -->
+            <Card Name="b01_Eve_Neu_003"/>
+			<!-- Week of Taxes -->
+        </RuleModifier>
+
+        <RuleModifier Type="StartingHand" Player="Player_1" Amount="2">
+            <Card Name="s05_For_Nec_071"/>
+            <!-- Sacred Venom Fumes -->
+            <Card Name="s02_Spe_Dar_030"/>
+            <!-- Moonsilf Fetters -->
+        </RuleModifier>
+		
+		<RuleModifier Type="StartingHand" Player="Player_2" Amount="6">
+            <Card Name="b01_Cre_Neu_006"/>
+            <!-- Pao Deathseeker -->
+			<Card Name="b01_Spe_Air_008"/>
+            <!-- Storm Wind -->
+		</RuleModifier>
+
+		<RuleModifier Type="Battleground">
+
+			<!-- Player -->
+            <Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="0" Column="0">
+				<Card Name="b01_Cre_Nec_016"/>
+				<!-- Vampire Knight -->
+			</Position>
+
+            <Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="0" Column="1">
+                <Card Name="b01_Cre_Nec_016"/>
+                <!-- Vampire Knight -->   
+			</Position>
+						
+			<Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="0" Column="2">
+                <Card Name="s05_Cre_Nec_075"/>
+                <!-- Vampire Connoisseur -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="1" Column="2">
+                <Card Name="s05_Cre_Nec_073"/>
+                <!-- Death Lord -->
+            </Position>
+            
+			<Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="0" Column="3">
+                <Card Name="b01_Cre_Nec_016"/>
+                <!-- Vampire Knight -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="1" Column="3">
+                <Card Name="b01_Cre_Nec_007"/>
+                <!-- Ghost Dragon -->
+            </Position>
+			
+			<!-- AI -->	
+			
+            <Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="0">
+                <Card Name="s03_Cre_Aca_003"/>
+				<!-- Rakshasa -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="1">
+                <Card Name="s05_Cre_Aca_073"/>
+				<!-- Loyal Rakshasa -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="3">
+                <Card Name="s03_Cre_Aca_003"/>
+				<!-- Rakshasa -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="1" Column="2">
+                <Card Name="s05_Cre_Aca_074"/>
+				<!-- Crimson Apprentice -->
+            </Position>
+															
+        </RuleModifier>
+    </Rule>
+	
+	<!-- C1000 E8*** Puzzle -->
+    <Rule Name="C1000E8_Rule">
+		<RuleModifier Type="StartingLife" Player="1" Value="8"/>
+		
+		<RuleModifier Type="StartingLife" Player="0" Value="1"/>
+		
+		<RuleModifier Type="IncreaseResources" Player="0" Amount="15"/>
+		
+		<RuleModifier Type="IncreaseResources" Player="1" Amount="14"/>
+	 
+		<RuleModifier Type="SetLevels" Player="0" Might="6" Magic="2" Destiny="4"/>
+	
+		<RuleModifier Type="SetLevels" Player="1" Might="3" Magic="3" Destiny="3"/>
+
+        <RuleModifier Type="Surrender" Surrenderer="Player_1" TurnOwner="Player_2" TurnCount="1" Phase="SupplyEnd" />
+	
+		<RuleModifier Type="CardHolder" Zone="Events">
+			<Card Name="b01_Eve_Neu_013"/>
+			<!-- Celebration -->
+            <Card Name="b01_Eve_Neu_003"/>
+			<!-- Week of Taxes -->
+        </RuleModifier>
+
+        <RuleModifier Type="StartingHand" Player="Player_1" Amount="5">
+            <Card Name="s05_Bui_San_071"/>
+            <!-- Kensei Dojo -->
+            <Card Name="s01_Cre_San_018"/>
+            <!-- Coral Priestess -->
+            <Card Name="s04_For_San_060"/>
+            <!-- Noboru's Insight -->
+			<Card Name="s01_For_San_002"/>
+            <!-- Honoured Land -->
+		</RuleModifier>
+		
+		<RuleModifier Type="StartingHand" Player="Player_2" Amount="6">
+            <Card Name="b01_Cre_Neu_006"/>
+            <!-- Pao Deathseeker -->
+			<Card Name="b01_Spe_Air_008"/>
+            <!-- Storm Wind -->
+		</RuleModifier>
+    
+		<RuleModifier Type="Battleground">
+
+			<!-- Player -->
+            <Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="0" Column="0">
+				<Card Name="s05_Bui_San_071"/>
+				<!-- Kensei Dojo -->
+			</Position>
+
+            <Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="1" Column="1">
+                <Card Name="s04_Cre_San_061"/>
+                <!-- Silver Bowl Spirit -->
+            </Position>
+			<Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="0" Column="3">
+                <Card Name="s01_Cre_San_003"/>
+                <!-- Kensei -->
+            </Position>
+            			
+			<!-- AI -->
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="1" Column="0">
+                <Card Name="b01_Cre_Nec_012"/>
+				<!-- Archlich -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="1" Column="1">
+                <Card Name="b01_Cre_Nec_004"/>
+				<!-- Vampire Lord -->
+            </Position>
+
+            <Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="1" Column="2">
+                <Card Name="b01_Cre_Nec_004"/>
+				<!-- Vampire Lord -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="1">
+                <Card Name="b02_Cre_Nec_023"/>
+				<!-- Vampire Assassin -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="2">
+                <Card Name="b01_Cre_Nec_016"/>
+				<!-- Vampire Knight -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="1" Column="3">
+                <Card Name="b01_Cre_Nec_012"/>
+				<!-- Archlich -->
+            </Position>
+						
+        </RuleModifier>
+    </Rule>
+	
+	<!-- C1000 E9*** Puzzle -->
+    <Rule Name="C1000E10_Rule">
+		<RuleModifier Type="StartingLife" Player="1" Value="10"/>
+		
+		<RuleModifier Type="StartingLife" Player="0" Value="1"/>
+		
+		<RuleModifier Type="IncreaseResources" Player="0" Amount="20"/>
+		
+		<RuleModifier Type="IncreaseResources" Player="1" Amount="20"/>
+	 
+		<RuleModifier Type="SetLevels" Player="0" Might="6" Magic="6" Destiny="5"/>
+	
+		<RuleModifier Type="SetLevels" Player="1" Might="3" Magic="3" Destiny="3"/>
+
+        <RuleModifier Type="Surrender" Surrenderer="Player_1" TurnOwner="Player_2" TurnCount="1" Phase="SupplyEnd" />
+	
+		<RuleModifier Type="CardHolder" Zone="Events">
+			<Card Name="b01_Eve_Neu_013"/>
+			<!-- Celebration -->
+            <Card Name="b01_Eve_Neu_013"/>
+			<!-- Celebration -->
+        </RuleModifier>
+
+        <RuleModifier Type="StartingHand" Player="Player_1" Amount="5">
+            <Card Name="b01_For_Neu_019"/>
+            <!-- Broken Bridge -->
+			<Card Name="b01_Spe_Fir_001"/>
+            <!-- Armageddon -->
+			<Card Name="s02_For_Str_005"/>
+            <!-- Blood of my Tribe -->
+			<Card Name="s01_For_Str_043"/>
+            <!-- Kat's Grand Finale -->
+			<Card Name="s04_For_Str_060"/>
+            <!-- Zefiria's Celerity -->
+		</RuleModifier>
+		
+		<RuleModifier Type="StartingHand" Player="Player_2" Amount="6">
+            <Card Name="b01_For_Neu_019"/>
+            <!-- Broken Bridge -->
+			<Card Name="b01_Spe_Fir_001"/>
+            <!-- Armageddon -->
+			<Card Name="s02_For_Str_005"/>
+            <!-- Blood of my Tribe -->
+			<Card Name="s01_For_Str_043"/>
+            <!-- Kat's Grand Finale -->
+		</RuleModifier>
+		
+		<RuleModifier Type="CardHolder" Zone="Battleground" Player="Player_1">
+			<Card Name="s02_Spe_Ear_042"/>    
+			<!-- Might of Nature -->
+		</RuleModifier>
+		
+		<RuleModifier Type="CardHolder" Zone="Battleground" Player="Player_2">
+			<Card Name="b01_Spe_Ear_008"/>    
+			<!-- Stone Shield -->
+		</RuleModifier>
+
+		
+		<RuleModifier Type="Battleground">
+
+			<!-- Player -->
+            <Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="0" Column="0">
+				<Card Name="s02_Cre_Str_047"/>
+				<!-- Blackskull Spellsmasher -->
+			</Position>
+
+            <Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="0" Column="1">
+                <Card Name="s02_Cre_Str_041"/>
+                <!-- War Oliphant -->   
+			</Position>
+						
+			<Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="0" Column="2">
+                <Card Name="s02_Cre_Str_041"/>
+                <!-- War Oliphant -->  
+            </Position>
+					
+			<!-- AI -->	
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="1">
+                <Card Name="b01_Cre_Nec_016"/>
+                <!-- Vampire Knight -->
+				<Attachment Name="b01_Spe_Pri_001" Owner="Player 2"/>
+            </Position>
+            
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="2">
+                <Card Name="s05_Cre_Str_071" Owner="Player_1"/>
+				<!-- Pao Warchief -->
+				<Attachment Name="s03_Spe_Dar_052" Owner="Player_2"/>
+				<Attachment Name="b01_Spe_Pri_001" Owner="Player 2"/>
+	        </Position>
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="3">
+                <Card Name="b01_Cre_Nec_016"/>
+                <!-- Vampire Knight -->
+				<Attachment Name="b01_Spe_Pri_001" Owner="Player 2"/>
+            </Position>
+				
+        </RuleModifier>
+    </Rule>
+	
+	<!-- C1000 E10 Puzzle -->
+    <Rule Name="C1000E09_Rule">
+		<RuleModifier Type="StartingLife" Player="1" Value="9"/>
+		
+		<RuleModifier Type="StartingLife" Player="0" Value="6"/>
+		
+		<RuleModifier Type="IncreaseResources" Player="0" Amount="18"/>
+		
+		<RuleModifier Type="IncreaseResources" Player="1" Amount="0"/>
+	 
+		<RuleModifier Type="SetLevels" Player="0" Might="5" Magic="4" Destiny="1"/>
+	
+		<RuleModifier Type="SetLevels" Player="1" Might="4" Magic="1" Destiny="1"/>
+
+        <RuleModifier Type="Surrender" Surrenderer="Player_1" TurnOwner="Player_2" TurnCount="1" Phase="SupplyEnd" />
+	
+		<RuleModifier Type="CardHolder" Zone="Events">
+			<Card Name="b02_Eve_Neu_044"/>
+			<!-- Cosmic Balance -->
+            <Card Name="r01_Eve_Neu_008"/>
+			<!-- Market of Shadows -->
+        </RuleModifier>
+
+        <RuleModifier Type="StartingHand" Player="Player_1" Amount="9">
+            <Card Name="r01_Cre_Nec_102"/>
+            <!-- Ichor Spinner -->
+            <Card Name="s06_Spe_Ear_080"/>
+            <!-- Virulent Poison -->
+            <Card Name="b02_Spe_Pri_040"/>
+            <!-- Minor Recall -->
+			<Card Name="b02_Spe_Dar_050"/>
+            <!-- Shared Agony -->
+			<Card Name="b02_Spe_Dar_030"/>
+            <!-- Moonsilk Fetters -->
+			<Card Name="s07_Spe_Ear_092"/>
+			<!-- Nature's Wrath -->
+			<Card Name="s05_For_Nec_070"/>
+			<!-- No Mercy for the Meek -->
+			<Card Name="s07_For_Nec_090"/>
+			<!-- Ritual of Weakness -->
+			<Card Name="s01_For_Nec_032"/>
+			<!-- Altar of The Spider Goddess -->
+		</RuleModifier>
+		
+		<RuleModifier Type="StartingHand" Player="Player_2" Amount="8">
+            <Card Name="b01_Cre_Neu_006"/>
+            <!-- Pao Deathseeker -->
+			<Card Name="b01_Spe_Air_008"/>
+            <!-- Storm Wind -->
+		</RuleModifier>
+
+		<RuleModifier Type="Battleground">
+
+			<!-- Player -->
+            <Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="0" Column="0">
+				<Card Name="s05_Cre_Inf_073"/>
+				<!-- Maniac Taskmaster -->
+			</Position>
+
+            <Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="0" Column="1">
+                <Card Name="s05_Cre_Inf_071"/>
+                <!-- Thrall of Hatred -->   
+			</Position>
+						
+			<Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="0" Column="2">
+                <Card Name="s05_Cre_Inf_070"/>
+                <!-- Lava Spawn -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="1" Column="3">
+                <Card Name="s05_Cre_Inf_070"/>
+                <!-- Lava Spawn -->
+            </Position>
+            
+			<Position Coordinate="CO_Logical" Player="0" QueryType="QT_Single" Line="0" Column="3">
+                <Card Name="b01_Cre_Inf_002"/>
+                <!-- Doom Bringer -->
+            </Position>
+			
+			<!-- AI -->	
+			
+            <Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="1" Column="0">
+                <Card Name="b01_Cre_Hav_002"/>
+				<!-- Healing Sister -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="1" Column="1">
+                <Card Name="s05_Cre_Hav_073"/>
+				<!-- Healing Sister -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="2">
+                <Card Name="b01_Cre_Hav_009"/>
+				<!-- Tithe Collector -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="3">
+                <Card Name="b01_Cre_Hav_009"/>
+				<!-- Tithe Collector -->
+            </Position>
+			
+			<Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="1" Column="3">
+                <Card Name="s05_Cre_Hav_072"/>
+				<!-- Angel of Salvation -->
+            </Position>
+			
+        </RuleModifier>
+    </Rule>
+
+	<Rule Name="BattleStartExemple">
+        <!-- Global card exemple -->
+        <RuleModifier Type="CardHolder" Zone="Battleground" Player="Player_2" >
+            <Card Name="Spe_Fir_002"/>
+        </RuleModifier>
+        <!-- Battleground creature exemple -->
+        <RuleModifier Type="Battleground">
+            <Position Coordinate="CO_Logical" Player="1" QueryType="QT_Single" Line="0" Column="2">
+                <Card Name="Cre_Inf_014"/>
+            </Position>
+        </RuleModifier>
+        <!-- Battleground row exemple -->
+        <RuleModifier Type="Battleground">
+            <Position Coordinate="CO_Absolute" Player="2" QueryType="QT_Single" Line="4" Column="2">
+                <Card Name="Spe_Ear_011"/>
+            </Position>
+        </RuleModifier>
+        <!-- Battleground line exemple -->
+        <RuleModifier Type="Battleground">
+            <Position Coordinate="CO_Absolute" Player="2" QueryType="QT_Single" Line="1" Column="4">
+                <Card Name="Spe_Air_009"/>
+            </Position>
+        </RuleModifier>
+    </Rule>
+	
+</Rules>

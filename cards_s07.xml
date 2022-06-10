@@ -88,20 +88,28 @@
 	<!--...............................................................................-->
 	<!-- Heroes Sanctuary -->
 	<!--...............................................................................-->
-	<Card Rarity="Heroic" Type="Hero" Name="Her_San_010" DisplayName="Irina" Faction="Sanctuary" School="Dark|Light|Water" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="909">
-		<Target Zone="None" Side="Friendly">
+	<Card NotLocalized="True" Rarity="Heroic" Type="Hero" Name="Her_San_010" DisplayName="Irina" Faction="Sanctuary" School="Dark|Light|Water" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="18" ID="909">
+    <Description>Discard a card: Target friendly creature gains Focused Blast 2 until end of turn.</Description>
+    <Target Zone="None" Side="Friendly">
 			<Effect Type="ChoiceOption"/>
 			<Subgroup>
 				<TemplateEffect Name="HeroAbilities"/>
 				<!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
-			</Subgroup>
+        <Target Zone="Hand" Amount="1" Side="Friendly">
+          <Option Value="4" DisplayText="Discard: creature gains Focused Blast 2." />
+          <Effect Type="MoveCardTo" Destination="Graveyard" Duration="Immediate" />
+        </Target>
+        <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="1" ForceExecute="True">
+          <Option Value="4" />
+          <Effect Type="ModifyAbility" Ability="FocusedBlast" Value="2" Duration="UntilEndOfTurn" />
+        </Target>
+      </Subgroup>
 		</Target>
-		<Description></Description>
 	</Card>
 	<!--...............................................................................-->
 	<!-- Heroes Stronghold -->
 	<!--...............................................................................-->
-	<Card Rarity="Heroic" Type="Hero" Name="Her_Str_010" DisplayName="Sandor" Faction="Stronghold" School="Dark|Earth|Fire" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="910">
+	<Card Rarity="Heroic" Type="Hero" Name="Her_Str_010" DisplayName="Sandor" Faction="Stronghold" School="Dark|Earth|Fire" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="18" ID="910">
 		<Target Zone="None" Side="Friendly">
 			<Effect Type="ChoiceOption"/>
 			<Subgroup>

@@ -14,7 +14,7 @@
         </Target>
         <Description>Deal 2 damage to target creature.</Description>
     </Card>
-    <Card Rarity="Rare" Type="Spell" Name="Spe_Fir_011" DisplayName="Firestorm" School="Fire" Cost="5" MagicLevel="5" ID="181">
+    <Card Rarity="Rare" Type="Spell" Name="Spe_Fir_011" DisplayName="Firestorm" School="Fire" Cost="4" MagicLevel="5" ID="181">
         <Target Zone="BattlegroundLine" CardType="Unit" Amount="1">
             <Effect Type="Damage" Value="4" />
         </Target>
@@ -27,27 +27,46 @@
         <Description>Deal 4 damage to target creature and all adjacent creatures.</Description>
         <ExtraDescription>(Also damage friendly units.)</ExtraDescription>
     </Card>
-    <Card Rarity="Rare" Type="Spell" Name="Spe_Fir_001" DisplayName="Armageddon" School="Fire" Cost="6" MagicLevel="6" ID="183">
+    <Card NotLocalized="True" Rarity="Rare" Type="Spell" Name="Spe_Fir_001" DisplayName="Armageddon" School="Fire" Cost="6" MagicLevel="6" ID="183">
+        <Target Zone="None" Side="Friendly">
+          <Effect Type="IncreaseLevel" LevelType="Magic" Value="-1"/>
+        </Target>
         <Target Zone="Battleground" CardType="Unit" Amount="All">
             <Effect Type="Damage" Value="10" />
         </Target>
-        <Description>Deal 10 damage to all creatures.</Description>
+        <Description>Deal 10 damage to all creatures. Decrease your Magic Level by 1.</Description>
         <ExtraDescription>(Also damage friendly units.)</ExtraDescription>
     </Card>
-    <Card Rarity="Common" Type="Spell" Name="Spe_Fir_004" DisplayName="Fire Trap" School="Fire" Cost="1" MagicLevel="1" ID="184">
-        <Ongoing Duration="Permanent" />
-        <Target Zone="BattlegroundColumn" Amount="1" />
-        <Trigger Type="OnPostAttackThisRow">
-            <CardFilter IncludeUnitType="Melee|Flyer" />
-            <Target Zone="Battleground" CardType="Unit" Amount="FromTrigger">
-                <Effect Type="Damage" Value="3" />
-            </Target>
-            <Target Zone="Battleground" Amount="Self">
-                <Effect Type="Kill" />
-            </Target>
-        </Trigger>
-        <Description>Enchant row. Permanent:
-After a melee or flyer creature on enchanted row attacks, deal 3 damage to it and destroy Fire Trap.</Description>
+    <Card NotLocalized="True" Rarity="Common" Type="Spell" Name="Spe_Fir_004" DisplayName="Fire Trap" School="Fire" Cost="2" MagicLevel="2" ID="184">
+      <Ongoing Duration="Permanent" />
+      <Target Zone="BattlegroundColumn" Amount="1" />
+      <Trigger Type="OnDeployThisRow">
+        <Target Zone="BattlegroundPosition" CardType="Unit" Amount="FromTrigger" Shape="SelfAndAdjacent">
+          <Effect Type="Damage" Value="3" />
+        </Target>
+        <Target Zone="Battleground" Amount="Self">
+          <Effect Type="Kill" />
+        </Target>
+      </Trigger>
+      <Trigger Type="OnRelocateThisRow">
+        <Target Zone="BattlegroundPosition" CardType="Unit" Amount="FromTrigger" Shape="SelfAndAdjacent">
+          <Effect Type="Damage" Value="3" />
+        </Target>
+        <Target Zone="Battleground" Amount="Self">
+          <Effect Type="Kill" />
+        </Target>
+      </Trigger>
+      <Trigger Type="OnMoveThisRow">
+        <Target Zone="BattlegroundPosition" CardType="Unit" Amount="FromTrigger" Shape="SelfAndAdjacent">
+          <Effect Type="Damage" Value="3" />
+        </Target>
+        <Target Zone="Battleground" Amount="Self">
+          <Effect Type="Kill" />
+        </Target>
+      </Trigger>
+        <Description>
+          Enchant row. Permanent:
+When a creature is deployed, moves into, or is relocated to enchanted row, deal 3 damage to it, and to all adjacent creatures. Then destroy Fire Trap.</Description>
     </Card>
     <Card Rarity="Rare" Type="Spell" Name="Spe_Fir_002" DisplayName="Immolation" School="Fire" Cost="4" MagicLevel="4" ID="185">
         <Variable Type="TargetCount">
@@ -68,6 +87,7 @@ At the beginning of each player's turn, deal 1 damage to all creatures. When the
     </Card>
     <Card Rarity="Common" Type="Spell" Name="Spe_Fir_006" DisplayName="Fire Shield" School="Fire" Cost="2" MagicLevel="2" ID="186">
         <Ongoing Duration="Permanent" />
+        <Ability Type="Endurable"/>
         <Target Zone="Battleground" CardType="Unit" Amount="1" />
         <Trigger Type="OnEnchantedDamaged" DamageIncludeFlags="Attack">
             <Target Zone="Battleground" CardType="Unit" Amount="FromTrigger">
@@ -77,7 +97,7 @@ At the beginning of each player's turn, deal 1 damage to all creatures. When the
         <Description>Enchant creature. Permanent:
 Whenever enchanted creature is attacked and dealt damage, Fire Shield deals the same amount of damage to the attacking creature.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Fir_007" DisplayName="Frenzy" School="Fire" Cost="3" MagicLevel="3" ID="187">
+    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Fir_007" DisplayName="Frenzy" School="Fire" Cost="2" MagicLevel="3" ID="187">
         <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Enemy" />
         <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Any" CantTargetPrevious="True">
             <Variable Type="CardAttack" UseLastTarget="True" />
@@ -97,7 +117,7 @@ Enchanted creature gains +[2:ATK] and +[2:RET].</Description>
     <!--...............................................................................-->
     <!-- Spells - Air -->
     <!--...............................................................................-->
-    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Air_001" DisplayName="Chain Lightning" School="Air" Cost="4" MagicLevel="3" ID="189">
+    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Air_001" DisplayName="Chain Lightning" School="Air" Cost="3" MagicLevel="3" ID="189">
         <Target Zone="BattlegroundPosition" Amount="1" CardType="Unit" BattlegroundPositionState="NoUnit" Shape="AdjacentOnly">
             <Effect Type="Damage" Value="3" />
         </Target>
@@ -109,7 +129,7 @@ Enchanted creature gains +[2:ATK] and +[2:RET].</Description>
         </Target>
         <Description>Deal 6 damage to target creature.</Description>
     </Card>
-    <Card Rarity="Rare" Type="Spell" Name="Spe_Air_002" DisplayName="Lightning Speed" School="Air" Cost="3" MagicLevel="3" ID="191">
+    <Card Rarity="Rare" Type="Spell" Name="Spe_Air_002" DisplayName="Lightning Speed" School="Air" Cost="2" MagicLevel="3" ID="191">
         <Ongoing Duration="Permanent" />
         <Ability Type="Endurable"/>
 		<Target Zone="Battleground" CardType="Unit" Amount="1">
@@ -207,7 +227,7 @@ At the beginning of each player's turn, deal 3 damage to enchanted creature. The
     </Card>
     <Card Rarity="Uncommon" Type="Spell" Name="Spe_Wat_003" DisplayName="Eternal Winter" School="Water" Cost="1" MagicLevel="2" ID="201">
         <Ongoing Duration="Permanent" />
-		<Ability Type="Endurable"/>
+		    <Ability Type="Endurable"/>
         <Target Zone="Battleground" CardType="Unit" Amount="1">
             <Effect Type="ModifyAbility" Ability="Immobilized" />
         </Target>
@@ -302,6 +322,7 @@ At the beginning of each player's turn, put 1 poison counter on enchanted creatu
     </Card>
     <Card Rarity="Uncommon" Type="Spell" Name="Spe_Ear_007" DisplayName="Regeneration" School="Earth" Cost="2" MagicLevel="2" ID="210">
         <Ongoing Duration="Permanent" />
+        <Ability Type="Endurable"/>
         <Target Zone="Battleground" CardType="Unit" Amount="1">
             <Effect Type="ModifyAbility" Ability="Regenerate" Value="2" />
         </Target>
@@ -309,7 +330,7 @@ At the beginning of each player's turn, put 1 poison counter on enchanted creatu
 Enchanted creature gains Regenerate 2.</Description>
         <ExtraDescription>(Unit with Regeneration[SPACE]2, at the beginning of your turn, gains 2[SPACE]HP. Cannot go above starting HP.)</ExtraDescription>
     </Card>
-    <Card Rarity="Rare" Type="Spell" Name="Spe_Ear_004" DisplayName="Mass Regeneration" School="Earth" Cost="3" MagicLevel="3" ID="211">
+    <Card Rarity="Rare" Type="Spell" Name="Spe_Ear_004" DisplayName="Mass Regeneration" School="Earth" Cost="2" MagicLevel="3" ID="211">
         <Ongoing Duration="Permanent" />
         <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
             <Effect Type="ModifyAbility" Ability="Regenerate" Value="1" />
@@ -336,8 +357,9 @@ Combat damage dealt to enchanted creature is halved, rounded down.</Description>
 Prevent all damage dealt to your Hero.
 At the end of the turn, if damage was prevented in this way this turn, destroy Stone Shield.</Description>
     </Card>
-    <Card Rarity="Common" Type="Spell" Name="Spe_Ear_010" DisplayName="Venomous Touch" School="Earth" Cost="2" MagicLevel="2" ID="214">
+    <Card Rarity="Common" Type="Spell" Name="Spe_Ear_010" DisplayName="Venomous Touch" School="Earth" Cost="1" MagicLevel="2" ID="214">
         <Ongoing Duration="Permanent" />
+        <Ability Type="Endurable"/>
         <Target Zone="Battleground" CardType="Unit" Amount="1">
             <Effect Type="ModifyAbility" Ability="Infect" Value="1" />
         </Target>
@@ -393,6 +415,7 @@ Heal 3 damage from all friendly creatures.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Spell" Name="Spe_Dar_010" DisplayName="Vampiric Embrace" School="Dark" Cost="2" MagicLevel="2" ID="219">
         <Ongoing Duration="Permanent" />
+        <Ability Type="Endurable"/>
         <Target Zone="Battleground" CardType="Unit" Amount="1">
             <Effect Type="ModifyAbility" Ability="LifeDrain" Value="2" />
         </Target>
@@ -419,16 +442,29 @@ Deploy a token that's a copy of target enemy creature. That token gains Quick At
 When any damage is dealt to the token, destroy it.</Description>
         <ExtraDescription>You put the copy on your side of the battleground, on a valid deploy position.</ExtraDescription>
     </Card>
-    <Card Rarity="Common" Type="Spell" Name="Spe_Dar_005" DisplayName="Death Seal" School="Dark" Cost="3" MagicLevel="3" ID="222">
-        <Ongoing Duration="Permanent" />
-        <Target Zone="Battleground" CardType="Unit" Amount="1" />
-        <Trigger Type="OnEnchantedDamaged" DamageIncludeFlags="Combat">
-            <Target Zone="Battleground" CardType="Unit" Amount="Parent">
-                <Effect Type="Kill" />
-            </Target>
-        </Trigger>
-        <Description>Enchant creature. Permanent:
-When combat damage is dealt to enchanted creature, destroy it.</Description>
+    <Card NotLocalized="True" Rarity="Common" Type="Spell" Name="Spe_Dar_005" DisplayName="Death Seal" School="Dark" Cost="3" MagicLevel="3" ID="222">
+      <Variable2 Type="TargetCount">
+        <Target Zone="Battleground" CardType="Unit" Amount="All">
+          <CardFilter IncludeColumn="True" Value="Variable3">
+            <Variable3 Type="CardColumn"/>
+          </CardFilter>
+        </Target>
+      </Variable2>
+      <Ongoing Duration="FromCondition">
+        <Condition Operator="GreaterThan" ValueA="Variable2" ValueB="0" />
+      </Ongoing>
+      <Target Zone="BattlegroundColumn" Amount="1" Cancelable="True"/>
+      <Trigger Type="OnUnitDamaged" DamageIncludeFlags="Combat">
+          <Target Zone="Battleground" CardType="Unit" Amount="Fromtrigger" ForceExecute="True">
+		        <CardFilter IncludeColumn="True" Value="Variable">
+			        <Variable Type="CardColumn"/>
+		        </CardFilter>
+            <Effect Type="Kill" />
+          </Target>
+      </Trigger>
+      <Description>Enchant row. Permanent:
+When combat damage is dealt to a creature on enchanted row, destroy that creature.
+When there are no creatures on enchanted row, destroy [THIS].</Description>
     </Card>
     <Card Rarity="Common" Type="Spell" Name="Spe_Dar_007" DisplayName="Purge" School="Dark" Cost="1" MagicLevel="1" ID="223">
         <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Enemy">
@@ -466,7 +502,7 @@ Enchanted creature gains -[2:ATK] and -[2:RET].</Description>
         </Target>
         <Description>Destroy all ongoing spells.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Lig_011" DisplayName="Word of Light" School="Light" Cost="4" MagicLevel="4" ID="228">
+    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Lig_011" DisplayName="Word of Light" School="Light" Cost="4" MagicLevel="3" ID="228">
         <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Enemy">
             <Effect Type="Damage" Value="2" />
         </Target>
@@ -474,6 +510,7 @@ Enchanted creature gains -[2:ATK] and -[2:RET].</Description>
     </Card>
     <Card Rarity="Common" Type="Spell" Name="Spe_Lig_001" DisplayName="Bless" School="Light" Cost="3" MagicLevel="3" ID="229">
         <Ongoing Duration="Permanent" />
+        <Ability Type="Endurable"/>
         <Target Zone="Battleground" CardType="Unit" Amount="1">
             <Effect Type="ModifyAttack" Value="2" />
         </Target>
@@ -510,11 +547,14 @@ Heal all damage from all friendly creatures.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Spell" Name="Spe_Lig_006" DisplayName="Martyr" School="Light" Cost="3" MagicLevel="3" ID="233">
         <Ongoing Duration="UntilDamagedAbsorbedAtEndOfTurn" SuicideParent="True" />
-        <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Friendly" />
+        <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Friendly">
+          <Effect Type="ModifyAbility" Ability="Anchored" />
+        </Target>
         <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
             <Effect Type="ModifyDamage" Value="0.0x" Side="Enemy" DamageIncludeFlags="All" />
         </Target>
         <Description>Enchant friendly creature. Permanent:
+Enchanted creature gains Anchored.
 Prevent all damage dealt to friendly creatures from sources you don't control.
 At end of turn, if damage was prevented in this way this turn, destroy enchanted creature.</Description>
     </Card>
@@ -540,14 +580,17 @@ At end of turn, if damage was prevented in this way this turn, destroy enchanted
         <Description>Choose a spell card from your hand with a cost equal to or less than the number of enemy creatures on the battleground. Play this spell for free.</Description>
     </Card>
     <Card Rarity="Rare" Type="Spell" Name="Spe_Pri_009" DisplayName="Time Jump" School="Prime" Cost="6" MagicLevel="6" ID="236">
+        <Target Zone="None" Side="Friendly">
+          <Effect Type="GainResourcesProduction" Value="-1"/>
+        </Target>
         <Target Zone="Hero" Side="Friendly" Amount="All" Persistent="True" ForceExecute="True">
             <Effect Type="GlobalEffect" GlobalEffectType="KeepResources" Duration="UntilYourNextSupplyPhase" />
             <Effect Type="GlobalEffect" GlobalEffectType="SkipResources" Duration="UntilYourNextSupplyPhase" />
         </Target>
         <Target Zone="Hero" Side="Friendly" Amount="All" Persistent="True" ForceExecute="True">
-            <Effect Type="GlobalEffect" GlobalEffectType="ExtraTurn" Duration="UntilYourNextTurn" />
+          <Effect Type="GlobalEffect" GlobalEffectType="ExtraTurn" Duration="UntilYourNextTurn" />
         </Target>
-        <Description>At the end of your turn, you gain one extra turn. Do not empty or produce [RESOURCES] during the supply phase of that turn.</Description>
+        <Description>Decrease your [RESOURCES] production by 1. At the end of your turn, you gain one extra turn. Do not empty or produce [RESOURCES] during the supply phase of that turn.</Description>
     </Card>
     <Card Rarity="Common" Type="Spell" Name="Spe_Pri_002" DisplayName="Dispel Magic" School="Prime" Cost="1" MagicLevel="1" ID="237">
         <Target Zone="Battleground" CardType="Spell" Amount="1">
@@ -581,14 +624,20 @@ At end of turn, if damage was prevented in this way this turn, destroy enchanted
         <Description>Permanent:
 At the beginning of your turn, destroy all creatures and For Whom the Bell Tolls.</Description>
     </Card>
-    <Card Rarity="Common" Type="Spell" Name="Spe_Pri_005" DisplayName="Slow" School="Prime" Cost="1" MagicLevel="2" ID="241">
-        <Ongoing Duration="UntilYourNextTurn" />
+    <Card Rarity="Common" Type="Spell" Name="Spe_Pri_005" DisplayName="Slow" School="Prime" Cost="2" MagicLevel="2" ID="241">
+        <Ongoing Duration="Permanent" />
         <Target Zone="Battleground" CardType="Unit" Amount="1">
             <Effect Type="ModifyAbility" Ability="CannotAttack" />
             <Effect Type="ModifyAbility" Ability="Immobilized" />
         </Target>
+        <Trigger Type="OnTurnBegin" Side="Friendly">
+          <Target Zone="Battleground" Amount="Self">
+            <Effect Type="MoveCardTo" Destination="Hand" />
+          </Target>
+        </Trigger>
         <Description>Enchant creature. Until your next turn:
-Enchanted creature gains Cannot Attack and is immobilized.</Description>
+Enchanted creature gains Cannot Attack and is immobilized.
+At the beginning of your turn, return [THIS] to its owner's hand.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Spell" Name="Spe_Pri_001" DisplayName="Arcane Ward" School="Prime" Cost="4" MagicLevel="4" ID="242">
         <Ongoing Duration="Permanent" />
@@ -640,44 +689,44 @@ Enchanted creature gains Magic Shield.</Description>
         <Description>[3:RESOURCES]: Until end of turn, play with the top card of your library revealed. While that card is a creature card, all friendly creatures gain +[1:ATK]. Otherwise, all enemy creatures gain +[1:RET].</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Event" Name="Eve_Neu_003" DisplayName="Week of Taxes" Faction="Neutral" ID="245">
-        <Ongoing Duration="Permanent" />
-        <Target Zone="Battleground" Amount="All" />
-        <!-- Hack to add a permanent feedback -->
-        <Trigger Type="OnCardPlay" Side="Friendly">
-            <CardFilter IncludeCardType="Fortune" />
-            <Target Zone="Hero" Amount="All" Side="Friendly" InputOnExec="True">
-                <Variable Type="Resources" Side="Friendly" />
-                <Condition Operator="LesserThan" ValueA="Variable" ValueB="1" />
-                <Effect Type="Damage" Value="1" />
-            </Target>
-            <Target Zone="None" Side="Friendly" InputOnExec="True">
-                <Variable Type="Resources" Side="Friendly" />
-                <Condition Operator="GreaterThan" ValueA="Variable" ValueB="0" />
-                <Effect Type="GainResources" Value="-1" />
-            </Target>
-        </Trigger>
-        <Description>Ongoing: Whenever you play a fortune, pay [1:RESOURCES]. If you can't, deal 1 damage to your hero.</Description>
-    </Card>
-    <Card Rarity="Uncommon" Type="Event" Name="Eve_Neu_007" DisplayName="Mana Storm" Faction="Neutral" ID="246">
-        <Ongoing Duration="Permanent" />
-        <Target Zone="Battleground" Amount="All" />
-        <!-- Hack to add a permanent feedback -->
-        <Trigger Type="OnCardPlay" Side="Friendly">
-            <CardFilter IncludeCardType="Spell" />
-            <Target Zone="Hero" Amount="All" Side="Friendly" InputOnExec="True">
-                <Variable Type="Resources" Side="Friendly" />
-                <Condition Operator="LesserThan" ValueA="Variable" ValueB="1" />
-                <Effect Type="Damage" Value="1" />
-            </Target>
-            <Target Zone="None" Side="Friendly" InputOnExec="True">
-                <Variable Type="Resources" Side="Friendly" />
-                <Condition Operator="GreaterThan" ValueA="Variable" ValueB="0" />
-                <Effect Type="GainResources" Value="-1" />
-            </Target>
-        </Trigger>
-        <Description>Ongoing: Whenever you play a spell, pay [1:RESOURCES]. If you can't, deal 1 damage to your hero.</Description>
-    </Card>
-    <Card Rarity="Common" Type="Event" Name="Eve_Neu_013" DisplayName="Celebrations" Faction="Neutral" Cost="2" ID="247">
+      <Ongoing Duration="Permanent" />
+      <Target Zone="Battleground" Amount="All" />
+      <!-- Hack to add a permanent feedback -->
+      <Trigger Type="OnCardPlay" Side="Friendly">
+          <CardFilter IncludeCardType="Fortune" />
+          <Target Zone="Hero" Amount="All" Side="Friendly" InputOnExec="True">
+              <Variable Type="Resources" Side="Friendly" />
+              <Condition Operator="LesserThan" ValueA="Variable" ValueB="1" />
+              <Effect Type="Damage" Value="1" />
+          </Target>
+          <Target Zone="None" Side="Friendly" InputOnExec="True">
+              <Variable Type="Resources" Side="Friendly" />
+              <Condition Operator="GreaterThan" ValueA="Variable" ValueB="0" />
+              <Effect Type="GainResources" Value="-1" />
+          </Target>
+      </Trigger>
+      <Description>Ongoing: Whenever you play a fortune, pay [1:RESOURCES]. If you can't, deal 1 damage to your hero.</Description>
+  </Card>
+  <Card Rarity="Uncommon" Type="Event" Name="Eve_Neu_007" DisplayName="Mana Storm" Faction="Neutral" ID="246">
+    <Ongoing Duration="Permanent" />
+    <Target Zone="Battleground" Amount="All" />
+    <!-- Hack to add a permanent feedback -->
+    <Trigger Type="OnCardPlay" Side="Friendly">
+      <CardFilter IncludeCardType="Spell" />
+      <Target Zone="Hero" Amount="All" Side="Friendly" InputOnExec="True">
+        <Variable Type="Resources" Side="Friendly" />
+        <Condition Operator="LesserThan" ValueA="Variable" ValueB="1" />
+        <Effect Type="Damage" Value="1" />
+      </Target>
+      <Target Zone="None" Side="Friendly" InputOnExec="True">
+        <Variable Type="Resources" Side="Friendly" />
+        <Condition Operator="GreaterThan" ValueA="Variable" ValueB="0" />
+        <Effect Type="GainResources" Value="-1" />
+      </Target>
+    </Trigger>
+    <Description>Ongoing: Whenever you play a spell, pay [1:RESOURCES]. If you can't, deal 1 damage to your hero.</Description>
+  </Card>
+  <Card Rarity="Common" Type="Event" Name="Eve_Neu_013" DisplayName="Celebrations" Faction="Neutral" Cost="2" ID="247">
         <Target Zone="None" Side="Any">
             <Effect Type="Draw" Value="1" />
         </Target>
@@ -694,7 +743,7 @@ Enchanted creature gains Magic Shield.</Description>
         </Target>
         <Description>[3:RESOURCES]: The next creature you deploy this turn gains +[2:HEALTH]</Description>
     </Card>
-    <Card Rarity="Common" Type="Event" Name="Eve_Neu_006" DisplayName="Day of Fortune" Faction="Neutral" Cost="3" ID="249">
+    <Card Rarity="Common" Type="Event" Name="Eve_Neu_006" DisplayName="Day of Fortune" Faction="Neutral" Cost="2" ID="249">
         <Target Zone="Hand" Side="Friendly" Amount="1">
             <Effect Type="MoveCardTo" Destination="Graveyard" />
         </Target>
@@ -749,7 +798,7 @@ Week of Knowledge can only be played if you haven't played any card this turn.</
         </Target>
         <Description>[2:RESOURCES], Deal 1 damage to your hero: Draw a card.</Description>
     </Card>
-    <Card Rarity="Common" Type="Event" Name="Eve_Neu_012" DisplayName="Week of the Weaponsmiths" Faction="Neutral" Cost="3" ID="254">
+    <Card Rarity="Common" Type="Event" Name="Eve_Neu_012" DisplayName="Week of the Weaponsmiths" Faction="Neutral" Cost="1" ID="254">
         <Ongoing Duration="UntilDeployThisTurn" />
         <Target Zone="None" Side="Friendly" NeedActivation="True">
             <Trigger Type="OnDeploy">
@@ -758,6 +807,6 @@ Week of Knowledge can only be played if you haven't played any card this turn.</
                 </Target>
             </Trigger>
         </Target>
-        <Description>[3:RESOURCES]: The next creature you deploy this turn gains +[1:ATK]</Description>
+        <Description>[1:RESOURCES]: The next creature you deploy this turn gains +[1:ATK]</Description>
     </Card>
 </Cards>

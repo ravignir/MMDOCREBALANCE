@@ -45,7 +45,7 @@
         <Ability Type="ImmuneToRetaliate" />
         <Ability Type="AttackAnywhere" />
     </Card>
-    <Card  Rarity="Rare" Type="Unit" Name="Cre_Inf_022" DisplayName="Hellfire Juggernaut" Faction="Inferno" School="Fire" SubType="Magic|Melee" Race="Demon|Juggernaut" Cost="5" MightLevel="5" MagicLevel="1" Attack="7" Retaliate="3" HP="3" ID="266">
+    <Card  Rarity="Rare" Type="Unit" Name="Cre_Inf_022" DisplayName="Hellfire Juggernaut" Faction="Inferno" School="Fire" SubType="Magic|Melee" Race="Demon|Juggernaut" Cost="4" MightLevel="5" MagicLevel="1" Attack="7" Retaliate="3" HP="3" ID="266">
         <Ability Type="FireBurst" Value="4" />
 		<Ability Type="Tremple" />
 		<Description>When [THIS] attacks and destroys a creature, overkill damage is redirected to enemy Hero.</Description>
@@ -66,7 +66,7 @@
     <Card Rarity="Common" Type="Unit" Name="Cre_Nec_020" DisplayName="Moonsilk Skeleton" Faction="Necropolis" SubType="Melee" Race="Skeleton" Cost="2" MightLevel="2" Attack="2" Retaliate="1" HP="3" ID="268">
         <Ability Type="Crippling" Value="1" />
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Nec_021" DisplayName="Moonsilk Spinner" Faction="Necropolis" SubType="Melee|Shooter" Race="Spider" Cost="4" MightLevel="4" Attack="2" Retaliate="2" HP="5" ID="269">
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Nec_021" DisplayName="Moonsilk Spinner" Faction="Necropolis" SubType="Melee|Shooter" Race="Spider" Cost="4" MightLevel="3" Attack="2" Retaliate="2" HP="6" ID="269">
         <Ability Type="Crippling" Value="2" />
     </Card>
     <Card Rarity="Epic" Type="Unit" Name="Cre_Nec_023" DisplayName="Vampire Assassin" Faction="Necropolis" SubType="Melee" Race="Vampire|Assassin" Cost="4" MightLevel="3" Attack="1" Retaliate="2" HP="4" ID="270">
@@ -77,7 +77,7 @@
         </Trigger>
         <Description>When Vampire Assassin deals combat damage to a creature, destroy that creature.</Description>
     </Card>
-    <Card Rarity="Rare" Type="Unit" Name="Cre_Nec_022" DisplayName="Fate Sealer" Faction="Necropolis" School="Dark" SubType="Magic|Flyer" Race="Namtaru" Cost="6" MightLevel="3" MagicLevel="1" DestinyLevel="3" Attack="2" Retaliate="2" HP="5" ID="271">
+    <Card Rarity="Rare" Type="Unit" Name="Cre_Nec_022" DisplayName="Fate Sealer" Faction="Necropolis" School="Dark" SubType="Magic|Flyer" Race="Namtaru" Cost="5" MightLevel="3" MagicLevel="1" DestinyLevel="3" Attack="2" Retaliate="2" HP="5" ID="271">
         <Ability Type="Incorporeal" />
         <Ability Type="LifeDrain" Value="2" />
         <Trigger Type="OnUnitDeath" Side="Friendly">

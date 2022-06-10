@@ -152,8 +152,7 @@
         <Description>Adjacent fire creatures gain +[1:ATK].
 Adjacent dark creatures gain +[1:ATK].</Description>
 	</Card>
-	<Card Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Inf_093" DisplayName="Spell Stealer Heretic" Faction="Inferno" SubType="Magic|Melee" Race="Human|Wizard" Cost="6" MightLevel="4" MagicLevel="2" DestinyLevel="0" Attack="3" Retaliate="1" HP="6" ID="924" School="Dark">
-		<Ability Type="MagicChannel" Value="1"/>
+	<Card Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Inf_093" DisplayName="Spell Stealer Heretic" Faction="Inferno" SubType="Magic|Melee" Race="Human|Wizard" Cost="6" MightLevel="4" MagicLevel="4" DestinyLevel="0" Attack="2" Retaliate="0" HP="5" ID="924" School="Dark">
 		<Trigger Type="OnThisCardDeploy">
 			<Target Zone="Graveyard" CardType="Spell" Side="Friendly" Amount="1">
 				<CardFilter IncludeSchool="Fire|Dark" IncludeOngoingType="Immediate"/>
@@ -432,7 +431,7 @@ Whenever Skeleton Servant attacks, move 1 crippling counter from Skeleton Servan
 		<Description>Other friendly spirit creature gain +[1:ATK].
 Arcane Eagle gains +[1:ATK] for each other friendly spirit creature.</Description>
 	</Card>
-	<Card Rarity="Epic" Unique="True" Type="Unit" Name="Cre_Neu_094" DisplayName="Ariana, Chosen of the Void" Faction="Neutral" School="Prime" SchoolsAligned="True" SubType="Magic|Shooter" Race="Human|Wizard" Cost="7" MightLevel="3" MagicLevel="4" DestinyLevel="0" Attack="2" Retaliate="1" HP="7" ID="950">
+	<Card Rarity="Epic" Unique="True" Type="Unit" Name="Cre_Neu_094" DisplayName="Ariana, Chosen of the Void" Faction="Neutral" School="Prime" SchoolsAligned="True" SubType="Magic|Shooter" Race="Human|Wizard" Cost="7" MightLevel="3" MagicLevel="4" DestinyLevel="0" Attack="2" Retaliate="1" HP="6" ID="950">
 		<Ability Type="ImmuneToRetaliate"/>
 		<Ability Type="PrimeAligned"/>
 		<Trigger Type="OnThisCardDeploy">

@@ -21,15 +21,9 @@
 				<Effect Type="IncreaseLevel" Value="1" LevelType="Magic"/>
 			</Target>
 		</Trigger>
-		<Trigger Type="OnThisCardDeath">
-            <Target Zone="BattlegroundColumn" CardType="Unit" Amount="FromTrigger" BattlegroundPositionState="DontCare">
-				<CardFilter ExcludeRaces="Construct"/>
-				<Effect Type="Damage" Value="3"/>
-			</Target>
-		</Trigger>
-		<Description>When [THIS] dies, increase your [MAGIC] level by 1, and deal 3 damage to all non-construct creature of the same row.</Description>
+		<Description>When [THIS] dies, increase your [MAGIC] level by 1.</Description>
 	</Card>
-	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Aca_102" DisplayName="Power Blast Titan" Faction="Academy" School="Prime" SubType="Magic|Shooter" Race="Construct|Titan" Cost="4" MightLevel="4" MagicLevel="4" DestinyLevel="0" Attack="3" Retaliate="2" HP="7" ID="1008">
+	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Aca_102" DisplayName="Power Blast Titan" Faction="Academy" School="Prime" SubType="Magic|Shooter" Race="Construct|Titan" Cost="4" MightLevel="4" MagicLevel="4" DestinyLevel="0" Attack="3" Retaliate="2" HP="6" ID="1008">
 		<Ability Type="ImmuneToRetaliate"/>
 		<Ability Type="Shockwave" Value="2" />
 		<Trigger Type="OnUnitKillUnit" DamageIncludeFlags="Splash" Side="Friendly" ExecuteOncePerTransaction="True">
@@ -38,7 +32,7 @@
 				<Variable Type="UnitAttackCount" FromTrigger="True"/>
 				<Condition Operator="LesserThan" ValueA="Variable" ValueB="2"/>
 				<Effect Type="AdditionalAttack" Value="1"/>
-            </Target>
+      </Target>
 		</Trigger>
 		<Description>Whenever a friendly construct destory a enemy with blast damage for the first time in a turn, it gains an additional attack.</Description>
 	</Card>
@@ -79,7 +73,7 @@
         </Target>
 		<Description>Adjacent friendly human creatures gain +[1:RET] and Perfect Retaliation.</Description>
 	</Card>
-	<Card Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Hav_102" DisplayName="Blind Justicar" Faction="Haven" SubType="Shooter" Race="Human|Archer" Cost="4" MightLevel="4" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="1" HP="7" ID="1012">
+	<Card Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Hav_102" DisplayName="Blind Justicar" Faction="Haven" SubType="Shooter" Race="Human|Archer" Cost="4" MightLevel="4" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="1" HP="6" ID="1012">
 		<Ability Type="ImmuneToRetaliate"/>
 		<Trigger Type="OnThisCardDeploy">
 			<Target Zone="Battleground" CardType="Unit" Amount="1" Side="Friendly" />		
@@ -176,10 +170,10 @@
 		</Target>
 		<Description>Friendly creatures with Infect gain Infect Blast X, where X is equal to its Infect value.</Description>
 	</Card>
-	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Nec_103" DisplayName="Namtaru Contagion" Faction="Necropolis" SubType="Magic|Shooter" Race="Namtaru" Cost="5" MightLevel="4" MagicLevel="2" DestinyLevel="0" Attack="3" Retaliate="2" HP="6" ID="1021" School="Prime">
+	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Nec_103" DisplayName="Ichor Weaver" Faction="Necropolis" SubType="Magic|Shooter" Race="Namtaru" Cost="5" MightLevel="4" MagicLevel="2" DestinyLevel="0" Attack="3" Retaliate="2" HP="6" ID="1021" School="Prime">
 		<Ability Type="ImmuneToRetaliate"/>
 		<Ability Type="Infect" Value="1"/>	
-		<Variable Type="LastAliveCounterCount" CounterType="Poison" FromTrigger="True"/>		
+		<Variable Type="LastAliveCounterCount" CounterType="Poison" FromTrigger="True"/>	
 		<Trigger Type="OnUnitDeath">
 			<Target Zone="Battleground" Amount="Variable" CardType="Unit" Random="True" AllowDuplicate="True">
 				<Effect Type="AddCounter" CounterType="Poison" Value="1"/>

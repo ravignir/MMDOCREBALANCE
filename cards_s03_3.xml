@@ -42,8 +42,9 @@ When a flyer creature is deployed on enchanted line, destroy it and destroy Air 
     <!--....................................................................-->
     <!-- Spells - Dark -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Spell" Name="Spe_Dar_050" DisplayName="Shared Agony" School="Dark" Cost="2" MagicLevel="2" ID="576">
+    <Card Rarity="Common" Type="Spell" Name="Spe_Dar_050" DisplayName="Shared Agony" School="Dark" Cost="1" MagicLevel="2" ID="576">
         <Ongoing Duration="Permanent" />
+        <Ability Type="Endurable"/>
         <Target Zone="Battleground" CardType="Unit" Amount="1" />
         <Trigger Type="OnDamageHero" Side="Friendly">
             <Target Zone="Battleground" CardType="Unit" Amount="Parent">
@@ -113,8 +114,9 @@ All melee creatures gain Anchored.</Description>
     <!--....................................................................-->
     <!-- Spells - Fire -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Spell" Name="Spe_Fir_050" DisplayName="Fiery Death" School="Fire" Cost="2" MagicLevel="2" ID="582">
+    <Card Rarity="Common" Type="Spell" Name="Spe_Fir_050" DisplayName="Fiery Death" School="Fire" Cost="3" MagicLevel="3" ID="582">
         <Ongoing Duration="Permanent" />
+        <Ability Type="Endurable"/>
         <Target Zone="Battleground" Amount="1" CardType="Unit" />
         <Trigger Type="OnEnchantedCardDeath">
             <Target Zone="BattlegroundPosition" CardType="Unit" Amount="FromTrigger" Shape="AdjacentOnly">
@@ -131,12 +133,18 @@ When enchanted creature dies, deal 2 damage to all adjacent creatures.</Descript
         <Description>Deal 2 damage to all creatures on target line.</Description>
     </Card>
     <Card Rarity="Rare" Type="Spell" Name="Spe_Fir_052" DisplayName="Mass Rage" School="Fire" Cost="3" MagicLevel="3" ID="584">
-        <Ongoing Duration="Permanent" />
+        <Variable Type="TargetCount">
+          <Target Zone="Battleground" CardType="Unit" Amount="All" />
+        </Variable>
+        <Ongoing Duration="FromCondition">
+          <Condition Operator="GreaterThan" ValueA="Variable" ValueB="0" />
+        </Ongoing>
         <Target Zone="Battleground" Amount="All" CardType="Unit">
             <Effect Type="ModifyAbility" Ability="Berserk" />
         </Target>
-        <Description>Permanent:
-All creatures gain Berserk.</Description>
+        <Description>
+          Permanent:
+          All creatures gain Berserk. When there are no creatures on the battleground, destroy [THIS].</Description>
     </Card>
     <!--....................................................................-->
     <!-- Spells - Light -->
@@ -220,7 +228,7 @@ Creatures on enchanted row with [2:ATK] or less gain Cannot Attack.</Description
         <Description>Permanent:
 Friendly creatures cannot be prevented from attacking and are unaffected by Berserk.</Description>
     </Card>
-    <Card Rarity="Rare" Type="Spell" Name="Spe_Wat_052" DisplayName="Ink Warrior" School="Water" Cost="5" MagicLevel="4" ID="593">
+    <Card Rarity="Rare" Type="Spell" Name="Spe_Wat_052" DisplayName="Ink Warrior" School="Water" Cost="4" MagicLevel="4" ID="593">
         <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="1">
             <CardFilter ExcludeUnique="True" />
             <Effect Type="Clone" />
@@ -243,28 +251,34 @@ Friendly creatures cannot be prevented from attacking and are unaffected by Bers
         </Target>
         <Description>[2:RESOURCES]: Until end of turn, creatures with a base [ATK] of 1 or less gain +[1:ATK]</Description>
     </Card>
-    <Card  Rarity="Uncommon" Type="Event" Name="Eve_Neu_051" DisplayName="Eye of the Mana Storm" Cost="3" Faction="Neutral" ID="595">
+    <Card  Rarity="Uncommon" Type="Event" Name="Eve_Neu_051" DisplayName="Eye of the Mana Storm" Cost="2" Faction="Neutral" ID="595">
         <Target Zone="Battleground" CardType="Unit" Amount="1" ForceExecute="True" Persistent="True">
             <Effect Type="ModifyAbility" Ability="MagicShield" Duration="UntilYourNextTurn" />
         </Target>
-        <Description>[3:RESOURCES]: Until your next turn, target creature gains Magic Shield.</Description>
-		<DescriptionChinese>[3:RESOURCES]: 持续到本方下回合开始，指定生物获得魔法护盾能力。</DescriptionChinese>
+        <Description>[2:RESOURCES]: Until your next turn, target creature gains Magic Shield.</Description>
+		<DescriptionChinese>[2:RESOURCES]: 持续到本方下回合开始，指定生物获得魔法护盾能力。</DescriptionChinese>
 	</Card>
-    <Card Rarity="Rare" Type="Event" Name="Eve_Neu_052" DisplayName="Graduation Day" Cost="1" Faction="Neutral" ID="596">
+    <Card NotLocalized="True" Rarity="Rare" Type="Event" Name="Eve_Neu_052" DisplayName="Graduation Day" Cost="0" Faction="Neutral" ID="596">
         <Ongoing Duration="UntilEndOfTurn" />
         <Target Zone="Hero" Amount="All" Side="Friendly" NeedActivation="True" Persistent="True">
             <Effect Type="GlobalEffect" GlobalEffectType="RevealLibraryTop" />
         </Target>
         <Target Zone="Hero" Amount="All" Side="Friendly" NeedActivation="True" Persistent="True">
             <Variable Type="LibraryTopCard" Side="Friendly">
-                <CardFilter IncludeCardType="Spell" />
+              <CardFilter IncludeCardType="Spell" />
             </Variable>
-            <Condition Operator="GreaterThan" ValueA="Variable" ValueB="0" />
+            <Variable2 Type="CardPlayedCount" Side="Friendly">
+              <CardFilter IncludeCardType="Spell" />
+            </Variable2>
+            <Condition Operator="And" ValueA="Condition" ValueB="Condition">
+              <Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+              <Condition Operator="LesserThan" ValueA="Variable2" ValueB="1"/>
+            </Condition>
             <Effect Type="GlobalEffect" GlobalEffectType="ModifyCost" Value="-1">
                 <CardFilter IncludeCardType="Spell" />
             </Effect>
         </Target>
-        <Description>[1:RESOURCES]: Until end of turn, play with the top card of your library revealed. While that card is a spell card, your spells cost [1:RESOURCES] less to play.</Description>
+        <Description>[0:RESOURCES]: Until end of turn, play with the top card of your library revealed. While that card is a spell card, your first spell cost [1:RESOURCES] less to play.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Event" Name="Eve_Neu_053" DisplayName="Rise of the Nethermancer" Cost="1" Faction="Neutral" ID="597">
         <Target Zone="None" Side="Friendly" ForceExecute="True">

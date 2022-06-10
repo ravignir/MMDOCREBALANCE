@@ -20,10 +20,10 @@
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_042" DisplayName="Griffin Mounted Spearman" Faction="Haven" SubType="Melee" Race="Human|Knight" Cost="4" MightLevel="4" Attack="3" Retaliate="2" HP="6" ID="347">
         <Ability Type="Swift" />
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_043" DisplayName="Griffin Knight" Faction="Haven" SubType="Flyer" Race="Human|Knight" Cost="3" MightLevel="3" Attack="1" Retaliate="2" HP="5" ID="348">
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_043" DisplayName="Griffin Knight" Faction="Haven" SubType="Flyer" Race="Human|Knight" Cost="3" MightLevel="3" Attack="1" Retaliate="2" HP="6" ID="348">
         <Ability Type="FlyerGuard" Value="2" />
     </Card>
-    <Card Rarity="Rare" Type="Unit" Name="Cre_Hav_044" DisplayName="Immaculate Glory" Faction="Haven" School="Light" SubType="Magic|Flyer" Race="Spirit" Cost="5" MightLevel="4" MagicLevel="2" Attack="3" Retaliate="3" HP="6" ID="349">
+    <Card Rarity="Rare" Type="Unit" Name="Cre_Hav_044" DisplayName="Immaculate Glory" Faction="Haven" School="Light" SubType="Magic|Flyer" Race="Spirit" Cost="5" MightLevel="4" MagicLevel="2" Attack="3" Retaliate="3" HP="7" ID="349">
         <Ability Type="DarkWard" />
         <Target Zone="Battleground" CardType="Unit" Amount="Self">
             <Effect Type="PlayEffect" PlayEffectType="CannotPutCounter" Duration="Static" />
@@ -47,7 +47,7 @@
         <Ability Type="CannotAttack" />
         <Ability Type="FireBurst" Value="4" />
     </Card>
-    <Card Rarity="Common" Type="Unit" Name="Cre_Inf_041" DisplayName="Hellfire Slave" Faction="Inferno" School="Fire" SubType="Shooter" Race="Demon|Juggernaut" Cost="4" MightLevel="4" Attack="4" Retaliate="4" HP="4" ID="352">
+    <Card Rarity="Common" Type="Unit" Name="Cre_Inf_041" DisplayName="Hellfire Slave" Faction="Inferno" School="Fire" SubType="Shooter" Race="Demon|Juggernaut" Cost="4" MightLevel="3" Attack="4" Retaliate="4" HP="4" ID="352">
         <Ability Type="ImmuneToRetaliate" />
     </Card>
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Inf_042" DisplayName="Chaos Lacerator" Faction="Inferno" School="Fire" SubType="Magic|Melee" Race="Demon|Tormentor" Cost="2" MightLevel="2" MagicLevel="1" DestinyLevel="1" Attack="2" Retaliate="0" HP="3" ID="353">
@@ -108,16 +108,16 @@ When Chaos Seer leaves the battleground during opponent's turn, they discard a c
         <Ability Type="CannotAttack" />
         <Ability Type="Regenerate" Value="1" />
     </Card>
-    <Card Rarity="Common" Type="Unit" Name="Cre_Nec_041" DisplayName="Skeleton Archer" Faction="Necropolis" SubType="Shooter" Race="Skeleton" Cost="3" MightLevel="3" Attack="2" Retaliate="2" HP="5" ID="358">
+    <Card Rarity="Common" Type="Unit" Name="Cre_Nec_041" DisplayName="Skeleton Archer" Faction="Necropolis" SubType="Shooter" Race="Skeleton" Cost="3" MightLevel="2" Attack="2" Retaliate="2" HP="5" ID="358">
         <Ability Type="ImmuneToRetaliate" />
     </Card>
     <Card Rarity="Common" Type="Unit" Name="Cre_Nec_042" DisplayName="Untamed Wraith" Faction="Necropolis" School="Prime" SubType="Magic|Flyer" Race="Ghost" Cost="3" MightLevel="3" MagicLevel="1" Attack="2" Retaliate="2" HP="4" ID="360">
         <Ability Type="Incorporeal" />
     </Card>
-    <Card Rarity="Rare" Type="Unit" Name="Cre_Nec_043" DisplayName="Living Nightmare" Faction="Necropolis" School="Dark" SubType="Melee" Race="Zombie|Hound" Cost="5" MightLevel="4" Attack="3" Retaliate="3" HP="6" ID="359">
+    <Card Rarity="Rare" Type="Unit" Name="Cre_Nec_043" DisplayName="Living Nightmare" Faction="Necropolis" School="Dark" SubType="Melee" Race="Zombie|Hound" Cost="4" MightLevel="5" Attack="3" Retaliate="3" HP="6" ID="359">
         <Ability Type="Fear" Value="3" />
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Nec_044" DisplayName="Soul-Consuming Lich" Faction="Necropolis" School="Dark" SubType="Melee" Race="Lich" Cost="4" MightLevel="4" Attack="2" Retaliate="1" HP="7" ID="361">
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Nec_044" DisplayName="Soul-Consuming Lich" Faction="Necropolis" School="Dark" SubType="Melee" Race="Lich" Cost="4" MightLevel="4" Attack="2" Retaliate="1" HP="8" ID="361">
         <Trigger Type="OnUnitDeath" Side="Any">
             <Target Zone="Battleground" CardType="Unit" Amount="Self">
                 <Effect Type="Heal" Value="2" />
@@ -142,7 +142,7 @@ When Chaos Seer leaves the battleground during opponent's turn, they discard a c
     <Card Rarity="Common" Type="Unit" Name="Cre_San_040" DisplayName="Waterfall Guardians" Faction="Sanctuary" School="Water" SubType="Melee" Race="Spirit" Cost="2" MightLevel="1" Attack="0" Retaliate="2" HP="5" ID="363">
         <Ability Type="Hypnotize" />
     </Card>
-    <Card Rarity="Common" Type="Unit" Name="Cre_San_041" DisplayName="Naga Yokujin" Faction="Sanctuary" SubType="Shooter" Race="Naga|Archer" Cost="3" MightLevel="3" Attack="2" Retaliate="2" HP="5" ID="364">
+    <Card Rarity="Common" Type="Unit" Name="Cre_San_041" DisplayName="Naga Yokujin" Faction="Sanctuary" SubType="Shooter" Race="Naga|Archer" Cost="3" MightLevel="3" Attack="2" Retaliate="1" HP="6" ID="364">
         <Ability Type="ImmuneToRetaliate" />
     </Card>
     <Card Rarity="Common" Type="Unit" Name="Cre_San_042" DisplayName="Okane no Okane" Faction="Sanctuary" School="Prime" SubType="Shooter" Race="Eel" Cost="3" MightLevel="2" DestinyLevel="1" Attack="2" Retaliate="1" HP="4" ID="365">
@@ -187,12 +187,12 @@ When Chaos Seer leaves the battleground during opponent's turn, they discard a c
         <Ability Type="ImmuneToRetaliate" />
         <Ability Type="Swift" />
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Str_043" DisplayName="Blackskull Shredder" Faction="Stronghold" School="Air" SubType="Melee" Race="Orc|Warrior" Cost="4" MightLevel="4" Attack="2" Retaliate="0" HP="4" ID="372">
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Str_043" DisplayName="Blackskull Shredder" Faction="Stronghold" School="Air" SubType="Melee" Race="Orc|Warrior" Cost="4" MightLevel="4" Attack="2" Retaliate="0" HP="3" ID="372">
         <Ability Type="QuickAttack" />
         <Ability Type="Swift" />
     </Card>
     <Card Rarity="Rare" Type="Unit" Name="Cre_Str_044" DisplayName="Bloodfrenzied Wyvern" Faction="Stronghold" SubType="Flyer" Race="Wyvern" Cost="5" MightLevel="5" Attack="3" Retaliate="3" HP="8" ID="373">
-        <Ability Type="BloodThirst" Value="1" />
+		<Ability Type="Bloodthirst" Value="1"/>
     </Card>
     <Card Rarity="Epic" Type="Unit" Name="Cre_Str_045" DisplayName="Blackskull Cyclops" Faction="Stronghold" SubType="Melee" Race="Cyclops" Cost="6" MightLevel="6" Attack="3" Retaliate="0" HP="6" ID="374">
         <Ability Type="DoubleAttack" />
@@ -232,6 +232,7 @@ When Chaos Seer leaves the battleground during opponent's turn, they discard a c
     <Card Rarity="Rare" Type="Unit" Name="Cre_Neu_044" DisplayName="Greater Earth Elemental" Faction="Neutral" School="Earth" SubType="Magic|Melee" Race="Spirit" Cost="6" MightLevel="5" MagicLevel="2" Attack="3" Retaliate="4" HP="9" ID="379">
         <Ability Type="EarthHeal" />
         <Ability Type="Towering" />
+        <Ability Type="Anchored" />
     </Card>
     <Card Rarity="Rare" Type="Unit" Name="Cre_Neu_045" DisplayName="Void Keeper" Faction="Neutral" School="Prime" SubType="Magic|Shooter" Race="Human|Wizard" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="2" Attack="2" Retaliate="1" HP="5" ID="380">
         <Ability Type="ImmuneToRetaliate" />
@@ -258,11 +259,11 @@ When Chaos Seer leaves the battleground during opponent's turn, they discard a c
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Inf_046" DisplayName="Lurker in the Dark" Faction="Inferno" School="Dark" SubType="Melee" Race="Demon|Breeder" Cost="2" MightLevel="3" Attack="2" Retaliate="0" HP="4" ID="383">
         <Ability Type="Fear" Value="2" />
     </Card>
-    <Card Rarity="Common" Type="Unit" Name="Cre_Inf_047" DisplayName="Ur-Khrag Enforcer" Faction="Inferno" SubType="Melee" Race="Demon|Juggernaut" Cost="5" MightLevel="5" Attack="4" Retaliate="5" HP="7" ID="384">
+    <Card Rarity="Common" Type="Unit" Name="Cre_Inf_047" DisplayName="Ur-Khrag Enforcer" Faction="Inferno" SubType="Melee" Race="Demon|Juggernaut" Cost="5" MightLevel="5" Attack="5" Retaliate="5" HP="7" ID="384">
         <Ability Type="SweepAttack" />
         <Ability Type="Berserk" />
     </Card>
-    <Card  Rarity="Uncommon" Type="Unit" Name="Cre_Nec_046" DisplayName="Dark Wood Hermit" Faction="Necropolis" School="Earth" SubType="Magic|Shooter" Race="Lich" Cost="4" MightLevel="4" MagicLevel="1" Attack="2" Retaliate="1" HP="6" ID="385">
+    <Card  Rarity="Uncommon" Type="Unit" Name="Cre_Nec_046" DisplayName="Dark Wood Hermit" Faction="Necropolis" School="Earth" SubType="Magic|Shooter" Race="Lich" Cost="4" MightLevel="3" MagicLevel="1" Attack="2" Retaliate="1" HP="6" ID="385">
         <Ability Type="ImmuneToRetaliate" />
 		<Ability Type="Infect" Value="1"/>
         <Target Zone="Battleground" CardType="Unit" Amount="AllOther" Side="Friendly">
@@ -294,7 +295,7 @@ When Chaos Seer leaves the battleground during opponent's turn, they discard a c
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_San_047" DisplayName="Venerable Kappa" Faction="Sanctuary" SubType="Melee" Race="Spirit" Cost="4" MightLevel="4" DestinyLevel="1" Attack="3" Retaliate="3" HP="6" ID="388">
         <Ability Type="FortuneWard" />
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Str_047" DisplayName="Blackskull Spellsmasher" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="4" MightLevel="4" Attack="2" Retaliate="2" HP="6" ID="389">
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Str_047" DisplayName="Blackskull Spellsmasher" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="4" MightLevel="4" Attack="2" Retaliate="2" HP="7" ID="389">
         <Trigger Type="OnThisPreAttack">
             <Target Zone="Battleground" CardType="Spell" Side="Any" Amount="1" Cancelable="False">
                 <Effect Type="Kill" />

@@ -44,7 +44,7 @@
 	<!-- Heroes Haven -->
 	<!--...............................................................................-->
 	<Card Rarity="Heroic" Type="Hero" Name="Her_Hav_008" DisplayName="Charity, Imperial Commander" Faction="Haven" School="Light|Earth" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="701">
-		<Description>[2:RESOURCES]: Target friendly Human creature's [ATK] is equal to its [RET] value until end of turn.</Description>
+		<Description>[1:RESOURCES]: Target friendly Human creature's [ATK] is equal to its [RET] value until end of turn.</Description>
 		<Target Zone="None" Side="Friendly">
 			<Effect Type="ChoiceOption"/>
 			<Subgroup>
@@ -52,9 +52,9 @@
 				<!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
 				<Target Zone="None" Side="Friendly">
 					<Variable Type="Resources" Side="Friendly"/>
-					<Condition Operator="GreaterThan" ValueA="Variable" ValueB="1"/>
-					<Option Value="4" DisplayText="[2:RESOURCES]: Humans"/>
-					<Effect Type="GainResources" Value="-2" Duration="Immediate"/>
+					<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+					<Option Value="4" DisplayText="[1:RESOURCES]: Humans"/>
+					<Effect Type="GainResources" Value="-1" Duration="Immediate"/>
 				</Target>
 				<Target Zone="Battleground" Amount="1" CardType="Unit" Side="Friendly" ForceExecute="True">
 					<Option Value="4"/>
@@ -68,7 +68,7 @@
 	<!-- Heroes Inferno -->
 	<!--...............................................................................-->
 	<Card Rarity="Heroic" Type="Hero" Name="Her_Inf_008" DisplayName="Deleb, Princess of Pain" Faction="Inferno" School="Air|Fire" MightLevel="2" MagicLevel="0" DestinyLevel="1" HP="20" ID="702">
-		<Description>[2:RESOURCES]: Destroy a friendly Demon creature, deploy a Demon creature from your hand for free. You must still meet its level requirements.</Description>
+		<Description>[1:RESOURCES]: Destroy a friendly Demon creature, deploy a Demon creature from your hand for free. You must still meet its level requirements.</Description>
 		<Target Zone="None" Side="Friendly">
 			<Effect Type="ChoiceOption"/>
 			<Subgroup>
@@ -76,9 +76,9 @@
 				<!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
 				<Target Zone="None" Side="Friendly">
 					<Variable Type="Resources" Side="Friendly"/>
-					<Condition Operator="GreaterThan" ValueA="Variable" ValueB="1"/>
-					<Option Value="4" DisplayText="[2:RESOURCES]: Demon"/>
-					<Effect Type="GainResources" Value="-2" Duration="Immediate"/>
+					<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+					<Option Value="4" DisplayText="[1:RESOURCES]: Demon"/>
+					<Effect Type="GainResources" Value="-1" Duration="Immediate"/>
 				</Target>
 				<Target Zone="Battleground" Amount="1" CardType="Unit" Side="Friendly">
 					<CardFilter IncludeRaces="Demon"/>
@@ -113,7 +113,7 @@
 	<!--...............................................................................-->
 	<!-- Heroes Sanctuary -->
 	<!--...............................................................................-->
-	<Card Rarity="Heroic" Type="Hero" Name="Her_San_008" DisplayName="Kenage, Master Strategist" Faction="Sanctuary" School="Water|Light" MightLevel="2" MagicLevel="0" DestinyLevel="1" HP="20" ID="704">
+	<Card Rarity="Heroic" Type="Hero" Name="Her_San_008" DisplayName="Kenage, Master Strategist" Faction="Sanctuary" School="Light|Earth" MightLevel="2" MagicLevel="0" DestinyLevel="1" HP="20" ID="704">
 		<Description>[1:RESOURCES]: Naga creatures in your hand cost [3:RESOURCES].</Description>
 		<Target Zone="None" Side="Friendly">
 			<Effect Type="ChoiceOption"/>
@@ -138,7 +138,7 @@
 	<!-- Heroes Stronghold -->
 	<!--...............................................................................-->
 	<Card Rarity="Heroic" Type="Hero" Name="Her_Str_008" DisplayName="Matewa, Voice of Thunder" Faction="Stronghold" School="Air|Water" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="705">
-		<Description>[1:RESOURCES]: Do not remove enrage counters from target Orc creature after it attacks this turn.</Description>
+		<Description>[0:RESOURCES]: Do not remove enrage counters from target Orc creature after it attacks this turn.</Description>
 		<Ongoing Duration="UntilEndOfTurn"/>
 		<Target Zone="None" Side="Friendly">
 			<Effect Type="ChoiceOption"/>
@@ -146,10 +146,7 @@
 				<TemplateEffect Name="HeroAbilities"/>
 				<!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
 				<Target Zone="None" Side="Friendly">
-					<Variable Type="Resources" Side="Friendly"/>
-					<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
-					<Option Value="4" DisplayText="[1:RESOURCES]: Keep Enrage"/>
-					<Effect Type="GainResources" Value="-1" Duration="Immediate"/>
+					<Option Value="4" DisplayText="[0:RESOURCES]: Keep Enrage"/>
 				</Target>
 				<Target Zone="Battleground" CardType="Unit" Amount="1" ForceExecute="True">
 					<CardFilter IncludeRaces="Orc"/>

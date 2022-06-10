@@ -9,7 +9,7 @@
 	<!--...............................................................................-->
 	<!-- Creatures - Academy -->
 	<!--...............................................................................-->
-	<Card Rarity="Uncommon" Type="Unit" Name="Cre_Aca_070" DisplayName="Chronicler" Faction="Academy" SubType="Magic|Melee" Race="Human|Wizard" Cost="3" MightLevel="2" MagicLevel="1" DestinyLevel="1" Attack="2" Retaliate="1" HP="4" ID="708" Unique="False">
+	<Card Rarity="Uncommon" Type="Unit" Name="Cre_Aca_070" DisplayName="Chronicler" Faction="Academy" SubType="Magic|Melee" Race="Human|Wizard" Cost="3" MightLevel="2" MagicLevel="1" DestinyLevel="1" Attack="2" Retaliate="1" HP="5" ID="708" Unique="False">
 		<Trigger Type="OnUnitDeath" Side="Friendly">
 			<CardFilter IncludeRaces="Beastmen"/>
 			<Target Zone="None" Side="Friendly">
@@ -88,28 +88,29 @@ Friendly Beastman creatures gain Charge.</Description>
 		</Target>
 		<Description>Friendly Human creatures gain: "While this creature has 2 remaining health or more when this creature dies set its remaining health to 1 instead."</Description>
 	</Card>
-	<Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_072" DisplayName="Praetorian Captain" Faction="Haven" SubType="Melee" Race="Human|Knight" Cost="4" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="1" Retaliate="2" HP="6" ID="715" Unique="False">
+	<Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_072" DisplayName="Praetorian Captain" Faction="Haven" SubType="Melee" Race="Human|Knight" Cost="4" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="1" Retaliate="2" HP="7" ID="715" Unique="False">
 		<Ability Type="CombatGuard" Value="1"/>
 	</Card>
 	<Card Rarity="Common" Type="Unit" Name="Cre_Hav_073" DisplayName="Healing Sister" Faction="Haven" School="Light" SubType="Magic|Shooter" Race="Human|Priest" Cost="2" MightLevel="2" MagicLevel="1" DestinyLevel="0" Attack="1" Retaliate="1" HP="5" ID="716" Unique="False">
 		<Ability Type="ImmuneToRetaliate"/>
 		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
 			<CardFilter IncludeRaces="Human" IncludeOccupant="True"/>
-			<Effect Type="ModifyAbility" Ability="Mending"/>
-		</Target>
-		<Description>Friendly Human creatures at a building gain Mending.</Description>
+      <Effect Type="ModifyMaxHp" Value="1"/>
+      <Effect Type="ModifyAbility" Ability="Mending"/>
+    </Target>
+		<Description>Friendly Human creatures at a building gain +[1:HEALTH] and Mending.</Description>
 	</Card>
 	<Card Rarity="Common" Type="Unit" Name="Cre_Hav_074" DisplayName="Falcon Marksman" Faction="Haven" SubType="Shooter" Race="Human|Archer" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="1" HP="5" ID="717" Unique="False">
 		<Ability Type="ImmuneToRetaliate"/>
 		<Target Zone="Battleground" Amount="Self">
 			<CardFilter IncludeOccupant="True"/>
-			<Effect Type="ModifyAbility" Ability="PreemptiveStrike"/>
+			<Effect Type="ModifyAttack" Value="1"/>
 		</Target>
 		<Target Zone="Battleground" Amount="Self">
 			<CardFilter IncludeOccupant="True"/>
 			<Effect Type="ModifyRetaliate" Value="2"/>
 		</Target>
-		<Description>While Falcon Marksman is at a building, it gains +[2:RET] and Preemptive Strike.</Description>
+		<Description>While Falcon Marksman is at a building, it gains +[1:ATK] and +[2:RET].</Description>
 	</Card>
 	<!--...............................................................................-->
 	<!-- Creatures - Inferno -->
@@ -118,11 +119,11 @@ Friendly Beastman creatures gain Charge.</Description>
 		<Variable Type="HeroIsUsed" Side="Friendly"/>
 		<Trigger Type="OnThisCardDeploy">
 			<Target Zone="None" Side="Friendly" Cancelable="False">
-                <Effect Type="IncreaseLevel" Value="-1" LevelType="Might" />
-            </Target>
+        <Effect Type="IncreaseLevel" Value="-1" LevelType="Might" />
+      </Target>
 		</Trigger>
-		<Description>When Lava Spawn enters the battleground, decrease your [MIGHT] level by 1.</Description>
-		<DescriptionEnglish>When Lava Spawn enters the battleground, decrease your [MIGHT] level by 1.</DescriptionEnglish>
+    <Description>When Lava Spawn enters the battleground, decrease your [MIGHT] level by 1.</Description>
+    <DescriptionEnglish>When Lava Spawn enters the battleground, decrease your [MIGHT] level by 1.</DescriptionEnglish>
 		<DescriptionChinese>当[THIS]进入战场时，降低你的[MIGHT]等级1级。</DescriptionChinese>
 		<DescriptionFrench>Lorsque l'Engeance de Lave entre sur le champ de bataille, réduisez votre niveau de [MIGHT] de 1.</DescriptionFrench>
 		<DescriptionGerman>Wenn Lavabrut das Schlachtfeld betritt, wird Eure [MIGHT]-Stufe um 1 vermindert.</DescriptionGerman>
@@ -177,7 +178,7 @@ Friendly Beastman creatures gain Charge.</Description>
 	<!--...............................................................................-->
 	<!-- Creatures - Necropolis -->
 	<!--...............................................................................-->
-	<Card Rarity="Common" Type="Unit" Name="Cre_Nec_070" DisplayName="Necromancer Apprentice" Faction="Necropolis" SubType="Magic|Shooter" Race="Human|Wizard" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="1" Attack="0" Retaliate="0" HP="3" ID="723" Unique="False">
+	<Card Rarity="Common" Type="Unit" Name="Cre_Nec_070" DisplayName="Necromancer Apprentice" Faction="Necropolis" SubType="Magic|Shooter" Race="Human|Wizard" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="1" Attack="1" Retaliate="0" HP="2" ID="723" Unique="False">
 		<Ability Type="ImmuneToRetaliate"/>
 		<Ability Type="Leadership" Value="1"/>
 	</Card>
@@ -185,7 +186,7 @@ Friendly Beastman creatures gain Charge.</Description>
 		<Ability Type="ImmuneToRetaliate"/>
 		<Ability Type="LifeDrain" Value="1"/>
 	</Card>
-	<Card Rarity="Epic" Type="Unit" Name="Cre_Nec_072" DisplayName="Putrid Dragon" Faction="Necropolis" School="Earth" SubType="Melee" Race="Zombie|Dragon" Cost="7" MightLevel="5" MagicLevel="0" DestinyLevel="0" Attack="3" Retaliate="3" HP="8" ID="725" Unique="False">
+	<Card Rarity="Epic" Type="Unit" Name="Cre_Nec_072" DisplayName="Putrid Dragon" Faction="Necropolis" School="Earth" SubType="Melee" Race="Zombie|Dragon" Cost="6" MightLevel="5" MagicLevel="0" DestinyLevel="0" Attack="3" Retaliate="3" HP="8" ID="725" Unique="False">
 		<Ability Type="Infect" Value="2"/>
 		<Ability Type="InfectBlast" Value="2"/>
 		<Target Zone="Battleground" Amount="Self">
@@ -210,7 +211,7 @@ Friendly Beastman creatures gain Charge.</Description>
 		<Description>Whenever a Vampire creature destroys a creature, heal 1 damage from your Hero.
 Whenever a friendly Vampire creature attacks a creature with [ATK] of 1 or less for the first time in a turn, it gains an additional attack.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Type="Unit" Name="Cre_Nec_074" DisplayName="Blood Ritualist" Faction="Necropolis" SubType="Flyer" Race="Vampire" Cost="3" MightLevel="2" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="0" HP="4" ID="727" Unique="False">
+	<Card Rarity="Uncommon" Type="Unit" Name="Cre_Nec_074" DisplayName="Blood Ritualist" Faction="Necropolis" SubType="Flyer" Race="Vampire" Cost="3" MightLevel="2" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="0" HP="5" ID="727" Unique="False">
 		<Ability Type="ImmuneToRetaliate"/>
 		<Variable Type="TargetCount">
 			<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
@@ -389,8 +390,9 @@ While there are fewer friendly creatures than enemy creatures on the battlegroun
 		<Description>When Damran, Chosen of the Thorns enters the battleground, put 3 poison counters distributed as you choose among up to 3 other target creatures.</Description>
 	</Card>
 	<Card Rarity="Epic" Type="Unit" Name="Cre_Neu_073" Unique="True" DisplayName="Anael, Chosen of the Light" Faction="Neutral" School="Light" SchoolsAligned="True" SubType="Magic|Flyer" Race="Angel" Cost="6" MightLevel="5" MagicLevel="2" DestinyLevel="0" Attack="5" Retaliate="4" HP="9" ID="746">
-		<Ability Type="LightAligned"/>
-		<Ability Type="Charge"/>
+    <Ability Type="LightAligned"/>
+    <Ability Type="DarkWard"/>
+    <Ability Type="Charge"/>
 		<Ability Type="PreemptiveStrike"/>
 		<Target Zone="Battleground" Amount="Self">
 			<Effect Type="PlayEffect" PlayEffectType="CannotPutCounter"/>

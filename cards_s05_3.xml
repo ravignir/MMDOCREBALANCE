@@ -40,7 +40,7 @@ Enchanted creature gains Swift and Charge.</Description>
 	<!--....................................................................-->
 	<Card Rarity="Common" Type="Spell" Name="Spe_Dar_070" DisplayName="Agonizing Purge" School="Dark" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="782" Unique="False">
 		<Target Zone="Battleground" Amount="1" CardType="Unit" Side="Enemy">
-			<Variable Type="CardChildrenCount" UseCurrentTarget="True"/>
+			<Variable Type="CardChildrenCount" UseCurrentTarget="True" ValueModifier="5x"/>
 			<Effect Type="Damage" Value="Variable"/>
 			<Effect Type="Cleanse"/>
 		</Target>
@@ -57,7 +57,7 @@ Enchanted creature gains Swift and Charge.</Description>
 		<Description>Enchant Creature. Permanent:
 When enchanted creature dies, deal 2 damage to its controller's hero.</Description>
 	</Card>
-	<Card Rarity="Uncommon" Type="Spell" Name="Spe_Dar_072" DisplayName="Death-Dodger" School="Dark" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="784" Unique="False">
+	<Card Rarity="Uncommon" Type="Spell" Name="Spe_Dar_072" DisplayName="Death-Dodger" School="Dark" Cost="1" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="784" Unique="False">
 		<Ongoing Duration="Permanent"/>
 		<Target Zone="Battleground" CardType="Unit" Amount="1">
 			<CardFilter ExcludeUnique="True"/>
@@ -118,9 +118,9 @@ All creatures gain +[1:ATK] and +[1:RET].</Description>
 	</Card>
 	<Card Rarity="Rare" Type="Spell" Name="Spe_Fir_072" DisplayName="Arkath's Wrath" School="Fire" Cost="5" MightLevel="0" MagicLevel="5" DestinyLevel="0" ID="790" Unique="False">
 		<Target Zone="Battleground" CardType="Unit" Amount="All">
-			<Effect Type="Damage" Value="5" DamageFlags="Spell|Fire|Magic|Enforced"/>
+			<Effect Type="Damage" Value="5" DamageFlags="Spell|Fire|Magic|Disintegrate"/>
 		</Target>
-		<Description>Deal 5 damage to all creatures. This damage cannot be prevented or reduced.</Description>
+		<Description>Deal 5 damage to all creatures. If a creature dies this way, banish it instead.</Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Spells - Light -->
@@ -206,7 +206,8 @@ Whenever a creature attacks or moves, deal 1 damage to it.</Description>
 	</Card>
 	<Card Rarity="Uncommon" Type="Spell" Name="Spe_Wat_071" DisplayName="Time Flow" School="Water" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="798" Unique="False">
 		<Ongoing Duration="Permanent"/>
-		<Target Zone="Battleground" CardType="Unit" Amount="1">
+    <Ability Type="Endurable"/>
+    <Target Zone="Battleground" CardType="Unit" Amount="1">
 			<Effect Type="ModifyAbility" Ability="Immobilized"/>
 			<Effect Type="ModifyAbility" Ability="FortuneWard"/>
 		</Target>
@@ -231,19 +232,17 @@ Other friendly ongoing Water spells cannot be destroyed by enemy effects.</Descr
 	<!-- //	##      ##  #   ##      #  ##    ##        ## -->
 	<!-- //	#####     ##    #####   #   #    ##     ##### -->
 	<!--....................................................................-->
-	<Card Rarity="Common" Type="Event" Name="Eve_Neu_070" DisplayName="Month of the Spider Queen" Cost="1" Faction="Neutral" ID="800" Unique="False">
-		<Ongoing Duration="UntilYourNextTurn"/>
-		<Target Zone="Battleground" Amount="All" NeedActivation="True">
-			<!-- This Target is used only to display the correct feedback -->
-			<CardFilter IncludeCardType="Unit|Hero"/>
-		</Target>
-		<Target Zone="Battleground" CardType="Unit" Amount="All" NeedActivation="True" Persistent="True">
+	<Card NotLocalized="True" Rarity="Common" Type="Event" Name="Eve_Neu_070" DisplayName="Month of the Spider Queen" Faction="Neutral" ID="800" Unique="False">
+    <Ongoing Duration="Permanent" />
+    <Target Zone="Battleground" Amount="All" />
+    <!-- Hack to add a permanent feedback -->
+    <Target Zone="Battleground" CardType="Unit" Amount="All">
 			<Effect Type="PlayEffect" PlayEffectType="CannotHeal"/>
 		</Target>
-		<Target Zone="Hero" Amount="All" Side="Any" NeedActivation="True" Persistent="True">
+		<Target Zone="Hero" Amount="All" Side="Any">
 			<Effect Type="PlayEffect" PlayEffectType="CannotHeal"/>
 		</Target>
-		<Description>[1:RESOURCES]: Until your next turn, creatures and heroes cannot be healed.</Description>
+		<Description>Ongoing: Creatures and heroes cannot be healed.</Description>
 	</Card>
 	<Card Rarity="Uncommon" Type="Event" Name="Eve_Neu_071" DisplayName="Week of the Elder Races" Cost="4" Faction="Neutral" ID="801" Unique="False">
 		<Ongoing Duration="UntilEndOfTurn"/>

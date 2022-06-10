@@ -56,8 +56,8 @@ The first time that one or more friendly Construct dies in a turn, return them t
 	<!--...................................................................-->
 	<!-- Fortune - Inferno -->
 	<!--...................................................................-->
-	<Card Rarity="Common" Unique="False" Type="Fortune" Name="For_Inf_080" DisplayName="Empowered Spell" Faction="Inferno" Cost="4" MightLevel="0" MagicLevel="4" DestinyLevel="3" ID="852">
-		<Ongoing Duration="Permanent"/>
+	<Card Rarity="Common" Unique="False" Type="Fortune" Name="For_Inf_080" DisplayName="Empowered Spell" Faction="Inferno" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="2" ID="852">
+		<Ongoing Duration="UntilYourNextTurn"/>
 		<Target Zone="Hero" Amount="All" Side="Any">
 			<Effect Type="GlobalEffect" GlobalEffectType="ModifyDamage" Value="2">
 				<CardFilter IncludeCardType="Spell" IncludeSchool="Fire"/>
@@ -95,7 +95,7 @@ If a fire spell would deal damage, it deals 2 more damage instead.</Description>
 		</Target>
 		<Description>Destroy target friendly creature and deploy five Skeleton melee-shooter token creatures with [1:ATK]/[0:RET]/[1:HEALTH] and Stackable at that creature battleground position.</Description>
 	</Card>
-	<Card Rarity="Common" Unique="False" Type="Fortune" Name="For_Nec_082" DisplayName="Undead Reinforcements" Faction="Necropolis" Cost="1" MightLevel="0" MagicLevel="0" DestinyLevel="0" ID="856">
+	<Card Rarity="Common" Unique="False" Type="Fortune" Name="For_Nec_082" DisplayName="Undead Reinforcements" Faction="Necropolis" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="0" ID="856">
 		<Target Zone="Battleground" Amount="All" Side="Friendly" CardType="Unit">
 			<CardFilter IncludeRaces="Skeleton" IncludeAbility="Stackable"/>
 			<Effect Type="IncreaseStackSize" Value="1"/>
@@ -154,8 +154,8 @@ At the beginning of opponent's turn, they must choose one creature they control 
 			<Effect Type="MoveCardTo" Destination="Library"/>
 			<Subgroup>
 				<Target Zone="Library" Side="Enemy" Amount="4">
-					<Effect Type="Banish"/>
-				</Target>
+          <Effect Type="MoveCardTo" Destination="Graveyard" />
+        </Target>
 				<Target Side="Enemy">
 					<Effect Type="Shuffle" CardHolder="Library"/>
 				</Target>
@@ -167,7 +167,7 @@ At the beginning of opponent's turn, they must choose one creature they control 
 				</Target>
 			</Subgroup>
 		</Target>
-		<Description>Shuffle opponent's hand into their library, then banish 4 cards from their library. Opponent draw a number of cards equal to the number of card previously in their hand.</Description>
+		<Description>Shuffle opponent's hand into their library, then put 4 cards from their library into their graveyard. Opponent draw a number of cards equal to the number of card previously in their hand.</Description>
 	</Card>
 	<!--....................................................................-->
 	<!-- Fortune - Stronghold -->
@@ -252,7 +252,7 @@ Whenever a friendly Mercenary creature deals combat damage, gain [2:RESOURCES].<
 	<!--....................................................................-->
 	<!-- Building - Haven -->
 	<!--....................................................................-->
-	<Card Rarity="Common" Unique="False" Type="Building" Name="Bui_Hav_080" DisplayName="Barracks" Faction="Haven" Cost="2" MightLevel="4" MagicLevel="0" DestinyLevel="0" ID="869">
+	<Card Rarity="Common" Unique="False" Type="Building" Name="Bui_Hav_080" DisplayName="Barracks" Faction="Haven" Cost="3" MightLevel="4" MagicLevel="0" DestinyLevel="0" ID="869">
 		<Trigger Type="OnDeploy" Side="Friendly">
 			<CardFilter IncludeRaces="Human" ExcludeToken="True"/>
 			<Target Zone="Battleground" Amount="Self">

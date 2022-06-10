@@ -18,7 +18,9 @@ Enchanted creature gains Shockwave 2.</Description>
     </Card>
     <Card Rarity="Common" Type="Spell" Name="Spe_Air_061" DisplayName="Ylath's Breath" School="Air" Cost="2" MagicLevel="2" ID="636">
         <Ongoing Duration="Permanent" />
-        <Target Zone="Battleground" Side="Friendly" CardType="Unit" Amount="1" />
+        <Target Zone="Battleground" Side="Friendly" CardType="Unit" Amount="1">
+          <Effect Type="ModifyAbility" Ability="CannotTarget" />
+        </Target>
         <Target Zone="BattlegroundColumn" CardType="Unit" Amount="Self" CantTargetParent="True">
             <Effect Type="ModifyAbility" Ability="CannotAttack" />
         </Target>
@@ -33,6 +35,7 @@ Enchanted creature gains Shockwave 2.</Description>
             </Target>
         </Trigger>
         <Description>Enchant friendly creature. Permanent:
+Enchanted creature cannot be targeted.
 Other creatures on the same row as enchanted creature gain Cannot Attack. When enchanted creature attacks or moves, destroy Ylath's Breath.</Description>
     </Card>
     <!--....................................................................-->
@@ -62,10 +65,11 @@ Enchanted creature gains -[X:ATK] and -[X:RET] where X is equal to your [MAGIC] 
 		<Ability Type="Endurable" />
         <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="1" />
         <Target Zone="None" Amount="Parent">
-            <Effect Type="ModifyMaxHp" Value="3" />
+            <Effect Type="ModifyMaxHp" Value="4" />
+            <Effect Type="ModifyAbility" Ability="Regenerate" Value="2" />
 		</Target>
         <Description>Enchant friendly creature. Permanent:
-Enchanted creature gains +[3:HEALTH].</Description>
+Enchanted creature gains Regenerate 2 and +[4:HEALTH].</Description>
 		<DescriptionChinese>依附于本方指定生物。永久：
 被依附生物获得+[3:HEALTH]。</DescriptionChinese>
 	</Card>
@@ -97,7 +101,7 @@ Enchanted creature gains +[3:HEALTH].</Description>
         <Description>Enchant row. Permanent:
 At the beginning of each players's turn, deal 1 damage to all creatures on enchanted row. When there are no creatures on enchanted row, destroy Lava Stream.</Description>
     </Card>
-    <Card Rarity="Common" Type="Spell" Name="Spe_Fir_061" DisplayName="Soulfire" School="Fire" Cost="3" MagicLevel="3" ID="642">
+    <Card Rarity="Common" Type="Spell" Name="Spe_Fir_061" DisplayName="Soulfire" School="Fire" Cost="3" MagicLevel="2" ID="642">
         <Ongoing Duration="Permanent" />
         <Variable Type="CardAttack" UseCurrentTarget="True" />
         <Target Zone="Battleground" CardType="Unit" Amount="1">
@@ -124,6 +128,7 @@ Whenever enchanted creature attacks, put 1 +[1:ATK] counter on it. When enchante
     <!--....................................................................-->
     <Card Rarity="Rare" Type="Spell" Name="Spe_Lig_060" DisplayName="Elrath's Protection" School="Light" Cost="4" MagicLevel="4" ID="643">
         <Ongoing Duration="Permanent" />
+        <Ability Type="Endurable"/>
         <Target Zone="Battleground" CardType="Unit" Amount="1">
             <Effect Type="ModifyAbility" Ability="CannotTarget" />
             <Effect Type="ModifyAbility" Ability="SpellShield" />
@@ -197,6 +202,7 @@ Enchanted creature gains +[1:ATK] for each ongoing water spell on the battlegrou
     </Card>
     <Card Rarity="Common" Type="Spell" Name="Spe_Wat_061" DisplayName="Ice Armour" School="Water" Cost="3" MagicLevel="4" ID="648">
         <Ongoing Duration="Permanent" />
+        <Ability Type="Endurable"/>
         <Target Zone="Battleground" CardType="Unit" Amount="1">
             <Effect Type="ModifyAbility" Ability="CannotTarget" />
             <Effect Type="ModifyAttack" Value="1" />
@@ -212,20 +218,27 @@ Enchanted creature cannot be targeted and gains +[1:ATK] and +[1:RET].</Descript
     <!-- //	##      ##  #   ##      #  ##    ##        ## -->
     <!-- //	#####     ##    #####   #   #    ##     ##### -->
     <!--....................................................................-->
-    <Card Rarity="Uncommon" Type="Event" Name="Eve_Neu_060" DisplayName="Time of War" Cost="0" Faction="Neutral" ID="649">
+    <Card NotLocalized="True" Rarity="Uncommon" Type="Event" Name="Eve_Neu_060" DisplayName="Time of War" Cost="0" Faction="Neutral" ID="649">
         <Ongoing Duration="Permanent" />
         <Target Zone="Battleground" Amount="All" />
         <!-- Hack to add a permanent feedback -->
-        <Trigger Type="OnTurnEnd" Side="Friendly">
-            <Target Zone="None" Side="Friendly">
-                <Variable Type="CardPlayedCount">
-                    <CardFilter IncludeCardType="Unit" />
-                </Variable>
+        <Trigger Type="OnCardPlay" Side="Friendly">
+          <CardFilter IncludeCardType="Unit" />
+              <Target Zone="None" Side="Friendly">
+              <Variable Type="CardPlayedCount">
+                <CardFilter IncludeCardType="Unit" />
+              </Variable>
+              <Variable2 Type="CardPlayedCount">
+                <CardFilter IncludeCardType="Unit" />
+              </Variable2>
+              <Condition Operator="And" ValueA="Condition" ValueB="Condition">
                 <Condition Operator="GreaterThan" ValueA="Variable" ValueB="2" />
+                <Condition Operator="LesserThan" ValueA="Variable2" ValueB="4" />
+              </Condition>
                 <Effect Type="Draw" Value="1" />
             </Target>
         </Trigger>
-        <Description>Ongoing: At end of your turn, if you played 3 or more creatures this turn, draw a card.</Description>
+        <Description>Ongoing: if you played at least 3 creatures this turn, draw a card.</Description>
     </Card>
     <Card Rarity="Rare" Type="Event" Name="Eve_Neu_061" DisplayName="Night of the Rising Moon" Cost="2" Faction="Neutral" ID="656">
         <Target Zone="Hand" CardType="Unit" Side="Friendly" Amount="1">
