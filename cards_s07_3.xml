@@ -1,0 +1,240 @@
+<Cards>
+	<!--....................................................................-->
+	<!-- //	#####   ####    #####   ##      ##      ##### -->
+	<!-- //	##      ##  #   ##      ##      ##      ##    -->
+	<!-- //	#####   ####    ####    ##      ##      ##### -->
+	<!-- //	   ##   ##      ##      ##      ##         ## -->
+	<!-- //	#####   ##      #####   #####   #####   ##### -->
+	<!--....................................................................-->
+	<Card Rarity="NotPlayable" Unique="False" Type="Unit" Name="Tok_Neu_001" Token="True" ResourceName="s07_Spe_Ear_092" DisplayName="Nature Elemental" Faction="Neutral" SubType="Melee|Shooter" Race="Spirit" Cost="0" MightLevel="0" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="1" HP="5" ID="1005" School="Earth">
+		<Ability Type="Infect" Value="1"/>
+	</Card>
+	<!--....................................................................-->
+	<!-- Spells - Air -->
+	<!--....................................................................-->
+	<Card Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Air_090" DisplayName="Blast of Wind" School="Air" Cost="3" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="982">
+		<Ongoing Duration="UntilYourNextTurn"/>
+		<Target Zone="Battleground" Amount="1" CardType="Unit">
+			<Effect Type="ModifyAbility" Ability="AreaCannotAttack"/>
+			<Effect Type="ModifyAbility" Ability="Anchored"/>
+		</Target>
+		<Description>Enchant creature. Until your next turn:
+Enchanted creature gains Anchored.
+Enchanted creature and all adjacent creatures gain Cannot Attack.</Description>
+		<!-- S07 NEW STUFF : AreaCannotAttack - Create a ability is the easiest way to give CannotAttack to a creature and its adjacent creature, see cards_tl.xml, the ability works like a "guard" ability. -->
+	</Card>
+	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Air_091" DisplayName="Wind Arrows" School="Air" Cost="3" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="983">
+		<Ongoing Duration="Permanent"/>
+		<Target Zone="Battleground" Amount="All" Side="Friendly" CardType="Unit">
+			<CardFilter IncludeSchool="Air"/>
+			<Effect Type="ModifyAbility" Ability="Shockwave" Value="2"/>
+		</Target>
+		<Description>Permanent:
+Friendly air creatures gains Shockwave 2.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Spell" Name="Spe_Air_092" DisplayName="Storm Rage" School="Air" Cost="3" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="984">
+		<Target Zone="BattlegroundPosition" Amount="3" CardType="Unit" Adjacent="True" Shape="Self">
+			<Effect Type="Damage" Value="2"/>
+		</Target>
+		<Description>Choose 3 adjacent target battleground positions. Deal 2 damage to any creatures at those positions.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Spells - Dark -->
+	<!--....................................................................-->
+	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Dar_090" DisplayName="Darkness Curse" School="Dark" Cost="4" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="985">
+		<Target Zone="Battleground" Amount="All" CardType="Unit">
+			<CardFilter ExcludeSchool="Dark"/>
+			<Effect Type="AddCounter" CounterType="Crippling" Value="1"/>
+		</Target>
+		<Description>Put a crippling counter on all non-dark creatures.</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Dar_091" DisplayName="Illusionary Nightmare" School="Dark" Cost="4" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="986">
+		<Ongoing Duration="Permanent"/>
+		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Enemy">
+			<CardFilter IncludeStatus="NoFriendlyAdjacent"/>
+			<Effect Type="ModifyAttack" Value="-2"/>
+		</Target>
+		<Description>Permanent:
+Enemy creatures with no adjacent friendly creatures gains -[2:ATK].</Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Spell" Name="Spe_Dar_092" DisplayName="Alone in the Dark" School="Dark" Cost="3" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="987">
+		<Target Zone="Battleground" Amount="1" CardType="Unit" Random="True" Side="Enemy">
+			<CardFilter IncludeStatus="NoAdjacent"/>
+			<Effect Type="Kill"/>
+		</Target>
+		<Description>Destroy an enemy creature with no adjacent creature, chosen at random.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Spells - Earth -->
+	<!--....................................................................-->
+	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Ear_090" DisplayName="Nature's Fortitude" School="Earth" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="988">
+		<Ongoing Duration="Permanent"/>
+		<Target Zone="Battleground" Amount="1" CardType="Unit">
+			<Effect Type="ModifyMaxHp" Value="4"/>
+		</Target>
+		<Description>Enchant creature. Permanent:
+Enchanted creature gains +[4:HEALTH].</Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Spell" Name="Spe_Ear_091" DisplayName="Vine Trap" School="Earth" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="989">
+		<Target Zone="Battleground" Amount="1" CardType="Unit">
+			<CardFilter IncludeUnitType="Flyer"/>
+			<Effect Type="Kill"/>
+		</Target>
+		<Description>Destroy target flyer creature.</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Ear_092" DisplayName="Nature's Wrath" School="Earth" Cost="5" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="990">
+		<Target Zone="BattlegroundPosition" Amount="2" Side="Friendly" BattlegroundPositionState="DontCare">
+			<Effect Type="PopulateStack" Name="s07_Tok_Neu_001"/>
+		</Target>
+		<Description>Deploy two Nature Elemental melee-shooter token creatures with [2:ATK]/[1:RET]/[5:HEALTH] and Infect 1 on two target valid friendly battleground positions.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Spells - Fire -->
+	<!--....................................................................-->
+	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Fir_090" DisplayName="Fire Splash" School="Fire" Cost="1" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="991">
+		<Target Zone="Battleground" CardType="Unit" Amount="1" Shape="SelfAndAdjacent">
+			<Effect Type="Damage" Value="1"/>
+		</Target>
+		<Description>Deal 1 damage to target creature and all adjacent creatures.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Spell" Name="Spe_Fir_091" DisplayName="Fire Rain" School="Fire" Cost="4" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="992">
+		<Target Zone="BattlegroundColumn" CardType="Unit" Amount="2">
+			<Effect Type="Damage" Value="3"/>
+		</Target>
+		<Description>Deal 3 damage to all creatures on 2 target rows.</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Fir_092" DisplayName="Flaring Rage" School="Fire" Cost="4" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="993">
+		<Ongoing Duration="Permanent"/>
+		<Trigger Type="OnPreAttack">
+			<Target Zone="Battleground" CardType="Unit" Amount="FromTrigger">
+				<Effect Type="AddCounter" CounterType="Fierce" Value="1"/>
+			</Target>
+		</Trigger>
+		<Description>Permanent:
+Whenever a creature attacks, put a +[1:ATK] counter on it.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Spells - Light -->
+	<!--....................................................................-->
+	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Lig_090" DisplayName="Holy Light" School="Light" Cost="3" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="994">
+		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
+			<CardFilter IncludeSchool="Light"/>
+			<Effect Type="AddCounter" CounterType="Fierce" Value="1"/>
+		</Target>
+		<Description>Put a +[1:ATK] counter on all friendly light creatures.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Spell" Name="Spe_Lig_091" DisplayName="Holy Sacrifice" School="Light" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="995">
+		<Ongoing Duration="Permanent"/>
+		<Target Zone="Battleground" CardType="Unit" Amount="1" Side="Friendly">
+			<Effect Type="ModifyAbility" Ability="AbsorbCreatureDamage" Value="infinite"/>
+		</Target>
+		<Description>Enchant friendly creature. Permanent:
+Redirect all combat damage dealt to your creatures to enchanted creature instead.</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Lig_092" DisplayName="Sunrise" School="Light" Cost="4" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="996">
+		<Target Zone="Graveyard" Amount="1" CardType="Unit" Side="Friendly">
+			<CardFilter IncludeSchool="Light"/>
+			<Effect Type="Deploy" Side="Friendly"/>
+		</Target>
+		<Description>Take target light creature in your graveyard and deploy it for free.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Spells - Prime -->
+	<!--....................................................................-->
+	<Card Rarity="Uncommon" Unique="False" Type="Spell" Name="Spe_Pri_090" DisplayName="Prime Shield" School="Prime" Cost="5" MightLevel="0" MagicLevel="5" DestinyLevel="0" ID="997">
+		<Ongoing Duration="Permanent"/>
+		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
+			<CardFilter IncludeSchool="Prime"/>
+			<Effect Type="ModifyAbility" Ability="MagicResist"/>
+		</Target>
+		<Description>Permanent:
+Friendly prime creatures gains Magic Resist.</Description>
+	</Card>
+	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Pri_091" DisplayName="Dissolve" School="Prime" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="998">
+		<Ongoing Duration="Permanent"/>
+		<Target Zone="Hero" Amount="All">
+			<Effect Type="GlobalEffect" GlobalEffectType="Deny">
+				<CardFilter IncludeCardType="Unit" IncludeUnitType="Magic"/>
+			</Effect>
+		</Target>
+		<Trigger Type="OnThisCardDeny">
+			<Target Zone="None" Amount="Self">
+				<Effect Type="Kill"/>
+			</Target>
+		</Trigger>
+		<Description>Permanent:
+When a magic creature is about to be played, negate that creature and then destroy Dissolve.</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Pri_092" DisplayName="Magic Steal" School="Prime" Cost="4" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="999">
+		<Target Zone="Hand" Amount="1" Side="Enemy">
+			<CardFilter IncludeCardType="Unit" IncludeUnitType="Magic" ExcludeUnique="True"/>
+			<Effect Type="Play" Free="True" CancelDestination="Graveyard"/>
+		</Target>
+		<Description>Look at opponent's hand and choose a non-unique magic creature card from it. You can play this creature for free. If you don't, put that card in opponent's graveyard.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Spells - Water -->
+	<!--....................................................................-->
+	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Wat_090" DisplayName="Ice Spear" School="Water" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="1000">
+		<Ongoing Duration="Permanent"/>
+		<Target Zone="Battleground" Amount="1" CardType="Unit">
+			<Effect Type="ModifyAttack" Value="1"/>
+		</Target>
+		<Trigger Type="OnTurnEnd">
+			<Target Zone="Battleground" Amount="Self">
+				<Effect Type="MoveCardTo" Destination="Hand"/>
+			</Target>
+		</Trigger>
+		<Description>Enchant creature. Permanent:
+Enchanted creature gains +[1:ATK].
+At end of turn, return Ice Spear to its owner hand.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Spell" Name="Spe_Wat_091" DisplayName="Ice Curse" School="Water" Cost="4" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="1001">
+		<Ongoing Duration="Permanent"/>
+		<Target Zone="Battleground" Amount="1" CardType="Unit"/>
+		<Trigger Type="OnTurnBegin">
+			<Target Zone="Battleground" Amount="All" CardType="Unit">
+				<Effect Type="Damage" Value="1"/>
+			</Target>
+		</Trigger>
+		<Description>Enchant creature. Permanent:
+At the beginning of each turn, deal 1 damage to all creatures.</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Wat_092" DisplayName="Frozen Wave" School="Water" Cost="5" MightLevel="0" MagicLevel="5" DestinyLevel="0" ID="1002">
+		<Ongoing Duration="UntilYourNextTurn"/>
+		<Target Zone="Battleground" Amount="All" CardType="Unit">
+			<CardFilter ExcludeUnitType="Flyer"/>
+			<Effect Type="ModifyAbility" Ability="CannotAttack"/>
+		</Target>
+		<Target Zone="Battleground" Amount="All" CardType="Unit">
+			<CardFilter ExcludeUnitType="Flyer"/>
+			<Effect Type="Damage" Value="4" Duration="Immediate"/>
+		</Target>
+		<Description>Until your next turn:
+All non-flyer creatures gains Cannot Attack.
+When Frozen Wave enters the battleground, deal 4 damage to all non-flyer creatures.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- //	#####   ##  #   #####   #   #   #####   ##### -->
+	<!-- //	##      ##  #   ##      ##  #    ##     ##    -->
+	<!-- //	####    ##  #   ####    # # #    ##     ##### -->
+	<!-- //	##      ##  #   ##      #  ##    ##        ## -->
+	<!-- //	#####     ##    #####   #   #    ##     ##### -->
+	<!--....................................................................-->
+	<Card Rarity="Common" Unique="False" Type="Event" Name="Eve_Neu_090" DisplayName="Week of the Elementals" Cost="0" Faction="Neutral" ID="1003">
+		<Ongoing Duration="Permanent"/>
+		<Target Zone="Hero" Amount="All" Side="Friendly">
+			<Effect Type="GlobalEffect" GlobalEffectType="ModifyCost" Value="-1">
+				<CardFilter IncludeCardType="Unit" IncludeFaction="Neutral" IncludeRaces="Spirit"/>
+			</Effect>
+		</Target>
+		<Description>All neutral Spirit creature cost [1:RESOURCES] less to play.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Event" Name="Eve_Neu_091" DisplayName="Waning Moon" Cost="2" Faction="Neutral" ID="1004">
+		<Target Zone="Battleground" Amount="1" CardType="Unit" Side="Friendly">
+			<CardFilter IncludeRaces="Spirit"/>
+			<Effect Type="MoveCardTo" Destination="Hand"/>
+		</Target>
+		<Description>[2:RESOURCES]: Return target friendly Spirit creature to its owner's hand.</Description>
+	</Card>
+</Cards>

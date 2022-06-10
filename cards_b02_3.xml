@@ -1,0 +1,166 @@
+<Cards>
+    <!--....................................................................-->
+    <!-- //	#####   ####    #####   ##      ##      ##### -->
+    <!-- //	##      ##  #   ##      ##      ##      ##    -->
+    <!-- //	#####   ####    ####    ##      ##      ##### -->
+    <!-- //	   ##   ##      ##      ##      ##         ## -->
+    <!-- //	#####   ##      #####   #####   #####   ##### -->
+    <!--....................................................................-->
+    <ExistingCard Name="Spe_Air_001" Rarity="Uncommon" />
+    <!-- b01 - Chain Lightning -->
+    <ExistingCard Name="Spe_Air_004" Rarity="Rare" />
+    <!-- b01 - Father Sky's Wrath -->
+    <ExistingCard Name="Spe_Air_007" Rarity="Common" />
+    <!-- b01 - Lightning Bold -->
+    <ExistingCard Name="Spe_Air_030" Rarity="Common" />
+    <!-- s01 - Lifting Wing -->
+    <ExistingCard Name="Spe_Air_032" Rarity="Rare" />
+    <!-- s01 - Sand Storm -->
+    <ExistingCard Name="Spe_Air_050" Rarity="Common" />
+    <!-- s03 - Air Trap -->
+    <ExistingCard Name="Spe_Air_051" Rarity="Uncommon" />
+    <!-- s03 - Homebound Winds -->
+    <ExistingCard Name="Spe_Air_060" Rarity="Rare" />
+    <!-- s04 - Thunder Weapon -->
+    <ExistingCard Name="Spe_Air_061" Rarity="Common" />
+    <!-- s04 - Ylath's Breath -->
+    <ExistingCard Name="Spe_Dar_005" Rarity="Common" />
+    <!-- b01 - Death Seal -->
+    <ExistingCard Name="Spe_Dar_008" Rarity="Uncommon" />
+    <!-- b01 - Soulreaver -->
+    <ExistingCard Name="Spe_Dar_030" Rarity="Common" />
+    <!-- b01 - Moonsilk Fetters -->
+    <ExistingCard Name="Spe_Dar_032" Rarity="Rare" />
+    <!-- b01 - Curse of the Penitent -->
+    <ExistingCard Name="Spe_Dar_050" Rarity="Common" />
+    <!-- s03 - Shared Agony -->
+    <ExistingCard Name="Spe_Dar_051" Rarity="Uncommon" />
+    <!-- s03 - Cursed Bound -->
+    <ExistingCard Name="Spe_Dar_052" Rarity="Rare" />
+    <!-- s03 - Enthrall -->
+    <ExistingCard Name="Spe_Dar_060" Rarity="Common" />
+    <!-- s04 - Wither -->
+    <ExistingCard Name="Spe_Dar_061" Rarity="Rare" />
+    <!-- s04 - Monnsilk Strand -->
+    <ExistingCard Name="Spe_Ear_001" Rarity="Uncommon" />
+    <!-- b01 - Insect Swarm -->
+    <ExistingCard Name="Spe_Ear_004" Rarity="Rare" />
+    <!-- b01 - Mass Regeneration -->
+    <ExistingCard Name="Spe_Ear_008" Rarity="Common" />
+    <!-- b01 - Stone Shield -->
+    <ExistingCard Name="Spe_Ear_030" Rarity="Common" />
+    <!-- s01 - Poisonous Bulb -->
+    <ExistingCard Name="Spe_Ear_040" Rarity="Common" />
+    <!-- s02 - Earth Bound -->
+    <ExistingCard Name="Spe_Ear_041" Rarity="Uncommon" />
+    <!-- s02 - Sylvanna's Embrace -->
+    <ExistingCard Name="Spe_Ear_052" Rarity="Rare" />
+    <!-- s03 - Deep Roots -->
+    <ExistingCard Name="Spe_Ear_060" Rarity="Rare" />
+    <!-- s04 - Symbiotic Barksin -->
+    <ExistingCard Name="Spe_Ear_061" Rarity="Common" />
+    <!-- s04 - Landslide -->
+    <ExistingCard Name="Spe_Fir_002" Rarity="Rare" />
+    <!-- b01 - Immolation -->
+    <ExistingCard Name="Spe_Fir_005" Rarity="Common" />
+    <!-- b01 - Fire Bolt -->
+    <ExistingCard Name="Spe_Fir_006" Rarity="Common" />
+    <!-- b01 - Fire Shield -->
+    <ExistingCard Name="Spe_Fir_009" Rarity="Uncommon" />
+    <!-- b01 - Inner Fire -->
+    <ExistingCard Name="Spe_Fir_050" Rarity="Common" />
+    <!-- s03 - Fire Death -->
+    <ExistingCard Name="Spe_Fir_051" Rarity="Uncommon" />
+    <!-- s03 - Fire Blast -->
+    <ExistingCard Name="Spe_Fir_052" Rarity="Rare" />
+    <!-- s03 - Mass Rage -->
+    <ExistingCard Name="Spe_Fir_060" Rarity="Rare" />
+    <!-- s04 - Lava Stream -->
+    <ExistingCard Name="Spe_Fir_061" Rarity="Common" />
+    <!-- s04 - Soulfire -->
+    <ExistingCard Name="Spe_Lig_001" Rarity="Common" />
+    <!-- b01 - Bless -->
+    <ExistingCard Name="Spe_Lig_004" Rarity="Uncommon" />
+    <!-- b01 - Cleansing Light -->
+    <ExistingCard Name="Spe_Lig_005" Rarity="Rare" />
+    <!-- b01 - Divine Intervention -->
+    <ExistingCard Name="Spe_Lig_006" Rarity="Uncommon" />
+    <!-- b01 - Martyr -->
+    <ExistingCard Name="Spe_Lig_011" Rarity="Common" />
+    <!-- b01 - Word of Light -->
+    <ExistingCard Name="Spe_Lig_030" Rarity="Common" />
+    <!-- s01 - Guardian Angel -->
+    <ExistingCard Name="Spe_Lig_050" Rarity="Common" />
+    <!-- s03 - Aura of Healing -->
+    <ExistingCard Name="Spe_Lig_052" Rarity="Rare" />
+    <!-- s03 - Lay of Hands -->
+    <ExistingCard Name="Spe_Lig_060" Rarity="Rare" />
+    <!-- s04 - Elrath's Protection -->
+    <ExistingCard Name="Spe_Pri_002" Rarity="Common" />
+    <!-- b01 - Dispel Magic -->
+    <ExistingCard Name="Spe_Pri_008" Rarity="Common" />
+    <!-- b01 - Teleport -->
+    <ExistingCard Name="Spe_Pri_009" Rarity="Rare" />
+    <!-- b01 - Time Jump -->
+    <ExistingCard Name="Spe_Pri_011" Rarity="Uncommon" />
+    <!-- b01 - Town Portal -->
+    <ExistingCard Name="Spe_Pri_031" Rarity="Uncommon" />
+    <!-- s01 - Mass Dispel -->
+    <ExistingCard Name="Spe_Pri_040" Rarity="Common" />
+    <!-- s02 - Minor Recall -->
+    <ExistingCard Name="Spe_Pri_050" Rarity="Common" />
+    <!-- s03 - Spirited Away -->
+    <ExistingCard Name="Spe_Pri_052" Rarity="Rare" />
+    <!-- s03 - Void Ripple -->
+    <ExistingCard Name="Spe_Pri_061" Rarity="Rare" />
+    <!-- s04 - Nether Curse -->
+    <ExistingCard Name="Spe_Wat_002" Rarity="Uncommon" />
+    <!-- b01 - Ice Spikes -->
+    <ExistingCard Name="Spe_Wat_005" Rarity="Rare" />
+    <!-- b01 - Geyser -->
+    <ExistingCard Name="Spe_Wat_008" Rarity="Common" />
+    <!-- b01 - Icy Weapon -->
+    <ExistingCard Name="Spe_Wat_040" Rarity="Common" />
+    <!-- s02 - Ice Shell -->
+    <ExistingCard Name="Spe_Wat_050" Rarity="Common" />
+    <!-- s03 - Cold Fear -->
+    <ExistingCard Name="Spe_Wat_051" Rarity="Uncommon" />
+    <!-- s03 - Focused Mind -->
+    <ExistingCard Name="Spe_Wat_052" Rarity="Rare" />
+    <!-- s03 - Ink Warrior -->
+    <ExistingCard Name="Spe_Wat_060" Rarity="Rare" />
+    <!-- s04 - Shalassa's Blade -->
+    <ExistingCard Name="Spe_Wat_061" Rarity="Common" />
+    <!-- s04 - Ice Armour -->
+    <!--....................................................................-->
+    <!-- //	#####   ##  #   #####   #   #   #####   ##### -->
+    <!-- //	##      ##  #   ##      ##  #    ##     ##    -->
+    <!-- //	####    ##  #   ####    # # #    ##     ##### -->
+    <!-- //	##      ##  #   ##      #  ##    ##        ## -->
+    <!-- //	#####     ##    #####   #   #    ##     ##### -->
+    <!--....................................................................-->
+    <ExistingCard Name="Eve_Neu_006" Rarity="Common" />
+    <!-- b01 - Day of Fortune -->
+    <ExistingCard Name="Eve_Neu_009" Rarity="Common" />
+    <!-- b01 - Week of Knowledge -->
+    <ExistingCard Name="Eve_Neu_010" Rarity="Uncommon" />
+    <!-- b01 - Week of the Dead -->
+    <ExistingCard Name="Eve_Neu_011" Rarity="Rare" />
+    <!-- b01 - Week of the Mercenaries -->
+    <ExistingCard Name="Eve_Neu_012" Rarity="Common" />
+    <!-- b01 - Week of the Weaponsmiths -->
+    <ExistingCard Name="Eve_Neu_040" Rarity="Uncommon" />
+    <!-- s02 - Day of the Sanctuary -->
+    <ExistingCard Name="Eve_Neu_041" Rarity="Common" />
+    <!-- s02 - Hail Storm -->
+    <ExistingCard Name="Eve_Neu_044" Rarity="Rare" />
+    <!-- s02 - Cosmic Balance -->
+    <ExistingCard Name="Eve_Neu_053" Rarity="Uncommon" />
+    <!-- s03 - Rise of the Nethermancer -->
+    <ExistingCard Name="Eve_Neu_060" Rarity="Uncommon" />
+    <!-- s04 - Time of War -->
+    <ExistingCard Name="Eve_Neu_061" Rarity="Rare" />
+    <!-- s04 - Night of the Rising Moon -->
+    <ExistingCard Name="Eve_Neu_062" Rarity="Common" />
+    <!-- s04 - The Great Hunt -->
+</Cards>

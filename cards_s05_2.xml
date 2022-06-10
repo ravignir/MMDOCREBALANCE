@@ -1,0 +1,456 @@
+<Cards>
+	<!--....................................................................-->
+	<!-- //	#####    ###    ####    #####   ##  #   #   #   #####   #####   -->
+	<!-- //	##      ##  #   #   #    ##     ##  #   ##  #   ##      ##      -->
+	<!-- //	####    ##  #   ####     ##     ##  #   # # #   ####    #####   -->
+	<!-- //	##      ##  #   ## #     ##     ##  #   #  ##   ##         ##   -->
+	<!-- //	##       ###    ##  #    ##     #####   #   #   #####   #####   -->
+	<!--....................................................................-->
+	<!--....................................................................-->
+	<!-- Fortune - Academy -->
+	<!--....................................................................-->
+	<Card Rarity="Uncommon" Type="Fortune" Name="For_Aca_070" DisplayName="Circle of Nine" Faction="Academy" Cost="3" MightLevel="0" MagicLevel="1" DestinyLevel="3" ID="748" Unique="False">
+		<Target Zone="None" Side="Friendly">
+			<Effect Type="IncreaseLevel" Value="5ma" LevelType="Magic"/>
+		</Target>
+		<Target Zone="None" Side="Friendly">
+			<Effect Type="Draw" Value="1"/>
+		</Target>
+		<Description>Increase your [MAGIC] level to 5, draw a card</Description>
+	</Card>
+	<Card Rarity="Common" Type="Fortune" Name="For_Aca_071" DisplayName="Crimson Link" Faction="Academy" Cost="1" MightLevel="0" MagicLevel="0" DestinyLevel="1" ID="749" Unique="False">
+		<Ongoing Duration="UntilYourNextTurn"/>
+		<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+			<CardFilter IncludeRaces="Beastmen"/>
+			<Variable Type="TargetCount">
+				<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+					<CardFilter IncludeRaces="Wizard"/>
+				</Target>
+			</Variable>
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+			<Effect Type="ModifyAbility" Ability="CannotTarget"/>
+		</Target>
+		<Description>Until your next turn:
+While there is a friendly Wizard creature on the battleground, friendly Beastman creatures cannot be targeted.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Fortune - Haven -->
+	<!--....................................................................-->
+	<Card Rarity="Uncommon" Type="Fortune" Name="For_Hav_070" DisplayName="Imperial Expansion" Faction="Haven" Cost="4" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="750" Unique="False">
+		<Target Zone="Battleground" CardType="Building" Side="Friendly" Amount="1">
+			<Effect Type="Clone"/>
+		</Target>
+		<Description>Deploy a token that's a copy of target friendly building.</Description>
+	</Card>
+	<Card Rarity="Rare" Type="Fortune" Name="For_Hav_071" DisplayName="Avenge the Fallen" Faction="Haven" Cost="2" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="751" Unique="False">
+		<Ongoing Duration="UntilYourNextTurn"/>
+		<Variable Type="TargetCount">
+			<Target Zone="Battleground" Amount="All" Side="Friendly" CardType="Unit">
+				<CardFilter IncludeRaces="Human"/>
+			</Target>
+		</Variable>
+		<Trigger Type="OnUnitKillUnit" DamageIncludeFlags="Combat">
+			<CardFilter Side="Enemy"/>
+			<Target Zone="Battleground" CardType="Unit" Amount="FromTrigger">
+				<Effect Type="Damage" Value="Variable"/>
+			</Target>
+		</Trigger>
+		<Description>Until your next turn:
+Whenever a friendly creature dies from combat damage, deal 1 damage to the creature that destroyed it for each Human creature you control.</Description>
+	</Card>
+	<!--...................................................................-->
+	<!-- Fortune - Inferno -->
+	<!--...................................................................-->
+	<Card Rarity="Uncommon" Type="Fortune" Name="For_Inf_070" DisplayName="Ur-Jubaal's Call" Faction="Inferno" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="752" Unique="False">
+		<Variable Type="CardDiscardedCount" Side="Enemy"/>
+		<PlayabilityCondition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+		<Target Zone="Hero" Amount="All" Side="Enemy">
+			<Effect Type="Damage" Value="3"/>
+		</Target>
+		<Description>Deal 3 damage to enemy hero.
+Ur-Jubaal's Call can only be played if opponent discarded this turn.</Description>
+	</Card>
+	<Card Rarity="Common" Type="Fortune" Name="For_Inf_071" DisplayName="Delve into Madness" Faction="Inferno" Cost="2" MightLevel="0" MagicLevel="0" DestinyLevel="0" ID="753" Unique="False">
+		<Target Zone="None" Side="Friendly" SkipSubTargetValidation="True">
+			<Effect Type="Draw" Value="2"/>
+			<Subgroup>
+				<Target Zone="Hand" Amount="1" Side="Friendly" Cancelable="False">
+					<Effect Type="MoveCardTo" Destination="Graveyard"/>
+				</Target>
+			</Subgroup>
+		</Target>
+		<Description>Draw 2 cards and discard a card.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Fortune - Necropolis -->
+	<!--....................................................................-->
+	<Card Rarity="Common" Type="Fortune" Name="For_Nec_070" DisplayName="No Mercy for the Meek" Faction="Necropolis" Cost="1" MightLevel="0" MagicLevel="0" DestinyLevel="2" ID="754" Unique="False">
+		<Target Zone="Battleground" CardType="Unit" Amount="1" Side="Any">
+			<Variable Type="CardAttack" UseCurrentTarget="True"/>
+			<Condition Operator="EqualTo" ValueA="Variable" ValueB="0"/>
+			<Effect Type="Kill"/>
+		</Target>
+		<Description>Destroy target creature with [0:ATK].</Description>
+	</Card>
+	<Card Rarity="Rare" Type="Fortune" Name="For_Nec_071" DisplayName="Sacred Venom Fumes" Faction="Necropolis" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="755" Unique="False">
+		<Ongoing Duration="UntilYourNextTurn"/>
+		<Target Zone="Battleground" Amount="All" CardType="Unit">
+			<CardFilter ExcludeRaces="Vampire"/>
+			<Effect Type="ModifyAttack" Value="-1"/>
+			<Effect Type="ModifyRetaliate" Value="-1"/>
+		</Target>
+		<Target Zone="Battleground" Amount="All" CardType="Unit">
+			<CardFilter IncludeRaces="Vampire"/>
+			<Effect Type="ModifyAttack" Value="1"/>
+			<Effect Type="ModifyRetaliate" Value="1"/>
+		</Target>
+		<Description>Until your next turn:
+All Vampire creatures gain +[1:ATK] and +[1:RET]. All non-Vampire creatures gain -[1:ATK] and -[1:RET].</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Fortune - Sanctuary -->
+	<!--....................................................................-->
+	<Card Rarity="Common" Type="Fortune" Name="For_San_070" DisplayName="Lotus Empire's Support" Faction="Sanctuary" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="756" Unique="False">
+		<Target Zone="Library" Side="Friendly" Amount="1">
+			<CardFilter IncludeFaction="Sanctuary"/>
+			<Effect Type="MoveCardTo" Destination="Hand"/>
+		</Target>
+		<Target Side="Friendly">
+			<Effect Type="Shuffle" CardHolder="Library"/>
+		</Target>
+		<Description>Search your library for a Sanctuary card and put it in your hand then shuffle your library.</Description>
+	</Card>
+	<Card Rarity="Common" Type="Fortune" Name="For_San_071" DisplayName="Tea Ceremony" Faction="Sanctuary" Cost="1" MightLevel="0" MagicLevel="0" DestinyLevel="2" ID="757" Unique="False">
+		<Target Zone="None" Side="Friendly">
+			<Variable Type="TargetCount">
+				<Target Zone="Library" Amount="All" Side="Enemy"/>
+			</Variable>
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+			<Subgroup>
+				<Target Zone="Library" AmountVisible="1" Side="Enemy">
+					<Effect Type="Look"/>
+				</Target>
+				<Target Zone="None" Side="Friendly">
+					<Effect Type="ChoiceOption"/>
+					<Subgroup>
+						<Target Zone="Library" Amount="1" Side="Enemy" AutoTakeFirstInputs="True">
+							<Option Value="0" DisplayText="Put into graveyard"/>
+							<Effect Type="MoveCardTo" Destination="Graveyard"/>
+						</Target>
+						<Target Zone="None" Side="Friendly">
+							<Option Value="1" DisplayText="Do nothing"/>
+						</Target>
+					</Subgroup>
+				</Target>
+			</Subgroup>
+		</Target>
+		<Target Zone="None" Side="Friendly">
+			<Variable Type="TargetCount">
+				<Target Zone="Library" Amount="All" Side="Friendly"/>
+			</Variable>
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+			<Subgroup>
+				<Target Zone="Library" AmountVisible="1" Side="Friendly">
+					<Effect Type="Look"/>
+				</Target>
+				<Target Zone="None" Side="Friendly">
+					<Effect Type="ChoiceOption"/>
+					<Subgroup>
+						<Target Zone="Library" Amount="1" Side="Friendly" AutoTakeFirstInputs="True">
+							<Option Value="0" DisplayText="Put into graveyard"/>
+							<Effect Type="MoveCardTo" Destination="Graveyard"/>
+						</Target>
+						<Target Zone="None" Side="Friendly">
+							<Option Value="1" DisplayText="Do nothing"/>
+						</Target>
+					</Subgroup>
+				</Target>
+			</Subgroup>
+		</Target>
+		<Trigger Type="OnDeploy" Side="Friendly" Location="Graveyard">
+			<CardFilter IncludeRaces="Priest"/>
+			<Target Zone="Graveyard" Amount="Self" Cancelable="False">
+				<Effect Type="MoveCardTo" Destination="Hand"/>
+			</Target>
+		</Trigger>
+		<Description>Look at the top card of opponent's library. You may put it into their graveyard. Do the same with your library.
+Whenever a friendly Priest creature enters the battleground, if Tea Ceremony is in your graveyard, take it and put it into your hand.</Description>
+	</Card>
+	<Card Rarity="Rare" Type="Fortune" Name="For_San_072" DisplayName="Honourable Challenge" Faction="Sanctuary" Cost="3" MightLevel="4" MagicLevel="0" DestinyLevel="2" ID="758" Unique="False">
+		<Ongoing Duration="UntilYourNextTurn"/>
+		<Variable Type="CardLevel" LevelType="Might" UseCurrentTarget="True" ValueModifier="-1"/>
+		<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+			<Effect Type="ModifyAbility" Ability="Fear" DontShowIcon="True" Value="Variable"/>
+		</Target>
+		<Description>Until your next turn:
+Friendly creatures cannot be attacked by creatures with a lower [MIGHT] requirement.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Fortune - Stronghold -->
+	<!--....................................................................-->
+	<Card Rarity="Rare" Type="Fortune" Name="For_Str_070" DisplayName="Might of the Tribe" Faction="Stronghold" Cost="2" MightLevel="6" MagicLevel="0" DestinyLevel="2" ID="759" Unique="False">
+		<Ongoing Duration="UntilEndOfTurn"/>
+		<Target Zone="Battleground" CardType="Unit" Side="Any" Amount="1">
+			<Effect Type="ModifyAttack" Value="3"/>
+		</Target>
+		<Description>Until end of turn:
+Target creature gains +[3:ATK].</Description>
+	</Card>
+	<!--....................................................................-->
+	<!--  Fortune - Neutral -->
+	<!--....................................................................-->
+	<Card Rarity="Uncommon" Type="Fortune" Name="For_Neu_070" DisplayName="Block Supply Lines" Faction="Neutral" Cost="1" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="760" Unique="False">
+		<Ongoing Duration="UntilYourNextTurn"/>
+		<Trigger Type="OnPostAttack" Side="Enemy">
+			<Target Zone="Hero" Amount="All" Side="Enemy" InputOnExec="True">
+				<Variable Type="Resources" Side="Enemy"/>
+				<Condition Operator="LesserThan" ValueA="Variable" ValueB="1"/>
+				<Effect Type="Damage" Value="1"/>
+			</Target>
+			<Target Zone="None" Side="Enemy" InputOnExec="True">
+				<Variable Type="Resources" Side="Enemy"/>
+				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+				<Effect Type="GainResources" Value="-1"/>
+			</Target>
+		</Trigger>
+		<Description>Until your next turn:
+Whenever an enemy creature attacks, opponent must pay [1:RESOURCES]. If they can't, deal 1 damage to enemy hero.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Type="Fortune" Name="For_Neu_071" DisplayName="Heroic Destiny" Faction="Neutral" Cost="2" MightLevel="3" MagicLevel="2" DestinyLevel="2" ID="761" Unique="False">
+		<Target Zone="None" Side="Friendly">
+			<Effect Type="IncreaseLevel" Value="1" LevelType="Might"/>
+		</Target>
+		<Target Zone="None" Side="Friendly">
+			<Effect Type="IncreaseLevel" Value="1" LevelType="Magic"/>
+		</Target>
+		<Target Zone="None" Side="Friendly">
+			<Effect Type="IncreaseLevel" Value="1" LevelType="Destiny"/>
+		</Target>
+		<Description>Increase your [MIGHT], [MAGIC] and [DESTINY] levels by 1.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Type="Fortune" Name="For_Neu_072" DisplayName="Conflicting Orders" Faction="Neutral" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="762" Unique="False">
+		<Ongoing Duration="UntilYourNextTurn"/>
+		<Trigger Type="OnDeploy" Side="Enemy">
+			<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Enemy" ForceExecute="True">
+				<Effect Type="ModifyAbility" Ability="CannotAttack" Duration="UntilEndOfTurn"/>
+			</Target>
+		</Trigger>
+		<Trigger Type="OnDeploy" Side="Enemy">
+			<Target Zone="Battleground" CardType="Unit" Amount="FromTrigger" ForceExecute="True">
+				<Effect Type="ModifyAbility" Ability="CannotAttack" Duration="UntilEndOfTurn"/>
+			</Target>
+		</Trigger>
+		<Trigger Type="OnPostAttack" Side="Enemy">
+			<Target Zone="Hero" Amount="All" Side="Enemy" ForceExecute="True">
+				<Effect Type="GlobalEffect" GlobalEffectType="CantDeploy" Duration="UntilEndOfTurn"/>
+			</Target>
+		</Trigger>
+		<Description>Until your next turn:
+When opponent deploys a creature, all enemy creatures gain Cannot Attack.
+When an enemy creature attacks, opponent cannot deploy creatures.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!--// ####    ##  #   ##   ##      ####    ##   #   #    #####   ##### -->
+	<!--// ##  #   ##  #   ##   ##      ##  #   ##   ##  #   ##       ##    -->
+	<!--// ####    ##  #   ##   ##      ##  #   ##   # # #   ## ###   ##### -->
+	<!--// ##  #   ##  #   ##   ##      ##  #   ##   #  ##   ##   ##     ## -->
+	<!--// ####     ###    ##   ######  ####    ##   #   #    ####    ##### -->
+	<!--....................................................................-->
+	<!-- Building - Academy -->
+	<!--....................................................................-->
+	<Card Rarity="Rare" Type="Building" Name="Bui_Aca_070" DisplayName="Dervish's Tent" Faction="Academy" Cost="2" MightLevel="2" MagicLevel="0" DestinyLevel="0" ID="763" Unique="False">
+		<Trigger Type="OnMoveAtThisBuilding">
+			<Target Zone="Battleground" Amount="FromTrigger" CardType="Unit" ForceExecute="True">
+				<Effect Type="ModifyAbility" Ability="Swift" Duration="UntilEndOfTurn"/>
+			</Target>
+		</Trigger>
+		<Description>Whenever a creature moves to Dervish's Tent, it gains Swift until end of turn.</Description>
+	</Card>
+	<Card Rarity="Common" Type="Building" Name="Bui_Aca_071" DisplayName="Spirit Gateway" Faction="Academy" Cost="1" MightLevel="1" MagicLevel="2" DestinyLevel="0" ID="764" Unique="False">
+		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
+			<CardFilter IncludeUnitType="Shooter"/>
+			<Effect Type="ModifyAbility" Ability="Phased"/>
+		</Target>
+		<Description>Shooter creatures at Spirit Gateway gain Phased.</Description>
+	</Card>
+	<Card Rarity="Common" Type="Building" Name="Bui_Aca_072" DisplayName="Stele of House Anima" Faction="Academy" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="765" Unique="False">
+		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
+			<CardFilter IncludeFaction="Academy"/>
+			<Effect Type="ModifyAbility" Ability="BounceChildrenOnDeath"/>
+		</Target>
+		<Description>Whenever an Academy creature at Stele of House Anima dies, return all spell cards enchanting it to their owner hand.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Building - Haven -->
+	<!--....................................................................-->
+	<Card Rarity="Uncommon" Type="Building" Name="Bui_Hav_070" DisplayName="Shrine of Elrath" Faction="Haven" Cost="2" MightLevel="0" MagicLevel="0" DestinyLevel="2" ID="766" Unique="False">
+		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
+			<CardFilter IncludeFaction="Haven" ExcludeUnique="True"/>
+			<Effect Type="PlayEffect" PlayEffectType="PutOnTopOnDie"/>
+		</Target>
+		<Description>Whenever a non-unique Haven creature at Shrine of Elrath dies, put it on the top of its owner's library instead.</Description>
+	</Card>
+	<Card Rarity="Rare" Type="Building" Name="Bui_Hav_071" DisplayName="Emperor's Wall" Faction="Haven" Cost="2" MightLevel="3" MagicLevel="0" DestinyLevel="1" ID="767" Unique="False">
+		<Variable Type="TargetCount">
+			<Target Zone="Battleground" Side="Any" Amount="All">
+				<CardFilter IncludeCardID="Bui_Hav_071"/>
+			</Target>
+		</Variable>
+		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
+			<Effect Type="ModifyAbility" Ability="PerfectRetaliate"/>
+			<Effect Type="ModifyRetaliate" Value="Variable"/>
+		</Target>
+		<Description>Creatures at Emperor's Wall gain Perfect Retaliation and gain +[1:RET] for each card named Emperor's Wall on the battleground.</Description>
+	</Card>
+	<Card Rarity="Common" Type="Building" Name="Bui_Hav_072" DisplayName="Treasury" Faction="Haven" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="2" ID="768" Unique="False">
+		<Variable Type="OccupantCount">
+			<CardFilter IncludeAbility="Income"/>
+		</Variable>
+		<Target Zone="Hero" Amount="All" Side="Friendly">
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+			<Effect Type="ModifyResourcesProduction" Value="1"/>
+		</Target>
+		<!-- The following target is necessary to display the right value in the Income icon. -->
+		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+			<Effect Type="ModifyAbility" Ability="Income" Value="1"/>
+		</Target>
+		<Description>Friendly creatures with Income at Treasury gain +1 to their Income value.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Building - Inferno -->
+	<!--....................................................................-->
+	<Card Rarity="Common" Type="Building" Name="Bui_Inf_070" DisplayName="Sacrificial Pit" Faction="Inferno" Cost="2" MightLevel="2" MagicLevel="0" DestinyLevel="2" ID="769" Unique="False">
+		<Trigger Type="OnOccupantCardDeath">
+			<CardFilter IncludeFaction="Inferno"/>
+			<Target Zone="Hero" Side="Enemy" Amount="All">
+				<Effect Type="Damage" Value="1"/>
+			</Target>
+		</Trigger>
+		<Description>Whenever an Inferno creature at Sacrificial Pit dies, deal 1 damage to enemy hero.</Description>
+	</Card>
+	<Card Rarity="Rare" Type="Building" Name="Bui_Inf_071" DisplayName="Ur-Traggal's Bastion" Faction="Inferno" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="2" ID="770" Unique="False">
+		<Variable Type="OccupantCount"/>
+		<Target Zone="BattlegroundColumn" CardType="Unit" Amount="Occupant" CantTargetOccupant="True">
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+			<Effect Type="PlayEffect" PlayEffectType="CannotHeal"/>
+		</Target>
+		<Target Zone="BattlegroundColumn" CardType="Unit" Amount="Occupant" CantTargetOccupant="True">
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+			<Effect Type="PlayEffect" PlayEffectType="CannotGainAttack"/>
+		</Target>
+		<Description>While a creatures is at Ur-Traggal's Bastion, other creatures on the same row cannot be healed and their [ATK] cannot exceed their base value.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Type="Building" Name="Bui_Inf_072" DisplayName="Hall of Agony" Faction="Inferno" Cost="2" MightLevel="2" MagicLevel="0" DestinyLevel="2" ID="771" Unique="False">
+		<Trigger Type="OnTurnEnd" Side="Enemy">
+			<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
+				<Variable Type="OccupantCount">
+					<CardFilter IncludeRaces="Demon"/>
+				</Variable>
+				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+				<Effect Type="Kill"/>
+			</Target>
+			<Target Zone="Hero" Amount="All" Side="Enemy">
+				<Variable Type="OccupantCount">
+					<CardFilter IncludeRaces="Demon"/>
+				</Variable>
+				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+				<Effect Type="Damage" Value="3"/>
+			</Target>
+		</Trigger>
+		<Description>At the end of opponent's turn, if a Demon is at Hall of Agony, destroy it then deal 3 damage to enemy hero.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Building - Necropolis -->
+	<!--....................................................................-->
+	<Card Rarity="Uncommon" Type="Building" Name="Bui_Nec_070" DisplayName="Boneyard" Faction="Necropolis" Cost="4" MightLevel="3" MagicLevel="0" DestinyLevel="0" ID="772" Unique="False">
+		<Trigger Type="OnPreTurnEnd" Side="Friendly">
+			<Target Zone="Graveyard" Amount="1" Side="Friendly" Random="True">
+				<CardFilter BaseMaxCost="True" Value="2" IncludeCardType="Unit" IncludeFaction="Necropolis"/>
+				<Effect Type="DeployOnBuilding"/>
+			</Target>
+		</Trigger>
+		<Description>At the end of your turn, take a card at random from your graveyard among all the necropolis creatures with a cost of [2:RESOURCES] or less that can be deployed at Boneyard and deploy it at Boneyard for free.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Building - Sanctuary -->
+	<!--....................................................................-->
+	<Card Rarity="Common" Type="Building" Name="Bui_San_070" DisplayName="Kabuki Dojo" Faction="Sanctuary" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="2" ID="773" Unique="False">
+		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
+			<Effect Type="ModifyAbility" Ability="ShuffleOnEnterGraveyard"/>
+		</Target>
+		<Trigger Type="OnOccupantCardDeath">
+			<Target Zone="None" Side="Friendly"/>
+			<!-- DO NOT REMOVE - This target is mandatory to force the shuffle before the draw -->
+			<Target Zone="None" Side="Friendly">
+				<Effect Type="Draw" Value="1" Duration="Immediate"/>
+			</Target>
+		</Trigger>
+		<Description>Whenever a creature at Kabuki Dojo dies, shuffle it in its owner's library instead, then draw a card.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Type="Building" Name="Bui_San_071" DisplayName="Kensei Dojo" Faction="Sanctuary" Cost="5" MightLevel="3" MagicLevel="0" DestinyLevel="3" ID="774" Unique="False">
+		<Variable Type="TargetCount">
+			<Target Zone="Battleground" Side="Any" Amount="All">
+				<CardFilter IncludeCardID="Bui_San_071"/>
+			</Target>
+		</Variable>
+		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
+			<Effect Type="ModifyAbility" Ability="Honor" Value="Variable"/>
+		</Target>
+		<Description>Creatures at Kensei Dojo gain Honor X, where X is equal to the number of cards named Kensei Dojo on the battleground.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Building - Stronghold -->
+	<!--....................................................................-->
+	<Card Rarity="Rare" Type="Building" Name="Bui_Str_070" DisplayName="Blood Ring" Faction="Stronghold" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" ID="775" Unique="False">
+		<Trigger Type="OnOccupantCardDeath">
+			<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+				<CardFilter IncludeAbility="Enrage"/>
+				<Effect Type="AddCounter" CounterType="Enrage" Value="1"/>
+			</Target>
+		</Trigger>
+		<Description>Whenever a creature at Blood Ring dies, put 1 enrage counter on all friendly creatures with Enrage.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Building - Neutral -->
+	<!--....................................................................-->
+	<Card Rarity="Rare" Type="Building" Name="Bui_Neu_070" DisplayName="Makeshift Shelter" Faction="Neutral" Cost="2" MightLevel="2" MagicLevel="0" DestinyLevel="2" ID="776" Unique="False">
+		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
+			<Effect Type="ModifyAbility" Ability="CannotTarget"/>
+		</Target>
+		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
+			<Effect Type="ModifyDamage" Value="0.0x" DamageIncludeFlags="Combat|Melee"/>
+		</Target>
+		<Trigger Type="OnOccupantCardMove">
+			<Target Zone="None" Amount="Self">
+				<Effect Type="Kill"/>
+			</Target>
+		</Trigger>
+		<Trigger Type="OnOccupantPreAttack">
+			<Target Zone="None" Amount="Self">
+				<Effect Type="Kill"/>
+			</Target>
+		</Trigger>
+		<Description>Creatures at Makeshift Shelter cannot be targeted. Prevent all attack damage dealt by melee creatures to creatures at Makeshift Shelter.
+When a creature at Makeshift Shelter attacks or moves, destroy Makeshift Shelter.</Description>
+	</Card>
+	<Card Rarity="Common" Type="Building" Name="Bui_Neu_071" DisplayName="Barricade" Faction="Neutral" Cost="1" MightLevel="1" MagicLevel="0" DestinyLevel="0" ID="777" Unique="False">
+		<Variable Type="TargetCount">
+			<Target Zone="Battleground" CardType="Building" Amount="Self" Shape="AdjacentOnly"/>
+		</Variable>
+		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
+			<Effect Type="ModifyRetaliate" Value="Variable"/>
+		</Target>
+		<Description>Creatures at Barricade gain +[1:RET] for each building adjacent to it.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Type="Building" Name="Bui_Neu_072" DisplayName="Training Ground" Faction="Neutral" Cost="3" MightLevel="1" MagicLevel="0" DestinyLevel="1" ID="778" Unique="False">
+		<Variable Type="OccupantCount"/>
+		<Trigger Type="OnHeroIncreaseMightLevel" Side="Friendly">
+			<Target Zone="None" Side="Friendly">
+				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+				<Effect Type="IncreaseLevel" Value="1" LevelType="Might"/>
+			</Target>
+		</Trigger>
+		<Description>Whenever you use your hero ability to increase your [MIGHT] level, if there is a creature at Training Ground, increase that level by 1 more.</Description>
+	</Card>
+</Cards>

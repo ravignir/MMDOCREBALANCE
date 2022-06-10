@@ -1,0 +1,378 @@
+<Cards>
+    <!--...............................................................................-->
+    <!-- Unreveleaded cards -->
+    <!--...............................................................................-->
+    <Card Rarity="NotPlayable" Type="Hero" Name="HeroCard" DisplayName="UnrevealedHeroCard" Faction="Neutral" MightLevel="0" MagicLevel="0" DestinyLevel="0" HP="0" ID="10001">
+        <Description>Unrevealed Hero Card.</Description>
+    </Card>
+    <Card Rarity="NotPlayable" Type="Event" Name="EventCard" DisplayName="UnrevealedEventCard" Faction="Neutral" ID="10002">
+        <Description>Unrevealed Event Card</Description>
+    </Card>
+    <Card Rarity="NotPlayable" Type="Unit" Name="CreatureCard" DisplayName="UnrevealedLibraryCard" Faction="Neutral" SubType="Flyer" Cost="0" MightLevel="0" Attack="0" Retaliate="0" HP="0" ID="10003">
+        <Description>Unrevealed Library Card</Description>
+    </Card>
+    <Card Rarity="NotPlayable" Type="Spell" Name="SpellCard" DisplayName="UnrevealedLibraryCard" School="Prime" ID="10004">
+        <Description>Unrevealed Library Card</Description>
+    </Card>
+    <Card Rarity="NotPlayable" Type="Fortune" Name="FortuneCard" DisplayName="UnrevealedLibraryCard" Faction="Neutral" Cost="0" DestinyLevel="0" ID="10005">
+        <Description>Unrevealed Library Card</Description>
+    </Card>
+    <Card Rarity="NotPlayable" Type="Building" Name="BuildingCard" DisplayName="UnrevealedLibraryCard" Faction="Neutral" Cost="0" DestinyLevel="0" ID="10006">
+        <Description>Unrevealed Library Card</Description>
+    </Card>
+    <!--...............................................................................-->
+    <!-- Tutorial cards -->
+    <!--...............................................................................-->
+    <Card Rarity="NotPlayable" Token="True" Type="Fortune" Name="For_Neu_000" DisplayName="Dragon's Crystal" Faction="Neutral" Cost="0" DestinyLevel="0" ID="10007">
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption" />
+            <Subgroup>
+                <Target Zone="None" Side="Friendly" Option="0">
+                    <Option Value="0" DisplayText="Draw a card." />
+                    <Effect Type="Draw" Value="1" />
+                </Target>
+                <Target Zone="None" Side="Friendly">
+                    <Option Value="1" DisplayText="Gain [1:RESOURCES]." />
+                    <Effect Type="GainResources" Value="1" />
+                </Target>
+                <Target Zone="Battleground" CardType="Unit" Amount="1">
+                    <Option Value="2" DisplayText="Deal 1 damage." />
+                    <Effect Type="Damage" Value="1" />
+                </Target>
+            </Subgroup>
+        </Target>
+        <Description>Draw a card OR Gain [1:RESOURCES] OR Deal 1 damage to target creature.</Description>
+    </Card>
+
+    <!--...............................................................................-->
+    <!-- Tutorial cards -->
+    <!--...............................................................................-->
+    <Card Rarity="NotPlayable" Type="Hero" Name="Her_Tut_001" DisplayName="Player Hero" Faction="Haven" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="10100">
+        <School Name="Fire"/>
+        <School Name="Prime"/>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption"/>
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities"/>
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+            </Subgroup>
+        </Target>
+    </Card>
+    <Card Rarity="NotPlayable" Type="Hero" Name="Her_Tut_002" ResourceName="Cre_Nec_001" DisplayName="Enemy Hero" Faction="Necropolis" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="4" ID="10101">
+        <School Name="Fire"/>
+		<Description>0[RESOURCES]: Increase your [MIGHT], [MAGIC] or [DESTINY] level. [BR]0[RESOURCES]: Draw a card.</Description>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption"/>
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities"/>
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+            </Subgroup>
+        </Target>
+    </Card>	
+	<Card Rarity="NotPlayable" Type="Hero" Name="Her_Tut_003" ResourceName="Cre_Nec_006" DisplayName="Enemy Hero" Faction="Necropolis" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="2" ID="10102">
+		<Description>0[RESOURCES]: Increase your [MIGHT], [MAGIC] or [DESTINY] level. [BR]0[RESOURCES]: Draw a card.</Description>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption"/>
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities"/>
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+            </Subgroup>
+        </Target>
+    </Card>	
+	<Card Rarity="NotPlayable" Type="Hero" Name="Her_Tut_004" ResourceName="Her_Inf_002" DisplayName="Garant, Seeker of Discord" Faction="Inferno" MightLevel="1" MagicLevel="1" DestinyLevel="2" HP="4" ID="10103">
+        <School Name="Fire"/>
+        <School Name="Prime"/>
+        <Description>0[RESOURCES]: Increase your [MIGHT], [MAGIC] or [DESTINY] level. [BR]0[RESOURCES]: Draw a card.</Description>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption"/>
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities"/>
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+            </Subgroup>
+        </Target>
+    </Card>
+    <!--...............................................................................-->
+    <!-- Campaign 01 cards -->
+    <!--...............................................................................-->
+    <Card Rarity="NotPlayable" Type="Hero" Name="Her_C01_001" ResourceName="Cre_Str_013" DisplayName="Crusher" Faction="Stronghold" MightLevel="2" MagicLevel="0" DestinyLevel="1" HP="10" ID="10104">
+        <School Name="Earth"/>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption"/>
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities"/>
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+            </Subgroup>
+        </Target>
+    </Card>
+    <Card Rarity="NotPlayable" Type="Hero" Name="Her_C01_002" ResourceName="Cre_Nec_001" DisplayName="Banshee" Faction="Necropolis" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="12" ID="10105">
+        <School Name="Dark"/>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption"/>
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities"/>
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+            </Subgroup>
+        </Target>
+    </Card>
+	<!--...............................................................................-->
+    <!-- Campaign 02 cards -->
+    <!--...............................................................................-->
+    <Card Rarity="NotPlayable" Type="Hero" Name="Her_C02_001" ResourceName="Cre_Nec_004" DisplayName="Farhang" Faction="Necropolis" MightLevel="2" MagicLevel="0" DestinyLevel="1" HP="18" ID="10106">
+        <School Name="Dark"/>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption"/>
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities"/>
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+            </Subgroup>
+        </Target>
+    </Card>
+    <Card Rarity="NotPlayable" Type="Hero" Name="Her_C01_004" ResourceName="Cre_Str_023" DisplayName="Usun" Faction="Stronghold" MightLevel="2" MagicLevel="0" DestinyLevel="1" HP="20" ID="10107">
+        <School Name="Earth"/>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption"/>
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities"/>
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+            </Subgroup>
+        </Target>
+    </Card>
+    <Card Rarity="NotPlayable" Type="Hero" Name="Her_C01_005" ResourceName="Cre_Inf_007" DisplayName="Abyssal Lord" Faction="Inferno" MightLevel="2" MagicLevel="2" DestinyLevel="1" HP="18" ID="10108">
+        <School Name="Fire"/>
+        <School Name="Prime"/>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption"/>
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities"/>
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+            </Subgroup>
+        </Target>
+    </Card>
+    <Card Rarity="NotPlayable" Type="Hero" Name="Her_C01_006" ResourceName="Cre_Inf_009" DisplayName="Sephilia" Faction="Inferno" MightLevel="1" MagicLevel="2" DestinyLevel="1" HP="19" ID="10109">
+        <School Name="Fire"/>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption"/>
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities"/>
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+            </Subgroup>
+        </Target>
+    </Card>
+    <Card Rarity="NotPlayable" Type="Hero" Name="Her_C01_007" ResourceName="Her_Inf_005" DisplayName="Phrias" Faction="Inferno" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="25" ID="10110">
+        <School Name="Fire"/>
+        <School Name="Prime"/>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption"/>
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities"/>
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+            </Subgroup>
+        </Target>
+    </Card>
+    <Card Rarity="NotPlayable" Type="Hero" Name="Her_C01_008" ResourceName="Her_Nec_005" DisplayName="Ariana" Faction="Necropolis" MightLevel="1" MagicLevel="2" DestinyLevel="0" HP="18" ID="10111">
+        <School Name="Prime"/>
+        <School Name="Dark"/>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption"/>
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities"/>
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+            </Subgroup>
+        </Target>
+    </Card>
+    <Card Rarity="NotPlayable" Type="Hero" Name="Her_C01_009" ResourceName="Her_San_005" DisplayName="Akane" Faction="Sanctuary" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="10112">
+        <School Name="Water"/>
+        <School Name="Prime"/>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption"/>
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities"/>
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+            </Subgroup>
+        </Target>
+    </Card>
+    <Card Rarity="NotPlayable" Type="Hero" Name="Her_C01_010" ResourceName="Her_Str_006" DisplayName="Kassar Blackskull" Faction="Stronghold" MightLevel="2" MagicLevel="0" DestinyLevel="1" HP="21" ID="10113">
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption"/>
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities"/>
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+            </Subgroup>
+        </Target>
+    </Card>
+    <Card Rarity="NotPlayable" Type="Hero" Name="Her_C01_011" ResourceName="Her_Hav_005" DisplayName="Kieran" Faction="Haven" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="23" ID="10114">
+        <School Name="Prime"/>
+        <School Name="Light"/>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption"/>
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities"/>
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+            </Subgroup>
+        </Target>
+    </Card>
+    <Card Rarity="NotPlayable" Type="Hero" Name="Her_C01_012" ResourceName="s01_For_Neu_036" DisplayName="Herald of the Void" Faction="Academy" MightLevel="6" MagicLevel="6" DestinyLevel="6" HP="18" ID="10115">
+        <School Name="Air"/>
+        <School Name="Earth"/>
+        <School Name="Fire"/>
+        <School Name="Water"/>
+        <School Name="Prime"/>
+        <School Name="Dark"/>
+        <School Name="Light"/>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption"/>
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities"/>
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+            </Subgroup>
+        </Target>
+    </Card>
+    <Card Rarity="NotPlayable" Type="Hero" Name="Her_C01_013" ResourceName="s01_For_Neu_036" DisplayName="Herald of the Void" Faction="Academy" MightLevel="6" MagicLevel="6" DestinyLevel="6" HP="24" ID="10116">
+        <School Name="Air"/>
+        <School Name="Earth"/>
+        <School Name="Fire"/>
+        <School Name="Water"/>
+        <School Name="Prime"/>
+        <School Name="Dark"/>
+        <School Name="Light"/>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption"/>
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities"/>
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+            </Subgroup>
+        </Target>
+    </Card>
+	<Card Rarity="NotPlayable" Type="Hero" Name="Her_C01_014" ResourceName="s03_Cre_Aca_023" DisplayName="Herald's Messenger" Faction="Academy" MightLevel="1" MagicLevel="1" DestinyLevel="2" HP="20" ID="10117">
+        <School Name="Earth"/>
+        <School Name="Dark"/>
+	    <School Name="Prime"/>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption"/>
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities"/>
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+            </Subgroup>
+        </Target>
+    </Card>
+
+    <!--...............................................................................-->
+    <!-- Heros - Cheat -->
+    <!--...............................................................................-->
+    <Card NotLocalized="True" Rarity="NotPlayable" Type="Hero" Name="Her_Che_000" DisplayName="Robin of Waterpool" Faction="Neutral" MightLevel="90" MagicLevel="90" DestinyLevel="90" HP="50" ID="15001">
+        <School Name="Light"/>
+        <School Name="Dark"/>
+        <School Name="Air"/>
+        <School Name="Earth"/>
+        <School Name="Fire"/>
+        <School Name="Water"/>
+        <School Name="Prime"/>
+        <Description>If you play, you win the game. +90[RESOURCES].</Description>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption"/>
+            <Subgroup>  
+                <TemplateEffect Name="HeroAbilities"/>
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+
+                <!--
+                <Target Zone="Hand" Amount="1" Side="Friendly">
+                    <Option Value="4" DisplayText="2 units +1 [ATK]."/>
+                    <Effect Type="MoveCardTo" Destination="Graveyard"/>
+                </Target>
+                <Target Zone="Battleground" Side="Friendly" Amount="2">
+                    <Option Value="4"/>
+                    <CardType Include="Unit"/>
+                    <Effect Type="ModifyAttack" Value="1" Duration="UntilEndOfTurn"/>
+                </Target >
+                <Target Zone="Library" Side="Friendly" Amount="1">
+                    <Option Value="4" DisplayText="Banish card from library."/>
+                    <Effect Type="Banish"/>
+                </Target> 
+                -->
+
+                <!-- PHRIAS Ability -->
+                <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="1" ForceExecute="True">
+                    <Option Value="4" DisplayText="Creature gain Sweep Attack."/>
+                    <Effect Type="ModifyAbility" Ability="SweepAttack" Duration="UntilEndOfTurn"/>                
+                </Target> 
+
+                <!-- CRAG HACK Ability
+                <Target Zone="Hero" Amount="All" Side="Friendly" NeedActivation="True">
+                    <Option Value="4" DisplayText="Neutral cost 1 less."/>
+                    <Effect Type="GlobalEffect" GlobalEffectType="ModifyCost" Value="-1" Duration="UntilEndOfTurn">
+                        <CardFilter IncludeCardType="Unit" IncludeFaction="Neutral"/>
+                    </Effect>
+                </Target>-->
+
+                <!-- GAZAL, HERALD OF THE VOID               
+                <Target Zone="None" Side="Friendly">
+                    <Variable Type="Resources" Side="Friendly"/>
+                    <Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+                    <Option Value="4" DisplayText="[1:RESOURCES]: Discard: Enemy Spell."/>
+                    <Effect Type="GainResources" Value="-1" Duration="Immediate"/>
+                </Target>
+                <Target Zone="Hand" Amount="1" Side="Friendly">
+                    <Option Value="4"/>
+                    <Effect Type="MoveCardTo" Destination="Graveyard" Duration="Immediate"/>
+                </Target>
+                <Target Zone="Graveyard" Amount="1" Side="Enemy">
+                    <CardFilter IncludeCardType="Spell" ExcludeUnique="True" IncludeOngoingType="Immediate"/>
+                    <Option Value="4"/>
+                    <Effect Type="DetachLocation" Destination="Banish"/>
+                    <Effect Type="Play" CancelDestination="Graveyard" Force="True" FakeAdditionalCost="1" Duration="Immediate"/>
+                </Target> -->
+                
+                <Target Zone="Library" Side="Friendly" Amount="1" Cancelable="True">
+                    <Option Value="5" DisplayText="Choose card from library."/>
+                    <Effect Type="MoveCardTo" Destination="Hand" Duration="Immediate"/>
+                </Target>
+                <Target Zone="Graveyard" Side="Friendly" Amount="1">
+                    <Option Value="6" DisplayText="Choose card from graveyard."/>
+                    <Effect Type="MoveCardTo" Destination="Hand" Duration="Immediate"/>
+                </Target>
+                <Target Zone="None" Side="Friendly">
+                    <Option Value="7" DisplayText="Increase [RESOURCES] by 90."/>
+                    <Effect Type="GainResourcesProduction" Value="90" Duration="Immediate"/>
+                </Target>
+                <Target Zone="None" Side="Friendly">
+                    <Option Value="7"/>
+                    <Effect Type="GainResources" Value="90" Duration="Immediate"/>
+                </Target>
+            </Subgroup>
+        </Target>
+    </Card>
+
+    <Card NotLocalized="True" Rarity="NotPlayable" Type="Hero" Name="Her_Che_002" DisplayName="Robin, Invoker of Loss" Faction="Neutral" MightLevel="5" MagicLevel="5" DestinyLevel="5" HP="1" ID="15003">
+        <School Name="Light"/>
+        <School Name="Dark"/>
+        <School Name="Air"/>
+        <School Name="Earth"/>
+        <School Name="Fire"/>
+        <School Name="Water"/>
+        <School Name="Prime"/>
+        <Description>If you play, you lose the game.</Description>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption"/>
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities"/>
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+                <Target Zone="Library" Side="Friendly" Amount="1">
+                    <Option Value="4" DisplayText="Choose card from library."/>
+                    <Effect Type="MoveCardTo" Destination="Hand" Duration="Immediate"/>
+                </Target>
+                <Target Zone="Graveyard" Side="Friendly" Amount="1">
+                    <Option Value="5" DisplayText="Choose card from graveyard."/>
+                    <Effect Type="MoveCardTo" Destination="Hand" Duration="Immediate"/>
+                </Target>
+                <Target Zone="None" Side="Friendly">
+                    <Option Value="6" DisplayText="Increase [RESOURCES] by 90."/>
+                    <Effect Type="GainResourcesProduction" Value="90" Duration="Immediate"/>
+                </Target>
+                <Target Zone="None" Side="Friendly">
+                    <Option Value="6"/>
+                    <Effect Type="GainResources" Value="90" Duration="Immediate"/>
+                </Target>
+            </Subgroup>
+        </Target>
+    </Card>
+</Cards>

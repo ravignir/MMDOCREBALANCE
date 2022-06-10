@@ -1,0 +1,488 @@
+<Cards>
+
+    <TemplateEffect Name="AirHeal">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+            <Effect Type="ModifyDamage" Value="1.0x" DamageIncludeFlags="Air" Reverse="True" OwnerAbility="AirHeal"/>
+        </Target>
+    </TemplateEffect>
+
+    <TemplateEffect Name="AirResist">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+            <Effect Type="ModifyDamage" Value="0.5xd" DamageIncludeFlags="Air" OwnerAbility="AirResist"/>
+        </Target>
+    </TemplateEffect>
+
+	<TemplateEffect Name="AbsorbPoisonDamageHeal">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+            <Effect Type="ModifyDamage" Value="1.0x" DamageIncludeFlags="Poison" Reverse="True" OwnerAbility="AbsorbPoisonDamageHeal"/>
+        </Target>
+    </TemplateEffect>	
+	
+    <TemplateEffect Name="AirWard">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+            <Effect Type="PlayEffect" PlayEffectType="Ward" OwnerAbility="AirWard">
+                <CardFilter IncludeSchool="Air"/>
+            </Effect>
+        </Target>
+    </TemplateEffect>
+
+	<TemplateEffect Name="Armor">
+		<Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+			<Variable Type="AbilityValue" Ability="Armor" ValueModifier="-1.0x"/>
+            <Effect Type="ModifyDamage" Value="Variable" DamageIncludeFlags="Combat" OwnerAbility="Armor" />
+        </Target>
+    </TemplateEffect>
+	
+    <TemplateEffect Name="AreaCannotAttack">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Shape="SelfAndAdjacent">
+            <Effect Type="ModifyAbility" Ability="CannotAttack" OwnerAbility="AreaCannotAttack"/>
+        </Target>
+    </TemplateEffect>
+
+    <TemplateEffect Name="AttackWeakTwice">
+        <Trigger Type="OnThisPreAttackUnit">
+            <CardFilter MaxAttack="True" Value="1" IncludeCardType="Unit"/>
+            <Target Zone="Battleground" Amount="Self">
+                <Variable Type="UnitAttackCount"/>
+                <Condition Operator="EqualTo" ValueA="Variable" ValueB="0"/>
+                <Effect Type="AdditionalAttack" Value="1" OwnerAbility="AttackWeakTwice"/>
+            </Target>
+        </Trigger>
+    </TemplateEffect>
+
+    <TemplateEffect Name="Berserk">
+        <Trigger Type="OnActionPhaseBegin" Side="Friendly">
+            <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+                <Effect Type="AutoAttack" OwnerAbility="Berserk"/>
+            </Target>
+        </Trigger>
+    </TemplateEffect>
+
+    <TemplateEffect Name="Bloodthirst">
+        <Trigger Type="OnUnitDeath" Side="Enemy">
+            <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+                <Variable Type="AbilityValue" Ability="Bloodthirst"/>
+                <Effect Type="AddCounter" CounterType="Enrage" Value="Variable" OwnerAbility="Bloodthirst"/>
+            </Target>
+        </Trigger>
+    </TemplateEffect>
+
+    <TemplateEffect Name="CannotTarget">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+            <Effect Type="PlayEffect" PlayEffectType="CannotTarget" OwnerAbility="CannotTarget"/>
+        </Target>
+    </TemplateEffect>
+
+    <TemplateEffect Name="CombatGuard">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly" Shape="SelfAndAdjacent">
+            <Variable Type="AbilityValue" Ability="CombatGuard" ValueModifier="-1.0x"/>
+            <Effect Type="ModifyDamage" Value="Variable" DamageIncludeFlags="Combat" OwnerAbility="CombatGuard"/>
+        </Target>
+    </TemplateEffect>
+
+	
+
+    <TemplateEffect Name="Crippling">
+        <Trigger Type="OnThisDamageUnit" Side="Enemy" DamageIncludeFlags="Attack">
+            <Target Zone="Battleground" CardType="Unit" Amount="FromTrigger">
+                <Variable Type="AbilityValue" Ability="Crippling"/>
+                <Effect Type="AddCounter" CounterType="Crippling" Value="Variable" OwnerAbility="Crippling"/>
+            </Target>
+        </Trigger>
+    </TemplateEffect>
+    
+	<TemplateEffect Name="CripplingSelf">
+        <Trigger Type="OnThisPostAttack">
+            <Target Zone="Battleground" CardType="Unit" Amount="Self">
+                <Variable Type="AbilityValue" Ability="CripplingSelf"/>
+                <Effect Type="AddCounter" CounterType="Crippling" Value="Variable" OwnerAbility="CripplingSelf"/>
+            </Target>
+        </Trigger>
+    </TemplateEffect>
+	
+    <TemplateEffect Name="DarkResist">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+            <Effect Type="ModifyDamage" Value="0.5xd" DamageIncludeFlags="Dark" OwnerAbility="DarkResist"/>
+        </Target>
+    </TemplateEffect>
+    
+    <TemplateEffect Name="DarkWard">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+            <Effect Type="PlayEffect" PlayEffectType="Ward" OwnerAbility="DarkWard">
+                <CardFilter IncludeSchool="Dark"/>
+            </Effect>
+        </Target>
+    </TemplateEffect>
+        
+    <TemplateEffect Name="DieOnDamage">
+        <Trigger Type="OnDamaged">
+            <Target Zone="Battleground" CardType="Unit" Amount="Self">
+                <Effect Type="Kill" OwnerAbility="DieOnDamage"/>
+            </Target>
+        </Trigger>
+    </TemplateEffect>
+
+    <TemplateEffect Name="EarthHeal">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+            <Effect Type="ModifyDamage" Value="1.0x" DamageIncludeFlags="Earth" Reverse="True" OwnerAbility="EarthHeal"/>
+        </Target>
+    </TemplateEffect>
+
+    <TemplateEffect Name="EarthResist">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+            <Effect Type="ModifyDamage" Value="0.5xd" DamageIncludeFlags="Earth" OwnerAbility="EarthResist"/>
+        </Target>
+    </TemplateEffect>
+    
+    <TemplateEffect Name="EarthWard">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+            <Effect Type="PlayEffect" PlayEffectType="Ward" OwnerAbility="EarthWard">
+                <CardFilter IncludeSchool="Earth"/>
+            </Effect>
+        </Target>
+    </TemplateEffect> 
+
+    <TemplateEffect Name="EnemySpellWard">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+            <Effect Type="PlayEffect" PlayEffectType="Ward" OwnerAbility="EnemySpellWard">
+                <CardFilter IncludeCardType="Spell" Side="Enemy"/>
+            </Effect>
+        </Target>
+    </TemplateEffect>
+
+    <TemplateEffect Name="EnemyWard">
+        <Target Zone="Battleground" Amount="Self">
+            <Effect Type="PlayEffect" PlayEffectType="Ward" OwnerAbility="EnemyWard">
+                <CardFilter Side="Enemy"/>
+            </Effect>
+        </Target>
+    </TemplateEffect>
+
+    <TemplateEffect Name="Enrage">
+        <Trigger Type="OnUnitDeath" Side="Friendly">
+            <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+                <Variable Type="AbilityValue" Ability="Enrage"/>
+                <Effect Type="AddCounter" CounterType="Enrage" Value="Variable" OwnerAbility="Enrage"/>
+            </Target>
+        </Trigger>
+    </TemplateEffect>
+	
+	<TemplateEffect Name="Endurable">
+		<Trigger Type="OnEnchantedCardLeavePlay">
+            <Target Zone="None" Amount="Self">
+                <Effect Type="AdjacentMovement" Side="Friendly" MoveFromLastKnownParent="True" OwnerAbility="Endurable"/>
+            </Target>
+        </Trigger>
+	</TemplateEffect>
+	
+    <TemplateEffect Name="FireBurst">
+        <Trigger Type="OnThisCardDeath">
+            <Target Zone="BattlegroundColumn" CardType="Unit" Amount="FromTrigger">
+                <Variable Type="AbilityValue" Ability="FireBurst"/>
+                <Effect Type="Damage" Value="Variable" OwnerAbility="FireBurst"/>
+            </Target>
+        </Trigger>
+    </TemplateEffect>
+
+    <TemplateEffect Name="FireHeal">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+            <Effect Type="ModifyDamage" Value="1.0x" DamageIncludeFlags="Fire" Reverse="True" OwnerAbility="FireHeal"/>
+        </Target>
+    </TemplateEffect>
+
+    <TemplateEffect Name="FireResist">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+            <Effect Type="ModifyDamage" Value="0.5xd" DamageIncludeFlags="Fire" OwnerAbility="FireResist"/>
+        </Target>
+    </TemplateEffect>
+
+    <TemplateEffect Name="FireWard">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+            <Effect Type="PlayEffect" PlayEffectType="Ward" OwnerAbility="FireWard">
+                <CardFilter IncludeSchool="Fire"/>
+            </Effect>
+        </Target>
+    </TemplateEffect>
+
+    <TemplateEffect Name="FlyerGuard">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly" Shape="SelfAndAdjacent">
+            <Variable Type="AbilityValue" Ability="FlyerGuard" ValueModifier="-1.0x"/>
+            <Effect Type="ModifyDamage" Value="Variable" DamageIncludeFlags="Combat|Flyer" OwnerAbility="FlyerGuard"/>
+        </Target>
+    </TemplateEffect>
+
+    <TemplateEffect Name="FortuneWard">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+            <Effect Type="PlayEffect" PlayEffectType="Ward" OwnerAbility="FortuneWard">
+                <CardFilter IncludeCardType="Fortune"/>
+            </Effect>
+        </Target>
+    </TemplateEffect>
+    
+    <TemplateEffect Name="FrozenTouch">
+        <Trigger Type="OnThisDamageUnit" Side="Enemy" DamageIncludeFlags="Attack">
+            <Target Zone="Battleground" CardType="Unit" Amount="FromTrigger" ForceExecute="True" Persistent="True">
+                <Effect Type="ModifyAbility" Ability="CannotAttack" Duration="UntilYourNextTurn" OwnerAbility="FrozenTouch"/>
+                <Effect Type="ModifyAbility" Ability="Immobilized" Duration="UntilYourNextTurn" OwnerAbility="FrozenTouch"/>
+            </Target>
+        </Trigger>
+    </TemplateEffect>
+
+    <TemplateEffect Name="Heal">
+        <Trigger Type="OnSupplyPhaseBegin" Side="Friendly">
+            <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly" Shape="AdjacentOnly">
+                <Variable Type="AbilityValue" Ability="Heal"/>
+                <Effect Type="Heal" Value="Variable" OwnerAbility="Heal"/>
+            </Target>
+        </Trigger>
+    </TemplateEffect>
+
+    <TemplateEffect Name="HeroAbilities">
+        <Target Zone="None" Side="Friendly">
+            <Option Value="0" DisplayText="Increase [MIGHT] level."/>
+            <Effect Type="IncreaseLevel" Value="1" LevelType="Might" Duration="Immediate"/>
+        </Target>
+        <Target Zone="None" Side="Friendly">
+            <Option Value="1" DisplayText="Increase [MAGIC] level."/>
+            <Effect Type="IncreaseLevel" Value="1" LevelType="Magic" Duration="Immediate"/>
+        </Target>
+        <Target Zone="None" Side="Friendly">
+            <Option Value="2" DisplayText="Increase [DESTINY] level."/>
+            <Effect Type="IncreaseLevel" Value="1" LevelType="Destiny"  Duration="Immediate"/>
+        </Target>
+        <Target Zone="None" Side="Friendly">
+            <Variable Type="Resources" Side="Friendly"/>
+            <Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+            <Option Value="3" DisplayText="Draw a card."/>
+            <Effect Type="GainResources" Value="-1" Duration="Immediate"/>
+        </Target>
+        <Target Zone="None" Side="Friendly">
+            <Option Value="3"/>
+            <Effect Type="Draw" Value="1" Duration="Immediate"/>
+        </Target>
+    </TemplateEffect>
+
+    <TemplateEffect Name="Honor">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly" Shape="AdjacentOnly">
+            <Variable Type="AbilityValue" Ability="Honor"/>
+            <Effect Type="ModifyAttack" Value="Variable" OwnerAbility="Honor"/>
+            <Effect Type="ModifyRetaliate" Value="Variable" OwnerAbility="Honor"/>
+        </Target>
+    </TemplateEffect>
+
+    <TemplateEffect Name="Hypnotize">
+        <Target Zone="BattlegroundColumn" CardType="Unit" Amount="Self" Side="Enemy">
+            <Effect Type="ModifyAbility" Ability="Immobilized"/>
+        </Target>
+    </TemplateEffect>
+
+    <TemplateEffect Name="ImmuneToRetaliate">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+            <Effect Type="ModifyDamage" Value="0.0x" DamageIncludeFlags="Retaliate" OwnerAbility="ImmuneToRetaliate"/>
+        </Target>
+    </TemplateEffect>
+    
+    <TemplateEffect Name="Income">
+        <Target Zone="Hero" Amount="All" Side="Friendly">
+            <Variable Type="AbilityValue" Ability="Income"/>
+            <Effect Type="ModifyResourcesProduction" Value="Variable" OwnerAbility="Income"/>
+        </Target>
+    </TemplateEffect>
+    
+    <TemplateEffect Name="Incorporeal">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+            <Effect Type="ModifyDamage" Value="0.5xd" DamageExcludeFlags="Magic" OwnerAbility="Incorporeal"/>
+        </Target>
+    </TemplateEffect>
+
+    <TemplateEffect Name="Infect">
+        <Trigger Type="OnThisDamageUnit" Side="Enemy" DamageIncludeFlags="Attack">
+            <Target Zone="Battleground" CardType="Unit" Amount="FromTrigger">
+                <Variable Type="AbilityValue" Ability="Infect"/>
+                <Effect Type="AddCounter" CounterType="Poison" Value="Variable" OwnerAbility="Infect"/>
+            </Target>
+        </Trigger>
+    </TemplateEffect>
+	
+	<TemplateEffect Name="DamageBerserk">
+        <Trigger Type="OnThisDamageUnit" Side="Enemy" DamageIncludeFlags="Attack">
+			<Target Zone="Battleground" Amount="FromTrigger" ForceExecute="True" Persistent="True">
+				<Effect Type="ModifyAbility" Ability="Berserk" Duration="UntilYourNextTurn" OwnerAbility="DamageBerserk"/>
+			</Target>
+		</Trigger>
+    </TemplateEffect>
+	
+	
+    <TemplateEffect Name="Leadership">
+        <Target Zone="Hero" Amount="All" Side="Friendly">
+            <Variable Type="AbilityValue" Ability="Leadership"/>
+            <Effect Type="IncreaseLevel" Value="Variable" LevelType="Might"/>
+        </Target>
+    </TemplateEffect>
+
+    <TemplateEffect Name="LifeDrain">
+        <Trigger Type="OnThisDamageAnything" Side="Enemy" DamageIncludeFlags="Attack">
+            <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+                <Variable Type="AbilityValue" Ability="LifeDrain"/>
+                <Effect Type="Heal" Value="Variable" OwnerAbility="LifeDrain"/>
+            </Target>
+        </Trigger>
+    </TemplateEffect>
+	
+
+	
+	
+
+    <TemplateEffect Name="LightResist">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+            <Effect Type="ModifyDamage" Value="0.5xd" DamageIncludeFlags="Light" OwnerAbility="LightResist"/>
+        </Target>
+    </TemplateEffect>
+
+    <TemplateEffect Name="LightWard">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+            <Effect Type="PlayEffect" PlayEffectType="Ward" OwnerAbility="LightWard">
+                <CardFilter IncludeSchool="Light"/>
+            </Effect>
+        </Target>
+    </TemplateEffect>
+
+    <TemplateEffect Name="Lucky">
+        <Target Zone="Hero" Amount="All" Side="Friendly">
+            <Variable Type="AbilityValue" Ability="Lucky"/>
+            <Effect Type="IncreaseLevel" Value="Variable" LevelType="Destiny" OwnerAbility="Lucky"/>
+        </Target>
+    </TemplateEffect>
+
+    <TemplateEffect Name="MagicChannel">
+        <Target Zone="Hero" Amount="All" Side="Friendly">
+            <Variable Type="AbilityValue" Ability="MagicChannel"/>
+            <Effect Type="IncreaseLevel" Value="Variable" LevelType="Magic"/>
+        </Target>
+    </TemplateEffect>
+
+    <TemplateEffect Name="MagicGuard">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly" Shape="SelfAndAdjacent">
+            <Variable Type="AbilityValue" Ability="MagicGuard" ValueModifier="-1.0x"/>
+            <Effect Type="ModifyDamage" Value="Variable" DamageIncludeFlags="Magic" OwnerAbility="MagicGuard"/>
+        </Target>
+    </TemplateEffect>
+
+    <TemplateEffect Name="MagicResist">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+            <Effect Type="ModifyDamage" Value="0.5xd" DamageIncludeFlags="Magic" OwnerAbility="MagicResist"/>
+        </Target>
+    </TemplateEffect>
+
+    <TemplateEffect Name="MagicShield">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+            <Effect Type="ModifyDamage" Value="0.0x" DamageIncludeFlags="Magic" OwnerAbility="MagicShield"/>
+        </Target>
+    </TemplateEffect>
+
+    <TemplateEffect Name="MeleeBlast">
+        <Trigger Type="OnThisPreAttackUnit" ExecuteOncePerTransaction="True">
+            <CardFilter IncludeUnitType="Melee" IncludeCardType="Unit"/>
+            <Target Zone="Battleground" CardType="Unit" Side="Enemy" Amount="All" ExceptFromTrigger="True">
+                <CardFilter IncludeUnitType="Melee"/>
+                <Variable Type="AbilityValue" Ability="MeleeBlast"/>
+                <Effect Type="Damage" Value="Variable"/>
+            </Target>
+        </Trigger>
+    </TemplateEffect>
+
+    <TemplateEffect Name="MeleeGuard">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly" Shape="SelfAndAdjacent">
+            <Variable Type="AbilityValue" Ability="MeleeGuard" ValueModifier="-1.0x"/>
+            <Effect Type="ModifyDamage" Value="Variable" DamageIncludeFlags="Combat|Melee" OwnerAbility="MeleeGuard"/>
+        </Target>
+    </TemplateEffect>
+
+    <TemplateEffect Name="Mending">
+        <Trigger Type="OnTurnEnd" Side="Friendly">
+            <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+                <Variable Type="UnitAttackCount"/>
+                <Condition Operator="LesserThan" ValueA="Variable" ValueB="1"/>
+                <Effect Type="Heal" Value="infinite" OwnerAbility="Mending"/>
+            </Target>
+        </Trigger>
+    </TemplateEffect>
+
+    <TemplateEffect Name="Outmaneuver">
+        <Trigger Type="OnThisCardDeploy">
+            <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Enemy">
+                <Effect Type="Relocate" Side="Enemy" OwnerAbility="Outmaneuver"/>
+            </Target>
+        </Trigger>
+    </TemplateEffect>
+
+    <TemplateEffect Name="PrimeResist">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+            <Effect Type="ModifyDamage" Value="0.5xd" DamageIncludeFlags="Prime" OwnerAbility="PrimeResist"/>
+        </Target>
+    </TemplateEffect>
+
+    <TemplateEffect Name="PrimeWard">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+            <Effect Type="PlayEffect" PlayEffectType="Ward" OwnerAbility="PrimeWard">
+                <CardFilter IncludeSchool="Prime"/>
+            </Effect>
+        </Target>
+    </TemplateEffect>
+    
+    <TemplateEffect Name="RangedGuard">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly" Shape="SelfAndAdjacent">
+            <Variable Type="AbilityValue" Ability="RangedGuard" ValueModifier="-1.0x"/>
+            <Effect Type="ModifyDamage" Value="Variable" DamageIncludeFlags="Combat|Shooter" OwnerAbility="RangedGuard"/>
+        </Target>
+    </TemplateEffect>
+
+    <TemplateEffect Name="Regenerate">
+        <Trigger Type="OnSupplyPhaseBegin" Side="Friendly">
+            <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+                <Variable Type="AbilityValue" Ability="Regenerate"/>
+                <Effect Type="Heal" Value="Variable" OwnerAbility="Regenerate"/>
+            </Target>
+        </Trigger>
+    </TemplateEffect>
+    
+    <TemplateEffect Name="SpellResist">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+            <Effect Type="ModifyDamage" Value="0.5xd" DamageIncludeFlags="Spell" OwnerAbility="SpellResist"/>
+        </Target>
+    </TemplateEffect>
+
+    <TemplateEffect Name="SpellShield">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+            <Effect Type="ModifyDamage" Value="0.0x" DamageIncludeFlags="Spell" OwnerAbility="SpellShield"/>
+        </Target>
+    </TemplateEffect>
+
+    <TemplateEffect Name="WaterHeal">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+            <Effect Type="ModifyDamage" Value="1.0x" DamageIncludeFlags="Water" Reverse="True" OwnerAbility="WaterHeal"/>
+        </Target>
+    </TemplateEffect>
+		
+    <TemplateEffect Name="WaterResist">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+            <Effect Type="ModifyDamage" Value="0.5xd" DamageIncludeFlags="Water" OwnerAbility="WaterResist"/>
+        </Target>
+    </TemplateEffect>
+
+    <TemplateEffect Name="WaterWard">
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly">
+            <Effect Type="PlayEffect" PlayEffectType="Ward" OwnerAbility="WaterWard">
+                <CardFilter IncludeSchool="Water"/>
+            </Effect>
+        </Target>
+    </TemplateEffect>
+	
+	<TemplateEffect Name="DieOnOccupantDeath">
+		<Trigger Type="OnOccupantCardDeath">
+			<Target Zone="None" Amount="Self">
+				<Effect Type="Kill" OwnerAbility="DieOnOccupantDeath"/>
+			</Target>
+		</Trigger>	
+	</TemplateEffect>
+</Cards>

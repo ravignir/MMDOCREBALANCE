@@ -1,0 +1,21 @@
+<Cards>
+    <!--...............................................................................-->
+    <!-- //	##  #   #####   ####     ###    #####   #####    -->
+    <!-- //	##  #   ##      #   #   ##  #   ##      ##       -->
+    <!-- //	#####   ####    ####    ##  #   ####    #####    -->
+    <!-- //	##  #   ##      ## #    ##  #   ##         ##    -->
+    <!-- //	##  #   #####   ##  #    ###    #####   #####    -->
+    <!--...............................................................................-->
+    <ExistingCard Name="Her_Aca_001" />
+    <ExistingCard Name="Her_Aca_007" />
+    <ExistingCard Name="Her_Hav_003" />
+    <ExistingCard Name="Her_Hav_004" />
+    <ExistingCard Name="Her_Inf_004" />
+    <ExistingCard Name="Her_Inf_005" />
+    <ExistingCard Name="Her_Nec_001" />
+    <ExistingCard Name="Her_Nec_006" />
+    <ExistingCard Name="Her_San_001" />
+    <ExistingCard Name="Her_San_005" />
+    <ExistingCard Name="Her_Str_001" />
+    <ExistingCard Name="Her_Str_007" />
+</Cards>

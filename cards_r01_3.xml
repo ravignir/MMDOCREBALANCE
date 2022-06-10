@@ -1,0 +1,84 @@
+<Cards>
+    <!--....................................................................-->
+    <!-- //	#####   ####    #####   ##      ##      ##### -->
+    <!-- //	##      ##  #   ##      ##      ##      ##    -->
+    <!-- //	#####   ####    ####    ##      ##      ##### -->
+    <!-- //	   ##   ##      ##      ##      ##         ## -->
+    <!-- //	#####   ##      #####   #####   #####   ##### -->
+    <!--....................................................................-->
+    <ExistingCard Name="Spe_Air_002" Rarity="Rare" />
+    <!-- b01 - Lightning Speed -->
+    <ExistingCard Name="Spe_Air_041" Rarity="Uncommon" />
+    <!-- b01 - Wind Gust -->
+    <ExistingCard Name="Spe_Air_009" Rarity="Common" />
+    <!-- b01 - Cyclone -->
+    
+    <ExistingCard Name="Spe_Dar_003" Rarity="Common" />
+    <!-- b01 - Agony -->
+    <ExistingCard Name="Spe_Dar_011" Rarity="Uncommon" />
+    <!-- b01 - Weakness -->
+    <ExistingCard Name="Spe_Dar_031" Rarity="Rare" />
+    <!-- b01 - Despair -->
+   
+    <ExistingCard Name="Spe_Ear_009" Rarity="Uncommon" />
+    <!-- b01 - Stone Skin -->
+    <ExistingCard Name="Spe_Ear_002" Rarity="Rare" />
+    <!-- b01 - Contagion -->
+    <ExistingCard Name="Spe_Ear_031" Rarity="Common" />
+    <!-- b01 - Poison Cloud -->
+    
+   
+    <ExistingCard Name="Spe_Fir_030" Rarity="Common" />
+    <!-- b01 - Combustion -->
+    <ExistingCard Name="Spe_Fir_031" Rarity="Uncommon" />
+    <!-- b01 - Fiery Weapon -->
+    <ExistingCard Name="Spe_Fir_032" Rarity="Rare" />
+    <!-- b01 - Mass Inner Fire -->
+   
+   
+    <ExistingCard Name="Spe_Lig_041" Rarity="Uncommon" />
+    <!-- b01 - Resolute Stand -->
+    <ExistingCard Name="Spe_Lig_051" Rarity="Rare" />
+    <!-- b01 - Divine Judgment -->
+    <ExistingCard Name="Spe_Lig_061" Rarity="Common" />
+    <!-- b01 - Chain Heal -->
+   
+    <ExistingCard Name="Spe_Pri_001" Rarity="Uncommon" />
+    <!-- b01 - Arcane Ward -->
+    <ExistingCard Name="Spe_Pri_005" Rarity="Common" />
+    <!-- b01 - Slow -->
+    <ExistingCard Name="Spe_Pri_032" Rarity="Rare" />
+    <!-- b01 - Spell Steal -->
+    
+    <ExistingCard Name="Spe_Wat_003" Rarity="Uncommon" />
+    <!-- b01 - Eternal Winter -->
+    <ExistingCard Name="Spe_Wat_001" Rarity="Rare" />
+    <!-- b01 - Blizzard -->
+    <ExistingCard Name="Spe_Wat_007" Rarity="Common" />
+    <!-- b01 - Ice Wall -->
+    
+    <!--....................................................................-->
+    <!-- //	#####   ##  #   #####   #   #   #####   ##### -->
+    <!-- //	##      ##  #   ##      ##  #    ##     ##    -->
+    <!-- //	####    ##  #   ####    # # #    ##     ##### -->
+    <!-- //	##      ##  #   ##      #  ##    ##        ## -->
+    <!-- //	#####     ##    #####   #   #    ##     ##### -->
+    <!--....................................................................-->
+    <ExistingCard Name="Eve_Neu_001" Rarity="Common" />
+    <!-- b01 - Month of the Dancing Flames -->
+    <ExistingCard Name="Eve_Neu_002" Rarity="Rare" />
+    <!-- b01 - Market of Wonders -->
+    <ExistingCard Name="Eve_Neu_008" Rarity="Uncommon" />
+    <!-- b01 - Market of Shadows -->
+    <ExistingCard Name="Eve_Neu_014" Rarity="Common" />
+    <!-- b01 - Month of the Emerald Song -->
+    <ExistingCard Name="Eve_Neu_020" Rarity="Common" />
+    <!-- s02 - Day of the Fallen Wolf -->
+    <ExistingCard Name="Eve_Neu_024" Rarity="Rare" />
+    <!-- s02 - Path of the Ancestors -->
+    <ExistingCard Name="Eve_Neu_042" Rarity="Uncommon" />
+    <!-- s02 - Conscription Day -->
+    <ExistingCard Name="Eve_Neu_051" Rarity="Uncommon" />
+    <!-- s03 - Eye of the Mana Storm -->
+    
+</Cards>

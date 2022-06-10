@@ -1,0 +1,797 @@
+<Cards>
+	<Card UseXmlDescription="True" Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Aca_111" DisplayName="Cre_Aca_111" Faction="Academy" SubType="Magic|Melee|Shooter" Race="Human|Wizard" Cost="5" MightLevel="4" MagicLevel="4" DestinyLevel="0" Attack="2" Retaliate="0" HP="5" ID="1030">
+		<Ability Type="ImmuneToRetaliate" />
+		<Trigger Type="OnThisCardDeath">
+			<Target Zone="BattlegroundPosition" CardType="Unit" Amount="FromTrigger" Side="Friendly"> 
+			</Target>
+			<Target Zone="Library" Amount="1" Random="True" Side="Friendly" CardType="Unit" SkipNextTargetValidation="True">
+				<CardFilter IncludeRaces="Titan"/>
+				<Effect Type="Deploy" Side="Friendly" DontGenerateTargetPosition="True" SamePositionLimit="True" DontTriggerOnDeploy="True"/>
+			</Target>
+			<Target Zone="BattlegroundPosition" Amount="SamePosition" InputOnExec="True">
+				<Effect Type="Deploy" Side="Friendly" DontGenerateTargetPosition="True" DontTriggerOnDeploy="True"/>
+			</Target>
+		</Trigger>
+		<Description>When [THIS] dies, replace it with a random Titan creature from your library that can be deployed at the same position.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Unit" Name="Cre_Aca_112" DisplayName="Cre_Aca_112" Faction="Academy" SubType="Magic|Melee" Race="Human|Wizard" Cost="3" MightLevel="2" MagicLevel="2" DestinyLevel="0" Attack="2" Retaliate="1" HP="4" ID="1031">
+		<Trigger Type="OnThisCardDeploy">
+			<Target Zone="BattlegroundPosition" Amount="1" Side="Friendly">
+				<Effect Type="PopulateNew" CardID="808"/>
+			</Target>
+		</Trigger>
+		<Description>When [THIS] enters the battleground, deploy a Makeshift Golem token.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Aca_113" DisplayName="Cre_Aca_113" Faction="Academy" School="Prime" SubType="Magic|Flyer" Race="Spirit" Cost="4" MightLevel="3" MagicLevel="3" DestinyLevel="0" Attack="2" Retaliate="0" HP="7" ID="1032">
+		<Ability Type="Phased" />
+		<Target Zone="Battleground" Amount="AllOther" Side="Friendly" ForceExecute="True">
+			<CardFilter IncludeAbility="Phased" />
+			<Effect Type="ModifyAbility" Ability="CannotTarget"/>
+			<Effect Type="ModifyAttack" Value="1" />			
+		</Target>
+		<Description>Other friendly creatures with Phased gain +[1:ATK] and cannot be targeted.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Aca_114" DisplayName="Cre_Aca_114" Faction="Academy" School="Prime" SubType="Magic|Flyer" Race="Spirit" Cost="3" MightLevel="3" MagicLevel="2" DestinyLevel="0" Attack="3" Retaliate="0" HP="4" ID="1033">
+		<Ability Type="Phased" />
+		<Target Zone="BattlegroundColumn" Amount="AllOther" Side="Friendly" CardType="Unit" BattlegroundPositionState="DontCare">
+			<Effect Type="ModifyMaxHp" Value="2" Duration="Permanent" />
+		</Target>
+		<Description>Other friendly creature in same raw as [THIS] gains +[2:HEALTH].</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Aca_115" DisplayName="Cre_Aca_115" Faction="Academy" School="Prime" SubType="Magic|Shooter" Race="Wizard" Cost="5" MightLevel="4" MagicLevel="3" DestinyLevel="0" Attack="3" Retaliate="0" HP="6" ID="1034">
+		<Ability Type="Phased" />
+		<Ability Type="ImmuneToRetaliate" />
+		<Target Zone="BattlegroundColumn" CardType="Unit" Amount="Self" Side="Enemy">
+			<Effect Type="ModifyAbility" Ability="CannotAttackHero" />
+		</Target>
+		<Description>Enemy creatures in the same row as [THIS] can't attack your Hero.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Common" Unique="False" Type="Unit" Name="Cre_Hav_111" DisplayName="Cre_Hav_111" Faction="Haven" School="Light" SubType="Magic|Melee" Race="Human|Priest" Cost="2" MightLevel="2" MagicLevel="1" DestinyLevel="0" Attack="0" Retaliate="0" HP="5" ID="1035">
+		<Trigger Type="OnDamaged">
+			<Target Zone="Battleground" CardType="Unit" Amount="1" Random="True" Side="Friendly" ForceExecute="True" Persistent="True">			    
+				<Effect Type="ModifyMaxHp" Value="2" Duration="Permanent" />
+			</Target>
+		</Trigger>
+		<Description>Whenever damage is dealt to [THIS], a random friendly creature gains +[2:HEALTH].</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Hav_112" DisplayName="Cre_Hav_112" Faction="Haven" School="Light" SubType="Shooter" Race="Human|Priest" Cost="2" MightLevel="1" DestinyLevel="1" Attack="1" Retaliate="0" HP="4" ID="1036">
+		<Ability Type="ImmuneToRetaliate" />
+		<Trigger Type="OnUnitHealed" Side="Friendly" ExecuteOncePerTransaction="True">
+			<Target Zone="None" Side="Friendly" Cancelable="False">
+                <Effect Type="Draw" Value="1" />
+            </Target>
+		</Trigger>
+		<Description>Whenever friendly creature are healed, draw a card.</Description>
+	</Card>
+	
+    <Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Hav_113" DisplayName="Cre_Hav_113" Faction="Haven" SubType="Melee" Race="Human|Knight" Cost="3" MightLevel="3" Attack="2" Retaliate="2" HP="6" ID="1037">
+        <Target Zone="Battleground" Amount="Self">
+            <Variable Type="CardDamage" />
+            <Condition Operator="LesserThan" ValueA="Variable" ValueB="1" />
+            <Effect Type="ModifyAbility" Ability="Charge" />
+        </Target>
+		<Target Zone="Battleground" Amount="Self">
+            <Variable Type="CardDamage" />
+            <Condition Operator="LesserThan" ValueA="Variable" ValueB="1" />
+            <Effect Type="ModifyAbility" Ability="SweepAttack" />
+        </Target>
+        <Description>While [THIS] has no damage, [THIS] gains Charge and Sweep.</Description>
+    </Card>
+	
+	<Card UseXmlDescription="True" Rarity="Rare" Type="Unit" Name="Cre_Hav_114" DisplayName="Cre_Hav_114" Faction="Haven" School="Light" SubType="Flyer" Race="Angel" Cost="4" MightLevel="3" Attack="2" Retaliate="3" HP="7" ID="1038">
+		<Trigger Type="OnTurnEnd" Side="Friendly">
+			<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+				<Variable Type="CardDamage" UseCurrentTarget="True"/>
+				<Variable2 Type="CreaturesMaxDamage" Side="Friendly"/>
+				<Condition Operator="LesserOrEqual" ValueA="Variable2" ValueB="Variable" />
+				<Effect Type="Heal" Value="infinite" />
+			</Target>
+		</Trigger>
+		<Description>At end of your turn, heal all damage from friendly creatures with the most damage among all friendly creatures.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Epic" Type="Unit" Name="Cre_Hav_115" DisplayName="Cre_Hav_115" Faction="Haven" School="Light" SubType="Flyer" Race="Angel" Cost="5" MightLevel="4" Attack="3" Retaliate="4" HP="8" ID="1039">
+		<Trigger Type="OnDamaged">
+			<Target Zone="Battleground" Amount="Self" ForceExecute="True" Persistent="True">
+				<Effect Type="ModifyAttack" Value="2" Duration="Permanent" />
+			</Target>
+		</Trigger>
+		 <Description>Whenever damage is dealt to [THIS], gain +[2:ATK].</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Inf_111" DisplayName="Cre_Inf_111" Faction="Inferno" SubType="Melee" School="Fire" Race="Demon|Maniac" Cost="3" MightLevel="3" Attack="3" Retaliate="1" HP="5" ID="1040">
+		<Trigger Type="OnDamaged">
+			<Target Zone="BattlegroundColumn" CardType="Unit" Amount="Self" Side="Enemy">
+				<Effect Type="Damage" Value="1" />
+			</Target>
+		</Trigger>
+		 <Description>Whenever damage is dealt to [THIS], deal 1 damage to enemy creatures in the same row.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Inf_112" DisplayName="Cre_Inf_112" Faction="Inferno" SubType="Magic|Shooter" School="Dark" Race="Demon|Succubus" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="2" Attack="2" Retaliate="2" HP="6" ID="1041">
+		<Ability Type="ImmuneToRetaliate" />
+		<Trigger Type="OnCardDiscard" Side="Enemy">
+			<Target Zone="Battleground"  Amount="Self"  ForceExecute="True" Persistent="True">
+				<Effect Type="ModifyAttack" Value="1" Duration="Permanent"/>
+			</Target>
+		</Trigger>
+		 <Description>Whenever oppenent discards a card, gain +[1:ATK].</Description>
+	</Card>	
+	
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Inf_113" DisplayName="Cre_Inf_113" Faction="Inferno" SubType="Magic|Melee" School="Dark" Race="Demon|Maniac" Cost="3" MightLevel="2" MagicLevel="1" DestinyLevel="1" Attack="1" Retaliate="1" HP="3" ID="1042">
+		<Trigger Type="OnDamaged">
+			<Target Zone="Hand" Side="Enemy" Amount="1" Random="True">
+                <Effect Type="MoveCardTo" Destination="Graveyard" />
+            </Target>
+		</Trigger>
+		 <Description>Whenever damage is dealt to [THIS], opponent discards a random card.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Rare" Type="Unit" Name="Cre_Inf_114" DisplayName="Cre_Inf_114" Faction="Inferno" SubType="Magic|Melee|Shooter" School="Dark" Race="Demon|Succubus" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="2" Attack="2" Retaliate="1" HP="6" ID="1043">
+		<Trigger Type="OnUnitDamageHero" Side="Enemy" ExecuteOncePerTurn="True">
+			<CardFilter IncludeRaces="Succubus" Side="Friendly"/>
+			<Target Zone="Hand" Side="Enemy" Amount="1">
+				<Effect Type="MoveCardTo" Destination="Graveyard" />
+			</Target>
+		</Trigger>
+		 <Description>The first time a friendly Succubus deals combat damage to enemy hero in your turn, Look at opponent's hand and choose a card. Opponent discards that card.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Epic" Type="Unit" Name="Cre_Inf_115" DisplayName="Cre_Inf_115" Faction="Inferno" SubType="Magic|Melee" School="Fire" Race="Demon" Cost="5" MightLevel="4" MagicLevel="3" Attack="3" Retaliate="3" HP="6" ID="1044">
+		<Trigger Type="OnTurnEnd" Side="Friendly">
+			<Target Zone="Battleground" CardType="Unit" Side="Enemy" Amount="All">
+				<Variable Type="UnitAttackCount"/>
+				<Condition Operator="LesserThan" ValueA="Variable" ValueB="1"/>
+				<Effect Type="Damage" Value="1" />
+			</Target>
+		</Trigger>
+		 <Description>At the end of your turn,if [THIS] did not attack, deal 1 damage to all enemy creatures. </Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Epic" Type="Unit" Name="Cre_Nec_111" DisplayName="Cre_Nec_111" Faction="Necropolis" SubType="Magic|Melee" School="Prime" Race="Namtaru" Cost="4" MightLevel="3" MagicLevel="2" DestinyLevel="1" Attack="3" Retaliate="2" HP="7" ID="1045">
+		<Trigger Type="OnUnitDeath" >
+			<Target Zone="Graveyard" Side="Friendly" Amount="1" Random="True" ForceExecute="True" Persistent="True" >
+				<CardFilter IncludeCardType="Fortune|Spell" IncludeOngoingType="Ongoing" IncludeEnchantUnit="True"/>
+				<Effect Type="MoveCardTo" Destination="Hand" />
+				<Effect Type="ModifyCost" Value="-2" />
+			</Target>
+		</Trigger>
+		 <Description>Whenever a creature dies, put a random enchant creature card from gravyard to your hand, that card cost 2 less [RESOURCES].</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Nec_112" DisplayName="Cre_Nec_112" Faction="Necropolis" SubType="Shooter" School="Prime" Race="Namtaru" Cost="3" MightLevel="2" DestinyLevel="1" Attack="2" Retaliate="1" HP="5" ID="1046">
+		<Ability Type="ImmuneToRetaliate" />
+		<Trigger Type="OnThisCardDeploy" Side="Friendly">
+			<Target Zone="Library" Side="Friendly" Amount="2">
+				<CardFilter IncludeCardType="Unit|Fortune|Spell" IncludeOngoingType="Ongoing"/>
+				<Effect Type="MoveCardTo" Destination="Graveyard" />
+			</Target>
+		</Trigger>
+		<Description>When [THIS] enters the battle ground, you may search your library for 2 creature or ongoing cards and put it into your graveyard.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Nec_113" DisplayName="Cre_Nec_113" Faction="Necropolis" SubType="Melee" Race="Zombie" Cost="3" MightLevel="2" DestinyLevel="1"  Attack="2" Retaliate="0" HP="5" ID="1047">
+		<Trigger Type="OnUnitDeath" Side="Friendly" Location="Graveyard">
+			<Target Zone="Graveyard" Amount="Self">
+                <Effect Type="MoveCardTo" Destination="Hand" />
+			</Target>
+		</Trigger>
+		<Description>When a friendly creature dies, [THIS] return to your hand from graveyard.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Fortune" Name="For_Nec_114" DisplayName="For_Nec_114" Faction="Necropolis" Cost="2" MightLevel="2" DestinyLevel="1"  ID="1048">
+	    <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="1">
+            <Effect Type="Kill" />
+        </Target>
+		<Target Zone="Graveyard" Amount="Same" Side="Friendly" CardType="Unit" SkipNextTargetValidation="True">
+			<Effect Type="Deploy"  DontGenerateTargetPosition="True"/>
+		</Target>
+		<Target Zone="BattlegroundPosition" Side="Friendly" Amount="1">
+			<Effect Type="Deploy"  DontGenerateTargetPosition="True" DontTriggerOnDeploy="True"/>
+		</Target>
+		<Description>Kill target friendly creatrue, then revive it and relocate to a valid battleground position.</Description>
+	</Card>
+
+	<Card UseXmlDescription="True" Rarity="Rare" Type="Unit" Name="Cre_Nec_115" DisplayName="Cre_Nec_115" Faction="Necropolis" SubType="Magic|Melee|Shooter" School="Dark" Race="Human|Wizard" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="1" Attack="3" Retaliate="1" HP="6" ID="1049">
+		<Ability Type="ImmuneToRetaliate" />
+		<Trigger Type="OnThisCardDeath">
+			<Target Zone="BattlegroundPosition" CardType="Unit" Amount="FromTrigger" Side="Friendly"> 
+			</Target>
+			<Target Zone="Graveyard" Amount="1" Random="True" Side="Friendly" CardType="Unit" SkipNextTargetValidation="True">
+				<CardFilter IncludeCardType="Unit"/>
+				<Effect Type="Deploy" Side="Friendly" DontGenerateTargetPosition="True" SamePositionLimit="True" DontTriggerOnDeploy="True"/>
+			</Target>
+			<Target Zone="BattlegroundPosition" Amount="SamePosition" InputOnExec="True">
+				<Effect Type="Deploy" Side="Friendly" DontGenerateTargetPosition="True" DontTriggerOnDeploy="True"/>
+			</Target>
+		</Trigger>
+		<Description>When [THIS] dies, replace it with a random creature from your graveyard that can be deployed at the same position.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Neu_111" DisplayName="Cre_Neu_111" Faction="Neutral" SubType="Shooter" Race="Mercenary" Cost="3" MightLevel="3" Attack="3" Retaliate="1" HP="5" ID="1050">
+		<Ability Type="ImmuneToRetaliate" />
+		<Ability Type="AttackCost" Value="1"/>
+		<Description>To attack with [THIS], you must pay [1:RESOURCES].</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Neu_112" DisplayName="Cre_Neu_112" Faction="Neutral" SubType="Shooter" Race="Mercenary" Cost="4" MightLevel="4" Attack="3" Retaliate="2" HP="7" ID="1051">
+		<Ability Type="ImmuneToRetaliate" />
+		<Ability Type="AttackCost" Value="1"/>
+		<Description>To attack with [THIS], you must pay [1:RESOURCES].</Description>
+	</Card>
+
+	<Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Neu_113" DisplayName="Cre_Neu_113" Faction="Neutral" SubType="Melee" Race="Mercenary" Cost="4" MightLevel="4" Attack="4" Retaliate="3" HP="7" ID="1052">
+		<Ability Type="AttackCost" Value="1"/>
+		<Description>To attack with [THIS], you must pay [1:RESOURCES].</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Neu_116" DisplayName="Cre_Neu_116" Faction="Neutral" SubType="Melee|Shooter" Race="Mercenary" Cost="4" MightLevel="3" Attack="2" Retaliate="1" HP="4" ID="1053">
+		<Trigger Type="OnThisCardDeploy">
+			<Target Zone="Battleground" CardType="Unit" Amount="1" Side="Any">
+				<Variable Type="TargetCount" ValueModifier="2x">
+					<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+						<CardFilter IncludeRaces="SeigeWeapon"/>
+					</Target>
+				</Variable>		
+				<Effect Type="Damage" Value="Variable" Duration="Immediate" />
+			</Target>
+		</Trigger>
+		<Description>When [THIS] enter the battleground, deal 2 damage to target creature for each friendly seige weapon on the battleground.</Description>
+	</Card>
+
+	<Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Neu_114" DisplayName="Cre_Neu_114" Faction="Neutral" SubType="Shooter" Race="SeigeWeapon" Cost="2" MightLevel="2" Attack="2" Retaliate="0" HP="3" ID="1054">
+		<Ability Type="ImmuneToRetaliate" />
+		<Trigger Type="OnTurnEnd" Side="Friendly">
+			<Target Zone="Battleground" CardType="Unit" Amount="1" Random="True" Side="Enemy">
+				<Variable Type="UnitAttackCount"/>
+				<Condition Operator="LesserThan" ValueA="Variable" ValueB="1"/>
+				<Effect Type="Damage" Value="1" />
+			</Target>
+		</Trigger>
+		<Description>At the end of your turn, if [THIS] did'nt attack, deal 1 damage to a random enemy creature.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Neu_115" DisplayName="Cre_Neu_115" Faction="Neutral" SubType="Shooter" Race="SeigeWeapon" Cost="3" MightLevel="3" Attack="3" Retaliate="0" HP="4" ID="1055">
+		<Ability Type="ImmuneToRetaliate" />
+		<Target Zone="Battleground" Amount="Self">
+			<CardFilter IncludeOccupant="True"/>
+			<Effect Type="ModifyMaxHp" Value="3"/>
+		</Target>
+		<Description>While [THIS] is on building, gain + [3:HEALTH].</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Neu_117" DisplayName="Cre_Neu_117" Faction="Neutral" SubType="Shooter" Race="SeigeWeapon" Cost="4" MightLevel="4" Attack="3" Retaliate="0" HP="6" ID="1056">
+		<Ability Type="ImmuneToRetaliate" />
+		<Trigger Type="OnDeployAdjacent">
+			<CardFilter IncludeRaces="Mercenary"/>
+			<Target Zone="Battleground" CardType="Unit" Amount="1">
+				<Effect Type="Damage" Value="3"/>
+			</Target>
+		</Trigger>
+		<Description>When you deploy a Mercenary adjacent to [THIS] deal 3 damage to target creature.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Rare" Type="Unit" Name="Cre_Neu_119" DisplayName="Cre_Neu_119" Faction="Neutral" SubType="Flyer" School="Light" Race="Spirit" Cost="5" MightLevel="4" Attack="2" Retaliate="4" HP="7" ID="1057">
+		<Ability Type="PreemptiveStrike" />
+		<Target Zone="BattlegroundColumn" CardType="Unit" Amount="Self" Side="Enemy">
+			<CardFilter IncludeUnitType="Shooter"/>
+			<Effect Type="ModifyAbility" Ability="CannotAttack"/>
+		</Target>
+		<Description>Enemy shooter in the same row as [THIS] gain Cannot Attack.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Epic" Unique="True" SchoolsAligned="True" Type="Unit" Name="Cre_Neu_120" DisplayName="Cre_Neu_120" Faction="Neutral" SubType="Magic|Melee|Shooter" School="Air" Race="Dragon" Cost="6" MightLevel="4" MagicLevel="3" Attack="5" Retaliate="4" HP="9" ID="1058">
+		<Ability Type="AirWard" />
+		<Ability Type="AirAligned" />
+		<Trigger Type="OnThisCardDeploy">
+			<Target Zone="Battleground" CardType="Unit" Amount="1" Side="Enemy">
+			    <Variable Type="Resources" Side="Friendly" />
+                <Condition Operator="GreaterThan" ValueA="Variable" ValueB="1" />
+				<Effect Type="Relocate" Side="Enemy"/>
+			</Target>
+			<Target Zone="None" CardType="Unit" Amount="Same" Shape="SelfAndAdjacent">
+				<Effect Type="Damage" Value="2" />
+			</Target>
+			<Target Zone="None" Side="Friendly">
+				<Effect Type="GainResources" Value="-2" />
+			</Target>
+		</Trigger>
+		<Trigger Type="OnThisDamageAnything" Side="Enemy" DamageIncludeFlags="Attack">
+			<Target Zone="Battleground" CardType="Unit" Amount="1" Side="Enemy">
+			    <Variable Type="Resources" Side="Friendly" />
+                <Condition Operator="GreaterThan" ValueA="Variable" ValueB="1" />
+				<Effect Type="Relocate" Side="Enemy"/>
+			</Target>
+			<Target Zone="None" CardType="Unit" Amount="Same" Shape="SelfAndAdjacent">
+				<Effect Type="Damage" Value="2" />
+			</Target>
+			<Target Zone="None" Side="Friendly">
+				<Effect Type="GainResources" Value="-2" />
+			</Target>
+		</Trigger>
+		<Description>When [THIS] enters the battleground or deals attack damage, you may pay [2:RESOURCES] to relocate target enemy creature and deal 2 damage to it and all adjacent enemy creatures.</Description>
+	</Card>	
+	<Card UseXmlDescription="True" Rarity="Epic" Unique="True" SchoolsAligned="True" Type="Unit" Name="Cre_Neu_121" DisplayName="Cre_Neu_121" Faction="Neutral" SubType="Magic|Melee|Shooter" School="Dark" Race="Dragon" Cost="6" MightLevel="4" MagicLevel="4" Attack="4" Retaliate="6" HP="8" ID="1059">
+		<Ability Type="DarkWard" />
+		<Ability Type="DarkAligned" />
+		<Trigger Type="OnThisCardDeploy" >
+			<Target Zone="Battleground" Side="Friendly" Amount="1">
+				<Variable Type="Resources" Side="Friendly" />
+                <Condition Operator="GreaterThan" ValueA="Variable" ValueB="1" />
+                <Effect Type="Kill" />
+            </Target>
+			<Target Zone="Battleground" Side="Enemy" Amount="1">
+                <Effect Type="Kill" />
+            </Target>
+			<Target Zone="None" Side="Friendly">
+				<Effect Type="GainResources" Value="-2" />
+			</Target>
+		</Trigger>
+		<Trigger Type="OnThisDamageAnything" Side="Enemy" DamageIncludeFlags="Attack">
+			<Target Zone="Battleground" Side="Friendly" Amount="1">
+				<Variable Type="Resources" Side="Friendly" />
+                <Condition Operator="GreaterThan" ValueA="Variable" ValueB="1" />
+                <Effect Type="Kill" />
+            </Target>
+			<Target Zone="Battleground" Side="Enemy" Amount="1">
+                <Effect Type="Kill" />
+            </Target>
+			<Target Zone="None" Side="Friendly">
+				<Effect Type="GainResources" Value="-2" />
+			</Target>
+		</Trigger>
+		<Description>When [THIS] enters the battleground or deals attack damage, you may pay [2:RESOURCES] to destroy target friendly creature and target enemy creature.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Epic" Unique="True" SchoolsAligned="True" Type="Unit" Name="Cre_Neu_122" DisplayName="Cre_Neu_122" Faction="Neutral" SubType="Magic|Melee|Shooter" School="Earth" Race="Dragon" Cost="8" MightLevel="5" MagicLevel="3" Attack="5" Retaliate="4" HP="10" ID="1060">
+		<Ability Type="EarthWard" />
+		<Ability Type="EarthAligned" />
+		<Target Zone="Battleground" Side="Friendly" CardType="Unit" Amount="All">
+            <Effect Type="ModifyMaxHp" Value="2" />
+			<Effect Type="ModifyAbility" Ability="Regenerate" Value="1" />
+        </Target>
+		<Trigger Type="OnThisCardDeploy">
+            <Target Zone="BattlegroundColumn" Side="Enemy" CardType="Unit" Amount="Self" >
+                <Effect Type="AddCounter" CounterType="Poison" Value="2" />
+            </Target>
+        </Trigger>
+		<Description>Friendly creatures gain +2[HEALTH] and regenerate 1.
+When [THIS] enters the battleground, put 2 poison counters on enemy creatres in the same row.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Epic" Unique="True" SchoolsAligned="True" Type="Unit" Name="Cre_Neu_123" DisplayName="Cre_Neu_123" Faction="Neutral" SubType="Magic|Melee|Shooter" School="Fire" Race="Dragon" Cost="6" MightLevel="5" MagicLevel="3" Attack="6" Retaliate="5" HP="8" ID="1061" >
+		<Ability Type="FireWard" />
+		<Ability Type="FireAligned" />
+		<Trigger Type="OnThisCardDeploy">
+			<Target Zone="Battleground" Side="Enemy" Amount="1" Shape="SelfAndAdjacent">
+				<Variable Type="Resources" Side="Friendly" />
+                <Condition Operator="GreaterThan" ValueA="Variable" ValueB="2" />
+                <Effect Type="Damage" Value="3" />
+            </Target>
+			<Target Zone="None" Side="Friendly">
+				<Effect Type="GainResources" Value="-3" />
+			</Target>
+		</Trigger>
+		<Trigger Type="OnThisDamageAnything" Side="Enemy" DamageIncludeFlags="Attack">
+			<Target Zone="Battleground" Side="Enemy" Amount="1" Shape="SelfAndAdjacent">
+				<Variable Type="Resources" Side="Friendly" />
+                <Condition Operator="GreaterThan" ValueA="Variable" ValueB="2" />
+                <Effect Type="Damage" Value="3" />
+            </Target>
+			<Target Zone="None" Side="Friendly">
+				<Effect Type="GainResources" Value="-3" />
+			</Target>
+		</Trigger>
+		<Description>When [THIS] enters the battleground or deals attack damage, you may pay [3:RESOURCES] to deal 3 damage to target creature and all adjacent creatures.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Epic" Unique="True" SchoolsAligned="True" Type="Unit" Name="Cre_Neu_124" DisplayName="Cre_Neu_124" Faction="Neutral" SubType="Magic|Melee|Shooter" School="Light" Race="Dragon" Cost="5" MightLevel="4" MagicLevel="3" Attack="3" Retaliate="5" HP="8" ID="1062">
+		<Ability Type="LightWard" />
+		<Ability Type="LightAligned" />
+		<Trigger Type="OnThisCardDeploy">
+			<Target Zone="BattlegroundLine" CardType="Unit" Amount="1" >
+				<Variable Type="Resources" Side="Friendly" />
+                <Condition Operator="GreaterThan" ValueA="Variable" ValueB="1" />
+				<Effect Type="Heal" Value="infinite" />			
+            </Target>
+			<Target Zone="None" Side="Friendly">
+				<Effect Type="GainResources" Value="-2" />
+			</Target>
+		</Trigger>
+		<Trigger Type="OnThisDamageAnything" Side="Enemy" DamageIncludeFlags="Attack">
+			<Target Zone="BattlegroundLine" CardType="Unit" Amount="1" >
+				<Variable Type="Resources" Side="Friendly" />
+                <Condition Operator="GreaterThan" ValueA="Variable" ValueB="1" />
+				<Effect Type="Heal" Value="infinite" />			
+            </Target>
+			<Target Zone="None" Side="Friendly">
+				<Effect Type="GainResources" Value="-2" />
+			</Target>
+		</Trigger>
+		<Description>When [THIS] enters the battleground or deals attack damage, you may pay [2:RESOURCES] to remove all damage from creatures on target line.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Epic" Unique="True" SchoolsAligned="True" Type="Unit" Name="Cre_Neu_125" DisplayName="Cre_Neu_125" Faction="Neutral" SubType="Magic|Melee|Shooter" School="Prime" Race="Dragon" Cost="6" MightLevel="4" MagicLevel="3" Attack="5" Retaliate="5" HP="8" ID="1063">
+		<Ability Type="PrimeWard" />
+		<Ability Type="PrimeAligned" />
+		<Trigger Type="OnThisCardDeploy">
+			<Target Zone="Battleground" Side="Enemy" Amount="1" >
+				<Variable Type="Resources" Side="Friendly" />
+                <Condition Operator="GreaterThan" ValueA="Variable" ValueB="2" />
+				<Effect Type="MoveCardTo" Destination="Hand" />
+            </Target>
+			<Target Zone="None" Side="Friendly">
+				<Effect Type="GainResources" Value="-3" />
+			</Target>
+		</Trigger>
+		<Trigger Type="OnThisDamageAnything" Side="Enemy" DamageIncludeFlags="Attack">
+			<Target Zone="Battleground" Side="Enemy" Amount="1" >
+				<Variable Type="Resources" Side="Friendly" />
+                <Condition Operator="GreaterThan" ValueA="Variable" ValueB="2" />
+                <Effect Type="MoveCardTo" Destination="Hand" />
+            </Target>
+			<Target Zone="None" Side="Friendly">
+				<Effect Type="GainResources" Value="-3" />
+			</Target>
+		</Trigger>
+		<Description>When [THIS] enters the battleground or deals attack damage, you may pay [3:RESOURCES] to return target creature to it's owner's hand. </Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Uncommon" Unique="False"  Type="Building" Name="Bui_Neu_112" DisplayName="Bui_Neu_112" Faction="Neutral" Cost="2" MightLevel="2" DestinyLevel="1" ID="1064">
+		<Target Zone="Battleground" Amount="Occupant" >
+			<CardFilter IncludeRaces="SeigeWeapon"/>
+            <Effect Type="ModifyAbility" Ability="AttackAnywhere" />
+		</Target>
+		<Description>Seige Weapon on [THIS] gains Attack Anywhere.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Epic" Unique="True" SchoolsAligned="True" Type="Unit" Name="Cre_Neu_127" DisplayName="Cre_Neu_127" Faction="Neutral" SubType="Magic|Melee|Shooter" School="Water" Race="Dragon" Cost="7" MightLevel="4" MagicLevel="4" Attack="4" Retaliate="4" HP="10" ID="1065">
+		<Ability Type="WaterWard" />
+		<Ability Type="WaterAligned" />
+		<Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="All">
+            <Effect Type="ModifyAbility" Ability="Berserk" Remove="True" />
+            <Effect Type="ModifyAbility" Ability="CannotAttack" Remove="True" />
+			<Effect Type="ModifyMaxHp" Value="1"/>
+			<Effect Type="ModifyAttack" Value="1"/>
+        </Target>
+		<Description>Friendly creatures cannot be prevent from attack, uneffected by Berserk, gain +[1:ATK] and +[1:HEALTH]</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_San_111" DisplayName="Cre_San_111" Faction="Sanctuary" SubType="Magic|Shooter" School="Water" Race="Spirit" Cost="4" MightLevel="4" MagicLevel="1" Attack="2" Retaliate="1" HP="7" ID="1066">
+		<Ability Type="ImmuneToRetaliate" />
+		<Ability Type="Hypnotize" />
+		<Ability Type="FocusedBlast" Value="1" />
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_San_112" DisplayName="Cre_San_112" Faction="Sanctuary" SubType="Melee" School="Water" Race="Spirit" Cost="2" MightLevel="2" Attack="1" Retaliate="1" HP="4" ID="1067">
+		<Trigger Type="OnThisCardDeploy" Side="Friendly">
+			<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Enemy" ForceExecute="True" Persistent="True" Cancelable="False">
+				<CardFilter IncludeAbility="Immobilized" />
+                <Effect Type="ModifyAbility" Ability="CannotAttack" Duration="UntilYourNextTurn" />
+            </Target>
+		</Trigger>
+		<Description>When [THIS] enters the battleground, enemy Immobilized crature cannot attack until your next turn.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_San_113" DisplayName="Cre_San_113" Faction="Sanctuary" SubType="Magic|Shooter" School="Water" Race="Spirit" Cost="4" MightLevel="3" MagicLevel="2" Attack="3" Retaliate="1" HP="6" ID="1068">
+		<Ability Type="ImmuneToRetaliate" />
+		<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Enemy">
+			<CardFilter IncludeAbility="immobilized" />
+			<Effect Type="ModifyAttack" Value="-1"/>
+		</Target>
+		<Description>Enemy immobilized creatures gain -[1:ATK].</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Rare" Type="Unit" Name="Cre_San_114" DisplayName="Cre_San_114" Faction="Sanctuary" SubType="Melee" School="Water" Race="Spirit" Cost="3" MightLevel="3" Attack="2" Retaliate="2" HP="5" ID="1069">
+		<Trigger Type="OnTurnEnd" Side="Friendly">
+			<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Enemy">
+				<CardFilter IncludeAbility="immobilized" />
+				<Effect Type="Damage" Value="1"/>
+			</Target>
+		</Trigger>
+		<Description>At the end of your turn, Deal 1 damage to all immobilized enemy creatures.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Epic" Type="Unit" Name="Cre_San_115" DisplayName="Cre_San_115" Faction="Sanctuary" SubType="Melee|Shooter" School="Water" Race="Spirit" Cost="5" MightLevel="4" Attack="3" Retaliate="2" HP="7" ID="1070">
+		<Ability Type="WaterHeal" />
+		<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Enemy" >	
+			<CardFilter IncludeAbility="Immobilized" />
+			<Effect Type="ModifyAbility" Ability="Phased"/>
+		</Target>
+		<Description>Enemy immobolized creatures gain phased.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Str_111" DisplayName="Cre_Str_111" Faction="Stronghold" SubType="Shooter" Race="Cyclops" Cost="4" MightLevel="4" DestinyLevel="2" Attack="3" Retaliate="1" HP="5" ID="1071">
+		<Ability Type="ImmuneToRetaliate" />
+		<Trigger Type="OnHeroIncreaseMightLevel" Side="Friendly">
+			<Target Zone="None" Side="Friendly">
+				<Effect Type="IncreaseLevel" Value="1" LevelType="Might"/>
+			</Target>
+		</Trigger>
+		<Description>Whenever you use your hero ability to increase your [MIGHT] level, increase that level by 1 more.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Common" Type="Unit" Name="Cre_Str_112" DisplayName="Cre_Str_112" Faction="Stronghold" SubType="Shooter" Race="Cyclops" Cost="3" MightLevel="3" DestinyLevel="2" Attack="3" Retaliate="1" HP="4" ID="1072">
+		<Ability Type="ImmuneToRetaliate" />
+		<Trigger Type="OnUnitDamageHero" Side="Enemy" ExecuteOncePerTurn="True">
+			<CardFilter IncludeRaces="Cyclops" Side="Friendly"/>
+			<Target Zone="None" Side="Friendly">
+				<Effect Type="IncreaseLevel" Value="1" LevelType="Might"/>
+			</Target>
+		</Trigger>
+		<Description>When Friendly Cyclops deals damage to your opponent hero the first time in a turn, increase your [MIGHT] level by 1.</Description>
+	</Card>
+
+	<Card UseXmlDescription="True" Rarity="Rare" Type="Unit" Name="Cre_Str_113" DisplayName="Cre_Str_113" Faction="Stronghold" SubType="Melee" Race="Cyclops|Warrior" Cost="5" MightLevel="5" Attack="4" Retaliate="3" HP="8" ID="1073">
+		<Target Zone="Battleground" Amount="All" Side="Friendly">
+			<CardFilter IncludeRaces="Cyclops"/>
+			<Variable Type="Level" LevelType="Might" Side="Friendly"/>
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="9"/>	
+			<Effect Type="ModifyAttack" Value="1"/>
+			<Effect Type="ModifyAbility" Ability="DoubleAttack"/>
+		</Target>
+		<Description>If your [MIGHT] level is 10 or more, friendly Cyclops creatures gain double attack and +1[ATK].</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Str_114" DisplayName="Cre_Str_114" Faction="Stronghold" SubType="Melee" Race="Cyclops|Warrior" Cost="4" MightLevel="4" DestinyLevel="2" Attack="3" Retaliate="2" HP="6" ID="1074">
+		<Trigger Type="OnHeroIncreaseMightLevel" Side="Friendly">
+			<Target Zone="None" Side="Friendly">
+				<Effect Type="Draw" Value="1" />
+			</Target>
+		</Trigger>
+		<Description>Whenever you use your hero ability to increase your [MIGHT] level, draw a card.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Epic" Type="Unit" Name="Cre_Str_115" DisplayName="Cre_Str_115" Faction="Stronghold" SubType="Melee" Race="Cyclops|Warrior" Cost="5" MightLevel="5" Attack="2" Retaliate="4" HP="8" ID="1075">
+		<Trigger Type="OnTurnEnd" Side="Friendly">
+			<Target Zone="Battleground" Side="Friendly" Amount="Self" ForceExecute="True" Persistent="True">
+				<Variable Type="UnitAttackCount"/>
+				<Condition Operator="LesserThan" ValueA="Variable" ValueB="1"/>
+				<Effect Type="ModifyAbility" Ability="AttackAnywhere" Duration="UntilEnemyNextTurn" />
+				<Effect Type="ModifyAbility" Ability="AreaBlast" Value="3" Duration="UntilEnemyNextTurn"/>
+				<Effect Type="ModifyAttack" Value="3" Duration="UntilEnemyNextTurn"/>
+			</Target>
+		</Trigger>
+		<Description>If [THIS] didn't attack during your last turn, [THIS] gain attack anywhere, area blast 3 and +[3:ATK].</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Spell" Name="Spe_Air_101" DisplayName="Spe_Air_101" School="Air" Cost="2" MagicLevel="2" ID="1076">
+		<Ongoing Duration="Permanent" />
+		<Trigger Type="OnTurnBegin" Side="Friendly">
+			<Target Zone="Battleground" CardType="Unit" Amount="1" Random="True" SkipNextTargetValidation="True" >
+				<Effect Type="Relocate" Side="Context" DontGenerateTargetPosition="True"/>
+			</Target> 
+			<Target Zone="BattlegroundPosition" Amount="1" Side="Context" Random="True">
+				<Effect Type="Relocate"  Side="Context" DontGenerateTargetPosition="True"/>
+			</Target>
+		</Trigger>
+		<Description>Permanent:
+At the beginning of your turn, relocate a random creature to a random valid battleground position.</Description>
+	</Card>
+		
+	<Card UseXmlDescription="True" Rarity="Rare" Type="Spell" Name="Spe_Air_102" DisplayName="Spe_Air_102" School="Air" Cost="6" MagicLevel="5" ID="1077">
+		<Target Zone="Battleground" CardType="Unit" Amount="1">
+            <Effect Type="Damage" Value="5" />
+        </Target>
+		<Target Zone="Battleground" CardType="Unit" Amount="1">
+            <Effect Type="Damage" Value="4" />
+        </Target>
+		<Target Zone="Battleground" CardType="Unit" Amount="1">
+            <Effect Type="Damage" Value="3" />
+        </Target>
+		<Description>Deal 5,4 and 3 damage to 3 target creatures.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Spell" Name="Spe_Dar_100" DisplayName="Spe_Dar_100" School="Dark" Cost="3" MagicLevel="3" ID="1078">
+		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Enemy">
+			<Variable Type="CardAttack" UseCurrentTarget="True" />
+            <Condition Operator="GreaterThan" ValueA="Variable" ValueB="1" />
+			<Effect Type="AddCounter" CounterType="Crippling" Value="1"/>
+		</Target>
+		<Description>Put a crippling counter on all ennemy creatures with 2 or more [ATK].</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Rare" Type="Spell" Name="Spe_Dar_101" DisplayName="Spe_Dar_101" School="Dark" Cost="3" MagicLevel="3" ID="1079">
+		<Target Zone="Battleground" CardType="Unit" Amount="1" Side="Enemy">
+            <Effect Type="Clone" />
+        </Target>
+        <Target Zone="Battleground" CardType="Unit" Amount="FromEffect" IgnoreWard="True">
+            <Effect Type="ModifyAbility" Ability="CripplingSelf" />
+        </Target>
+		<Description>Deploy token that's a copy of target enemy creature.
+When this token creature attacks, put a crippling counter on it.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Spell" Name="Spe_Ear_101" DisplayName="Spe_Ear_101" School="Earth" Cost="3" MagicLevel="3" ID="1080">
+		<Variable Type="TargetCount">
+			<Target Zone="Battleground" CardType="Unit" Amount="All"/>
+		</Variable>
+		<Ongoing Duration="FromCondition">
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+		</Ongoing>		
+		<Trigger Type="OnTurnBegin" Side="Friendly">
+            <Target Zone="Battleground" CardType="Unit" Amount="All">
+                <Effect Type="AddCounter" CounterType="Poison" Value="1"/>
+            </Target>
+        </Trigger>
+		<Description>Permanent:
+At the beginning of your turn, put a poison counter on all creatures. When there are no creatures on the battleground, destroy [THIS].</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Rare" Type="Spell" Name="Spe_Ear_102" DisplayName="Spe_Ear_102" School="Earth" Cost="5" MagicLevel="4" ID="1081">
+		<Target Zone="Battleground" CardType="Unit" Amount="1">
+            <Effect Type="ModifyAbility" Ability="Anchored" />
+			<Effect Type="ModifyAbility" Ability="Armor" Value="2"/>
+        </Target>
+        <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Enemy">
+            <CardFilter ExcludeUnitType="Flyer" />
+            <Effect Type="Damage" Value="3" />
+        </Target>
+		<Description>Target non-flyer creature gain Anchor and Armor 2. Deal 3 damage to all enemy non-flyer creatures.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Spell" Name="Spe_Fir_100" DisplayName="Spe_Fir_100" School="Fire" Cost="2" MagicLevel="3" ID="1082">
+	    <Ongoing Duration="Permanent" />
+        <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Friendly">
+            <Effect Type="ModifyAttack" Value="3"/>
+			<Effect Type="ModifyAbility" Ability="ImmuneToRetaliate" Remove="True" />			
+        </Target>
+		<Target Zone="BattlegroundColumn" CardType="Unit" Amount="Same" Side="Enemy">
+			<Effect Type="ModifyAbility" Ability="Retribution"/>
+        </Target>
+		<Description>Enchant Friendly Creature. Permanent: 
+Enchanted creature gains +3 [ATK] and lose Immune To Rataliation, Enemmy creatures on the same row gain Retribution.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Rare" Type="Spell" Name="Spe_Fir_102" DisplayName="Spe_Fir_102" School="Fire" Cost="4" MagicLevel="3" ID="1083">
+        <Target Zone="Battleground" CardType="Unit" Amount="1" Shape="AdjacentOnly">
+            <Effect Type="Damage" Value="2" />
+        </Target>
+		<Target Zone="Battleground" CardType="Unit" Amount="Same">
+            <Effect Type="Damage" Value="5"/>
+        </Target>
+		<Description>Deal 5 damage to target creature and 2 damage to adjacent creatures.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Spell" Name="Spe_Lig_101" DisplayName="Spe_Lig_101" School="Light" Cost="3" MagicLevel="2" ID="1084">
+		 <Target Zone="Battleground" CardType="Unit" Side="Enemy" Amount="All">
+            <Effect Type="Damage" Value="1" />
+        </Target>
+		<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+            <Effect Type="Heal" Value="1" />
+        </Target>
+		<Description>Deal 1 damage to all enemy creatures. Heal 1 damage from all friendly creatures.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Rare" Type="Spell" Name="Spe_Lig_102" DisplayName="Spe_Lig_102" School="Light" Cost="4" MagicLevel="4" ID="1085">
+		<Target Zone="Hero" Amount="All" Side="Friendly">
+            <Effect Type="Heal" Value="10" />
+        </Target>
+		<Description>Heal 10 damage from your Hero.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Spell" Name="Spe_Pri_101" DisplayName="Spe_Pri_101" School="Prime" Cost="3" MagicLevel="2" ID="1086">
+	    <Target Zone="Battleground" CardType="Unit" Amount="2" Adjacent="True">
+            <Effect Type="Damage" Value="3" />
+        </Target>
+		<Description>Deal 3 damage to 2 target adjacent creatures.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Rare" Type="Spell" Name="Spe_Pri_102" DisplayName="Spe_Pri_102" School="Prime" Cost="2" MagicLevel="3" ID="1087">
+		<Ongoing Duration="Permanent" />
+		<Trigger Type="OnThisCardPlay" >
+			<!--Target Zone="Hero" Side="Enemy" Amount="All" Persistent="True" ForceExecute="True" >
+				<Effect Type="GlobalEffect" GlobalEffectType="ExtraTurn" Duration="UntilEnemyNextTurn"/>
+			</Target-->
+			<Target Zone="Hero" Amount="All" Side="Friendly" Persistent="True" ForceExecute="True">
+				<Effect Type="GlobalEffect" GlobalEffectType="CantPlay" Duration="UntilEnemyNextTurn">
+					<CardFilter IncludeCardType="Fortune|Spell|Unit|Building" />
+				</Effect>
+			</Target>
+		</Trigger>
+		<Target Zone="Hand" Amount="All" Side="Friendly" >
+			<Effect Type="IncreaseLevel" LevelType="Might" Value="-2" />
+		</Target>
+		<Target Zone="Hand" Amount="All" Side="Friendly" >
+			<Effect Type="IncreaseLevel" LevelType="Magic" Value="-2" />
+		</Target>
+		<Target Zone="Hand" Amount="All" Side="Friendly" >
+			<Effect Type="IncreaseLevel" LevelType="Destiny" Value="-2" />
+		</Target>
+		<Target Zone="Hand" Amount="All" Side="Friendly" >
+			<Effect Type="ModifyCost" Value="-2" />
+		</Target>
+		<Description>Permanent.
+When [THIS] enters the battleground, you cannot play card in this turn and in your next turn. All cards in your hands cost 2 less [RESOURCES] and requires 2 less levels.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Spell" Name="Spe_Wat_100" DisplayName="Spe_Wat_100" School="Water" Cost="2" MagicLevel="3" ID="1088">
+		<Ongoing Duration="UntilYourNextTurn" />
+        <Target Zone="BattlegroundLine" CardType="Unit" Amount="1">
+            <Effect Type="ModifyAttack" Value="0=" />
+			<Effect Type="ModifyDamage" Value="0.0x" DamageIncludeFlags="All" />
+        </Target>
+		<Description>Enchant Line. Until your next turn: Creatures in enchanted line have 0 attack and cannot receive combat damage.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Rare" Type="Spell" Name="Spe_Wat_102" DisplayName="Spe_Wat_102" School="Water" Cost="3" MagicLevel="3" ID="1089">
+        <Ongoing Duration="Permanent" />
+        <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Any">
+            <Effect Type="ModifyAttack" Value="2"/>
+        </Target>
+		<Target Zone="Battleground" CardType="Unit" Amount="Same" Side="Any">
+			<Effect Type="ModifyMaxHp" Value="2"/>
+        </Target>
+		<Description>Enchant Creature. Permanent: 
+Enchanted creature gains +2[ATK] and +2[HEALTH].</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Event" Name="Eve_Neu_111" DisplayName="Eve_Neu_111" Faction="Neutral" Cost="1" ID="1090">
+		<Target Zone="None" Side="Friendly" NeedActivation="True">
+			<Trigger Type="OnCardPlay">
+				<CardFilter IncludeCardType="Spell" IncludeOngoingType="Ongoing" IncludeEnchantUnit="True" />
+				<Target Zone="Battleground" CardType="Spell" Amount="FromTrigger" ForceExecute="True" Persistent="True">
+					<Effect Type="ModifyAbility" Ability="Endurable" Duration="Permanent"/>
+				</Target>
+			</Trigger> 
+		</Target>
+		<Description>[1:RESOURCES]: Enchant creature spell you play this turn gain Persistent. </Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Epic" Type="Event" Name="Eve_Neu_112" DisplayName="Eve_Neu_112" Faction="Neutral" Cost="0" ID="1094">
+		<Ongoing Duration="Permanent" />
+		<Target Zone="Battleground" Amount="All" />
+		<Trigger Type="OnCardPlay">
+			<CardFilter IncludeCardType="Spell" IncludeOngoingType="Immediate"/>	
+			<Target Zone="Battleground" CardType="Spell" Amount="1">
+				<Variable Type="BaseCardCost" FromTrigger="True" />
+				<Variable2 Type="BaseCardCost" UseCurrentTarget="True"/>
+				<Condition Operator="LesserOrEqual" ValueA="Variable2" ValueB="Variable"/>
+				<Effect Type="Kill" />
+			</Target>
+		</Trigger>
+		<Description>Ongoing: When you play a instant spell, you may destory target ongoing spell with equal or lower [RESOURCES].</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Event" Name="Eve_Neu_113" DisplayName="Eve_Neu_113" Faction="Neutral" Cost="1" ID="1095">
+		<Target Zone="None" Side="Friendly" NeedActivation="True">
+			<Trigger Type="OnCardPlay">
+				<CardFilter IncludeCardType="Spell" IncludeOngoingType="Ongoing" IncludeEnchantUnit="True" />
+				<Target Zone="None" Side="Friendly">
+					<Effect Type="Draw" Value="1" />
+				</Target>
+			</Trigger>
+		</Target>
+		<Description>[1:RESOURCES]: When you play a enchant creature spell this turn, draw a card.</Description>
+	</Card>
+	
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Neu_130" DisplayName="Cre_Neu_130" Faction="Neutral" SubType="Magic|Melee" Race="Wizard" Cost="5" MightLevel="4" MagicLevel="2" Attack="2" Retaliate="2" HP="6" ID="1098">
+		<Target Zone="Battleground" CardType="Spell" Side="Friendly" Amount="AllOther">
+			<CardFilter IncludeOngoingType="Ongoing"/>
+			<Effect Type="PlayEffect" PlayEffectType="Indestructible">
+				<CardFilter Side="Enemy"/>
+			</Effect>
+			<Effect Type="ModifyAbility" Ability="Endurable"/>
+		</Target>
+		<Description>Friendly ongoing spells gain Persistent and cannot be destoried by enemy effects.</Description>
+	</Card>
+	<Card UseXmlDescription="True" Rarity="Epic" Unique="False" Type="Event" Name="Eve_Neu_114" DisplayName="Eve_Neu_114" Cost="1" Faction="Neutral" ID="1099">
+		<Target Zone="Battleground" Amount="1" CardType="Building" Side="Any">
+			<Effect Type="Relocate" Side="Context" />
+		</Target>
+		<Description>[1:RESOURCES]: Relocate target building.</Description>
+		<DescriptionChinese>[1:RESOURCES]: 转移指定建筑。</DescriptionChinese>
+	</Card>
+	
+	<ExistingCard Rarity="Rare" Name="For_Neu_111" />
+	<ExistingCard Rarity="Epic" Name="For_Neu_112" />
+ 	<ExistingCard Rarity="Uncommon" Name="Cre_Neu_128" />
+	<ExistingCard Rarity="Epic" Name="Cre_Neu_129" />
+	<ExistingCard Rarity="Rare" Name="Bui_Neu_111" />
+</Cards>

@@ -1,0 +1,125 @@
+<Cards>
+	<!--...............................................................................-->
+	<!-- //	##  #   #####   ####     ###    #####   #####    -->
+	<!-- //	##  #   ##      #   #   ##  #   ##      ##       -->
+	<!-- //	#####   ####    ####    ##  #   ####    #####    -->
+	<!-- //	##  #   ##      ## #    ##  #   ##         ##    -->
+	<!-- //	##  #   #####   ##  #    ###    #####   #####    -->
+	<!--...............................................................................-->
+	<!--...............................................................................-->
+	<!-- Heroes Academy -->
+	<!--...............................................................................-->
+	<Card Rarity="Heroic" Type="Hero" Name="Her_Aca_009" DisplayName="Nahla" Faction="Academy" School="Prime|Fire" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="802">
+		<Target Zone="None" Side="Friendly">
+			<Effect Type="ChoiceOption"/>
+			<Subgroup>
+				<TemplateEffect Name="HeroAbilities"/>
+				<!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+				<Target Zone="None" Side="Friendly">
+					<Variable Type="Resources" Side="Friendly"/>
+					<Condition Operator="GreaterThan" ValueA="Variable" ValueB="2"/>
+					<Option Value="4" DisplayText="[3:RESOURCES]: Heal all friendly Beastmen and they gains +1 [ATK]."/>
+					<Effect Type="GainResources" Value="-3" Duration="Immediate"/>
+				</Target>
+				<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+					<Option Value="4"/>
+					<CardFilter IncludeRaces="Beastmen"/>
+					<Effect Type="Heal" Value="infinite" Duration="Immediate"/>
+				</Target>
+				<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly" NeedActivation="True">
+					<Option Value="4"/>
+					<CardFilter IncludeRaces="Beastmen"/>
+					<Effect Type="ModifyAttack" Value="1" Duration="UntilEndOfTurn"/>
+				</Target>
+			</Subgroup>
+		</Target>
+		<Description>[3:RESOURCES]: Heal all damage from all friendly Beastman creatures and they gain +[1:ATK] until end of turn.</Description>
+	</Card>
+	<!--...............................................................................-->
+	<!-- Heroes Haven -->
+	<!--...............................................................................-->
+	<Card Rarity="Heroic" Type="Hero" Name="Her_Hav_009" DisplayName="Slava" Faction="Haven" School="Air|Fire|Light" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="803">
+		<Target Zone="None" Side="Friendly">
+			<Effect Type="ChoiceOption"/>
+			<Subgroup>
+				<TemplateEffect Name="HeroAbilities"/>
+				<!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+			</Subgroup>
+		</Target>
+	</Card>
+	<!--...............................................................................-->
+	<!-- Heroes Inferno -->
+	<!--...............................................................................-->
+	<Card Rarity="Heroic" Type="Hero" Name="Her_Inf_009" DisplayName="Jezebeth" Faction="Inferno" School="Dark|Fire|Water" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="804">
+		<Target Zone="None" Side="Friendly">
+			<Effect Type="ChoiceOption"/>
+			<Subgroup>
+				<TemplateEffect Name="HeroAbilities"/>
+				<!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+			</Subgroup>
+		</Target>
+	</Card>
+	<!--...............................................................................-->
+	<!-- Heroes Necropolis -->
+	<!--...............................................................................-->
+	<Card Rarity="Heroic" Type="Hero" Name="Her_Nec_009" DisplayName="Mother Namtaru, Asha's Nightmare" Faction="Necropolis" School="Earth|Prime|Water" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="805">
+		<Target Zone="None" Side="Friendly">
+			<Effect Type="ChoiceOption"/>
+			<Subgroup>
+				<TemplateEffect Name="HeroAbilities"/>
+				<!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+			</Subgroup>
+		</Target>
+	</Card>
+	<!--...............................................................................-->
+	<!-- Heroes Sanctuary -->
+	<!--...............................................................................-->
+	<Card Rarity="Heroic" Type="Hero" Name="Her_San_009" DisplayName="Mukao" Faction="Sanctuary" School="Dark|Water" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="806">
+		<Target Zone="None" Side="Friendly">
+			<Effect Type="ChoiceOption"/>
+			<Subgroup>
+				<TemplateEffect Name="HeroAbilities"/>
+				<!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+				<Target Zone="None" Side="Friendly">
+					<Variable Type="Resources" Side="Friendly"/>
+					<Condition Operator="GreaterThan" ValueA="Variable" ValueB="1"/>
+					<Option Value="4" DisplayText="[2:RESOURCE]: Look at opponent's hand. Draw a card."/>
+					<Effect Type="GainResources" Value="-2" Duration="Immediate"/>
+				</Target>
+				<Target Zone="Hand" Amount="All" Side="Enemy">
+					<Option Value="4"/>
+					<Effect Type="Look" Duration="Immediate"/>
+				</Target>
+				<Target Zone="None" Side="Friendly">
+					<Option Value="4"/>
+					<Effect Type="Draw" Value="1" Duration="Immediate"/>
+				</Target>
+			</Subgroup>
+		</Target>
+		<Description>[2:RESOURCES]: Look at opponent's hand. Draw a card.</Description>
+	</Card>
+	<!--...............................................................................-->
+	<!-- Heroes Stronghold -->
+	<!--...............................................................................-->
+	<Card Rarity="Heroic" Type="Hero" Name="Her_Str_009" DisplayName="Toghrul" Faction="Stronghold" School="Earth|Fire" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="807">
+		<Target Zone="None" Side="Friendly">
+			<Effect Type="ChoiceOption"/>
+			<Subgroup>
+				<TemplateEffect Name="HeroAbilities"/>
+				<!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+				<Target Zone="None" Side="Friendly">
+					<Variable Type="Resources" Side="Friendly"/>
+					<Condition Operator="GreaterThan" ValueA="Variable" ValueB="2"/>
+					<Option Value="4" DisplayText="[3:RESOURCES] Add 1 Enrage counter on all friendly creatures with Bloodthirst."/>
+					<Effect Type="GainResources" Value="-3" Duration="Immediate"/>
+				</Target>
+				<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
+					<Option Value="4"/>
+					<CardFilter IncludeAbility="Bloodthirst"/>
+					<Effect Type="AddCounter" CounterType="Enrage" Value="1" Duration="Immediate"/>
+				</Target>
+			</Subgroup>
+		</Target>
+		<Description>[3:RESOURCES]: Put 1 Enrage counter on all friendly creatures with Bloodthirst.</Description>
+	</Card>
+</Cards>

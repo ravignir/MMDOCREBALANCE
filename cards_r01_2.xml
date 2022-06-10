@@ -1,0 +1,62 @@
+<Cards>
+    <!--....................................................................-->
+    <!-- //	#####    ###    ####    #####   ##  #   #   #   #####   #####   -->
+    <!-- //	##      ##  #   #   #    ##     ##  #   ##  #   ##      ##      -->
+    <!-- //	####    ##  #   ####     ##     ##  #   # # #   ####    #####   -->
+    <!-- //	##      ##  #   ## #     ##     ##  #   #  ##   ##         ##   -->
+    <!-- //	##       ###    ##  #    ##     #####   #   #   #####   #####   -->
+    <!--....................................................................-->
+    <ExistingCard Name="For_Aca_003" Rarity="Common" />
+    <!-- s03 - Arcane Research -->
+    <ExistingCard Name="For_Aca_011" Rarity="Common" />
+    <!-- s03 - Stolen Research -->
+    <ExistingCard Name="For_Aca_013" Rarity="Uncommon" />
+    <!-- s03 - Thread of Fate -->
+   
+    <ExistingCard Name="For_Hav_032" Rarity="Uncommon" />
+    <!-- b01 - Imperial Phalanx -->
+    <ExistingCard Name="For_Hav_040" Rarity="Common" />
+    <!-- b01 - Elrath's Blessing -->
+    <ExistingCard Name="For_Hav_042" Rarity="Common" />
+    <!-- s01 - Strength in Numbers -->
+    
+    <ExistingCard Name="For_Inf_001" Rarity="Uncommon" />
+    <!-- b01 - House of Madness -->
+    <ExistingCard Name="For_Inf_040" Rarity="Common" />
+    <!-- b01 - Chamber of Dementia -->
+    <ExistingCard Name="For_Inf_051" Rarity="Common" />
+    <!-- s01 - Escalating Madness -->
+    
+    <ExistingCard Name="For_Nec_050" Rarity="Common" />
+    <!-- b01 - Eternal Battlefield -->
+    <ExistingCard Name="For_Nec_060" Rarity="Common" />
+    <!-- s01 - Ariana's Will -->
+    <ExistingCard Name="For_Nec_062" Rarity="Uncommon" />
+    <!-- s02 - Unholy Communion -->
+   
+    <ExistingCard Name="For_Neu_015" Rarity="Rare" />
+    <!-- b01 - Reinforcements -->
+    <ExistingCard Name="For_Neu_031" Rarity="Common" />
+    <!-- b01 - Curse of Negation -->
+    <ExistingCard Name="For_Neu_043" Rarity="Common" />
+    <!-- b01 - Gold Mine -->
+    <ExistingCard Name="For_Neu_060" Rarity="Uncommon" />
+    <!-- b01 - Calculated Sacrifice -->
+    <ExistingCard Name="For_Neu_063" Rarity="Uncommon" />
+    <!-- b01 - Strength in Unity -->
+    
+    <ExistingCard Name="For_San_002" Rarity="Uncommon" />
+    <!-- s01 - Honoured Land-->
+    <ExistingCard Name="For_San_006" Rarity="Common" />
+    <!-- s01 - Underwater Fortress -->
+    <ExistingCard Name="For_San_007" Rarity="Common" />
+    <!-- s01 - Whirlpool -->
+   
+    <ExistingCard Name="For_Str_003" Rarity="Common" />
+    <!-- b01 - Blood Pool -->
+    <ExistingCard Name="For_Str_032" Rarity="Common" />
+    <!-- s01 - Call of the Bloodhorn -->
+    <ExistingCard Name="For_Str_002" Rarity="Rare" />
+    <!-- s04 - The Last Stand -->
+   
+</Cards>

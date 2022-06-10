@@ -1,0 +1,287 @@
+<Cards>
+    <!--...............................................................................-->
+    <!-- //	 ####   ####    #####    ###    #####   ##  #   ####    #####   ##### -->
+    <!-- //	##      #   #   ##      ##  #    ##     ##  #   #   #   ##      ##    -->
+    <!-- //	##      ####    ####    #####    ##     ##  #   ####    ####    ##### -->
+    <!-- //	##      ## #    ##      ##  #    ##     ##  #   ## #    ##         ## -->
+    <!-- //	 ####   ##  #   #####   ##  #    ##     #####   ##  #   #####   ##### -->
+    <!--...............................................................................-->
+    <ExistingCard Name="Cre_Aca_002" Rarity="Common" />
+    <!-- s03 - Scholar -->
+    <ExistingCard Name="Cre_Aca_003" Rarity="Common" />
+    <!-- s03 - Rakshasa -->
+    <ExistingCard Name="Cre_Aca_006" Rarity="Common" />
+    <!-- s03 - Gargoyle -->
+    <ExistingCard Name="Cre_Aca_008" Rarity="Common" />
+    <!-- s03 - Spirit-Bound Djinn -->
+    <ExistingCard Name="Cre_Aca_009" Rarity="Uncommon" />
+    <!-- s03 - Wizard Apprentice -->
+    <ExistingCard Name="Cre_Aca_010" Rarity="Common" />
+    <!-- s03 - Wizard Tutor -->
+    <ExistingCard Name="Cre_Aca_012" Rarity="Uncommon" />
+    <!-- s03 - Wizard Disciple -->
+    <ExistingCard Name="Cre_Aca_013" Rarity="Common" />
+    <!-- s03 - Djinn -->
+    <ExistingCard Name="Cre_Aca_016" Rarity="Uncommon" />
+    <!-- s03 - Guardian Golem -->
+    <ExistingCard Name="Cre_Aca_018" Rarity="Uncommon" />
+    <!-- s03 - Titan -->
+    <ExistingCard Name="Cre_Aca_020" Rarity="Uncommon" />
+    <!-- s03 - Obsidian Gargoyle -->
+    <ExistingCard Name="Cre_Aca_021" Rarity="Uncommon" />
+    <!-- s03 - Nethermancer -->
+    <ExistingCard Name="Cre_Aca_023" Rarity="Uncommon" />
+    <!-- s03 - Void-Tainted Djinn -->
+    <ExistingCard Name="Cre_Aca_026" Rarity="Rare" />
+    <!-- s03 - Shantiri Titan -->
+    <ExistingCard Name="Cre_Aca_027" Rarity="Rare" />
+    <!-- s03 - Rakshasa Scout -->
+    <ExistingCard Name="Cre_Aca_034" Rarity="Epic" />
+    <!-- s03 - Surging Titan -->
+    <ExistingCard Name="Cre_Aca_035" Rarity="Epic" />
+    <!-- s03 - Dervish Master -->
+    <ExistingCard Name="Cre_Aca_036" Rarity="Epic" />
+    <!-- s03 - Nur, Spellweaver -->
+    <ExistingCard Name="Cre_Aca_063" Rarity="Rare" />
+    <!-- s04 - Sentinel of the Ages -->
+    <ExistingCard Name="Cre_Aca_064" Rarity="Common" />
+    <!-- s04 - Rakshasa Skirmisher -->
+    <ExistingCard Name="Cre_Hav_001" Rarity="Epic" />
+    <!-- b01 - Imperial Guard -->
+    <ExistingCard Name="Cre_Hav_005" Rarity="Common" />
+    <!-- b01 - Imperial Crossbowman -->
+    <ExistingCard Name="Cre_Hav_007" Rarity="Common" />
+    <!-- b01 - Loyal Griffin -->
+    <ExistingCard Name="Cre_Hav_009" Rarity="Uncommon" />
+    <!-- b01 - Tithe Collector -->
+    <ExistingCard Name="Cre_Hav_015" Rarity="Uncommon" />
+    <!-- b01 - Elite Squire -->
+    <ExistingCard Name="Cre_Hav_016" Rarity="Common" />
+    <!-- b01 - Sun Rider -->
+    <ExistingCard Name="Cre_Hav_021" Rarity="Uncommon" />
+    <!-- s01 - Wolf Praetorian -->
+    <ExistingCard Name="Cre_Hav_022" Rarity="Rare" />
+    <!-- s01 - Wolf Justicar -->
+    <ExistingCard Name="Cre_Hav_041" Rarity="Common" />
+    <!-- s02 - Griffin Marksman -->
+    <ExistingCard Name="Cre_Hav_043" Rarity="Uncommon" />
+    <!-- s02 - Griffin Knight -->
+    <ExistingCard Name="Cre_Hav_045" Rarity="Epic" />
+    <!-- s02 - Griffin Battle Priest -->
+    <ExistingCard Name="Cre_Hav_046" Rarity="Uncommon" />
+    <!-- s02 - Angel of Mercy -->
+    <ExistingCard Name="Cre_Hav_050" Rarity="Common" />
+    <!-- s03 - Crusader Commander -->
+    <ExistingCard Name="Cre_Hav_051" Rarity="Common" />
+    <!-- s03 - Crusader Watchman -->
+    <ExistingCard Name="Cre_Hav_052" Rarity="Uncommon" />
+    <!-- s03 - Crusader Treasurer -->
+    <ExistingCard Name="Cre_Hav_053" Rarity="Uncommon" />
+    <!-- s03 - Scattershot Marksman -->
+    <ExistingCard Name="Cre_Hav_054" Rarity="Rare" />
+    <!-- s03 - Crusader Chaplain -->
+    <ExistingCard Name="Cre_Hav_055" Rarity="Epic" />
+    <!-- s03 - Anael, Angel of Redemption -->
+    <ExistingCard Name="Cre_Hav_060" Rarity="Rare" />
+    <!-- s04 - Crusader Sergeant -->
+    <ExistingCard Name="Cre_Hav_062" Rarity="Common" />
+    <!-- s04 - Crusader Vanguard -->
+    <ExistingCard Name="Cre_Inf_002" Rarity="Epic" />
+    <!-- b01 - Doom Bringer -->
+    <ExistingCard Name="Cre_Inf_005" Rarity="Uncommon" />
+    <!-- b01 - Cerberus -->
+    <ExistingCard Name="Cre_Inf_012" Rarity="Common" />
+    <!-- b01 - Juggernaut -->
+    <ExistingCard Name="Cre_Inf_013" Rarity="Common" />
+    <!-- b01 - Maniac -->
+    <ExistingCard Name="Cre_Inf_017" Rarity="Common" />
+    <!-- b01 - Succubus -->
+    <ExistingCard Name="Cre_Inf_020" Rarity="Uncommon" />
+    <!-- s01 - Hellfire Imp -->
+    <ExistingCard Name="Cre_Inf_021" Rarity="Common" />
+    <!-- s01 - Hellfire Cerberus -->
+    <ExistingCard Name="Cre_Inf_023" Rarity="Epic" />
+    <!-- s01 - Caller of the Void -->
+    <ExistingCard Name="Cre_Inf_040" Rarity="Common" />
+    <!-- s02 - Hellfire Bloater -->
+    <ExistingCard Name="Cre_Inf_041" Rarity="Common" />
+    <!-- s02 - Hellfire Slave -->
+    <ExistingCard Name="Cre_Inf_042" Rarity="Uncommon" />
+    <!-- s02 - Chaos Lacerator -->
+    <ExistingCard Name="Cre_Inf_043" Rarity="Uncommon" />
+    <!-- s02 - Hellfire Maniac -->
+    <ExistingCard Name="Cre_Inf_044" Rarity="Epic" />
+    <!-- s02 - Chaos Seer -->
+    <ExistingCard Name="Cre_Inf_045" Rarity="Rare" />
+    <!-- s02 - Void Arbiter -->
+    <ExistingCard Name="Cre_Inf_046" Rarity="Uncommon" />
+    <!-- s02 - Lurker in the Dark -->
+    <ExistingCard Name="Cre_Inf_050" Rarity="Common" />
+    <!-- s03 - Lashing Lilim -->
+    <ExistingCard Name="Cre_Inf_054" Rarity="Rare" />
+    <!-- s03 - Abyssal Worm -->
+    <ExistingCard Name="Cre_Inf_060" Rarity="Rare" />
+    <!-- s04 - Fate Bender -->
+    <ExistingCard Name="Cre_Inf_062" Rarity="Uncommon" />
+    <!-- s04 - Reborn Incubus -->
+    <ExistingCard Name="Cre_Nec_001" Rarity="Epic" />
+    <!-- b01 - The Banshee -->
+    <ExistingCard Name="Cre_Nec_002" Rarity="Epic" />
+    <!-- b01 - Atropos, Weaver of the Dead -->
+    <ExistingCard Name="Cre_Nec_003" Rarity="Rare" />
+    <!-- b01 - Fate Weaver -->
+    <ExistingCard Name="Cre_Nec_004" Rarity="Rare" />
+    <!-- b01 - Vampire Lord -->
+    <ExistingCard Name="Cre_Nec_005" Rarity="Uncommon" />
+    <!-- b01 - Fate Spinner -->
+    <ExistingCard Name="Cre_Nec_006" Rarity="Common" />
+    <!-- b01 - Lingering Ghost -->
+    <ExistingCard Name="Cre_Nec_008" Rarity="Common" />
+    <!-- b01 - Wretched Ghoul -->
+    <ExistingCard Name="Cre_Nec_010" Rarity="Common" />
+    <!-- b01 - Neophyte Lich -->
+    <ExistingCard Name="Cre_Nec_011" Rarity="Uncommon" />
+    <!-- b01 - Putrid Lamasu -->
+    <ExistingCard Name="Cre_Nec_012" Rarity="Uncommon" />
+    <!-- b01 - Archlich -->
+    <ExistingCard Name="Cre_Nec_013" Rarity="Uncommon" />
+    <!-- b01 - Vengeful Spectre -->
+    <ExistingCard Name="Cre_Nec_016" Rarity="Uncommon" />
+    <!-- b01 - Vampire Knight -->
+    <ExistingCard Name="Cre_Nec_017" Rarity="Common" />
+    <!-- b01 - Plague Zombie -->
+    <ExistingCard Name="Cre_Nec_020" Rarity="Common" />
+    <!-- s01 - Moonsilk Skeleton -->
+    <ExistingCard Name="Cre_Nec_021" Rarity="Uncommon" />
+    <!-- s01 - Moonsilk Spinner -->
+    <ExistingCard Name="Cre_Nec_023" Rarity="Rare" />
+    <!-- s01 - Vampire Assassin -->
+    <ExistingCard Name="Cre_Nec_040" Rarity="Common" />
+    <!-- s02 - Hangman Tree -->
+    <ExistingCard Name="Cre_Nec_042" Rarity="Common" />
+    <!-- s02 - Untamed Wraith -->
+    <ExistingCard Name="Cre_Nec_045" Rarity="Epic" />
+    <!-- s02 - Namtaru Channeler -->
+    <ExistingCard Name="Cre_Nec_061" Rarity="Rare" />
+    <!-- s04 - Plague Bearer -->
+    <ExistingCard Name="Cre_Nec_062" Rarity="Common" />
+    <!-- s04 - Undead Minotaur -->
+    <ExistingCard Name="Cre_Nec_063" Rarity="Uncommon" />
+    <!-- s04 - Scavenger Ratkin -->
+    <ExistingCard Name="Cre_Neu_003" Rarity="Common" />
+    <!-- b01 - Sea Elf Archer -->
+    <ExistingCard Name="Cre_Neu_007" Rarity="Uncommon" />
+    <!-- b01 - Wandering Bard -->
+    <ExistingCard Name="Cre_Neu_012" Rarity="Common" />
+    <!-- b01 - Lesser Air Elemental -->
+    <ExistingCard Name="Cre_Neu_013" Rarity="Common" />
+    <!-- b01 - Lesser Fire Elemental -->
+    <ExistingCard Name="Cre_Neu_015" Rarity="Uncommon" />
+    <!-- b01 - Angry Wyvern -->
+    <ExistingCard Name="Cre_Neu_021" Rarity="Common" />
+    <!-- s01 - Black Vulture -->
+    <ExistingCard Name="Cre_Neu_023" Rarity="Rare" />
+    <!-- s01 - Greater Fire Elemental -->
+    <ExistingCard Name="Cre_Neu_024" Rarity="Epic" />
+    <!-- s01 - Shi-No-Shi -->
+    <ExistingCard Name="Cre_Neu_026" Rarity="Uncommon" />
+    <!-- s01 - Void Wraith -->
+    <ExistingCard Name="Cre_Neu_044" Rarity="Rare" />
+    <!-- s02 - Greater Earth Elemental -->
+    <ExistingCard Name="Cre_Neu_054" Rarity="Rare" />
+    <!-- s03 - Greater Air Elemental -->
+    <ExistingCard Name="Cre_Neu_055" Rarity="Epic" />
+    <!-- s03 - Moon Phoenix -->
+    <ExistingCard Name="Cre_Neu_056" Rarity="Uncommon" />
+    <!-- s03 - Sahaar Skirmisher -->
+    <ExistingCard Name="Cre_Neu_063" Rarity="Rare" />
+    <!-- s04 - Greater Water Elemental -->
+    <ExistingCard Name="Cre_Neu_064" Rarity="Common" />
+    <!-- s04 - Lesser Light Elemental -->
+    <ExistingCard Name="Cre_San_003" Rarity="Uncommon" />
+    <!-- s01 - Kenshi -->
+    <ExistingCard Name="Cre_San_004" Rarity="Uncommon" />
+    <!-- s01 - Naga Tide Master -->
+    <ExistingCard Name="Cre_San_012" Rarity="Common" />
+    <!-- s01 - Shark Guard -->
+    <ExistingCard Name="Cre_San_013" Rarity="Rare" />
+    <!-- s01 - Mizu-Kami -->
+    <ExistingCard Name="Cre_San_014" Rarity="Common" />
+    <!-- s01 - Snow Maiden -->
+    <ExistingCard Name="Cre_San_015" Rarity="Common" />
+    <!-- s01 - Spring Spirit -->
+    <ExistingCard Name="Cre_San_016" Rarity="Uncommon" />
+    <!-- s01 - Wanizame -->
+    <ExistingCard Name="Cre_San_018" Rarity="Common" />
+    <!-- s01 - Coral Priestess -->
+    <ExistingCard Name="Cre_San_020" Rarity="Common" />
+    <!-- s01 - White Fox -->
+    <ExistingCard Name="Cre_San_023" Rarity="Epic" />
+    <!-- s01 - Deep Mountain Yeti -->
+    <ExistingCard Name="Cre_San_041" Rarity="Common" />
+    <!-- s02 - Naga Yokujin -->
+    <ExistingCard Name="Cre_San_043" Rarity="Uncommon" />
+    <!-- s02 - Kabuki Tei -->
+    <ExistingCard Name="Cre_San_044" Rarity="Epic" />
+    <!-- s02 - Shinje Warrior -->
+    <ExistingCard Name="Cre_San_045" Rarity="Rare" />
+    <!-- s02 - Unmei-Kami -->
+    <ExistingCard Name="Cre_San_046" Rarity="Uncommon" />
+    <!-- s02 - Stream Singer -->
+    <ExistingCard Name="Cre_San_052" Rarity="Rare" />
+    <!-- s03 - Sayama Champion -->
+    <ExistingCard Name="Cre_San_053" Rarity="Uncommon" />
+    <!-- s03 - Sayama Warden -->
+    <ExistingCard Name="Cre_San_055" Rarity="Epic" />
+    <!-- s03 - Raya, Sibilant Seductress -->
+    <ExistingCard Name="Cre_San_061" Rarity="Common" />
+    <!-- s04 - Silver Bowl Spirit -->
+    <ExistingCard Name="Cre_Str_001" Rarity="Epic" />
+    <!-- b01 - Wyvern Rider -->
+    <ExistingCard Name="Cre_Str_003" Rarity="Common" />
+    <!-- b01 - Ranaar Harpy -->
+    <ExistingCard Name="Cre_Str_004" Rarity="Rare" />
+    <!-- s03 - Raging Smasher -->
+    <ExistingCard Name="Cre_Str_005" Rarity="Common" />
+    <!-- b01 - Centaur Archer -->
+    <ExistingCard Name="Cre_Str_006" Rarity="Rare" />
+    <!-- b01 - Enraged Cyclops -->
+    <ExistingCard Name="Cre_Str_007" Rarity="Common" />
+    <!-- b01 - Dreamwalker -->
+    <ExistingCard Name="Cre_Str_008" Rarity="Rare" />
+    <!-- b01 - Panther Warrior -->
+    <ExistingCard Name="Cre_Str_009" Rarity="Common" />
+    <!-- b01 - Goblin Scout -->
+    <ExistingCard Name="Cre_Str_011" Rarity="Uncommon" />
+    <!-- b01 - Dreamreaver -->
+    <ExistingCard Name="Cre_Str_013" Rarity="Uncommon" />
+    <!-- b01 - Crusher -->
+    <ExistingCard Name="Cre_Str_017" Rarity="Common" />
+    <!-- b01 - Goblin Hunter -->
+    <ExistingCard Name="Cre_Str_018" Rarity="Uncommon" />
+    <!-- s01 - Cyclops Brawler -->
+    <ExistingCard Name="Cre_Str_020" Rarity="Common" />
+    <!-- s01 - Blackskull Warchanter -->
+    <ExistingCard Name="Cre_Str_021" Rarity="Uncommon" />
+    <!-- s01 - Blackskull Goblin -->
+    <ExistingCard Name="Cre_Str_023" Rarity="Epic" />
+    <!-- s01 - Blackskull Clan Warlord -->
+    <ExistingCard Name="Cre_Str_041" Rarity="Common" />
+    <!-- s02 - War Oliphant -->
+    <ExistingCard Name="Cre_Str_042" Rarity="Common" />
+    <!-- s02 - Blackskull Centaur -->
+    <ExistingCard Name="Cre_Str_043" Rarity="Uncommon" />
+    <!-- s02 - Blackskull Shredder -->
+    <ExistingCard Name="Cre_Str_044" Rarity="Rare" />
+    <!-- s02 - Bloodfrenzied Wyvern -->
+    <ExistingCard Name="Cre_Str_045" Rarity="Epic" />
+    <!-- s02 - Blackskull Cyclops -->
+    <ExistingCard Name="Cre_Str_047" Rarity="Uncommon" />
+    <!-- s02 - Blackskull Spellsmasher -->
+    <ExistingCard Name="Cre_Str_048" Rarity="Uncommon" />
+    <!-- s02 - Blackskull Crusher -->
+    <ExistingCard Name="Cre_Str_055" Rarity="Epic" />
+    <!-- s03 - Zefiria -->
+    <ExistingCard Name="Cre_Str_062" Rarity="Rare" />
+    <!-- s04 - Sahaar Orc -->
+</Cards>

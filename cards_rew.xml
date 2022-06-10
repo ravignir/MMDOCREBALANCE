@@ -1,0 +1,385 @@
+<!-- Define all reward cards in this document. XML is case sensitive. -->
+<Cards>
+    <!--...............................................................................-->
+    <!-- //	##  #   #####   ####     ###    #####   #####    -->
+    <!-- //	##  #   ##      #   #   ##  #   ##      ##       -->
+    <!-- //	#####   ####    ####    ##  #   ####    #####    -->
+    <!-- //	##  #   ##      ## #    ##  #   ##         ##    -->
+    <!-- //	##  #   #####   ##  #    ###    #####   #####    -->
+    <!--...............................................................................-->
+    <!-- Heroes Academy -->
+    <!--...............................................................................-->
+    <Card Rarity="Heroic" Type="Hero" Name="Her_Aca_005" DisplayName="Gazal, Herald of the Void" Faction="Academy" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="448">
+        <School Name="Prime" />
+        <School Name="Dark" />
+        <Description>[1:RESOURCES], discard a card: Take a target non-unique instant spell card from either graveyard. You can play that card. If you do, banish it afterwards.</Description>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption" />
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities" />
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+                <Target Zone="None" Side="Friendly">
+                    <Variable Type="Resources" Side="Friendly" />
+                    <Condition Operator="GreaterThan" ValueA="Variable" ValueB="0" />
+                    <Option Value="4" DisplayText="[1:RESOURCES]: Discard: Friendly Spell." />
+                    <Effect Type="GainResources" Value="-1" Duration="Immediate" />
+                </Target>
+                <Target Zone="Hand" Amount="1" Side="Friendly">
+                    <Option Value="4" />
+                    <Effect Type="MoveCardTo" Destination="Graveyard" Duration="Immediate" />
+                </Target>
+                <Target Zone="Graveyard" Amount="1" Side="Friendly">
+                    <CardFilter IncludeCardType="Spell" ExcludeUnique="True" IncludeOngoingType="Immediate" />
+                    <Option Value="4" />
+                    <Effect Type="DetachLocation" Destination="Banish" Duration="Immediate" />
+                    <Effect Type="Play" CancelDestination="Graveyard" Force="True" FakeAdditionalCost="1" Duration="Immediate" />
+                </Target>
+                <Target Zone="None" Side="Friendly">
+                    <Variable Type="Resources" Side="Friendly" />
+                    <Condition Operator="GreaterThan" ValueA="Variable" ValueB="0" />
+                    <Option Value="5" DisplayText="[1:RESOURCES]: Discard: Enemy Spell." />
+                    <Effect Type="GainResources" Value="-1" Duration="Immediate" />
+                </Target>
+                <Target Zone="Hand" Amount="1" Side="Friendly">
+                    <Option Value="5" />
+                    <Effect Type="MoveCardTo" Destination="Graveyard" Duration="Immediate" />
+                </Target>
+                <Target Zone="Graveyard" Amount="1" Side="Enemy">
+                    <CardFilter IncludeCardType="Spell" ExcludeUnique="True" IncludeOngoingType="Immediate" />
+                    <Option Value="5" />
+                    <Effect Type="DetachLocation" Destination="Banish" Duration="Immediate" />
+                    <Effect Type="Play" CancelDestination="Graveyard" Force="True" FakeAdditionalCost="1" Duration="Immediate" />
+                </Target>
+            </Subgroup>
+        </Target>
+    </Card>
+    <Card Rarity="Heroic" Type="Hero" Name="Her_Aca_007" DisplayName="Ammar, the Cunning" Faction="Academy" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="450">
+        <School Name="Earth" />
+        <School Name="Water" />
+        <Description>The first time you play a spell this turn, if your [MAGIC] level is 6 or more and your [DESTINY] level is 3 or more, draw a card.</Description>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption" />
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities" />
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+            </Subgroup>
+        </Target>
+        <Trigger Type="OnCardPlay" Side="Friendly" ExecuteOncePerTurn="True">
+            <CardFilter IncludeCardType="Spell" />
+            <Target Zone="None" Side="Friendly">
+                <Variable Type="Level" Side="Friendly" LevelType="Magic" />
+                <Variable2 Type="Level" Side="Friendly" LevelType="Destiny" />
+                <Condition Operator="And" ValueA="Condition" ValueB="Condition">
+                    <Condition Operator="GreaterThan" ValueA="Variable" ValueB="5" />
+                    <Condition Operator="GreaterThan" ValueA="Variable2" ValueB="2" />
+                </Condition>
+                <Effect Type="Draw" Value="1" />
+            </Target>
+        </Trigger>
+    </Card>
+    <!--...............................................................................-->
+    <!-- Heros - Haven -->
+    <!--...............................................................................-->
+    <Card Rarity="Heroic" Type="Hero" Name="Her_Hav_005" DisplayName="Kieran, Knight of Negation" Faction="Haven" MightLevel="2" MagicLevel="1" DestinyLevel="0" HP="20" ID="256">
+        <School Name="Light" />
+        <School Name="Prime" />
+        <Description>[0:RESOURCES] Deal 1 damage to every creature that dealt combat damage to Kieran, Knight of Negation during your opponent's last turn.</Description>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption" />
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities" />
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+                <Target Zone="Battleground" Amount="All" CardType="Unit" Side="Enemy">
+                    <Option Value="4" DisplayText="1 damage to attacking creature" />
+                    <CardFilter DealDamageToHeroLastTurn="True" />
+                    <Effect Type="Damage" Value="1" Duration="Immediate" />
+                </Target>
+            </Subgroup>
+        </Target>
+    </Card>
+    <Card Rarity="Heroic" Type="Hero" Name="Her_Hav_007" DisplayName="Morgan, Beloved General" Faction="Haven" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="451">
+        <School Name="Light" />
+        <School Name="Water" />
+        <Description>Whenever you play a creature, if your [MIGHT] level is 5 or more and your [DESTINY] level is 3 or more, heal 1 damage from your hero.</Description>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption" />
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities" />
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+            </Subgroup>
+        </Target>
+        <Trigger Type="OnCardPlay" Side="Friendly">
+            <CardFilter IncludeCardType="Unit" />
+            <Target Zone="Hero" Amount="All" Side="Friendly">
+                <Variable Type="Level" Side="Friendly" LevelType="Might" />
+                <Variable2 Type="Level" Side="Friendly" LevelType="Destiny" />
+                <Condition Operator="And" ValueA="Condition" ValueB="Condition">
+                    <Condition Operator="GreaterThan" ValueA="Variable" ValueB="4" />
+                    <Condition Operator="GreaterThan" ValueA="Variable2" ValueB="2" />
+                </Condition>
+                <Effect Type="Heal" Value="1" />
+            </Target>
+        </Trigger>
+    </Card>
+    <!--...............................................................................-->
+    <!-- Heros - Inferno -->
+    <!--...............................................................................-->
+    <Card Rarity="Heroic" Type="Hero" Name="Her_Inf_005" DisplayName="Phrias, Prince of Annihilation" Faction="Inferno" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="257">
+        <School Name="Fire" />
+        <School Name="Prime" />
+        <Description>[2:RESOURCES]: Target friendly creature gains Sweep Attack until end of turn.</Description>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption" />
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities" />
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+                <Target Zone="None" Side="Friendly">
+                    <Variable Type="Resources" Side="Friendly" />
+                    <Condition Operator="GreaterThan" ValueA="Variable" ValueB="1" />
+                    <Option Value="4" DisplayText="[2:RESOURCES]: Creature gain Sweep Attack." />
+                    <Effect Type="GainResources" Value="-2" Duration="Immediate" />
+                </Target>
+                <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="1" ForceExecute="True">
+                    <Option Value="4" />
+                    <Effect Type="ModifyAbility" Ability="SweepAttack" Duration="UntilEndOfTurn" />
+                </Target>
+            </Subgroup>
+        </Target>
+    </Card>
+    <Card Rarity="Heroic" Type="Hero" Name="Her_Inf_007" DisplayName="Ignatius" Faction="Inferno" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="452">
+        <School Name="Dark" />
+        <School Name="Fire" />
+        <Description>The first time opponent discards a card in a turn, if your [DESTINY] level is 5 or more, deal 2 damage to their hero.</Description>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption" />
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities" />
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+            </Subgroup>
+        </Target>
+        <Trigger Type="OnCardDiscard" Side="Enemy" ExecuteOncePerTurn="True">
+            <Target Zone="Hero" Amount="All" Side="Enemy">
+                <Variable Type="Level" Side="Friendly" LevelType="Destiny" />
+                <Condition Operator="GreaterThan" ValueA="Variable" ValueB="4" />
+                <Effect Type="Damage" Value="2" />
+            </Target>
+        </Trigger>
+    </Card>
+    <!--...............................................................................-->
+    <!-- Heros - Necropolis -->
+    <!--...............................................................................-->
+    <Card Rarity="Heroic" Type="Hero" Name="Her_Nec_005" DisplayName="Ariana of the Severed Fates" Faction="Necropolis" MightLevel="1" MagicLevel="2" DestinyLevel="0" HP="18" ID="255">
+        <School Name="Dark" />
+        <School Name="Prime" />
+        <School Name="Earth" />
+        <Description>[4:RESOURCES]: Destroy target creature with a counter on it.</Description>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption" />
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities" />
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+                <Target Zone="None" Side="Friendly">
+                    <Variable Type="Resources" Side="Friendly" />
+                    <Condition Operator="GreaterThan" ValueA="Variable" ValueB="3" />
+                    <Option Value="4" DisplayText="Kill creature with counter." />
+                    <Effect Type="GainResources" Value="-4" Duration="Immediate" />
+                </Target>
+                <Target Zone="Battleground" CardType="Unit" Amount="1">
+                    <Option Value="4" />
+                    <CardFilter IncludeCounter="Any" />
+                    <Effect Type="Kill" Duration="Immediate" />
+                </Target>
+            </Subgroup>
+        </Target>
+    </Card>
+    <Card Rarity="Heroic" Type="Hero" Name="Her_Nec_007" DisplayName="Siham, Spirit Severer" Faction="Necropolis" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="453">
+        <School Name="Dark" />
+        <School Name="Earth" />
+        <Description>At the beginning of your turn, if your [MIGHT] level is 5 or more and your [DESTINY] level is 4 or more, destroy target creature with a cost of [2:RESOURCES] or less.</Description>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption" />
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities" />
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+            </Subgroup>
+        </Target>
+        <Trigger Type="OnSupplyPhaseBegin" Side="Friendly">
+            <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Any" Cancelable="False">
+                <Variable Type="Level" Side="Friendly" LevelType="Might" />
+                <Variable2 Type="Level" Side="Friendly" LevelType="Destiny" />
+                <Condition Operator="And" ValueA="Condition" ValueB="Condition">
+                    <Condition Operator="GreaterThan" ValueA="Variable" ValueB="4" />
+                    <Condition Operator="GreaterThan" ValueA="Variable2" ValueB="3" />
+                </Condition>
+                <CardFilter BaseMaxCost="True" Value="2" IncludeCardType="Unit" />
+                <Effect Type="Kill" />
+            </Target>
+        </Trigger>
+    </Card>
+    <!--...............................................................................-->
+    <!-- Heroes Sanctuary -->
+    <!--...............................................................................-->
+    <Card Rarity="Heroic" Type="Hero" Name="Her_San_005" DisplayName="Akane, Mourner of Lost Memories" Faction="Sanctuary" MightLevel="1" MagicLevel="2" HP="20" ID="258">
+        <School Name="Air" />
+        <School Name="Prime" />
+        <Description>[1:RESOURCES]: Remove all counters and destroy all ongoing spells on target creature.</Description>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption" />
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities" />
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+                <Target Zone="None" Side="Friendly">
+                    <Variable Type="Resources" Side="Friendly" />
+                    <Condition Operator="GreaterThan" ValueA="Variable" ValueB="0" />
+                    <Option Value="4" DisplayText="Remove counters and ongoing on creature" />
+                    <Effect Type="GainResources" Value="-1" Duration="Immediate" />
+                </Target>
+                <Target Zone="Battleground" CardType="Unit" Amount="1">
+                    <Option Value="4" />
+                    <Effect Type="RemoveCounter" CounterType="Any" Value="Infinite" Duration="Immediate" />
+                    <Effect Type="Cleanse" Duration="Immediate" />
+                </Target>
+            </Subgroup>
+        </Target>
+    </Card>
+    <Card Rarity="Heroic" Type="Hero" Name="Her_San_007" DisplayName="Shalan, Voice of the Lotus" Faction="Sanctuary" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="454">
+        <School Name="Water" />
+        <School Name="Earth" />
+        <Description>Whenever a Sanctuary creature is returned to your hand from the battleground, if your [MIGHT] level is 4 or more and your [DESTINY] level is 3 or more, that creature costs [2:RESOURCES] less to play until end of turn.</Description>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption" />
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities" />
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+            </Subgroup>
+        </Target>
+        <Trigger Type="OnCardReturnToOwnerHandFromPlay">
+            <CardFilter IncludeCardType="Unit" IncludeFaction="Sanctuary" />
+            <Target Zone="Hand" CardType="Unit" Amount="FromTrigger" ForceExecute="True">
+                <Variable Type="Level" Side="Friendly" LevelType="Might" />
+                <Variable2 Type="Level" Side="Friendly" LevelType="Destiny" />
+                <Condition Operator="And" ValueA="Condition" ValueB="Condition">
+                    <Condition Operator="GreaterThan" ValueA="Variable" ValueB="3" />
+                    <Condition Operator="GreaterThan" ValueA="Variable2" ValueB="2" />
+                </Condition>
+                <Effect Type="ModifyCost" Value="-2" Duration="UntilEndOfTurn" />
+            </Target>
+        </Trigger>
+    </Card>
+    <!--...............................................................................-->
+    <!-- Heroes Stronghold -->
+    <!--...............................................................................-->
+    <Card Rarity="Heroic" Type="Hero" Name="Her_Str_005" DisplayName="Crag Hack" Faction="Stronghold" MightLevel="2" MagicLevel="0" DestinyLevel="0" HP="20" ID="21">
+        <School Name="Earth" />
+        <Description>[0:RESOURCES]: Neutral creatures cost [1:RESOURCES] less to play until end of turn.</Description>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption" />
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities" />
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+                <Target Zone="Hero" Amount="All" Side="Friendly" NeedActivation="True">
+                    <Option Value="4" DisplayText="Neutral cost 1 less." />
+                    <Effect Type="GlobalEffect" GlobalEffectType="ModifyCost" Value="-1" Duration="UntilEndOfTurn">
+                        <CardFilter IncludeCardType="Unit" IncludeFaction="Neutral" />
+                    </Effect>
+                </Target>
+            </Subgroup>
+        </Target>
+    </Card>
+    <Card Rarity="Heroic" Type="Hero" Name="Her_Str_007" DisplayName="Zouleika, Renegade Wizard" Faction="Stronghold" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="455">
+        <School Name="Air" />
+        <School Name="Earth" />
+        <Description>At the beginning of your turn, if your [MIGHT] level is 5 or more and your [MAGIC] level is 4 or more, target friendly creature gains Magic Resist until your next turn.</Description>
+        <Target Zone="None" Side="Friendly">
+            <Effect Type="ChoiceOption" />
+            <Subgroup>
+                <TemplateEffect Name="HeroAbilities" />
+                <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+            </Subgroup>
+        </Target>
+        <Trigger Type="OnTurnBegin" Side="Friendly">
+            <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Friendly" ForceExecute="True">
+                <Variable Type="Level" Side="Friendly" LevelType="Might" />
+                <Variable2 Type="Level" Side="Friendly" LevelType="Magic" />
+                <Condition Operator="And" ValueA="Condition" ValueB="Condition">
+                    <Condition Operator="GreaterThan" ValueA="Variable" ValueB="4" />
+                    <Condition Operator="GreaterThan" ValueA="Variable2" ValueB="3" />
+                </Condition>
+                <Effect Type="ModifyAbility" Ability="MagicResist" Duration="UntilYourNextTurn" />
+            </Target>
+        </Trigger>
+    </Card>
+    <!--...............................................................................-->
+    <!-- //	 ####   ####    #####    ###    #####   ##  #   ####    #####   #####      -->
+    <!-- //	##      #   #   ##      ##  #    ##     ##  #   #   #   ##      ##         -->
+    <!-- //	##      ####    ####    #####    ##     ##  #   ####    ####    #####      -->
+    <!-- //	##      ## #    ##      ##  #    ##     ##  #   ## #    ##         ##      -->
+    <!-- //	 ####   ##  #   #####   ##  #    ##     #####   ##  #   #####   #####      -->
+    <!--...............................................................................-->
+    <ExistingCard Name="Cre_Neu_041" Rarity="Epic" />
+	
+	<!--Card UseXmlDescription="True" Rarity="Rare" Unique="False" Type="Fortune" Name="For_Neu_111" DisplayName="For_Neu_111" Faction="Neutral" Cost="3" MightLevel="2" MagicLevel="1" DestinyLevel="1" ID="1092">
+		<Variable Type="TargetCount">
+			<Target Zone="Battleground" CardType="Building" Amount="All"/>
+		</Variable>
+		<Ongoing Duration="FromCondition">
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+		</Ongoing>
+		<Target Zone="Battleground" CardType="Building" Amount="All">
+			<Effect Type="ModifyAbility" Ability="DieOnOccupantDeath" />
+		</Target>
+		<Description>Permanent
+When an  creature on building dies, destroy that building.
+When no building on the battleground, destroy [THIS].</Description>
+	</Card>	
+	<Card UseXmlDescription="True" Rarity="Epic" Unique="False" Type="Fortune" Name="For_Neu_112" DisplayName="For_Neu_112" Faction="Neutral" Cost="3" MightLevel="2" MagicLevel="3" DestinyLevel="1" ID="1096">
+        <Target Zone="Battleground" CardType="Unit" Amount="1">
+            <Effect Type="RemoveCounter" CounterType="Any" Value="Infinite" />
+            <Effect Type="Cleanse" />
+			<Effect Type="ModifyAbility" Ability="Invalid" Remove="True" Duration="Immediate" />
+		</Target>
+		<Target Zone="None" Side="Friendly">
+            <Effect Type="Draw" Value="1" />
+        </Target>
+		<Description>Remove all ongoing spells and counters on target creature, and that creature lose lts abilitlies. Draw a card.</Description>
+	</Card>
+	<Card UseXmlDescription="True" Rarity="Uncommon" Type="Unit" Name="Cre_Neu_128" Unique="False" DisplayName="Cre_Neu_128" Faction="Neutral" SubType="Shooter" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="0" HP="5" ID="1091">
+		<Ability Type="ImmuneToRetaliate"/>
+		<Target Zone="Battleground" Amount="Self">
+			<Effect Type="PlayEffect" PlayEffectType="AttackBonus" Value="2">
+				<CardFilter IncludeOccupant="True" IncludeCardType="Unit"/>
+			</Effect>
+		</Target>
+		<Trigger Type="OnThisDamageUnit" Side="Enemy" >
+            <Target Zone="Battleground" CardType="Building" Amount="FromTrigger">
+				<Effect Type="Kill" />
+            </Target>
+        </Trigger>
+		
+		<Description>When attack a creature on building, deal 2 more damage and destroy that building.</Description>
+	</Card>
+	<Card UseXmlDescription="True" Rarity="Rare" Type="Unit" Name="Cre_Neu_129" Unique="False" DisplayName="Cre_Neu_129" Faction="Neutral" SubType="Magic|Shooter" Race="Wizard" Cost="5" MightLevel="3" MagicLevel="3" DestinyLevel="0" Attack="3" Retaliate="2" HP="7" ID="1097">
+		<Ability Type="ImmuneToRetaliate"/>
+		<Target Zone="Hero" Amount="All" Side="Friendly">
+			<Effect Type="GlobalEffect" GlobalEffectType="ModifyDamage" Value="1">
+				<CardFilter IncludeCardType="Spell"/>
+			</Effect>
+		</Target>	
+		<Description>Friendly Spell deal 1 more damage.</Description>
+	</Card>
+	<Card UseXmlDescription="True" Rarity="Rare" Unique="False" Type="Building" Name="Bui_Neu_111" DisplayName="Bui_Neu_111" Faction="Neutral" Cost="3" MightLevel="1" MagicLevel="3" DestinyLevel="0" ID="1093">
+		<Trigger Type="OnDeployOnThis">
+			<Target Zone="Battleground" Amount="1" Cancelable="True">
+				<CardFilter IncludeCardType="Fortune|Spell" IncludeOngoingType="Ongoing"/>
+				<Effect Type="Kill" />
+			</Target>
+		</Trigger>
+		<Description>When you deploy a creature on this, you may destory target ongoing spell or fortune.</Description>
+	</Card>
+	<Card UseXmlDescription="True" Rarity="Epic" Unique="False" Type="Event" Name="Eve_Neu_114" DisplayName="Eve_Neu_114" Cost="1" Faction="Neutral" ID="1099">
+		<Target Zone="Battleground" Amount="1" CardType="Building" Side="Any">
+			<Effect Type="Relocate" Side="Context" />
+		</Target>
+		<Description>[1:RESOURCE]: Relocate target building.</Description>
+	</Card-->
+</Cards>

@@ -1,0 +1,242 @@
+<Cards>
+	<!--....................................................................-->
+	<!-- //	#####   ####    #####   ##      ##      ##### -->
+	<!-- //	##      ##  #   ##      ##      ##      ##    -->
+	<!-- //	#####   ####    ####    ##      ##      ##### -->
+	<!-- //	   ##   ##      ##      ##      ##         ## -->
+	<!-- //	#####   ##      #####   #####   #####   ##### -->
+	<!--....................................................................-->
+	<!--....................................................................-->
+	<!-- Spells - Air -->
+	<!--....................................................................-->
+	<Card Rarity="Uncommon" Unique="False" Type="Spell" Name="Spe_Air_080" DisplayName="Grounding Squall" School="Air" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="879">
+		<Target Zone="Battleground" CardType="Unit" Amount="1">
+			<CardFilter IncludeUnitType="Flyer"/>
+			<Effect Type="MoveCardTo" Destination="Hand"/>
+		</Target>
+		<Description>Return target Flyer creature to its owner's hand.</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Air_081" DisplayName="Windborn Speed" School="Air" Cost="4" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="880">
+		<Ongoing Duration="Permanent"/>
+		<Target Zone="Battleground" CardType="Unit" Amount="All">
+			<Effect Type="ModifyAbility" Ability="Swift"/>
+		</Target>
+		<Description>Permanent:
+All creatures gain Swift.</Description>
+	</Card>
+	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Air_082" DisplayName="Wind Wall" School="Air" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="881">
+		<Ongoing Duration="UntilYourNextTurn"/>
+		<Target Zone="Battleground" CardType="Unit" Amount="All">
+			<CardFilter IncludeUnitType="Shooter"/>
+			<Effect Type="ModifyAttack" Value="0.5xd"/>
+			<Effect Type="ModifyRetaliate" Value="0.5xd"/>
+		</Target>
+		<Description>Until your next turn:
+[ATK] and [RET] value of shooter creatures is halved, rounded down.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Spells - Dark -->
+	<!--....................................................................-->
+	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Dar_080" DisplayName="Cheap Death" School="Dark" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="882">
+		<Target Zone="Battleground" CardType="Unit" Amount="1">
+			<Variable Type="CardAttack" UseCurrentTarget="True"/>
+			<Condition Operator="LesserThan" ValueA="Variable" ValueB="2"/>
+			<Effect Type="Kill"/>
+		</Target>
+		<Description>Destroy target creature with [1:ATK] or less.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Spell" Name="Spe_Dar_081" DisplayName="Flaying Darkness" School="Dark" Cost="3" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="883">
+		<Target Zone="Battleground" CardType="Unit" Amount="All">
+			<Variable Type="CardAttack" UseCurrentTarget="True"/>
+			<Condition Operator="LesserThan" ValueA="Variable" ValueB="2"/>
+			<Effect Type="Damage" Value="2"/>
+		</Target>
+		<Description>Deal 2 damage to all creatures with [1:ATK] or less.</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Dar_082" DisplayName="Creeping Darkness" School="Dark" Cost="4" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="884">
+		<Ongoing Duration="Permanent"/>
+		<Trigger Type="OnTurnBegin" Side="Enemy">
+			<Target Zone="Battleground" CardType="Unit" Amount="1" Side="Enemy" Random="True">
+				<Effect Type="AddCounter" CounterType="Crippling" Value="1"/>
+			</Target>
+		</Trigger>
+		<Description>Permanent:
+At the beginning of opponent's turn, put 1 crippling counter on an enemy creature chosen at random.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Spells - Earth -->
+	<!--....................................................................-->
+	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Ear_080" DisplayName="Virulent Poison" School="Earth" Cost="1" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="885">
+		<Target Zone="Battleground" CardType="Unit" Amount="All">
+			<Variable Type="CounterCount" CounterType="Poison" UseCurrentTarget="True"/>
+			<Effect Type="Damage" Value="Variable"/>
+		</Target>
+		<Description>Deal damage to each creature equal to the number of poison counters on it. </Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Spell" Name="Spe_Ear_081" DisplayName="Contagious Poison" School="Earth" Cost="3" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="886">
+		<Target Zone="Battleground" CardType="Unit" Amount="All">
+			<Variable Type="CounterCount" CounterType="Poison" UseCurrentTarget="True"/>
+			<Effect Type="AddCounter" CounterType="Poison" Value="Variable"/>
+		</Target>
+		<Description>Double the number of poison counters on all creatures.</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Ear_082" DisplayName="Nature's Revenge" School="Earth" Cost="4" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="887">
+		<Variable Type="TargetCount">
+			<Target Zone="Battleground" CardType="Unit" Amount="All"/>
+		</Variable>
+		<Ongoing Duration="FromCondition">
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+		</Ongoing>
+		<Trigger Type="OnTurnBegin">
+			<Target Zone="Battleground" Amount="All" CardType="Unit">
+				<CardFilter IncludeOccupant="True"/>
+				<Effect Type="Damage" Value="2"/>
+			</Target>
+		</Trigger>
+		<Description>Permanent:
+At the beginning of each player's turn, deal 2 damage to all creatures at a building. When there are no creatures on the battleground, destroy Nature's Revenge.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Spells - Fire -->
+	<!--....................................................................-->
+	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Fir_080" DisplayName="Forked Firebolt" School="Fire" Cost="3" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="888">
+		<Target Zone="Battleground" Amount="2" CardType="Unit">
+			<Effect Type="Damage" Value="2"/>
+		</Target>
+		<Description>Deal 2 damage to 2 target creatures.</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Fir_081" DisplayName="Collateral Damage" School="Fire" Cost="4" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="889">
+		<Ongoing Duration="Permanent"/>
+		<Target Zone="Battleground" Amount="1" CardType="Unit">
+			<Effect Type="ModifyAbility" Ability="Tremple"/>
+		</Target>
+		<Description>Enchant Creature. Permanent:
+Whenever enchanted creature attacks and destroys a creature, overkill damage is redirected to enemy Hero.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Spell" Name="Spe_Fir_082" DisplayName="Ragefire" School="Fire" Cost="5" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="890">
+		<Ongoing Duration="Permanent"/>
+		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
+			<CardFilter IncludeSchool="Fire"/>
+			<Effect Type="ModifyAbility" Ability="AreaBlast" Value="3"/>
+			<Effect Type="ModifyAttack" Value="1"/>
+		</Target>
+		<Description>Permanent:
+Friendly Fire creatures gain Area Blast 3 and +[1:ATK].</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Spells - Light -->
+	<!--....................................................................-->
+	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Lig_080" DisplayName="Sunblaze" School="Light" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="891">
+		<Target Zone="BattlegroundColumn" Amount="1" CardType="Unit" Side="Enemy">
+			<Effect Type="Damage" Value="2"/>
+		</Target>
+		<Description>Deal 2 damage to all enemy creatures on target row.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Spell" Name="Spe_Lig_081" DisplayName="Blinding Light" School="Light" Cost="4" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="892">
+		<Ongoing Duration="Permanent"/>
+		<Target Zone="Battleground" CardType="Unit" Amount="1">
+			<Effect Type="ModifyAbility" Ability="CannotAttack"/>
+			<Effect Type="ModifyAbility" Ability="Immobilized"/>
+			<Effect Type="ModifyAbility" Ability="Phased"/>
+		</Target>
+		<Description>Enchant Creature. Permanent:
+Enchanted creature is Immobilized and gains Cannot Attack and Phased.</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Lig_082" DisplayName="Avenging Wings" School="Light" Cost="4" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="893">
+		<Ongoing Duration="Permanent"/>
+		<Target Zone="Battleground" Amount="1" CardType="Unit" Side="Friendly"/>
+		<Trigger Type="OnThisPostAttacked">
+			<Target Zone="Battleground" Amount="All" Side="Enemy" CardType="Unit">
+				<Effect Type="Damage" Value="2"/>
+			</Target>
+		</Trigger>
+		<Description>Enchant friendly creature. Permanent:
+Whenever enchanted creature is attacked, deal 2 damage to all enemy creatures.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Spells - Prime -->
+	<!--....................................................................-->
+	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Pri_080" DisplayName="Relocation" School="Prime" Cost="3" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="894">
+		<Target Zone="Battleground" CardType="Unit" Amount="1" Side="Friendly">
+			<Effect Type="Relocate" Side="Friendly"/>
+		</Target>
+		<Target Zone="Battleground" CardType="Unit" Amount="1" Side="Enemy">
+			<Effect Type="Relocate" Side="Enemy"/>
+		</Target>
+		<Description>Relocate target friendly creature and target enemy creature.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Spell" Name="Spe_Pri_081" DisplayName="Spell Block" School="Prime" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="895">
+		<Ongoing Duration="Permanent"/>
+		<Target Zone="Hero" Amount="All">
+			<Effect Type="GlobalEffect" GlobalEffectType="Deny">
+				<CardFilter IncludeCardType="Spell" IncludeOngoingType="Immediate"/>
+			</Effect>
+		</Target>
+		<Trigger Type="OnThisCardDeny">
+			<Target Zone="None" Amount="Self">
+				<Effect Type="Kill"/>
+			</Target>
+		</Trigger>
+		<Description>Permanent:
+When an instant spell is about to be played, negate that spell and destroy Spell Block.</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Pri_082" DisplayName="Disintegration" School="Prime" Cost="4" MightLevel="0" MagicLevel="5" DestinyLevel="0" ID="896">
+		<Target Zone="Battleground" Amount="1" CardType="Unit">
+			<Effect Type="Damage" Value="8" DamageFlags="Spell|Prime|Magic|Disintegrate"/>
+		</Target>
+		<Description>Deal 8 damage to target creature. If a creature dies this way, banish it instead.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Spells - Water -->
+	<!--....................................................................-->
+	<Card Rarity="Common" Unique="False" Type="Spell" Name="Spe_Wat_080" DisplayName="Spirit Wave" School="Water" Cost="4" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="897">
+		<Ongoing Duration="Permanent"/>
+		<Target Zone="Battleground" Amount="1" CardType="Unit"/>
+		<Trigger Type="OnCardDraw" Side="Friendly">
+			<Target Zone="Battleground" CardType="Unit" Amount="Parent" ForceExecute="True">
+				<Effect Type="ModifyAttack" Value="1" Duration="UntilEndOfTurn"/>
+			</Target>
+		</Trigger>
+		<Description>Enchant creature. Permanent:
+Whenever you draw a card, enchanted creature gains +[1:ATK] until end of turn.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Spell" Name="Spe_Wat_081" DisplayName="Aura of Frost" School="Water" Cost="4" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="898">
+		<Ongoing Duration="Permanent"/>
+		<Target Zone="Battleground" Amount="All" Side="Friendly" CardType="Unit">
+			<CardFilter IncludeSchool="Water"/>
+			<Effect Type="ModifyAbility" Ability="FrozenTouch"/>
+		</Target>
+		<Description>Permanent:
+Friendly Water creatures gain Frozen Touch.</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Spell" Name="Spe_Wat_082" DisplayName="Ice Meteor" School="Water" Cost="6" MightLevel="0" MagicLevel="5" DestinyLevel="0" ID="899">
+		<Target Zone="Battleground" CardType="Unit" Amount="1" Shape="SelfAndAdjacent">
+			<Effect Type="Damage" Value="6" DamageLethalSchools="Fire"/>
+		</Target>
+		<Description>Deal 6 damage to target creature and all adjacent creatures. Fire creatures dealt damage this way are destroyed.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- //	#####   ##  #   #####   #   #   #####   ##### -->
+	<!-- //	##      ##  #   ##      ##  #    ##     ##    -->
+	<!-- //	####    ##  #   ####    # # #    ##     ##### -->
+	<!-- //	##      ##  #   ##      #  ##    ##        ## -->
+	<!-- //	#####     ##    #####   #   #    ##     ##### -->
+	<!--....................................................................-->
+	<Card Rarity="Common" Unique="False" Type="Event" Name="Eve_Neu_080" DisplayName="Fiery Sunrise" Cost="2" Faction="Neutral" ID="900">
+		<Ongoing Duration="UntilEndOfTurn"/>
+		<Target Zone="Battleground" CardType="Unit" Side="Any" Amount="All" NeedActivation="True" Persistent="True">
+			<CardFilter IncludeAbility="Stackable"/>
+			<Effect Type="ModifyAttack" Value="1"/>
+		</Target>
+		<Description>[2:RESOURCES]: Until end of turn, all stacks gain +[1:ATK].</Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Event" Name="Eve_Neu_081" DisplayName="A Tear in the Veil" Cost="1" Faction="Neutral" ID="901">
+		<Ongoing Duration="UntilPlaySpellThisTurn"/>
+		<Target Zone="Hero" Amount="All" Side="Any" NeedActivation="True" Persistent="True">
+			<Effect Type="GlobalEffect" GlobalEffectType="EnforceDamage">
+				<CardFilter IncludeCardType="Spell"/>
+			</Effect>
+		</Target>
+		<Description>[1:RESOURCES]: The damage of the next spell you play this turn cannot be prevented or reduced.</Description>
+	</Card>
+</Cards>

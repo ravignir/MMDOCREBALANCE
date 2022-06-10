@@ -1,0 +1,260 @@
+<Cards>
+	<!--....................................................................-->
+	<!-- //	#####   ####    #####   ##      ##      ##### -->
+	<!-- //	##      ##  #   ##      ##      ##      ##    -->
+	<!-- //	#####   ####    ####    ##      ##      ##### -->
+	<!-- //	   ##   ##      ##      ##      ##         ## -->
+	<!-- //	#####   ##      #####   #####   #####   ##### -->
+	<!--....................................................................-->
+	<!--....................................................................-->
+	<!-- Spells - Air -->
+	<!--....................................................................-->
+	<Card Rarity="Uncommon" Type="Spell" Name="Spe_Air_070" DisplayName="Lightning Burst" School="Air" Cost="3" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="779" Unique="False">
+		<Target Zone="BattlegroundPosition" CardType="Unit" Amount="1" Shape="AdjacentOnly">
+			<Effect Type="Damage" Value="2"/>
+		</Target>
+		<Description>Choose target battleground position. Deal 2 damage to all creatures adjacent to that position.</Description>
+	</Card>
+	<Card Rarity="Rare" Type="Spell" Name="Spe_Air_071" DisplayName="Lightning Curse" School="Air" Cost="2" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="780" Unique="False">
+		<Ongoing Duration="Permanent"/>
+		<Target Zone="Battleground" Amount="1" CardType="Unit"/>
+		<Trigger Type="OnDeployAdjacent">
+			<Target Zone="Battleground" CardType="Unit" Amount="FromTrigger">
+				<Effect Type="Damage" Value="4"/>
+			</Target>
+		</Trigger>
+		<Description>Enchant Creature. Permanent:
+Whenever a creature is deployed on a battleground position adjacent to enchanted creature, deal 4 damage to it.</Description>
+	</Card>
+	<Card Rarity="Common" Type="Spell" Name="Spe_Air_072" DisplayName="Blessing of the Storm" School="Air" Cost="4" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="781" Unique="False">
+		<Ongoing Duration="Permanent"/>
+		<Target Zone="Battleground" Amount="1" CardType="Unit">
+			<Effect Type="ModifyAbility" Ability="Swift"/>
+			<Effect Type="ModifyAbility" Ability="Charge"/>
+		</Target>
+		<Description>Enchant Creature. Permanent:
+Enchanted creature gains Swift and Charge.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Spells - Dark -->
+	<!--....................................................................-->
+	<Card Rarity="Common" Type="Spell" Name="Spe_Dar_070" DisplayName="Agonizing Purge" School="Dark" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="782" Unique="False">
+		<Target Zone="Battleground" Amount="1" CardType="Unit" Side="Enemy">
+			<Variable Type="CardChildrenCount" UseCurrentTarget="True"/>
+			<Effect Type="Damage" Value="Variable"/>
+			<Effect Type="Cleanse"/>
+		</Target>
+		<Description>Destroy all ongoing spells on target enemy creature. Deal 1 damage to that creature for each spell destroyed this way.</Description>
+	</Card>
+	<Card Rarity="Rare" Type="Spell" Name="Spe_Dar_071" DisplayName="Mutual Agony" School="Dark" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="783" Unique="False">
+		<Ongoing Duration="Permanent"/>
+		<Target Zone="Battleground" Amount="1" CardType="Unit"/>
+		<Trigger Type="OnEnchantedCardDeath">
+			<Target Zone="Hero" Amount="ParentHero">
+				<Effect Type="Damage" Value="2"/>
+			</Target>
+		</Trigger>
+		<Description>Enchant Creature. Permanent:
+When enchanted creature dies, deal 2 damage to its controller's hero.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Type="Spell" Name="Spe_Dar_072" DisplayName="Death-Dodger" School="Dark" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="784" Unique="False">
+		<Ongoing Duration="Permanent"/>
+		<Target Zone="Battleground" CardType="Unit" Amount="1">
+			<CardFilter ExcludeUnique="True"/>
+			<Effect Type="PlayEffect" PlayEffectType="BounceOnDie"/>
+		</Target>
+		<Description>Enchant Non-Unique Creature. Permanent:
+When enchanted creature dies, return it to its owner's hand instead.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Spells - Earth -->
+	<!--....................................................................-->
+	<Card Rarity="Common" Type="Spell" Name="Spe_Ear_070" DisplayName="Putrid Dragon's Breath" School="Earth" Cost="3" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="785" Unique="False">
+		<Target Zone="BattlegroundColumn" CardType="Unit" Amount="1">
+			<Effect Type="AddCounter" CounterType="Poison" Value="2"/>
+		</Target>
+		<Description>Put 2 poison counters on all creatures on target row.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Type="Spell" Name="Spe_Ear_071" DisplayName="Earth Growth" School="Earth" Cost="4" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="786" Unique="False">
+		<Ongoing Duration="Permanent"/>
+		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
+			<CardFilter IncludeSchool="Earth" IncludeFrontLine="True"/>
+			<Effect Type="ModifyAbility" Ability="Towering"/>
+			<Effect Type="ModifyAbility" Ability="Anchored"/>
+		</Target>
+		<Description>Permanent:
+Friendly Earth creatures on the front line gain Towering and Anchored.</Description>
+	</Card>
+	<Card Rarity="Rare" Type="Spell" Name="Spe_Ear_072" DisplayName="Fissure" School="Earth" Cost="4" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="787" Unique="False">
+		<Target Zone="Battleground" CardType="Unit" Amount="All">
+			<CardFilter IncludeOccupant="True"/>
+			<Effect Type="Damage" Value="2"/>
+			<Subgroup>
+				<Target Zone="Battleground" CardType="Building" Amount="All">
+					<Effect Type="Kill"/>
+				</Target>
+			</Subgroup>
+		</Target>
+		<Description>Deal 2 damage to all creatures at a building then destroy all buildings.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Spells - Fire -->
+	<!--....................................................................-->
+	<Card Rarity="Common" Type="Spell" Name="Spe_Fir_070" DisplayName="Magma Burst" School="Fire" Cost="3" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="788" Unique="False">
+		<Target Zone="Battleground" CardType="Unit" Amount="1" Shape="SelfAndAdjacent">
+			<Effect Type="Damage" Value="2"/>
+		</Target>
+		<Description>Deal 2 damage to target creature and all adjacent creatures.</Description>
+		<ExtraDescription>(Also damage friendly units.)</ExtraDescription>
+	</Card>
+	<Card Rarity="Uncommon" Type="Spell" Name="Spe_Fir_071" DisplayName="Mass Inner Flame" School="Fire" Cost="3" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="789" Unique="False">
+		<Ongoing Duration="UntilYourNextTurn"/>
+		<Target Zone="Battleground" CardType="Unit" Amount="All">
+			<Effect Type="ModifyAttack" Value="1"/>
+			<Effect Type="ModifyRetaliate" Value="1"/>
+		</Target>
+		<Description>Until your next turn:
+All creatures gain +[1:ATK] and +[1:RET].</Description>
+	</Card>
+	<Card Rarity="Rare" Type="Spell" Name="Spe_Fir_072" DisplayName="Arkath's Wrath" School="Fire" Cost="5" MightLevel="0" MagicLevel="5" DestinyLevel="0" ID="790" Unique="False">
+		<Target Zone="Battleground" CardType="Unit" Amount="All">
+			<Effect Type="Damage" Value="5" DamageFlags="Spell|Fire|Magic|Enforced"/>
+		</Target>
+		<Description>Deal 5 damage to all creatures. This damage cannot be prevented or reduced.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Spells - Light -->
+	<!--....................................................................-->
+	<Card Rarity="Common" Type="Spell" Name="Spe_Lig_070" DisplayName="Cleanse" School="Light" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="791" Unique="False">
+		<Target Zone="Battleground" Amount="1" CardType="Unit" Side="Friendly">
+			<Variable Type="CardChildrenCount" UseCurrentTarget="True" ValueModifier="2x"/>
+			<Effect Type="Heal" Value="Variable"/>
+		</Target>
+		<Target Zone="Battleground" Amount="Same">
+			<Effect Type="Cleanse"/>
+		</Target>
+		<Description>Destroy all ongoing spells on target friendly creature. Heal 2 damage from that creature for each spell destroyed this way.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Type="Spell" Name="Spe_Lig_071" DisplayName="Avenging Shield" School="Light" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="792" Unique="False">
+		<Ongoing Duration="Permanent"/>
+		<Target Zone="Battleground" CardType="Unit" Amount="1" Side="Friendly">
+			<Effect Type="ModifyAbility" Ability="AbsorbHeroDamage" Value="1"/>
+		</Target>
+		<Description>Enchant friendly creature. Permanent:
+Whenever damage is dealt to your hero, redirect 1 of that damage to enchanted creature.</Description>
+	</Card>
+	<Card Rarity="Rare" Type="Spell" Name="Spe_Lig_072" DisplayName="Sanctified Walls" School="Light" Cost="4" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="793" Unique="False">
+		<Ongoing Duration="Permanent"/>
+		<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+			<CardFilter IncludeOccupant="True"/>
+			<Effect Type="ModifyAbility" Ability="CannotTarget"/>
+		</Target>
+		<Description>Permanent:
+Friendly creatures at buildings cannot be targeted.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Spells - Prime -->
+	<!--....................................................................-->
+	<Card Rarity="Uncommon" Type="Spell" Name="Spe_Pri_070" DisplayName="Arcane Armour" School="Prime" Cost="1" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="794" Unique="False">
+		<Ongoing Duration="Permanent"/>
+		<Target Zone="Battleground" CardType="Unit" Amount="1">
+			<Effect Type="ModifySubType" SubType="Magic"/>
+			<Effect Type="ModifyAbility" Ability="MagicResist"/>
+		</Target>
+		<Description>Enchant creature. Permanent:
+Enchanted creature becomes a magic creature and gains Magic Resist.</Description>
+	</Card>
+	<Card Rarity="Common" Type="Spell" Name="Spe_Pri_071" DisplayName="Counterspell" School="Prime" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="795" Unique="False">
+		<Ongoing Duration="Permanent"/>
+		<Trigger Type="OnCardPlay">
+			<CardFilter IncludeCardType="Spell" IncludeOngoingType="Ongoing"/>
+			<Target Zone="None" Amount="FromTrigger">
+				<Effect Type="Banish"/>
+			</Target>
+			<Target Zone="Battleground" Amount="Self">
+				<Effect Type="Kill"/>
+			</Target>
+		</Trigger>
+		<Description>Permanent:
+When an ongoing spell enters the battleground, banish it then destroy Counterspell.</Description>
+	</Card>
+	<Card Rarity="Rare" Type="Spell" Name="Spe_Pri_072" DisplayName="Arcane Mastery" School="Prime" Cost="3" MightLevel="0" MagicLevel="4" DestinyLevel="0" ID="796" Unique="False">
+		<Ongoing Duration="Permanent"/>
+		<Target Zone="Hero" Amount="All" Side="Friendly">
+			<Effect Type="GlobalEffect" GlobalEffectType="EnforceDamage"/>
+		</Target>
+		<Description>Permanent:
+Magic damage from friendly sources cannot be prevented or reduced.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Spells - Water -->
+	<!--....................................................................-->
+	<Card Rarity="Common" Type="Spell" Name="Spe_Wat_070" DisplayName="Deadly Hail" School="Water" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="797" Unique="False">
+		<Ongoing Duration="UntilYourNextTurn"/>
+		<Trigger Type="OnPostAttack">
+			<Target Zone="Battleground" CardType="Unit" Amount="FromTrigger">
+				<Effect Type="Damage" Value="1"/>
+			</Target>
+		</Trigger>
+		<Trigger Type="OnMove">
+			<Target Zone="Battleground" CardType="Unit" Amount="FromTrigger">
+				<Effect Type="Damage" Value="1"/>
+			</Target>
+		</Trigger>
+		<Description>Until your next turn:
+Whenever a creature attacks or moves, deal 1 damage to it.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Type="Spell" Name="Spe_Wat_071" DisplayName="Time Flow" School="Water" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="798" Unique="False">
+		<Ongoing Duration="Permanent"/>
+		<Target Zone="Battleground" CardType="Unit" Amount="1">
+			<Effect Type="ModifyAbility" Ability="Immobilized"/>
+			<Effect Type="ModifyAbility" Ability="FortuneWard"/>
+		</Target>
+		<Description>Enchant creature. Permanent:
+Enchanted creature is Immobilized and gains Fortune Ward.</Description>
+	</Card>
+	<Card Rarity="Rare" Type="Spell" Name="Spe_Wat_072" DisplayName="Water Flows Freely" School="Water" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="799" Unique="False">
+		<Ongoing Duration="Permanent"/>
+		<Target Zone="Battleground" CardType="Spell" Side="Friendly" Amount="AllOther">
+			<CardFilter IncludeOngoingType="Ongoing" IncludeSchool="Water"/>
+			<Effect Type="PlayEffect" PlayEffectType="Indestructible">
+				<CardFilter Side="Enemy"/>
+			</Effect>
+		</Target>
+		<Description>Permanent:
+Other friendly ongoing Water spells cannot be destroyed by enemy effects.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- //	#####   ##  #   #####   #   #   #####   ##### -->
+	<!-- //	##      ##  #   ##      ##  #    ##     ##    -->
+	<!-- //	####    ##  #   ####    # # #    ##     ##### -->
+	<!-- //	##      ##  #   ##      #  ##    ##        ## -->
+	<!-- //	#####     ##    #####   #   #    ##     ##### -->
+	<!--....................................................................-->
+	<Card Rarity="Common" Type="Event" Name="Eve_Neu_070" DisplayName="Month of the Spider Queen" Cost="1" Faction="Neutral" ID="800" Unique="False">
+		<Ongoing Duration="UntilYourNextTurn"/>
+		<Target Zone="Battleground" Amount="All" NeedActivation="True">
+			<!-- This Target is used only to display the correct feedback -->
+			<CardFilter IncludeCardType="Unit|Hero"/>
+		</Target>
+		<Target Zone="Battleground" CardType="Unit" Amount="All" NeedActivation="True" Persistent="True">
+			<Effect Type="PlayEffect" PlayEffectType="CannotHeal"/>
+		</Target>
+		<Target Zone="Hero" Amount="All" Side="Any" NeedActivation="True" Persistent="True">
+			<Effect Type="PlayEffect" PlayEffectType="CannotHeal"/>
+		</Target>
+		<Description>[1:RESOURCES]: Until your next turn, creatures and heroes cannot be healed.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Type="Event" Name="Eve_Neu_071" DisplayName="Week of the Elder Races" Cost="4" Faction="Neutral" ID="801" Unique="False">
+		<Ongoing Duration="UntilEndOfTurn"/>
+		<Target Zone="Battleground" CardType="Unit" Amount="1">
+			<Effect Type="Choose" Duration="Immediate"/>
+		</Target>
+		<Target Zone="Battleground" CardType="Unit" Amount="All" NeedActivation="True" Persistent="True">
+			<CardFilter ShareRaces="True"/>
+			<Effect Type="ModifyAttack" Value="1"/>
+			<Effect Type="ModifyRetaliate" Value="1"/>
+		</Target>
+		<Description>[4:RESOURCES]: Until end of turn, all creatures that share a creature type with target creature gain +[1:ATK] and +[1:RET].</Description>
+	</Card>
+</Cards>

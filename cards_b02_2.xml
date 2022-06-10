@@ -1,0 +1,140 @@
+<Cards>
+    <!--....................................................................-->
+    <!-- //	#####    ###    ####    #####   ##  #   #   #   #####   #####   -->
+    <!-- //	##      ##  #   #   #    ##     ##  #   ##  #   ##      ##      -->
+    <!-- //	####    ##  #   ####     ##     ##  #   # # #   ####    #####   -->
+    <!-- //	##      ##  #   ## #     ##     ##  #   #  ##   ##         ##   -->
+    <!-- //	##       ###    ##  #    ##     #####   #   #   #####   #####   -->
+    <!--....................................................................-->
+    <ExistingCard Name="For_Aca_004" Rarity="Common" />
+    <!-- s03 - Favorite Spell -->
+    <ExistingCard Name="For_Aca_006" Rarity="Common" />
+    <!-- s03 - Severed Fate -->
+    <ExistingCard Name="For_Aca_012" Rarity="Uncommon" />
+    <!-- s03 - Rift's Echo -->
+    <ExistingCard Name="For_Aca_014" Rarity="Uncommon" />
+    <!-- s03 - Forgotten Spell -->
+    <ExistingCard Name="For_Aca_016" Rarity="Rare" />
+    <!-- s03 - Chain Casting -->
+    <ExistingCard Name="For_Aca_017" Rarity="Rare" />
+    <!-- s03 - Offering to the Void -->
+    <ExistingCard Name="For_Aca_018" Rarity="Epic" />
+    <!-- s03 - Arcane Intuition -->
+    <ExistingCard Name="For_Aca_062" Rarity="Common" />
+    <!-- s04 - Memory Lapse -->
+    <ExistingCard Name="For_Hav_003" Rarity="Epic" />
+    <!-- b01 - Cassandra's Imperial Devotion -->
+    <ExistingCard Name="For_Hav_004" Rarity="Uncommon" />
+    <!-- b01 - Fountain of Youth -->
+    <ExistingCard Name="For_Hav_030" Rarity="Common" />
+    <!-- s01 - Tree of Truth -->
+    <ExistingCard Name="For_Hav_031" Rarity="Common" />
+    <!-- s01 - Truce of Elrath -->
+    <ExistingCard Name="For_Hav_043" Rarity="Rare" />
+    <!-- s02 - Offensive Stance -->
+    <ExistingCard Name="For_Hav_053" Rarity="Rare" />
+    <!-- s03 - Stockpile -->
+    <ExistingCard Name="For_Hav_061" Rarity="Common" />
+    <!-- s04 - Morgan's Inspiration -->
+    <ExistingCard Name="For_Hav_062" Rarity="Uncommon" />
+    <!-- s04 - Favor of the Just -->
+    <ExistingCard Name="For_Inf_006" Rarity="Epic" />
+    <!-- b01 - Garant's Purge -->
+    <ExistingCard Name="For_Inf_007" Rarity="Rare" />
+    <!-- b01 - Hall of Torment -->
+    <ExistingCard Name="For_Inf_030" Rarity="Common" />
+    <!-- s01 - Halls of Amnesia -->
+    <ExistingCard Name="For_Inf_032" Rarity="Common" />
+    <!-- s01 - Maws of Chaos -->
+    <ExistingCard Name="For_Inf_042" Rarity="Uncommon" />
+    <!-- s02 - Void Judgment -->
+    <ExistingCard Name="For_Inf_043" Rarity="Rare" />
+    <!-- s02 - Void Rift -->
+    <ExistingCard Name="For_Inf_052" Rarity="Uncommon" />
+    <!-- s03 - Dunes of Madness -->
+    <ExistingCard Name="For_Inf_060" Rarity="Common" />
+    <!-- s04 - Phrias' Gift -->
+    <ExistingCard Name="For_Inf_062" Rarity="Uncommon" />
+    <!-- s04 - Sacrifice -->
+    <ExistingCard Name="For_Nec_003" Rarity="Epic" />
+    <!-- b01 - Seria's Legion -->
+    <ExistingCard Name="For_Nec_031" Rarity="Common" />
+    <!-- s01 - Ariana's Lair -->
+    <ExistingCard Name="For_Nec_042" Rarity="Uncommon" />
+    <!-- s02 - Early Grave -->
+    <ExistingCard Name="For_Nec_043" Rarity="Rare" />
+    <!-- s02 - Seria's Last Order -->
+    <ExistingCard Name="For_Nec_052" Rarity="Uncommon" />
+    <!-- s03 - Death is Not the End -->
+    <ExistingCard Name="For_Nec_061" Rarity="Common" />
+    <!-- s04 - Soul Harvest -->
+    <ExistingCard Name="For_Neu_001" Rarity="Epic" />
+    <!-- b01 - Altar of Asha -->
+    <ExistingCard Name="For_Neu_010" Rarity="Common" />
+    <!-- b01 - Camp Fire -->
+    <ExistingCard Name="For_Neu_013" Rarity="Uncommon" />
+    <!-- b01 - Observatory -->
+    <ExistingCard Name="For_Neu_019" Rarity="Uncommon" />
+    <!-- b01 - Broken Bridge -->
+    <ExistingCard Name="For_Neu_021" Rarity="Uncommon" />
+    <!-- b01 - Arcane Academy -->
+    <ExistingCard Name="For_Neu_041" Rarity="Common" />
+    <!-- s02 - Forgotten Cave -->
+    <ExistingCard Name="For_Neu_042" Rarity="Uncommon" />
+    <!-- s02 - Revised Tactics -->
+    <ExistingCard Name="For_Neu_044" Rarity="Rare" />
+    <!-- s02 - Altar of Wishes -->
+    <ExistingCard Name="For_Neu_050" Rarity="Common" />
+    <!-- s02 - Fortune Telling -->
+    <ExistingCard Name="For_Neu_056" Rarity="Epic" />
+    <!-- s03 - Time Of Need -->
+    <ExistingCard Name="For_Neu_062" Rarity="Rare" />
+    <!-- s04 - The Price of the Void -->
+    <ExistingCard Name="For_Neu_064" Rarity="Uncommon" />
+    <!-- s04 - Architect's Wonder -->
+    <ExistingCard Name="For_San_001" Rarity="Common" />
+    <!-- s01 - Challenge Hall -->
+    <ExistingCard Name="For_San_003" Rarity="Epic" />
+    <!-- s01 - Yukiko's Shrine -->
+    <ExistingCard Name="For_San_032" Rarity="Uncommon" />
+    <!-- s01 - The Frozen Maze -->
+    <ExistingCard Name="For_San_043" Rarity="Rare" />
+    <!-- s02 - Battle Trance -->
+    <ExistingCard Name="For_San_051" Rarity="Common" />
+    <!-- s03 - Road to Enlightenment -->
+    <ExistingCard Name="For_San_052" Rarity="Uncommon" />
+    <!-- s03 - Sinkhole -->
+    <ExistingCard Name="For_San_053" Rarity="Rare" />
+    <!-- s03 - Honor Binds Us -->
+    <ExistingCard Name="For_San_060" Rarity="Common" />
+    <!-- s04 - Noboru's Insight -->
+    <ExistingCard Name="For_San_062" Rarity="Uncommon" />
+    <!-- s04 - Truce -->
+    <ExistingCard Name="For_Str_008" Rarity="Common" />
+    <!-- b01 - Sacrificial Altar -->
+    <ExistingCard Name="For_Str_031" Rarity="Uncommon" />
+    <!-- s01 - Surprise Attack -->
+    <ExistingCard Name="For_Str_060" Rarity="Common" />
+    <!-- s04 - Zefiria's Celerity -->
+    <ExistingCard Name="For_Str_061" Rarity="Uncommon" />
+    <!-- s04 - Famous Last Blows -->
+    <!--....................................................................-->
+    <!--// ####    ##  #   ##   ##      ####    ##   #   #    #####   ##### -->
+    <!--// ##  #   ##  #   ##   ##      ##  #   ##   ##  #   ##       ##    -->
+    <!--// ####    ##  #   ##   ##      ##  #   ##   # # #   ## ###   ##### -->
+    <!--// ##  #   ##  #   ##   ##      ##  #   ##   #  ##   ##   ##     ## -->
+    <!--// ####     ###    ##   ######  ####    ##   #   #    ####    ##### -->
+    <!--....................................................................-->
+    <ExistingCard Name="Bui_Aca_060" Rarity="Uncommon" />
+    <!-- s04 - Arcane Orb -->
+    <ExistingCard Name="Bui_Hav_060" Rarity="Uncommon" />
+    <!-- s04 - Watchtower -->
+    <ExistingCard Name="Bui_Inf_060" Rarity="Uncommon" />
+    <!-- s04 - Hall of Nightmares -->
+    <ExistingCard Name="Bui_Nec_060" Rarity="Uncommon" />
+    <!-- s04 - Soul Spire -->
+    <ExistingCard Name="Bui_San_060" Rarity="Uncommon" />
+    <!-- s04 - Hidden Dojo -->
+    <ExistingCard Name="Bui_Str_060" Rarity="Uncommon" />
+    <!-- s04 - War Tent -->
+</Cards>

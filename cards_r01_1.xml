@@ -1,0 +1,443 @@
+<Cards>
+	<!--...............................................................................-->
+	<!-- //	 ####   ####    #####    ###    #####   ##  #   ####    #####   #####      -->
+	<!-- //	##      #   #   ##      ##  #    ##     ##  #   #   #   ##      ##         -->
+	<!-- //	##      ####    ####    #####    ##     ##  #   ####    ####    #####      -->
+	<!-- //	##      ## #    ##      ##  #    ##     ##  #   ## #    ##         ##      -->
+	<!-- //	 ####   ##  #   #####   ##  #    ##     #####   ##  #   #####   #####      -->
+	<!--...............................................................................-->
+	<!--...............................................................................-->
+	<!-- Creatures - Academy -->
+	<!--...............................................................................-->
+	<Card  Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Aca_100" DisplayName="Surging Golem" Faction="Academy" SubType="Magic|Shooter" Race="Construct|Golem" Cost="3" MightLevel="3" MagicLevel="3" DestinyLevel="0" Attack="2" Retaliate="2" HP="5" ID="1006" School="Prime">
+		<Ability Type="ImmuneToRetaliate"/>
+		<Ability Type="Shockwave" Value="2" />
+		<Ability Type="FocusedBlast" Value="1" />
+	</Card>
+	<Card  Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Aca_101" DisplayName="Manastorm Titan" Faction="Academy" SubType="Magic|Melee" Race="Construct|Titan" Cost="4" MightLevel="3" MagicLevel="3" DestinyLevel="0" Attack="2" Retaliate="2" HP="7" ID="1007" School="Prime">
+		<Ability Type="Shockwave" Value="2" />
+		<Trigger Type="OnThisCardDeath">
+			<Target Zone="None" Side="Friendly">
+				<Effect Type="IncreaseLevel" Value="1" LevelType="Magic"/>
+			</Target>
+		</Trigger>
+		<Trigger Type="OnThisCardDeath">
+            <Target Zone="BattlegroundColumn" CardType="Unit" Amount="FromTrigger" BattlegroundPositionState="DontCare">
+				<CardFilter ExcludeRaces="Construct"/>
+				<Effect Type="Damage" Value="3"/>
+			</Target>
+		</Trigger>
+		<Description>When [THIS] dies, increase your [MAGIC] level by 1, and deal 3 damage to all non-construct creature of the same row.</Description>
+	</Card>
+	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Aca_102" DisplayName="Power Blast Titan" Faction="Academy" School="Prime" SubType="Magic|Shooter" Race="Construct|Titan" Cost="4" MightLevel="4" MagicLevel="4" DestinyLevel="0" Attack="3" Retaliate="2" HP="7" ID="1008">
+		<Ability Type="ImmuneToRetaliate"/>
+		<Ability Type="Shockwave" Value="2" />
+		<Trigger Type="OnUnitKillUnit" DamageIncludeFlags="Splash" Side="Friendly" ExecuteOncePerTransaction="True">
+			<CardFilter IncludeRaces="Construct"/>
+			<Target Zone="Battleground" Amount="FromTrigger" CardType="Unit" >
+				<Variable Type="UnitAttackCount" FromTrigger="True"/>
+				<Condition Operator="LesserThan" ValueA="Variable" ValueB="2"/>
+				<Effect Type="AdditionalAttack" Value="1"/>
+            </Target>
+		</Trigger>
+		<Description>Whenever a friendly construct destory a enemy with blast damage for the first time in a turn, it gains an additional attack.</Description>
+	</Card>
+	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Aca_103" DisplayName="Crimson Wizard" Faction="Academy" SubType="Magic|Shooter" Race="Human|Wizard" Cost="4" MightLevel="4" MagicLevel="1" DestinyLevel="0" Attack="3" Retaliate="1" HP="6" ID="1009">
+		<Ability Type="ImmuneToRetaliate"/>
+		<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+			<CardFilter IncludeRaces="Beastmen"/>
+			<Variable Type="TargetCount" UseCurrentTarget="True">
+				<Target Zone="Battleground" CardType="Unit" Amount="self" Side="Friendly" Shape="AdjacentOnly">
+					<CardFilter IncludeRaces="Wizard"/>
+				</Target>
+			</Variable>
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+			<Effect Type="ModifyAbility" Ability="Swift"/>	
+			<Effect Type="ModifyMaxHp" Value="1"/>
+		</Target>
+		<Description>Friendly beastman creatures adjacent to frirendly wizard gain Swift and +[1:HEALTH].</Description>
+	</Card>
+	
+	<!--...............................................................................-->
+	<!-- Creatures - Haven -->
+	<!--...............................................................................-->
+	<Card  Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Hav_100" DisplayName="Falcon Praetorian" Faction="Haven" SubType="Melee" Race="Human|Soldier" Cost="4" MightLevel="4" MagicLevel="0" DestinyLevel="0" Attack="3" Retaliate="3" HP="6" ID="1010">
+		<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+			<CardFilter IncludeRaces="Human"/>
+			<Variable Type="UnitAttackCount" UseCurrentTarget="True"/>
+		    <Condition Operator="LesserThan" ValueA="Variable" ValueB="1"/>
+			<Effect Type="ModifyAbility" Ability="PreemptiveStrike" Duration="UntilYourNextTurn"/>		
+		</Target>
+		<Description>While a friendly Human creature did not attack in a turn, it gain Preemptive strike until your next turn.</Description>
+	</Card>
+	<Card  Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Hav_101" DisplayName="Griffin Captain" Faction="Haven" SubType="Flyer" Race="Human|Knight" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="2" HP="5" ID="1011">
+		<Ability Type="PerfectRetaliate"/>        
+		<Target Zone="Battleground" CardType="Unit" Amount="Self" Shape="AdjacentOnly" Side="Friendly">
+			<CardFilter IncludeRaces="Human" />
+			<Effect Type="ModifyAbility" Ability="PerfectRetaliate" />
+			<Effect Type="ModifyRetaliate" Value="1" />
+        </Target>
+		<Description>Adjacent friendly human creatures gain +[1:RET] and Perfect Retaliation.</Description>
+	</Card>
+	<Card Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Hav_102" DisplayName="Blind Justicar" Faction="Haven" SubType="Shooter" Race="Human|Archer" Cost="4" MightLevel="4" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="1" HP="7" ID="1012">
+		<Ability Type="ImmuneToRetaliate"/>
+		<Trigger Type="OnThisCardDeploy">
+			<Target Zone="Battleground" CardType="Unit" Amount="1" Side="Friendly" />		
+			<Target Zone="Battleground" CardType="Unit" Amount="1" Side="Enemy" >
+				<Variable Type="CardRetaliation" UseLastTarget="True"/> 
+				<Effect Type="Damage" Value="Variable" />
+			</Target>
+        </Trigger>
+		<Description>When [THIS] enter the battleground, choose a target friendly creature, deal damage to target enemy creature equal to the first creature's [RET].</Description>
+	</Card>
+	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Hav_103" DisplayName="Falcon Holy Priest" Faction="Haven" SubType="Magic|Shooter" Race="Human|Priest" School="Light" Cost="3" MightLevel="3" MagicLevel="1" DestinyLevel="0" Attack="1" Retaliate="2" HP="5" ID="1013">
+		<Ability Type="ImmuneToRetaliate"/> 
+		<Target Zone="Battleground" CardType="Unit" Amount="AllOther" Side="Friendly">
+			<CardFilter IncludeRaces="Human"/>
+			<Effect Type="ModifyAbility" Ability="AttackWithRetaliate" />
+        </Target>
+		<Description>All other friendly human creature's [ATK] is equal to its [RET] value.</Description>
+	</Card>
+	<!--...............................................................................-->
+	<!-- Creatures - Inferno -->
+	<!--...............................................................................-->
+	<Card  Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Inf_100" DisplayName="Shadow Lilim" Faction="Inferno" SubType="Magic|Melee" Race="Demon|Succubus" Cost="3" MightLevel="3" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="2" HP="6" ID="1014" School="Dark">
+		<Trigger Type="OnUnitKillUnit" DamageIncludeFlags="Attack" Side="Friendly">
+			<CardFilter IncludeSchool="Dark"/>
+			<Target Zone="Battleground" CardType="Unit" Amount="Self">
+				<Effect Type="AddCounter" CounterType="Fierce" Value="1" />
+			</Target>
+		</Trigger>
+		<Description>Whenever a friendly dark creature attacks and destroy a creature, Put a +1 ATK counter on it.</Description>
+	</Card>
+	<Card  Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Inf_101" DisplayName="Shadow Breeder" Faction="Inferno" SubType="Melee|Shooter" Race="Demon|Breeder" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="2" HP="5" ID="1015" School="Dark">
+		<Trigger Type="OnThisPreAttack">
+            <Target Zone="Battleground" Amount="Self" CardType="Unit" Side="Friendly" Shape="AdjacentOnly">
+				<CardFilter IncludeAbility="Stackable"/>
+				<Effect Type="IncreaseStackSize" Value="1"/>
+            </Target>
+        </Trigger>
+		<Description>When [THIS] attacks, increase the size of each friendly adjacent stacks by 1. </Description>
+	</Card>
+	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Inf_102" DisplayName="Abyssal Lilim" Faction="Inferno" SubType="Magic|Melee|Shooter" Race="Demon|Succubus" Cost="5" MightLevel="4" MagicLevel="2" DestinyLevel="0" Attack="3" Retaliate="3" HP="8" ID="1016" School="Dark">
+		<Trigger Type="OnThisCardDeploy">
+            <Target Zone="Battleground" Amount="AllOther" CardType="Unit" Side="Friendly">
+				<CardFilter IncludeSchool="Dark"/>
+				<Effect Type="AddCounter" CounterType="Fierce" Value="1"/>
+			</Target>
+        </Trigger>
+        <Trigger Type="OnThisCardLeavePlay">
+            <Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
+				<CardFilter IncludeSchool="Dark"/>
+				<Effect Type="AddCounter" CounterType="Fierce" Value="1"/>
+			</Target>
+        </Trigger>
+		<Description>When [THIS] enter or leave the battle ground, Put +1 ATK counter on all other friendly dark creatures.</Description>
+	</Card>
+	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Inf_103" DisplayName="Breeder Progenitor" Faction="Inferno" SubType="Magic|Shooter" Race="Demon|Breeder" Cost="5" MightLevel="4" MagicLevel="2" DestinyLevel="0" Attack="4" Retaliate="2" HP="7" ID="1017">	
+		<Ability Type="ImmuneToRetaliate"/>
+		<Trigger Type="OnUnitKillUnit" DamageIncludeFlags="Attack" Side="Friendly">
+			<CardFilter IncludeRaces="Breeder"/>
+			<Target Zone="BattlegroundPosition" Amount="1" Side="Friendly" BattlegroundPositionState="DontCare" Cancelable="False">
+				<Effect Type="PopulateStack" Name="s06_Tok_Inf_001"/>
+			</Target>
+		</Trigger>
+		<Description>Whenever a friendly breeder attacks and destroy a creature, deploy a 1/0/1 breeder melee shooter token with stackable on Target friendly battle ground position.</Description>
+	</Card>
+
+	<!--...............................................................................-->
+	<!-- Creatures - Necropolis -->
+	<!--...............................................................................-->
+	<Card  Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Nec_100" DisplayName="Skeleton Master" Faction="Necropolis" SubType="Magic|Melee" Race="Human|Wizard" Cost="3" MightLevel="3" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="2" HP="6" ID="1018">
+		<Trigger Type="OnThisPreAttack">
+            <Target Zone="BattlegroundPosition" Amount="1" Side="Friendly" BattlegroundPositionState="DontCare" Cancelable="False">
+				<Effect Type="PopulateStack" Name="s06_Tok_Nec_001"/>
+			</Target>
+        </Trigger>
+		<Description>When [THIS] attacks, deploy a Skeleton melee-shooter token with 1/0/1 and Stackable on target friendly battleground position</Description>
+	</Card>
+	<Card  Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Nec_101" DisplayName="Necromancer Reinforcer" Faction="Necropolis"  SubType="Magic|Shooter" Race="Human|Wizard" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="1" Attack="2" Retaliate="0" HP="6" ID="1019">
+		<Ability Type="ImmuneToRetaliate"/>
+		<Trigger Type="OnPreAttackUnit" Side="Friendly">
+			<CardFilter IncludeAbility="Stackable" />
+			<Target Zone="Battleground" Amount="FromTrigger" CardType="Unit" ForceExecute="True">
+				<Effect Type="IncreaseStackSize" Value="1"/>
+            </Target>
+		</Trigger>
+		<Description>Whenever a friendly creature with stackable attacks enemy creature, increase its' stack size by 1.</Description>
+	</Card>
+	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Nec_102" DisplayName="Namtaru Infector" Faction="Necropolis" SubType="Magic|Melee" Race="Namtaru" Cost="5" MightLevel="4" MagicLevel="2" DestinyLevel="0" Attack="4" Retaliate="3" HP="7" ID="1020" School="Prime">
+		<Ability Type="Infect" Value="1"/>	
+		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
+			<Variable Type="AbilityValue" Ability="Infect" UseCurrentTarget="True"/>	
+			<CardFilter IncludeAbility="Infect"/>
+			<Effect Type="ModifyAbility" Ability="InfectBlast" Value="0"/>
+			<Effect Type="ModifyAbilityValue" Ability="InfectBlast" Value="Variable" />
+		</Target>
+		<Description>Friendly creatures with Infect gain Infect Blast X, where X is equal to its Infect value.</Description>
+	</Card>
+	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Nec_103" DisplayName="Namtaru Contagion" Faction="Necropolis" SubType="Magic|Shooter" Race="Namtaru" Cost="5" MightLevel="4" MagicLevel="2" DestinyLevel="0" Attack="3" Retaliate="2" HP="6" ID="1021" School="Prime">
+		<Ability Type="ImmuneToRetaliate"/>
+		<Ability Type="Infect" Value="1"/>	
+		<Variable Type="LastAliveCounterCount" CounterType="Poison" FromTrigger="True"/>		
+		<Trigger Type="OnUnitDeath">
+			<Target Zone="Battleground" Amount="Variable" CardType="Unit" Random="True" AllowDuplicate="True">
+				<Effect Type="AddCounter" CounterType="Poison" Value="1"/>
+			</Target>
+		</Trigger>
+		<Target Zone="Battleground" Amount="All" CardType="Unit"  Side="Friendly">
+			<Effect Type="ModifyAbility" Ability="AbsorbPoisonDamageHeal"/>
+		</Target>
+		<Description>Friendly creatures gain Poison Heal. Whenever a creature with poison counters on it dies, put the same number of poison counters on other random creatures.</Description>
+	</Card>
+	
+	<!--...............................................................................-->
+	<!-- Creatures - Sanctuary -->
+	<!--...............................................................................-->
+	<Card  Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_San_100" DisplayName="Ushio Naga" Faction="Sanctuary" SubType="Melee|Shooter" Race="Naga" Cost="2" MightLevel="2" MagicLevel="0" DestinyLevel="1" Attack="1" Retaliate="1" HP="5" ID="1022" School="Water">
+		<Ability Type="SwitchOther"/>
+		<Ability Type="MoveSwitch"/>		
+		<Description>You can move or deploy [THIS] on another friendly creature other than [THIS]. When you do, return that creature to its owner's hand.</Description>
+	</Card>
+	<Card  Rarity="Rare" Unique="False" Type="Unit" Name="Cre_San_101" DisplayName="Shinobi Thief" Faction="Sanctuary" SubType="Melee|Shooter" Race="Naga|Spy" Cost="3" MightLevel="2" MagicLevel="0" DestinyLevel="2" Attack="2" Retaliate="0" HP="6" ID="1023">
+		<Ability Type="ImmuneToRetaliate"/>	
+		<Trigger Type="OnDamageHero" Side="Enemy">
+			<CardFilter IncludeCardType="Unit" IncludeRaces="Spy"/>	
+			<Target Zone="Hero" Amount="All" Side="Friendly" ForceExecute="True" Persistent="True">
+				<Effect Type="GlobalEffect" GlobalEffectType="ModifyCost" Value="-1" Duration="UntilPlayCardThisTurn" >
+					<CardFilter IncludeCardType="Fortune" IncludeFaction="Sanctuary"/>
+				</Effect>
+			</Target>		
+		</Trigger>
+		<Description>Whenever a spy deal damage to enemy hero, next Sanctuary fortune cost 1 less to play.</Description>
+	</Card>
+	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_San_102" DisplayName="Shinobi Whisperer" Faction="Sanctuary" SubType="Shooter" Race="Naga|Spy" Cost="5" MightLevel="4" MagicLevel="0" DestinyLevel="2" Attack="3" Retaliate="3" HP="7" ID="1024">
+		<Ability Type="ImmuneToRetaliate"/>				
+		<Trigger Type="OnUnitKillUnit" DamageIncludeFlags="Attack" Side="Friendly">	
+			<CardFilter IncludeRaces="Spy" />
+			<Target Zone="Battleground" CardType="Unit" Amount="1" Side="Enemy" Cancelable="False">
+				<Effect Type="MoveCardTo" Destination="Hand" />
+			</Target>
+		</Trigger>
+		<Description>Whenever a spy attacks and destory a creature, return target enemy creature to its owner's hand.</Description>
+	</Card>
+	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_San_103" DisplayName="Shinobi Gunshi" Faction="Sanctuary" SubType="Magic|Melee|Shooter" Race="Naga|Spy" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="2" Attack="3" Retaliate="2" HP="6" ID="1025" School="Water">
+		<Trigger Type="OnCardReturnToHandFromPlay" Side="Enemy">
+			<CardFilter IncludeCardType="Unit" />
+			<Target Zone="None" Side="Friendly">
+                <Effect Type="Draw" Value="1" />
+            </Target>
+		</Trigger>
+		<Description>Whenever a card return to it's owner's hand from battle ground, draw a card.</Description>
+	</Card>
+	
+	<!--...............................................................................-->
+	<!-- Creatures - Stronghold -->
+	<!--...............................................................................-->
+	<Card  Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Str_100" DisplayName="Sahaar Archer" Faction="Stronghold" SubType="Shooter" Race="Centaur|Archer" Cost="4" MightLevel="4" MagicLevel="0" DestinyLevel="0" Attack="3" Retaliate="1" HP="6" ID="1026" School="Earth">
+		<Ability Type="ImmuneToRetaliate"/>
+		<Ability Type="Armor" Value = "1"/>
+	</Card>
+	<Card  Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Str_101" DisplayName="Harpy Shaman" Faction="Stronghold" SubType="Flyer" Race="Harpy" Cost="4" MightLevel="4" MagicLevel="0" DestinyLevel="0" Attack="3" Retaliate="2" HP="6" ID="1027" School="Air|Earth">
+		<Target Zone="Battleground" CardType="Unit" Amount="Self" Shape="AdjacentOnly" Side="Friendly">
+			<CardFilter IncludeSchool="Air"/>
+			<Effect Type="ModifyAttack" Value="1"/>			
+		</Target>
+		<Target Zone="Battleground" CardType="Unit" Amount="Self" Shape="AdjacentOnly" Side="Friendly">
+			<CardFilter IncludeSchool="Earth"/>
+			<Effect Type="ModifyMaxHp" Value="1" />		
+		</Target>
+		<Description>Adjacent friendly Air creature gain +[1:ATK]. Adjacent friendly Earth creature gain +[1:HEALTH].</Description>
+	</Card>
+	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Str_102" DisplayName="Bone Ancestor" Faction="Stronghold" SubType="Magic|Melee" Race="Orc|Spirit" Cost="5" MightLevel="5" MagicLevel="1" DestinyLevel="0" Attack="4" Retaliate="2" HP="7" ID="1028" School="Earth">
+		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
+			<CardFilter IncludeSchool="Earth"/>
+			<Effect Type="ModifyAbility" Ability="Regenerate" Value="1"/>
+			<Effect Type="ModifyAbility" Ability="Armor" Value="1"/>
+		</Target>
+		<Description>Friendly Earth creatures gain Regenerate 1 and Armor 1.</Description>
+	</Card>
+	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Str_103" DisplayName="Sahaar Raging Chieftain" Faction="Stronghold" SubType="Melee|Shooter" Race="Orc" Cost="5" MightLevel="5" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="2" HP="7" ID="1029" School="Air|Earth">
+		<Ability Type="Enrage" Value="1"/>
+		<Trigger Type="OnTurnBegin" Side="Friendly">
+            <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+                <CardFilter IncludeAbility="Enrage" />
+                <Effect Type="AddCounter" CounterType="Enrage" Value="1" />
+            </Target>
+        </Trigger>
+		<Description>At the beginning of your turn, put 1 enrage counter on all friendly creatures with Enrage.</Description>
+	</Card>
+	
+	
+	<ExistingCard Name="Cre_Aca_001" Rarity="Common" />
+    <!-- s03 - Dancing Dervish -->
+    <ExistingCard Name="Cre_Aca_005" Rarity="Common" />
+    <!-- s03 - Minotaur Brute -->
+    <ExistingCard Name="Cre_Aca_007" Rarity="Uncommon" />
+    <!-- s03 - Enslaved Harpy -->
+	<ExistingCard Name="Cre_Aca_011" Rarity="Common" />
+    <!-- s03 - Unstable Djinn -->
+    <ExistingCard Name="Cre_Aca_014" Rarity="Common" />
+    <!-- s03 - Spinning Dervish -->
+    <ExistingCard Name="Cre_Aca_015" Rarity="Rare" />
+    <!-- s03 - Blade Magee -->
+    <ExistingCard Name="Cre_Aca_017" Rarity="Uncommon" />
+    <!-- s03 - Rakshasa Raja -->
+    <ExistingCard Name="Cre_Aca_024" Rarity="Common" />
+    <!-- s03 - Arcane Archer -->
+    <ExistingCard Name="Cre_Aca_025" Rarity="Uncommon" />
+    <!-- s03 - Sellspell Djinn -->
+    <ExistingCard Name="Cre_Aca_028" Rarity="Rare" />
+    <!-- s03 - Taweret Warrior -->
+    <ExistingCard Name="Cre_Aca_030" Rarity="Rare" />
+    <!-- s03 - Void Sycophant -->
+    <ExistingCard Name="Cre_Aca_061" Rarity="Uncommon" />
+    <!-- s04 - Insatiable Djinn -->
+   
+	<ExistingCard Name="Cre_Hav_003" Rarity="Rare" />
+    <!-- b01 - Celestial -->
+    <ExistingCard Name="Cre_Hav_004" Rarity="Rare" />
+    <!-- b01 - Sun Crusader -->
+    <ExistingCard Name="Cre_Hav_006" Rarity="Uncommon" />
+    <!-- b01 - Blazing Glory -->
+    <ExistingCard Name="Cre_Hav_010" Rarity="Rare" />
+    <!-- b01 - Vestal -->
+    <ExistingCard Name="Cre_Hav_012" Rarity="Common" />
+    <!-- b01 - Imperial Sentinel -->
+    <ExistingCard Name="Cre_Hav_013" Rarity="Uncommon" />
+    <!-- b01 - Warrior Seraph -->
+    <ExistingCard Name="Cre_Hav_014" Rarity="Common" />
+    <!-- s01 - Expert Marksman -->
+    <ExistingCard Name="Cre_Hav_017" Rarity="Common" />
+    <!-- s01 - Devoted Sister -->
+    <ExistingCard Name="Cre_Hav_018" Rarity="Uncommon" />
+    <!-- s02 - Holy Praetorian -->
+    <ExistingCard Name="Cre_Hav_040" Rarity="Common" />
+    <!-- s02 - Wolf Guard -->
+    <ExistingCard Name="Cre_Hav_042" Rarity="Uncommon" />
+    <!-- s02 - Griffin Mounted Spearman -->
+    <ExistingCard Name="Cre_Hav_047" Rarity="Common" />
+    <!-- s03 - Chosen of Elrath -->
+    
+    <ExistingCard Name="Cre_Inf_003" Rarity="Rare" />
+    <!-- b01 - Pit Lord -->
+    <ExistingCard Name="Cre_Inf_004" Rarity="Common" />
+    <!-- b01 - Gravid Breeder -->
+    <ExistingCard Name="Cre_Inf_008" Rarity="Uncommon" />
+    <!-- b01 - Lacerator -->
+    <ExistingCard Name="Cre_Inf_009" Rarity="Rare" />
+    <!-- b01 - Chaos Sorceress -->
+    <ExistingCard Name="Cre_Inf_010" Rarity="Rare" />
+    <!-- b01 - Breeder Mother -->
+    <ExistingCard Name="Cre_Inf_015" Rarity="Uncommon" />
+    <!-- b01 - Pit Fiend -->
+    <ExistingCard Name="Cre_Inf_016" Rarity="Common" />
+    <!-- b01 - Hell Hound -->
+    <ExistingCard Name="Cre_Inf_018" Rarity="Common" />
+    <!-- b01 - Tormentor -->
+    <ExistingCard Name="Cre_Inf_022" Rarity="Uncommon" />
+    <!-- s01 - Hellfire Juggernaut -->
+    <ExistingCard Name="Cre_Inf_047" Rarity="Common" />
+    <!-- s02 - Ur-Khrag Enforcer -->
+    <ExistingCard Name="Cre_Inf_051" Rarity="Common" />
+    <!-- s03 - Demon Thrall -->
+    <ExistingCard Name="Cre_Inf_063" Rarity="Uncommon" />
+    <!-- s04 - Soul-Consuming Efreet -->
+    
+    <ExistingCard Name="Cre_Nec_007" Rarity="Rare" />
+    <!-- b01 - Ghost Dragon -->
+    <ExistingCard Name="Cre_Nec_014" Rarity="Uncommon" />
+    <!-- b01 - Ravenous Ghoul -->
+    <ExistingCard Name="Cre_Nec_015" Rarity="Common" />
+    <!-- b01 - Skeleton Spearman -->
+    <ExistingCard Name="Cre_Nec_018" Rarity="Common" />
+    <!-- b01 - Plague Skeleton -->
+    <ExistingCard Name="Cre_Nec_022" Rarity="Rare" />
+    <!-- b01 - Fate Sealer -->
+    <ExistingCard Name="Cre_Nec_043" Rarity="Rare" />
+    <!-- s02 - Living Nightmare -->
+    <ExistingCard Name="Cre_Nec_046" Rarity="Uncommon" />
+    <!-- s02 - Dark Wood Hermit -->
+    <ExistingCard Name="Cre_Nec_050" Rarity="Common" />
+    <!-- s03 - Al-Betyl Ghoul -->
+    <ExistingCard Name="Cre_Nec_051" Rarity="Common" />
+    <!-- s03 - Rotting Zombie -->
+    <ExistingCard Name="Cre_Nec_052" Rarity="Uncommon" />
+    <!-- s03 - Putrid Ghoul -->
+    <ExistingCard Name="Cre_Nec_053" Rarity="Common" />
+    <!-- s03 - Sahaar Mummy -->
+    <ExistingCard Name="Cre_Nec_054" Rarity="Uncommon" />
+    <!-- s03 - Rotting Mummy -->
+
+    <ExistingCard Name="Cre_Neu_004" Rarity="Common" />
+    <!-- b01 - Rogue Mercenary -->
+    <ExistingCard Name="Cre_Neu_008" Rarity="Uncommon" />
+    <!-- b01 - Helexian Librarian -->
+    <ExistingCard Name="Cre_Neu_010" Rarity="Common" />
+    <!-- b01 - Pao Hunter -->
+    <ExistingCard Name="Cre_Neu_011" Rarity="Common" />
+    <!-- b01 - Lesser Shadow Elemental -->
+	<ExistingCard Name="Cre_Neu_014" Rarity="Common" />
+    <!-- b01 - Lesser Earth Elemental -->
+    <ExistingCard Name="Cre_Neu_022" Rarity="Rare" />
+    <!-- b01 - Blind Brother -->
+    <ExistingCard Name="Cre_Neu_025" Rarity="Uncommon" />
+    <!-- s01 - Deep Mountain Turtle -->
+    <ExistingCard Name="Cre_Neu_040" Rarity="Uncommon" />
+    <!-- s02 - Dark Wood Treant -->
+    <ExistingCard Name="Cre_Neu_043" Rarity="Common" />
+    <!-- s02 - Lesser Water Elemental -->
+    <ExistingCard Name="Cre_Neu_053" Rarity="Uncommon" />
+    <!-- s03 - Cactus Thing -->
+    
+    <ExistingCard Name="Cre_San_001" Rarity="Rare" />
+    <!-- s01 - Naga Tactician -->
+    <ExistingCard Name="Cre_San_005" Rarity="Common" />
+    <!-- s01 - Kappa -->
+    <ExistingCard Name="Cre_San_006" Rarity="Common" />
+    <!-- s01 - Kirin -->
+    <ExistingCard Name="Cre_San_007" Rarity="Rare" />
+    <!-- s01 - Sacred Kirin -->
+    <ExistingCard Name="Cre_San_009" Rarity="Common" />
+    <!-- s01 - Yuki-Onna -->
+    <ExistingCard Name="Cre_San_010" Rarity="Uncommon" />
+    <!-- s01 - Naga Warrior -->
+    <ExistingCard Name="Cre_San_011" Rarity="Uncommon" />
+    <!-- s01 - Pearl Priestess -->
+    <ExistingCard Name="Cre_San_017" Rarity="Uncommon" />
+    <!-- s01 - Kappa Shoya -->
+    <ExistingCard Name="Cre_San_021" Rarity="Common" />
+    <!-- s01 - Shanriya Guard -->
+    <ExistingCard Name="Cre_San_022" Rarity="Rare" />
+    <!-- s01 - Shanriya Priestess -->
+    <ExistingCard Name="Cre_San_040" Rarity="Common" />
+    <!-- s02 - Waterfall Guardians -->
+    <ExistingCard Name="Cre_San_062" Rarity="Uncommon" />
+    <!-- s02 - Honor Bound Kami -->
+    
+    <ExistingCard Name="Cre_Str_010" Rarity="Uncommon" />
+    <!-- b01 - Striking Fury-->
+    <ExistingCard Name="Cre_Str_012" Rarity="Uncommon" />
+    <!-- b01 - Jaguar Warrior -->
+    <ExistingCard Name="Cre_Str_015" Rarity="Uncommon" />
+    <!-- b01 - Centaur Marauder -->
+    <ExistingCard Name="Cre_Str_016" Rarity="Common" />
+    <!-- b01 - Ranaar Mauler -->
+    <ExistingCard Name="Cre_Str_040" Rarity="Common" />
+    <!-- s02 - Bramble Beast -->
+    <ExistingCard Name="Cre_Str_046" Rarity="Common" />
+    <!-- s02 - Kitten Warrior -->
+    <ExistingCard Name="Cre_Str_050" Rarity="Common" />
+    <!-- s03 - Coward Gnoll -->
+    <ExistingCard Name="Cre_Str_051" Rarity="Uncommon" />
+    <!-- s03 - Sahaar Marauder -->
+    <ExistingCard Name="Cre_Str_053" Rarity="Uncommon" />
+    <!-- s03 - Sahaar Harpy -->
+    <ExistingCard Name="Cre_Str_054" Rarity="Rare" />
+    <!-- s03 - Sahaar Hunter -->
+    <ExistingCard Name="Cre_Str_060" Rarity="Rare" />
+    <!-- s04 - Guerilla Master -->
+    <ExistingCard Name="Cre_Str_063" Rarity="Common" />
+    <!-- s04 - Erg Hunter -->
+    	
+</Cards>

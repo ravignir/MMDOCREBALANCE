@@ -1,0 +1,57 @@
+<Cards>
+    <!--...............................................................................-->
+    <!-- //	##  #   #####   ####     ###    #####   #####    -->
+    <!-- //	##  #   ##      #   #   ##  #   ##      ##       -->
+    <!-- //	#####   ####    ####    ##  #   ####    #####    -->
+    <!-- //	##  #   ##      ## #    ##  #   ##         ##    -->
+    <!-- //	##  #   #####   ##  #    ###    #####   #####    -->
+    <!--...............................................................................-->
+    <ExistingCard Name="Her_Aca_002" />
+    <!-- s03 - Hakeem, Seeker of Mysteries -->
+    <ExistingCard Name="Her_Aca_003" />
+    <!-- s03 - Asalah, Invoker of Castigation -->
+    <ExistingCard Name="Her_Aca_004" />
+    <!-- s03 - Myranda, Blademage Champion -->
+    <ExistingCard Name="Her_Aca_006" />
+    <!-- s03 - Akane, Caller of Memories -->
+    <ExistingCard Name="Her_Hav_002" />
+    <!-- b01 - Cassandra, Seeker of Light -->
+    <ExistingCard Name="Her_Hav_005" />
+    <!-- rew - Kieran, Knight of Negation -->
+    <ExistingCard Name="Her_Hav_006" />
+    <!-- s02 - Alia, Caller of Faith -->
+    <ExistingCard Name="Her_Hav_007" />
+    <!-- rew - Morgan, Beloved General -->
+    <ExistingCard Name="Her_Inf_002" />
+    <!-- b01 - Garant, Seeker of Discord -->
+    <ExistingCard Name="Her_Inf_003" />
+    <!-- b01 - Kal-Azaar, Invoker of Agony -->
+    <ExistingCard Name="Her_Inf_006" />
+    <!-- s02 - Dhamiria, Caller of Madness -->
+    <ExistingCard Name="Her_Inf_007" />
+    <!-- rew - Ignatius -->
+    <ExistingCard Name="Her_Nec_002" />
+    <!-- b01 - Seria, Seeker of the Lost Souls -->
+    <ExistingCard Name="Her_Nec_003" />
+    <!-- b01 - Mother Namtaru, Invoker of Death -->
+    <ExistingCard Name="Her_Nec_004" />
+    <!-- b01 - Fleshbane, Champion of the Misshapen -->
+    <ExistingCard Name="Her_Nec_005" />
+    <!-- rew - Ariana of the Severed Fates -->
+    <ExistingCard Name="Her_San_002" />
+    <!-- s01 - Yukiko, Seeker of Honour -->
+    <ExistingCard Name="Her_San_004" />
+    <!-- s01 - Takana Osore, Champion of the Tides -->
+    <ExistingCard Name="Her_San_006" />
+    <!-- s02 - Noboru, Caller of Twilight -->
+    <ExistingCard Name="Her_San_007" />
+    <!-- rew - Shalan, Voice of the Lotus -->
+    <ExistingCard Name="Her_Str_002" />
+    <!-- b01 - Kat, Seeker of Freedom -->
+    <ExistingCard Name="Her_Str_003" />
+    <!-- b01 - Shaar, Invoker of the Skies -->
+    <ExistingCard Name="Her_Str_004" />
+    <!-- b01 - Acamas, Champion of the Bloodhorn -->
+    <ExistingCard Name="Her_Str_006" />
+    <!-- s02 - Zardoc, Caller of Valor -->
+</Cards>

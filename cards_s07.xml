@@ -1,0 +1,114 @@
+<Cards>
+	<!--...............................................................................-->
+	<!-- //	##  #   #####   ####     ###    #####   #####    -->
+	<!-- //	##  #   ##      #   #   ##  #   ##      ##       -->
+	<!-- //	#####   ####    ####    ##  #   ####    #####    -->
+	<!-- //	##  #   ##      ## #    ##  #   ##         ##    -->
+	<!-- //	##  #   #####   ##  #    ###    #####   #####    -->
+	<!--...............................................................................-->
+	<!--...............................................................................-->
+	<!-- Heroes Academy -->
+	<!--...............................................................................-->
+	<Card Rarity="Heroic" Type="Hero" Name="Her_Aca_010" DisplayName="Elisabeth" Faction="Academy" School="Dark|Light|Earth" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="905">
+		<Target Zone="None" Side="Friendly">
+			<Effect Type="ChoiceOption"/>
+			<Subgroup>
+				<TemplateEffect Name="HeroAbilities"/>
+				<!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+			</Subgroup>
+		</Target>
+		<Description></Description>
+	</Card>
+	<!--...............................................................................-->
+	<!-- Heroes Haven -->
+	<!--...............................................................................-->
+	<Card Rarity="Heroic" Type="Hero" Name="Her_Hav_010" DisplayName="Anton" Faction="Haven" School="Air|Light" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="906">
+		<Target Zone="None" Side="Friendly">
+			<Effect Type="ChoiceOption"/>
+			<Subgroup>
+				<TemplateEffect Name="HeroAbilities"/>
+				<!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+				<Target Zone="None" Side="Friendly">
+					<Variable Type="Resources" Side="Friendly"/>
+					<Condition Operator="GreaterThan" ValueA="Variable" ValueB="3"/>
+					<Option Value="4" DisplayText="[4:RESOURCE] Increase all stack by 1."/>
+					<Effect Type="GainResources" Value="-4" Duration="Immediate"/>
+				</Target>
+				<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+					<Option Value="4"/>
+					<CardFilter IncludeAbility="Stackable"/>
+					<Effect Type="IncreaseStackSize" Value="1" Duration="Immediate"/>
+				</Target>
+			</Subgroup>
+		</Target>
+		<Description>[4:RESOURCES]: Increase the size of all friendly stack by 1.</Description>
+	</Card>
+	<!--...............................................................................-->
+	<!-- Heroes Inferno -->
+	<!--...............................................................................-->
+	<Card Rarity="Heroic" Type="Hero" Name="Her_Inf_010" DisplayName="Kiril" Faction="Inferno" School="Dark|Fire" MightLevel="2" MagicLevel="1" DestinyLevel="0" HP="20" ID="907">
+		<Target Zone="None" Side="Friendly">
+			<Effect Type="ChoiceOption"/>
+			<Subgroup>
+				<TemplateEffect Name="HeroAbilities"/>
+				<!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+				<Target Zone="Hero" Amount="All" Side="Friendly" NeedActivation="True">
+					<Option Value="4" DisplayText="[0:RESOURCES]: Until end of turn, Fire creatures and Dark creatures cost [1:RESOURCES] less to play."/>
+					<Effect Type="GlobalEffect" GlobalEffectType="ModifyCost" Value="-1" Duration="UntilEndOfTurn">
+						<CardFilter IncludeCardType="Unit" IncludeSchool="Fire|Dark"/>
+					</Effect>
+				</Target>
+			</Subgroup>
+		</Target>
+		<Description>[0:RESOURCES]: Until end of turn, fire creatures and dark creatures cost [1:RESOURCES] less to play.</Description>
+	</Card>
+	<!--...............................................................................-->
+	<!-- Heroes Necropolis -->
+	<!--...............................................................................-->
+	<Card Rarity="Heroic" Type="Hero" Name="Her_Nec_010" DisplayName="Anastasya" Faction="Necropolis" School="Dark|Prime" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="908">
+		<Target Zone="None" Side="Friendly">
+			<Effect Type="ChoiceOption"/>
+			<Subgroup>
+				<TemplateEffect Name="HeroAbilities"/>
+				<!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+				<Target Zone="None" Side="Friendly">
+					<Variable Type="Resources" Side="Friendly"/>
+					<Option Value="4" DisplayText="[2:RESOURCES]: 2 crippling counter."/>
+					<Condition Operator="GreaterThan" ValueA="Variable" ValueB="1"/>
+					<Effect Type="GainResources" Value="-2" Duration="Immediate"/>
+				</Target>
+				<Target Zone="Battleground" CardType="Unit" Side="Any" Amount="1">
+					<Option Value="4"/>
+					<Effect Type="AddCounter" CounterType="Crippling" Value="2" Duration="Immediate"/>
+				</Target>
+			</Subgroup>
+		</Target>
+		<Description>[2:RESOURCES]: Put two crippling counters on target creature.</Description>
+	</Card>
+	<!--...............................................................................-->
+	<!-- Heroes Sanctuary -->
+	<!--...............................................................................-->
+	<Card Rarity="Heroic" Type="Hero" Name="Her_San_010" DisplayName="Irina" Faction="Sanctuary" School="Dark|Light|Water" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="909">
+		<Target Zone="None" Side="Friendly">
+			<Effect Type="ChoiceOption"/>
+			<Subgroup>
+				<TemplateEffect Name="HeroAbilities"/>
+				<!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+			</Subgroup>
+		</Target>
+		<Description></Description>
+	</Card>
+	<!--...............................................................................-->
+	<!-- Heroes Stronghold -->
+	<!--...............................................................................-->
+	<Card Rarity="Heroic" Type="Hero" Name="Her_Str_010" DisplayName="Sandor" Faction="Stronghold" School="Dark|Earth|Fire" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="910">
+		<Target Zone="None" Side="Friendly">
+			<Effect Type="ChoiceOption"/>
+			<Subgroup>
+				<TemplateEffect Name="HeroAbilities"/>
+				<!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+			</Subgroup>
+		</Target>
+		<Description></Description>
+	</Card>
+</Cards>

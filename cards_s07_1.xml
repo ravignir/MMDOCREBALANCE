@@ -1,0 +1,446 @@
+<Cards>
+	<!--...............................................................................-->
+	<!-- //	 ####   ####    #####    ###    #####   ##  #   ####    #####   #####      -->
+	<!-- //	##      #   #   ##      ##  #    ##     ##  #   #   #   ##      ##         -->
+	<!-- //	##      ####    ####    #####    ##     ##  #   ####    ####    #####      -->
+	<!-- //	##      ## #    ##      ##  #    ##     ##  #   ## #    ##         ##      -->
+	<!-- //	 ####   ##  #   #####   ##  #    ##     #####   ##  #   #####   #####      -->
+	<!--...............................................................................-->
+	<!--...............................................................................-->
+	<!-- Creatures - Academy -->
+	<!--...............................................................................-->
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Aca_090" DisplayName="Captive Djinn" Faction="Academy" SubType="Magic|Flyer" Race="Spirit|Djinn" Cost="4" MightLevel="2" MagicLevel="3" DestinyLevel="0" Attack="2" Retaliate="2" HP="5" ID="911" School="Prime">
+		<Ability Type="Anchored"/>
+		<Trigger Type="OnThisCardDeploy">
+			<Target Zone="Battleground" Amount="1" Cancelable="True">
+				<CardFilter IncludeCardType="Fortune|Spell" IncludeOngoingType="Ongoing" ExcludeUnique="True"/>
+				<Effect Type="Banish"/>
+			</Target>
+		</Trigger>
+		<Description>When Captive Djinn enters the battleground, you may banish target non-unique ongoing spell or fortune.</Description>
+	</Card>
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Aca_091" DisplayName="Surging Djinn" Faction="Academy" SubType="Magic|Flyer" Race="Spirit|Djinn" Cost="3" MightLevel="3" MagicLevel="2" DestinyLevel="0" Attack="3" Retaliate="2" HP="7" ID="912" School="Prime">
+		<Trigger Type="OnThisCardDeath">
+			<Target Zone="None" Side="Friendly">
+				<Effect Type="IncreaseLevel" Value="-2" LevelType="Magic"/>
+			</Target>
+		</Trigger>
+		<Description>When Surging Djinn dies, decrease your [MAGIC] level by 2.</Description>
+	</Card>
+	<Card Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Aca_092" DisplayName="Time-Bender Djinn" Faction="Academy" School="Prime" SubType="Magic|Flyer" Race="Spirit|Djinn" Cost="5" MightLevel="4" MagicLevel="5" DestinyLevel="0" Attack="4" Retaliate="3" HP="7" ID="913">
+		<Variable Type="TargetCount">
+			<Target Zone="Battleground" Side="Friendly" CardType="Unit" Amount="All">
+				<CardFilter IncludeSchool="Prime"/>
+			</Target>
+		</Variable>
+		<Trigger Type="OnSupplyPhaseEnd" Side="Friendly">
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="4"/>
+			<Target Zone="Hero" Side="Friendly" Amount="All" Persistent="True" ForceExecute="True" NeedAllTargets="True">
+				<Effect Type="GlobalEffect" GlobalEffectType="ExtraTurn" Duration="UntilYourNextTurn"/>
+			</Target>
+			<Target Zone="None" Amount="Self">
+				<Effect Type="Banish"/>
+			</Target>
+		</Trigger>
+		<Description>At the beginning of your turn, if there is 5 or more friendly prime creatures on the battleground, banish Time-Bender Djinn. If you do, gain an extra turn.</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Aca_093" DisplayName="Arcane Master Djinn" Faction="Academy" SubType="Magic|Flyer" Race="Spirit|Djinn" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="2" Attack="2" Retaliate="2" HP="6" ID="914" School="Prime">
+		<Trigger Type="OnTurnEnd" Side="Friendly">
+			<Target Zone="None" Side="Friendly">
+				<Variable Type="UnitAttackCount"/>
+				<Condition Operator="LesserThan" ValueA="Variable" ValueB="1"/>
+				<Effect Type="Draw" Value="1"/>
+			</Target>
+		</Trigger>
+		<Description>At the end of your turn, if Arcane Master Djinn did not attack, draw a card.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Aca_094" DisplayName="Embers Elemental" Faction="Academy" SubType="Magic|Melee" Race="Spirit" Cost="2" MightLevel="2" MagicLevel="2" DestinyLevel="0" Attack="2" Retaliate="1" HP="4" ID="915" School="Fire|Earth">
+		<Target Zone="Battleground" Amount="AllOther" CardType="Unit" Side="Friendly">
+			<CardFilter IncludeSchool="Fire|Earth"/>
+			<Effect Type="ModifyAttack" Value="1"/>
+		</Target>
+		<Description>Other friendly fire creature and other friendly earth creature gain +[1:ATK].</Description>
+	</Card>
+	<!--...............................................................................-->
+	<!-- Creatures - Haven -->
+	<!--...............................................................................-->
+	<Card Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Hav_090" DisplayName="Warding Inquisitor" Faction="Haven" SubType="Magic|Shooter" Race="Human|Priest" Cost="5" MightLevel="3" MagicLevel="2" DestinyLevel="0" Attack="2" Retaliate="2" HP="7" ID="916" School="Light">
+		<Ability Type="ImmuneToRetaliate"/>
+		<Trigger Type="OnThisCardDeploy">
+			<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly" ForceExecute="True" Persistent="True">
+				<Effect Type="ModifyAbility" Ability="EnemySpellWard" Duration="UntilYourNextTurn"/>
+			</Target>
+		</Trigger>
+		<Description>When Warding Inquisitor entres the battleground, all friendly creature gain Enemy Spell Ward until your next turn.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Hav_091" DisplayName="Blessing Inquisitor" Faction="Haven" SubType="Magic|Melee|Shooter" Race="Human|Priest" Cost="4" MightLevel="3" MagicLevel="2" DestinyLevel="0" Attack="2" Retaliate="3" HP="7" ID="917" School="Light">
+		<Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly" Shape="AdjacentOnly">
+			<CardFilter IncludeSchool="Light"/>
+			<Effect Type="ModifyAttack" Value="1"/>
+		</Target>
+		<Description>Adjacent friendly light creatures gain +[1:ATK].</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Hav_092" DisplayName="Cleansing Priestess" Faction="Haven" SubType="Magic|Melee|Shooter" Race="Human|Priest" Cost="4" MightLevel="3" MagicLevel="2" DestinyLevel="0" Attack="2" Retaliate="2" HP="6" ID="918" School="Light">
+		<Variable Type="UnitAttackCount"/>
+		<Trigger Type="OnTurnEnd" Side="Friendly">
+			<Condition Operator="LesserThan" ValueA="Variable" ValueB="1"/>
+			<Target Zone="Battleground" Amount="Self" CardType="Unit" Shape="AdjacentOnly" Side="Friendly">
+				<Effect Type="Heal" Value="infinite"/>
+				<Effect Type="RemoveCounter" CounterType="Any" Value="infinite" Duration="Immediate"/>
+			</Target>
+		</Trigger>
+		<Description>At the end of your turn, if Cleansing Priestess did not attack, heal all damages and remove all counters from all adjacent friendly creatures.</Description>
+	</Card>
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Hav_093" DisplayName="Lesser Glory" Faction="Haven" SubType="Magic|Flyer" Race="Spirit" Cost="2" MightLevel="2" MagicLevel="1" DestinyLevel="0" Attack="1" Retaliate="1" HP="6" ID="919" School="Light">
+		<Description></Description>
+	</Card>
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Hav_094" DisplayName="Wolf Priest" Faction="Haven" SubType="Magic|Melee" Race="Human|Priest" Cost="3" MightLevel="2" MagicLevel="1" DestinyLevel="0" Attack="1" Retaliate="3" HP="6" ID="920" School="Light">
+		<Ability Type="PreemptiveStrike"/>
+		<Target Zone="Battleground" CardType="Unit" Amount="Self" Side="Friendly" Shape="AdjacentOnly">
+			<CardFilter IncludeRaces="Human"/>
+			<Effect Type="ModifyRetaliate" Value="1"/>
+		</Target>
+		<Description>All adjacent friendly humans gains +[1:RET].</Description>
+	</Card>
+	<!--...............................................................................-->
+	<!-- Creatures - Inferno -->
+	<!--...............................................................................-->
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Inf_090" DisplayName="Ur-Jubaal's Minion" Faction="Inferno" SubType="Magic|Melee|Shooter" Race="Demon|Succubus" Cost="3" MightLevel="2" MagicLevel="2" DestinyLevel="0" Attack="2" Retaliate="1" HP="4" ID="921" School="Fire">
+		<Trigger Type="OnDamaged" DamageIncludeFlags="Attack">
+			<Target Zone="Battleground" CardType="Unit" Amount="FromTrigger">
+				<Effect Type="Damage" Value="FromTrigger"/>
+			</Target>
+		</Trigger>
+		<Description>Whenever Ur-Jubaal's Minion is attacked and dealt damage, deals the same amount of damage to the attacking creature.</Description>
+	</Card>
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Inf_091" DisplayName="Bound Succubus" Faction="Inferno" SubType="Magic|Shooter" Race="Demon|Succubus" Cost="5" MightLevel="3" MagicLevel="1" DestinyLevel="2" Attack="3" Retaliate="2" HP="5" ID="922" School="Dark">
+		<Ability Type="ImmuneToRetaliate"/>
+		<Trigger Type="OnTurnEnd" Side="Friendly">
+			<Target Zone="Hero" Amount="All" Side="Enemy">
+				<Variable Type="UnitAttackCount"/>
+				<Variable2 Type="HeroHP" Side="Friendly" />			
+				<Variable3 Type="HeroHP" Side="Enemy" />
+				<Condition Operator="And" ValueA="Condition" ValueB="Condition">
+                   <Condition Operator="LesserThan" ValueA="Variable" ValueB="1"/>
+				   <Condition Operator="GreaterThan" ValueA="Variable2" ValueB="Variable3"/>
+                </Condition>
+				<Effect Type="Damage" Value="1"/>
+			</Target>		
+			<Target Zone="Hero" Amount="All" Side="Enemy">			
+				<Variable Type="UnitAttackCount"/>
+				<Variable2 Type="HeroHP" Side="Friendly" />			
+				<Variable3 Type="HeroHP" Side="Enemy" />
+				<Condition Operator="And" ValueA="Condition" ValueB="Condition">
+                    <Condition Operator="LesserThan" ValueA="Variable" ValueB="1"/>
+					<Condition Operator="LesserOrEqual" ValueA="Variable2" ValueB="Variable3"/>
+                </Condition>
+				<Effect Type="Damage" Value="2"/>
+			</Target>
+		</Trigger>
+		<Description>At the end of your turn, if Bound Succubus did not attack, deal 1 damage to enemy hero. If opponent hero's remaining health is greater than yours, deal 2 damage instead.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Inf_092" DisplayName="Blazing Succubus" Faction="Inferno" SubType="Magic|Shooter" Race="Demon|Succubus" Cost="4" MightLevel="3" MagicLevel="2" DestinyLevel="0" Attack="3" Retaliate="1" HP="6" ID="923" School="Fire">
+		<Ability Type="ImmuneToRetaliate"/>
+		<Target Zone="Battleground" CardType="Unit" Amount="Self" Shape="AdjacentOnly">
+			<CardFilter IncludeSchool="Fire"/>
+			<Effect Type="ModifyAttack" Value="1"/>
+		</Target>
+        <Target Zone="Battleground" CardType="Unit" Amount="Self" Shape="AdjacentOnly">
+            <CardFilter IncludeSchool="Dark"/>
+            <Effect Type="ModifyAttack" Value="1"/>
+        </Target>
+        <Description>Adjacent fire creatures gain +[1:ATK].
+Adjacent dark creatures gain +[1:ATK].</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Inf_093" DisplayName="Spell Stealer Heretic" Faction="Inferno" SubType="Magic|Melee" Race="Human|Wizard" Cost="6" MightLevel="4" MagicLevel="2" DestinyLevel="0" Attack="3" Retaliate="1" HP="6" ID="924" School="Dark">
+		<Ability Type="MagicChannel" Value="1"/>
+		<Trigger Type="OnThisCardDeploy">
+			<Target Zone="Graveyard" CardType="Spell" Side="Friendly" Amount="1">
+				<CardFilter IncludeSchool="Fire|Dark" IncludeOngoingType="Immediate"/>
+				<Effect Type="DetachLocation" Destination="Banish" Duration="Immediate" />
+				<Effect Type="Play" Free="True" RequireLevel="True" CancelDestination="Graveyard"/>
+			</Target>
+		</Trigger>
+		<Description>When Spell Stealer Heretic enters the battleground, you may take target instant dark or fire spell from your graveyard and play it for free. If you do, banish it afterwards.</Description>
+		<DescriptionEnglish>When Spell Stealer Heretic enters the battleground, you may take target instant dark or fire spell from your graveyard and play it for free. If you do, banish it afterwards.</DescriptionEnglish>
+		<DescriptionChinese>当窃魔异教徒进入战场时，你能从本方墓地中指定一张瞬发类暗系或火系的法术，并免费使用它。如果这样做了，则使用后驱逐该卡。</DescriptionChinese>
+		<DescriptionFrench>Quand l'Hérétique Vole-Sorts entre sur le champ de bataille, vous pouvez choisir dans votre cimetière un sort instantané de feu ou de ténèbres et le jouer gratuitement. Si vous le faites, bannissez-le juste après.</DescriptionFrench>
+		<DescriptionGerman>Beim Ausspielen von Zauber-Raubender Ketzer könnt Ihr einen unmittelbaren Dunkel- oder Feuer-Zauber von Eurem Friedhof auswählen und kostenlos spielen. Wenn Ihr das tut, wird die Karte anschließend verbannt.</DescriptionGerman>
+		<DescriptionPolish>Gdy Heretycki Złodziej Zaklęć wkracza na pole bitwy, możesz wybrać z cmentarza dowolne jednorazowe zaklęcie Magii Ognia lub Ciemności i zagrać nim za darmo. Jeśli to zrobisz zostanie ono później usunięta.</DescriptionPolish>		
+		<DescriptionItalian>Quando l'Eretica ruba incantesimi entra nel campo di battaglia, puoi prendere l'incantesimo dell'Oscurità o del Fuoco immediato bersaglio dal cimitero e giocarlo senza alcun costo. Se lo fai, dopo la espelli.</DescriptionItalian>
+		<DescriptionSpanish>En cuanto la hereje robahechizos entra en el campo de batalla, puedes elegir un hechizo inmediato de Oscuridad o de Fuego de tu cementerio para usarlo sin coste. si lo haces, queda desterrada después.</DescriptionSpanish>
+		<DescriptionRussian>Когда Еретик, вор заклинаний выходит на поле битвы, вы можете взять целевое мгновенное заклинание Тьмы или Огня со своего кладбища, Вы можете  разыграть эту карту бесплатно и после изгнать её.</DescriptionRussian>
+		<DescriptionPortuguese>Quando Herege Ladra de Feitiços entrar no campo de batalha, você pode pegar uma carta de feitiço imediato de Escuridão ou Fogo alvo de seu cemitério e jogá-la sem custo. O feitiço é banido em seguida.</DescriptionPortuguese>	
+	</Card>
+	<Card Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Inf_094" DisplayName="Executioner Succubus" Faction="Inferno" SubType="Magic|Melee" Race="Demon|Succubus" Cost="6" MightLevel="4" MagicLevel="4" DestinyLevel="0" Attack="3" Retaliate="2" HP="6" ID="925" School="Dark">
+		<Trigger Type="OnThisCardDeploy" Side="Friendly">
+			<Target Zone="Battleground" Amount="1" Cancelable="True">
+				<CardFilter IncludeCardType="Unit" Damaged="True"/>
+				<Effect Type="Kill"/>
+			</Target>
+		</Trigger>
+		<Description>When Executioner Succubus enters the battleground, destroy target damaged creature.</Description>
+	</Card>
+	<!--...............................................................................-->
+	<!-- Creatures - Necropolis -->
+	<!--...............................................................................-->
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Nec_090" DisplayName="Eternal Apprentice" Faction="Necropolis" SubType="Magic|Melee" Race="Human|Wizard" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="1" HP="5" ID="926" School="Dark">
+		<Ability Type="Crippling" Value="1"/>
+		<Trigger Type="OnTurnEnd" Side="Friendly">
+			<Target Zone="BattlegroundColumn" Amount="Self" Side="Enemy" CardType="Unit" BattlegroundPositionState="DontCare">
+				<Variable Type="UnitAttackCount"/>
+				<Condition Operator="LesserThan" ValueA="Variable" ValueB="1"/>
+				<Effect Type="AddCounter" CounterType="Crippling" Value="1"/>
+			</Target>
+		</Trigger>
+		<Description>At the end of your turn, if Eternal Apprentice did not attack, put 1 crippling counters on all enemy creatures in the same row as Eternal Apprentice.</Description>
+	</Card>
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Nec_091" DisplayName="Ancient Ghost" Faction="Necropolis" School="Prime" SubType="Magic|Melee" Race="Ghost" Cost="1" MightLevel="1" MagicLevel="1" DestinyLevel="0" Attack="0" Retaliate="1" HP="3" ID="927">
+		<Ability Type="Incorporeal"/>
+		<Variable Type="TargetCount">
+			<Target Zone="Battleground" CardType="Unit" Amount="Self" Shape="AdjacentOnly">
+				<CardFilter IncludeRaces="Ghost"/>
+			</Target>
+		</Variable>
+		<Target Zone="Battleground" Amount="Self">
+			<Effect Type="ModifyAttack" Value="Variable"/>
+		</Target>
+		<Description>Ancient Ghost gains +[1:ATK] for each adjacent Ghost creatures.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Nec_092" DisplayName="Skeleton Servant" Faction="Necropolis" SubType="Melee" Race="Skeleton" Cost="4" MightLevel="4" MagicLevel="0" DestinyLevel="0" Attack="5" Retaliate="5" HP="7" ID="928" School="Dark">
+		<Variable Type="CounterCount" CounterType="Crippling"/>
+		<Trigger Type="OnThisCardDeploy">
+			<Target Zone="Battleground" Amount="Self">
+				<Effect Type="AddCounter" CounterType="Crippling" Value="4"/>
+			</Target>
+		</Trigger>
+		<Trigger Type="OnThisPreAttackUnit">
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+			<Target Zone="None" Amount="FromTrigger">
+				<Effect Type="AddCounter" CounterType="Crippling" Value="1"/>
+			</Target>
+			<Target Zone="Battleground" Amount="Self">
+				<Effect Type="RemoveCounter" CounterType="Crippling" Value="1"/>
+			</Target>
+		</Trigger>
+		<Description>When Skeleton Servant enters the battleground, put 4 crippling counters on it.
+Whenever Skeleton Servant attacks, move 1 crippling counter from Skeleton Servant to the attacked creature.</Description>
+	</Card>
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Nec_093" DisplayName="Eternal Disciple" Faction="Necropolis" SubType="Magic|Melee" Race="Human|Wizard" Cost="3" MightLevel="3" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="1" HP="6" ID="929" School="Dark">
+		<Trigger Type="OnThisCardDeploy">
+			<Target Zone="Battleground" CardType="Unit" Amount="1" Cancelable="False">
+				<Variable Type="CardAttack" UseCurrentTarget="True"/>
+				<Condition Operator="EqualTo" ValueA="Variable" ValueB="0"/>
+				<Effect Type="Kill"/>
+			</Target>
+		</Trigger>
+		<Description>When Eternal Disciple enters the battleground, destroy target creature with [0:ATK].</Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Nec_094" DisplayName="Eternal Scholar" Faction="Necropolis" SubType="Magic|Shooter" Race="Human|Wizard" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="1" Attack="3" Retaliate="2" HP="6" ID="930" School="Dark">
+		<Ability Type="ImmuneToRetaliate"/>
+		<Target Zone="Battleground" Amount="All" CardType="Unit">
+			<Variable Type="CounterCount" CounterType="Crippling" UseCurrentTarget="True"/>
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+			<Effect Type="ModifyAbility" Ability="Immobilized"/>
+		</Target>
+		<Description>While there is a crippling counter on a creature, that creature is immobilized.</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Nec_095" DisplayName="Eternal Mentor" Faction="Necropolis" SubType="Magic|Shooter" Race="Human|Wizard" Cost="3" MightLevel="3" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="2" HP="5" ID="931" School="Dark">
+		<Ability Type="ImmuneToRetaliate"/>
+		<Variable Type="CounterCount" CounterType="Crippling" UseCurrentTarget="True"/>
+		<Trigger Type="OnUnitDeath">
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+			<Target Zone="Battleground" Amount="Self">
+				<Effect Type="AddCounter" CounterType="Fierce" Value="1"/>
+			</Target>
+		</Trigger>
+		<Description>When a creature with a crippling counter dies, put a +[1:ATK] counter on Eternal Mentor.</Description>
+	</Card>
+	<Card Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Nec_096" DisplayName="Eternal Archon" Faction="Necropolis" SubType="Flyer" Race="Vampire" Cost="5" MightLevel="5" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="3" HP="8" ID="932" School="Dark">
+		<Ability Type="ImmuneToRetaliate"/>
+		<Ability Type="Crippling" Value="1"/>
+		<Variable Type="TargetCount">
+			<Target Zone="Battleground" Amount="All" CardType="Unit">
+				<Variable2 Type="CounterCount" CounterType="Crippling" UseCurrentTarget="True"/>
+				<Condition Operator="GreaterThan" ValueA="Variable2" ValueB="0"/>
+			</Target>
+		</Variable>
+		<Target Zone="Battleground" Amount="Self">
+			<Effect Type="ModifyAttack" Value="Variable"/>
+		</Target>
+		<Description>Eternal Archon gains +[1:ATK] for each creatures with at least 1 crippling counter.</Description>
+	</Card>
+	<!--...............................................................................-->
+	<!-- Creatures - Sanctuary -->
+	<!--...............................................................................-->
+	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_San_090" DisplayName="Dousing Kappa" Faction="Sanctuary" SubType="Magic|Melee" Race="Spirit" Cost="3" MightLevel="3" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="1" HP="6" ID="933" School="Water">
+		<Trigger Type="OnThisCardDeploy">
+			<Target Zone="Battleground" CardType="Unit" Amount="1" Cancelable="True"/>
+			<Target Zone="Battleground" CardType="Unit" Amount="Same" ValidateFilterOnExecute="True">
+				<CardFilter ExcludeSchool="Fire"/>
+				<Effect Type="Damage" Value="1"/>
+			</Target>
+			<Target Zone="Battleground" CardType="Unit" Amount="Same" ValidateFilterOnExecute="True">
+				<CardFilter IncludeSchool="Fire"/>
+				<Effect Type="Damage" Value="2"/>
+			</Target>
+		</Trigger>
+		<Description>When Dousing Kappa enters the battleground, you may have it deal 1 damage to target creature. If it's a fire creature, deal 2 damage instead.</Description>
+	</Card>
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_San_091" DisplayName="Fountain Spirit" Faction="Sanctuary" SubType="Melee|Shooter" Race="Spirit" Cost="2" MightLevel="2" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="0" HP="4" ID="934" School="Water">
+		<Target Zone="Battleground" Amount="Self">
+			<Effect Type="ModifyAbility" Ability="CannotTarget"/>
+		</Target>
+		<Description>Fountain Spirit cannot be targeted.</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Unit" Name="Cre_San_092" DisplayName="Greater Kirin" Faction="Sanctuary" SubType="Magic|Melee|Shooter" Race="Spirit" Cost="5" MightLevel="5" MagicLevel="1" DestinyLevel="0" Attack="4" Retaliate="3" HP="7" ID="935" School="Water">
+		<Ability Type="FocusedBlast" Value="3"/>
+		<Ability Type="Hypnotize"/>
+		<!-- S07 NEW STUFF : OnUnitDamaged - A simple trigger triggered whenever a creature is damaged. -->
+	</Card>
+	<Card Rarity="Epic" Unique="False" Type="Unit" Name="Cre_San_093" DisplayName="Shogun" Faction="Sanctuary" SubType="Magic|Melee" Race="Naga" Cost="6" MightLevel="4" MagicLevel="3" DestinyLevel="0" Attack="3" Retaliate="2" HP="6" ID="936" School="Water">
+		<Trigger Type="OnThisCardDeploy">
+			<Target Zone="Battleground" CardType="Unit" Amount="1" Shape="SelfAndAdjacent" Cancelable="True">
+				<Effect Type="Damage" Value="2"/>
+			</Target>
+		</Trigger>
+		<Description>When Shogun comes into play, you may have it deal 2 damage to target creature and all adjacent creatures.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_San_094" DisplayName="Shark Bodyguard" Faction="Sanctuary" SubType="Magic|Melee" Race="Beastmen" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="2" HP="7" ID="937">
+		<Trigger Type="OnMove" Side="Enemy">
+			<Target Zone="Battleground" CardType="Unit" Amount="FromTrigger">
+				<Effect Type="Damage" Value="1"/>
+			</Target>
+		</Trigger>
+		<Trigger Type="OnRelocate" Side="Enemy">
+			<Target Zone="Battleground" CardType="Unit" Amount="FromTrigger">
+				<Effect Type="Damage" Value="1"/>
+			</Target>
+		</Trigger>
+		<Description>When an enemy creature moves or is relocated, deal 1 damage to it.</Description>
+		<!-- S07 NEW STUFF : OnRelocate - A simple trigger triggered whenever a creature is relocated. -->
+	</Card>
+	<!--...............................................................................-->
+	<!-- Creatures - Stronghold -->
+	<!--...............................................................................-->
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Str_090" DisplayName="Pao Harpy" Faction="Stronghold" SubType="Flyer" Race="Harpy" Cost="2" MightLevel="2" MagicLevel="0" DestinyLevel="0" Attack="1" Retaliate="1" HP="3" ID="938">
+		<Ability Type="AttackAnywhere"/>
+		<Description></Description>
+	</Card>
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Str_091" DisplayName="Juvenile Centaur" Faction="Stronghold" SubType="Shooter" Race="Centaur" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="0" HP="4" ID="939">
+		<Ability Type="ImmuneToRetaliate"/>
+		<Variable Type="TargetCount">
+			<Target Zone="Battleground" Amount="All" Side="Friendly" CardType="Unit">
+				<CardFilter IncludeRaces="Centaur"/>
+			</Target>
+		</Variable>
+		<Target Zone="Battleground" Amount="Self">
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="1"/>
+			<Effect Type="ModifyAbility" Ability="AttackAnywhere"/>
+		</Target>
+		<Description>While there is another friendly Centaur creature on the battleground, Juvenile Centaur gains Attack Anywhere.</Description>
+	</Card>
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Str_092" DisplayName="Pao Scout" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="3" Retaliate="1" HP="4" ID="940">
+		<Variable Type="TargetCount">
+			<Target Zone="BattlegroundColumn" Amount="Self" Side="Enemy" CardType="Unit" BattlegroundPositionState="DontCare"/>
+		</Variable>
+		<Target Zone="Battleground" Amount="Self">
+			<Condition Operator="EqualTo" ValueA="Variable" ValueB="0"/>
+			<Effect Type="ModifyAttack" Value="1"/>
+		</Target>
+		<Description>While there is no enemy creatures on the same row as Pao Scout, Pao Scout gains +[1:ATK].</Description>
+	</Card>
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Str_093" DisplayName="Centaur Sharpshooter" Faction="Stronghold" SubType="Shooter" Race="Centaur" Cost="4" MightLevel="4" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="2" HP="5" ID="941">
+		<Ability Type="ImmuneToRetaliate"/>
+		<Ability Type="AttackAnywhere"/>
+		<Target Zone="Battleground" Amount="Self">
+			<Effect Type="ModifyAbility" Ability="CannotAttack" Remove="True"/>
+		</Target>
+		<Description>Centaur Sharpshooter cannot be prevented from attacking.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Str_094" DisplayName="Gust Harpy" Faction="Stronghold" SubType="Flyer" Race="Harpy" Cost="5" MightLevel="5" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="2" HP="5" ID="942" School="Air">
+		<Ability Type="AttackAnywhere"/>
+		<Ability Type="QuickAttack"/>
+		<Description></Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Str_095" DisplayName="Elder Centaur" Faction="Stronghold" SubType="Melee" Race="Centaur" Cost="4" MightLevel="4" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="2" HP="5" ID="943">
+		<Ability Type="MagicResist"/>
+		<Variable Type="TargetCount">
+			<Target Zone="BattlegroundColumn" Amount="Self" Side="Enemy" CardType="Unit" BattlegroundPositionState="DontCare"/>
+		</Variable>
+		<Target Zone="Battleground" Amount="Self">
+			<Condition Operator="EqualTo" ValueA="Variable" ValueB="0"/>
+			<Effect Type="ModifyAttack" Value="1"/>
+		</Target>
+		<Description>While there is no enemy creatures on the same row as Elder Centaur, Elder Centaur gains +[1:ATK].</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Str_096" DisplayName="Centaur Chieftain" Faction="Stronghold" SubType="Shooter" Race="Centaur" Cost="5" MightLevel="5" MagicLevel="0" DestinyLevel="0" Attack="3" Retaliate="2" HP="7" ID="944">
+		<Ability Type="ImmuneToRetaliate"/>
+		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
+			<CardFilter IncludeAbility="AttackAnywhere"/>
+			<Effect Type="ModifyAttack" Value="1"/>
+		</Target>
+		<Description>Friendly creatures with Attack Anywhere gain +[1:ATK].</Description>
+	</Card>
+	<Card Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Str_097" DisplayName="Mother Harpy" Faction="Stronghold" SubType="Flyer" Race="Harpy" Cost="5" MightLevel="4" MagicLevel="0" DestinyLevel="0" Attack="3" Retaliate="2" HP="6" ID="945" School="Air">
+		<Ability Type="AttackAnywhere"/>
+		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
+			<CardFilter IncludeRaces="Harpy"/>
+			<Effect Type="ModifyAbility" Ability="Swift"/>
+		</Target>
+		<Description>Friendly Harpies gains Swift.</Description>
+	</Card>
+	<!--...............................................................................-->
+	<!-- Creatures - Neutral -->
+	<!--...............................................................................-->
+	<Card Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Neu_090" DisplayName="Agyn Mercenary" Faction="Neutral" SubType="Melee" Race="Human|Mercenary" Cost="4" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="0" Retaliate="3" HP="7" ID="946">
+		<Variable Type="Resources" Side="Friendly" ValueModifier="0.5xd"/>
+		<Target Zone="Battleground" Amount="Self">
+			<Effect Type="ModifyAbility" Ability="AttackCost" Value="Variable"/>
+		</Target>
+		<Target Zone="Battleground" Amount="Self">
+			<Effect Type="ModifyAttack" Value="Variable"/>
+		</Target>
+		<Description>Agyn Mercenary's [ATK] is equal to half your [RESOURCES] rounded down. After Agyn Mercenary attacks, pay half of your [RESOURCES], rounded down.</Description>
+		<!-- S07 NEW STUFF : AttackCost - This ability has been created to reflect the mercenary behavior (Refactor). Previous mercenaries now use this ability too. -->
+	</Card>
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Neu_091" DisplayName="Bursting Fire Elemental" Faction="Neutral" SubType="Magic|Shooter" Race="Spirit" Cost="4" MightLevel="3" MagicLevel="2" DestinyLevel="0" Attack="2" Retaliate="0" HP="5" ID="947" School="Fire">
+		<Ability Type="ImmuneToRetaliate"/>
+		<Ability Type="AreaBlast" Value="2"/>
+		<Description></Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Neu_092" DisplayName="Magma Elemental" Faction="Neutral" SubType="Magic|Melee" Race="Spirit" Cost="3" MightLevel="3" MagicLevel="2" DestinyLevel="0" Attack="2" Retaliate="2" HP="3" ID="948" School="Fire">
+		<Target Zone="Battleground" Side="Friendly" CardType="Unit" Amount="All">
+			<CardFilter IncludeSchool="Fire"/>
+			<Effect Type="ModifyDamage" Value="0.0x" DamageIncludeFlags="Fire" Side="Friendly"/>
+		</Target>
+		<Description>Prevent all friendly fire damage dealt to friendly fire creature.</Description>
+	</Card>
+	<Card Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Neu_093" DisplayName="Arcane Eagle" Faction="Neutral" SubType="Magic|Flyer" Race="Spirit" Cost="5" MightLevel="4" MagicLevel="4" DestinyLevel="0" Attack="3" Retaliate="3" HP="6" ID="949" School="Prime">
+		<Variable Type="TargetCount" ValueModifier="-1">
+			<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
+				<CardFilter IncludeRaces="Spirit"/>
+			</Target>
+		</Variable>
+		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly" CantTargetSelf="True">
+			<CardFilter IncludeRaces="Spirit"/>
+			<Effect Type="ModifyAttack" Value="1"/>
+		</Target>
+		<Target Zone="Battleground" Amount="Self">
+			<Effect Type="ModifyAttack" Value="Variable"/>
+		</Target>
+		<Description>Other friendly spirit creature gain +[1:ATK].
+Arcane Eagle gains +[1:ATK] for each other friendly spirit creature.</Description>
+	</Card>
+	<Card Rarity="Epic" Unique="True" Type="Unit" Name="Cre_Neu_094" DisplayName="Ariana, Chosen of the Void" Faction="Neutral" School="Prime" SchoolsAligned="True" SubType="Magic|Shooter" Race="Human|Wizard" Cost="7" MightLevel="3" MagicLevel="4" DestinyLevel="0" Attack="2" Retaliate="1" HP="7" ID="950">
+		<Ability Type="ImmuneToRetaliate"/>
+		<Ability Type="PrimeAligned"/>
+		<Trigger Type="OnThisCardDeploy">
+			<Target Zone="Battleground" Amount="1" Cancelable="False" CantTargetSelf="True">
+				<CardFilter IncludeCardType="Fortune|Spell|Unit|Building"/>
+				<Effect Type="Banish"/>
+			</Target>
+		</Trigger>
+		<Description>When Arianna, Chosen of the Void enters the battleground, banish another target non-hero, non-event card from the battleground.</Description>
+	</Card>
+</Cards>

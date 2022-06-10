@@ -1,0 +1,294 @@
+<!-- Define all cards of the second serie in this document. XML is case sensitive. -->
+<Cards>
+    <!--....................................................................-->
+    <!-- //	#####   ####    #####   ##      ##      ##### -->
+    <!-- //	##      ##  #   ##      ##      ##      ##    -->
+    <!-- //	#####   ####    ####    ##      ##      ##### -->
+    <!-- //	   ##   ##      ##      ##      ##         ## -->
+    <!-- //	#####   ##      #####   #####   #####   ##### -->
+    <!--....................................................................-->
+    <!-- Spells - Air -->
+    <!--....................................................................-->
+    <Card Rarity="Common" Type="Spell" Name="Spe_Air_030" DisplayName="Lifting Wind" School="Air" Cost="3" MagicLevel="3" ID="307">
+        <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Friendly" />
+        <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Friendly" CantTargetPrevious="True">
+            <Effect Type="SwapWithLastTarget" />
+        </Target>
+        <Description>Choose 2 target friendly creatures. Relocate each of them to the other's position. New positions must be valid.</Description>
+    </Card>
+    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Air_031" DisplayName="Storm Arrows" School="Air" Cost="3" MagicLevel="3" ID="308">
+        <Ongoing Duration="UntilEndOfTurn" />
+        <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+            <CardFilter IncludeUnitType="Shooter" />
+            <Effect Type="ModifyAbility" Ability="AttackAnywhere" />
+        </Target>
+        <Description>Until end of turn:
+All friendly shooter creatures gain Attack Anywhere.</Description>
+    </Card>
+    <Card Rarity="Rare" Type="Spell" Name="Spe_Air_032" DisplayName="Sand Storm" School="Air" Cost="3" MagicLevel="3" ID="309">
+        <Ongoing Duration="UntilYourNextTurn" />
+        <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Enemy">
+            <CardFilter IncludeUnitType="Melee|Flyer" />
+            <Effect Type="ModifyAbility" Ability="CannotAttack" />
+        </Target>
+        <Description>Until your next turn:
+Enemy melee and flyer creatures gain Cannot Attack.</Description>
+    </Card>
+    <!--....................................................................-->
+    <!-- Spells - Dark -->
+    <!--....................................................................-->
+    <Card Rarity="Common" Type="Spell" Name="Spe_Dar_030" DisplayName="Moonsilk Fetters" School="Dark" Cost="2" MagicLevel="3" ID="310">
+        <Target Zone="Battleground" CardType="Unit" Amount="2">
+            <Effect Type="AddCounter" CounterType="Crippling" Value="1" />
+        </Target>
+        <Description>Put 1 crippling counter on two target creatures.</Description>
+    </Card>
+    <Card  Rarity="Uncommon" Type="Spell" Name="Spe_Dar_031" DisplayName="Despair" School="Dark" Cost="3" MagicLevel="3" ID="311">
+        <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Enemy">
+            <CardFilter IncludeStatus="NoFriendlyAdjacent" />
+            <Effect Type="Damage" Value="2" />
+        </Target>
+        <Description>Deal 2 damage to all enemy creatures with no adjacent friendly creature.</Description>
+		<DescriptionChinese>对所有没有相邻的同一方生物的敌方生物造成2点伤害。</DescriptionChinese>
+	</Card>
+    <Card Rarity="Rare" Type="Spell" Name="Spe_Dar_032" DisplayName="Curse of the Penitent" School="Dark" Cost="4" MagicLevel="4" ID="312">
+        <Target Zone="Battleground" CardType="Unit" Amount="All">
+            <Variable Type="CardHealth" UseCurrentTarget="True" ValueModifier="0.5xu" />
+            <Effect Type="Damage" Value="Variable" />
+        </Target>
+        <Description>Deal damage to all creatures equal to half their remaining Health, rounded up.</Description>
+    </Card>
+    <!--....................................................................-->
+    <!-- Spells - Earth -->
+    <!--....................................................................-->
+    <Card Rarity="Common" Type="Spell" Name="Spe_Ear_030" DisplayName="Poisonous Bulb" School="Earth" Cost="2" MagicLevel="2" ID="313">
+        <Ongoing Duration="Permanent" />
+        <Target Zone="BattlegroundColumn" Amount="1" />
+        <Trigger Type="OnPreAttackThisRow">
+            <CardFilter IncludeUnitType="Melee|Flyer" />
+            <Target Zone="Battleground" Amount="FromTrigger">
+                <Effect Type="AddCounter" CounterType="Poison" Value="2" />
+            </Target>
+            <Target Zone="Battleground" Amount="Self">
+                <Effect Type="Kill" />
+            </Target>
+        </Trigger>
+        <Description>Enchant Row. Permanent:
+When a melee or flyer creature on enchanted row attacks, put 2 poison counters on it and destroy Poisonous Bulb.</Description>
+    </Card>
+    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Ear_031" DisplayName="Poison Cloud" School="Earth" Cost="4" MagicLevel="3" ID="314">
+        <Target Zone="Battleground" CardType="Unit" Side="Any" Amount="All">
+            <Effect Type="AddCounter" CounterType="Poison" Value="1" />
+        </Target>
+        <Description>Put 1 poison counter on all creatures.</Description>
+    </Card>
+    <Card Rarity="Rare" Type="Spell" Name="Spe_Ear_032" DisplayName="Earth's Grasp" School="Earth" Cost="2" MagicLevel="2" ID="315">
+        <Ongoing Duration="Permanent" />
+        <Target Zone="Battleground" CardType="Unit" Amount="All">
+            <Effect Type="ModifyAbility" Ability="QuickAttack" Remove="True" />
+        </Target>
+        <Description>Permanent:
+All creatures lose Quick Attack.</Description>
+    </Card>
+    <!--....................................................................-->
+    <!-- Spells - Fire -->
+    <!--....................................................................-->
+    <Card Rarity="Common" Type="Spell" Name="Spe_Fir_030" DisplayName="Combustion" School="Fire" Cost="2" MagicLevel="2" ID="316">
+        <Ongoing Duration="Permanent" />
+        <Ability Type="Endurable"/>
+		<Target Zone="Battleground" CardType="Unit" Amount="1" />
+        <Trigger Type="OnTurnBegin">
+            <Target Zone="Battleground" CardType="Unit" Amount="Parent">
+                <Effect Type="Damage" Value="1" />
+            </Target>
+        </Trigger>
+        <Description>Enchant creature. Permanent:
+At the begining of each player's turn, deal 1 damage to enchanted creature.</Description>
+    </Card>
+    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Fir_031" DisplayName="Fiery Weapon" School="Fire" Cost="3" MagicLevel="2" ID="317">
+        <Ongoing Duration="Permanent" />
+        <Target Zone="Battleground" CardType="Unit" Amount="1" />
+        <Trigger Type="OnThisPreAttack" Side="Enemy" DamageIncludeFlags="Attack">
+            <Target Zone="Battleground" CardType="Unit" Amount="Parent">
+                <Effect Type="AddCounter" CounterType="Fierce" Value="1" />
+            </Target>
+        </Trigger>
+        <Description>Enchant creature. Permanent:
+Whenever enchanted creature attacks, put a +[1:ATK] counter on it.</Description>
+    </Card>
+    <Card Rarity="Rare" Type="Spell" Name="Spe_Fir_032" DisplayName="Mass Inner Fire" School="Fire" Cost="5" MagicLevel="4" ID="318">
+        <Ongoing Duration="UntilYourNextTurn" />
+        <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="All">
+            <Effect Type="ModifyAttack" Value="2" />
+            <Effect Type="ModifyRetaliate" Value="2" />
+        </Target>
+        <Description>Until your next turn:
+All friendly creatures gain +[2:ATK] and +[2:RET].</Description>
+    </Card>
+    <!--....................................................................-->
+    <!-- Spells - Light -->
+    <!--....................................................................-->
+    <Card Rarity="Common" Type="Spell" Name="Spe_Lig_030" DisplayName="Guardian Angel" School="Light" Cost="2" MagicLevel="2" ID="319">
+        <Ongoing Duration="UntilYourNextTurn" />
+        <Target Zone="BattlegroundColumn" Amount="1">
+            <CardType Include="Unit" />
+            <Effect Type="ModifyAbility" Ability="CannotTarget" />
+        </Target>
+        <Description>Enchant Row. Until your next turn:
+Creatures on enchanted row cannot be targeted.</Description>
+    </Card>
+    <Card Rarity="Rare" Type="Spell" Name="Spe_Lig_031" DisplayName="Ward Against Darkness" School="Light" Cost="3" MagicLevel="2" ID="320">
+        <Variable Type="TargetCount">
+            <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="All" />
+        </Variable>
+        <Ongoing Duration="FromCondition">
+            <Condition Operator="GreaterThan" ValueA="Variable" ValueB="0" />
+        </Ongoing>
+        <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+            <Effect Type="ModifyAbility" Ability="DarkWard" />
+        </Target>
+        <Description>Permanent:
+All friendly creatures gain Dark Ward.
+When there are no friendly creatures on the battleground, destroy Ward Against Darkness.</Description>
+    </Card>
+    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Lig_032" DisplayName="Purity" School="Light" Cost="2" MagicLevel="2" ID="321">
+        <Ongoing Duration="Permanent" />
+        <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+            <Effect Type="RemoveCounter" CounterType="Any" Value="Infinite" Duration="Immediate" />
+        </Target>
+        <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+            <Effect Type="PlayEffect" PlayEffectType="CannotPutCounter" />
+        </Target>
+        <Description>Permanent:
+No counters can be put on friendly creatures.
+When Purity enters the battleground, remove all counters from friendly creatures.</Description>
+    </Card>
+    <!--....................................................................-->
+    <!-- Spells - Prime -->
+    <!--....................................................................-->
+    <Card Rarity="Common" Type="Spell" Name="Spe_Pri_030" DisplayName="Negate Magic" School="Prime" Cost="2" MagicLevel="1" ID="322">
+        <Target Zone="Battleground" CardType="Unit" Amount="1">
+            <Effect Type="RemoveCounter" CounterType="Any" Value="Infinite" />
+            <Effect Type="Cleanse" />
+        </Target>
+        <Description>Remove all counters and destroy all ongoing spells on target creature.</Description>
+    </Card>
+    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Pri_031" DisplayName="Mass Dispel" School="Prime" Cost="2" MagicLevel="3" ID="323">
+        <Target Zone="Battleground" CardType="Spell" Amount="All">
+            <Effect Type="Kill" />
+        </Target>
+        <Description>Destroy all Ongoing spells.</Description>
+    </Card>
+    <Card Rarity="Rare" Type="Spell" Name="Spe_Pri_032" DisplayName="Spell Steal" School="Prime" Cost="3" MagicLevel="3" ID="324">
+        <Target Zone="Battleground" Amount="1">
+            <CardFilter IncludeCardType="Spell" ExcludeUnique="True" />
+            <Effect Type="Play" Free="True" />
+        </Target>
+        <Description>Take target non-unique Ongoing spell on the battleground and play it for free.</Description>
+    </Card>
+    <!--....................................................................-->
+    <!-- Spells - Water -->
+    <!--....................................................................-->
+    <Card Rarity="Common" Type="Spell" Name="Spe_Wat_030" DisplayName="Water Wall" School="Water" Cost="2" MagicLevel="2" ID="325">
+        <Ongoing Duration="UntilYourNextTurn" />
+        <Target Zone="Battleground" CardType="Unit" Amount="All">
+            <Variable Type="CardAttack" UseCurrentTarget="True" />
+            <Condition Operator="LesserThan" ValueA="Variable" ValueB="3" />
+            <Effect Type="ModifyAbility" Ability="CannotAttack" EvaluationOrder="Last" />
+        </Target>
+        <Description>Until your next turn:
+Creatures with [ATK] of 2 or less gain Cannot Attack.</Description>
+    </Card>
+    <Card Rarity="Uncommon" Type="Spell" Name="Spe_Wat_031" DisplayName="Monsoon" School="Water" Cost="2" MagicLevel="3" ID="326">
+        <Ongoing Duration="Permanent" />
+        <Target Zone="Battleground" Amount="All">
+            <Effect Type="ModifyDamage" Value="0.5xd" DamageIncludeFlags="Fire|Spell" />
+        </Target>
+        <Target Zone="Battleground" Amount="All">
+            <Effect Type="ModifyDamage" Value="0.5xd" DamageIncludeFlags="Earth|Spell" />
+        </Target>
+        <Description>Permanent:
+Fire and earth spells deal half damage, rounded down.</Description>
+    </Card>
+    <Card Rarity="Rare" Type="Spell" Name="Spe_Wat_032" DisplayName="Clashing Tides" School="Water" Cost="4" MagicLevel="4" ID="327">
+        <Target Zone="BattlegroundLine" CardType="Unit" Amount="1" Side="Enemy">
+            <BattlegroundFilter Line="Front" />
+            <Effect Type="Damage" Value="3" />
+        </Target>
+        <Target Zone="BattlegroundLine" CardType="Unit" Amount="Same" Shape="AdjacentOnly" Side="Any">
+            <Effect Type="Damage" Value="2" />
+        </Target>
+        <Description>Deal 3 damage to all creatures on opponent's front line and 2 damage to all creatures on adjacent lines.</Description>
+    </Card>
+    <!--....................................................................-->
+    <!-- //	#####   ##  #   #####   #   #   #####   ##### -->
+    <!-- //	##      ##  #   ##      ##  #    ##     ##    -->
+    <!-- //	####    ##  #   ####    # # #    ##     ##### -->
+    <!-- //	##      ##  #   ##      #  ##    ##        ## -->
+    <!-- //	#####     ##    #####   #   #    ##     ##### -->
+    <!--....................................................................-->
+    <Card Rarity="Common" Type="Event" Name="Eve_Neu_020" DisplayName="Day of the Fallen Wolf" Cost="3" Faction="Neutral" ID="328">
+        <Ongoing Duration="UntilDeployThisTurn" />
+        <Target Zone="None" Side="Friendly" NeedActivation="True">
+            <Trigger Type="OnDeploy">
+                <Target Zone="None" Amount="FromTrigger" Persistent="True" ForceExecute="True">
+                    <Effect Type="ModifyRetaliate" Value="2" Duration="Permanent" />
+                </Target>
+            </Trigger>
+        </Target>
+        <Description>[3:RESOURCES]: The next creature you deploy this turn gains +[2:RET]</Description>
+    </Card>
+    <Card Rarity="Uncommon" Type="Event" Name="Eve_Neu_021" DisplayName="Week of the Tamed Spirits" Faction="Neutral" Cost="3" ID="329">
+        <Ongoing Duration="UntilYourNextTurn" />
+        <Target Zone="Battleground" Amount="All" CardType="Unit" NeedActivation="True" Persistent="True">
+            <CardFilter IncludeUnitType="Magic" />
+            <Effect Type="ModifyAttack" Value="-1" />
+        </Target>
+        <Description>[3:RESOURCES]: Until your next turn, magic creatures gain -[1:ATK].</Description>
+    </Card>
+    <Card Rarity="Uncommon" Type="Event" Name="Eve_Neu_022" DisplayName="Week of the Wild Spirits" Faction="Neutral" Cost="3" ID="330">
+        <Ongoing Duration="UntilEndOfTurn" />
+        <Target Zone="Battleground" Amount="All" CardType="Unit" NeedActivation="True" Persistent="True">
+            <CardFilter IncludeUnitType="Magic" />
+            <Effect Type="ModifyAttack" Value="1" />
+        </Target>
+        <Description>[3:RESOURCES]: Until end of turn, magic creatures get +[1:ATK].</Description>
+    </Card>
+    <Card Rarity="Uncommon" Type="Event" Name="Eve_Neu_023" DisplayName="Week of Austerity" Faction="Neutral" ID="331">
+        <Ongoing Duration="Permanent" />
+        <Target Zone="Battleground" Amount="All" />
+        <!-- Hack to add a permanent feedback -->
+        <Trigger Type="OnDeploy" Side="Friendly">
+            <Target Zone="Hero" Amount="All" Side="Friendly" InputOnExec="True">
+                <Variable Type="BaseCardCost" FromTrigger="True" />
+                <Variable2 Type="Resources" Side="Friendly" />
+                <Condition Operator="And" ValueA="Condition" ValueB="Condition">
+                    <Condition Operator="LesserThan" ValueA="Variable" ValueB="5" />
+                    <Condition Operator="LesserThan" ValueA="Variable2" ValueB="1" />
+                </Condition>
+                <Effect Type="Damage" Value="1" />
+            </Target>
+            <Target Zone="None" Side="Friendly" InputOnExec="True">
+                <Variable Type="BaseCardCost" FromTrigger="True" />
+                <Variable2 Type="Resources" Side="Friendly" />
+                <Condition Operator="And" ValueA="Condition" ValueB="Condition">
+                    <Condition Operator="LesserThan" ValueA="Variable" ValueB="5" />
+                    <Condition Operator="GreaterThan" ValueA="Variable2" ValueB="0" />
+                </Condition>
+                <Effect Type="GainResources" Value="-1" />
+            </Target>
+        </Trigger>
+        <Description>Ongoing: Whenever you deploy a creature with a base cost of [4:RESOURCES] or less, pay [1:RESOURCES]. If you can't, deal 1 damage to your hero.</Description>
+    </Card>
+    <Card  Rarity="Rare" Type="Event" Name="Eve_Neu_024" DisplayName="Path of the Ancestors" Faction="Neutral" ID="332">
+        <Ongoing Duration="Permanent" />
+	    <Target Zone="Battleground" Amount="All" />
+		<Trigger Type="OnDeploy">
+            <Target Zone="Battleground" Amount="FromTrigger" Persistent="True" ForceExecute="True">
+				<Effect Type="ModifyAbility" Ability="CannotTarget" Duration="UntilYourNextTurn"/>
+            </Target>
+        </Trigger>
+        <Description>Ongoing: Creatures that entered the battleground cannot be targeted until your next turn.</Description>
+		<DescriptionChinese>持续：进入战场的生物不能被指定，直到本方下回合开始。</DescriptionChinese>
+	</Card>
+</Cards>

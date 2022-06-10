@@ -1,0 +1,393 @@
+<Cards>
+    <!--...............................................................................-->
+    <!-- //	 ####   ####    #####    ###    #####   ##  #   ####    #####   #####      -->
+    <!-- //	##      #   #   ##      ##  #    ##     ##  #   #   #   ##      ##         -->
+    <!-- //	##      ####    ####    #####    ##     ##  #   ####    ####    #####      -->
+    <!-- //	##      ## #    ##      ##  #    ##     ##  #   ## #    ##         ##      -->
+    <!-- //	 ####   ##  #   #####   ##  #    ##     #####   ##  #   #####   #####      -->
+    <!--...............................................................................-->
+    <!--...............................................................................-->
+    <!-- Creatures - Haven -->
+    <!--...............................................................................-->
+    <Card Rarity="Common" Type="Unit" Name="Cre_Hav_012" DisplayName="Imperial Sentinel" Faction="Haven" SubType="Melee" Race="Human|Soldier" Cost="1" MightLevel="1" Attack="1" Retaliate="1" HP="2" ID="40">
+        <Ability Type="MeleeGuard" Value="1" />
+		<Ability Type="Stackable" />
+    </Card>
+    <Card Rarity="Common" Type="Unit" Name="Cre_Hav_005" DisplayName="Imperial Crossbowman" Faction="Haven" SubType="Shooter" Race="Human|Archer" Cost="1" MightLevel="1" Attack="1" Retaliate="0" HP="2" ID="41">
+        <Ability Type="ImmuneToRetaliate" />
+		<Ability Type="Stackable" />
+    </Card>
+    <Card Rarity="Common" Type="Unit" Name="Cre_Hav_017" DisplayName="Devoted Sister" Faction="Haven" School="Light" SubType="Magic|Shooter" Race="Human|Priest" Cost="2" MightLevel="1" MagicLevel="1" Attack="1" Retaliate="1" HP="4" ID="42">
+        <Ability Type="ImmuneToRetaliate" />
+        <Ability Type="Heal" Value="2" />
+    </Card>
+    <Card Rarity="Common" Type="Unit" Name="Cre_Hav_007" DisplayName="Loyal Griffin" Faction="Haven" SubType="Flyer" Race="Griffin" Cost="2" MightLevel="2" Attack="2" Retaliate="1" HP="4" ID="43" />
+    <Card Rarity="Common" Type="Unit" Name="Cre_Hav_011" DisplayName="Radiant Glory" Faction="Haven" School="Light" SubType="Magic|Flyer" Race="Spirit" Cost="3" MightLevel="3" MagicLevel="1" Attack="3" Retaliate="2" HP="5" ID="44" />
+    <Card Rarity="Common" Type="Unit" Name="Cre_Hav_016" DisplayName="Sun Rider" Faction="Haven" SubType="Melee" Race="Human|Knight" Cost="3" MightLevel="3" Attack="2" Retaliate="1" HP="5" ID="45">
+        <Ability Type="ImmuneToRetaliate" />
+        <Ability Type="Charge" />
+    </Card>
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_013" DisplayName="Warrior Seraph" Faction="Haven" School="Light" SubType="Flyer" Race="Angel" Cost="4" MightLevel="4" Attack="3" Retaliate="2" HP="6" ID="46">
+        <Ability Type="Regenerate" Value="2" />
+    </Card>
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_018" DisplayName="Holy Praetorian" Faction="Haven" SubType="Melee" Race="Human|Soldier" Cost="2" MightLevel="2" Attack="1" Retaliate="1" HP="4" ID="47">
+        <Ability Type="MeleeGuard" Value="2" />
+    </Card>
+    <Card Rarity="Common" Type="Unit" Name="Cre_Hav_014" DisplayName="Expert Marksman" Faction="Haven" SubType="Shooter" Race="Human|Archer" Cost="2" MightLevel="2" Attack="2" Retaliate="1" HP="3" ID="48">
+        <Ability Type="ImmuneToRetaliate" />
+    </Card>
+    <Card Rarity="Rare" Type="Unit" Name="Cre_Hav_010" DisplayName="Vestal" Faction="Haven" School="Light" SubType="Magic|Shooter" Race="Human|Priest" Cost="4" MightLevel="3" MagicLevel="2" Attack="1" Retaliate="1" HP="7" ID="49">
+        <Ability Type="ImmuneToRetaliate" />
+        <Ability Type="Heal" Value="3" />
+		<Ability Type="Mending" />
+    </Card>
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_008" DisplayName="Imperial Griffin" Faction="Haven" SubType="Flyer" Race="Griffin" Cost="4" MightLevel="4" Attack="2" Retaliate="2" HP="6" ID="50">
+        <Ability Type="ImmuneToRetaliate" />
+        <Ability Type="Charge" />
+    </Card>
+    <Card  Rarity="Uncommon" Type="Unit" Name="Cre_Hav_006" DisplayName="Blazing Glory" Faction="Haven" School="Light" SubType="Magic|Flyer" Race="Spirit" Cost="5" MightLevel="4" MagicLevel="2" Attack="3" Retaliate="3" HP="7" ID="51">
+        <Ability Type="Regenerate" Value="2" />
+		<Trigger Type="OnUnitHealed" Side="Friendly">
+			<Target Zone="Battleground" CardType="Unit" Amount="FromTrigger" ForceExecute="True" Persistent="True">
+				<Effect Type="ModifyAttack" Value="1" Duration="UntilEndOfTurn"/>
+			</Target>
+		</Trigger>
+    <Description>Whenever a friendly creature is healed, it gains +[1:ATK] until end or turn..</Description>
+    <DescriptionChinese>每当一个本方生物被治疗时，它获得+[1:ATK]直到回合结束。</DescriptionChinese>
+	</Card>
+    <Card  Rarity="Rare" Type="Unit" Name="Cre_Hav_004" DisplayName="Sun Crusader" Faction="Haven" SubType="Melee" Race="Human|Knight" Cost="5" MightLevel="5" Attack="4" Retaliate="2" HP="7" ID="52">
+        <Ability Type="ImmuneToRetaliate" />
+        <Ability Type="Charge" />
+        <Trigger Type="OnUnitKillUnit" DamageIncludeFlags="Attack" Side="Friendly" ExecuteOncePerTurn="True">
+			<CardFilter IncludeRaces="Knight"/>
+			<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
+				<CardFilter IncludeAbility="Stackable"/>
+				<Effect Type="IncreaseStackSize" Value="1"/>
+            </Target>
+		</Trigger>
+	    <Description>When friendly Knight destory a creature the first time in a turn, Increase the size of each friendly stack by 1.</Description>
+		<DescriptionChinese>当本方骑士生物在一回合内第一次消灭一个生物时，所有本方堆叠叠数增加1。</DescriptionChinese>
+	</Card>
+    <Card  Rarity="Rare" Type="Unit" Name="Cre_Hav_003" DisplayName="Celestial" Faction="Haven" School="Light" SubType="Flyer" Race="Angel" Cost="6" MightLevel="5" Attack="4" Retaliate="4" HP="8" ID="53">
+        <Ability Type="Regenerate" Value="2" />
+		<Target Zone="BattlegroundColumn" CardType="Unit" Amount="Self" Side="Enemy" >
+			<Effect Type="ModifyAttack" Value="2mi" EvaluationOrder="Last" />	
+			<Effect Type="ModifyRetaliate" Value="2mi" EvaluationOrder="Last" />			
+		</Target>
+        <Description>The [ATK] and [RET] of enemy creatures in the same row as [THIS] is always 2 or less.</Description>
+		<DescriptionChinese>同行的敌方生物的[ATK]和[RET]变为只能小于或等于2。</DescriptionChinese>
+	</Card>
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_009" DisplayName="Tithe Collector" Faction="Haven" SubType="Melee" Race="Human" Cost="1" DestinyLevel="1" Attack="0" Retaliate="0" HP="2" ID="54">
+        <Ability Type="Income" Value="1" />
+    </Card>
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Hav_015" DisplayName="Elite Squire" Faction="Haven" SubType="Melee" Race="Human|Soldier" Cost="2" MightLevel="2" Attack="1" Retaliate="2" HP="3" ID="55">
+        <Ability Type="RangedGuard" Value="2" />
+    </Card>
+    <Card Rarity="Epic" Type="Unit" Name="Cre_Hav_001" DisplayName="Imperial Guard" Faction="Haven" SubType="Shooter" Race="Human|Soldier" Cost="5" MightLevel="4" Attack="0" Retaliate="2" HP="8" ID="56">
+        <Ability Type="ImmuneToRetaliate" />
+        <Ability Type="AbsorbHeroDamage" Value="infinite" />
+        <Description>Redirect all damage dealt to your hero to Imperial Guard instead.</Description>
+    </Card>
+    <Card Rarity="Epic" Type="Unit" Name="Cre_Hav_002" DisplayName="Eleonore, the Voice of Harmony" Faction="Haven" School="Light" SubType="Magic|Shooter" Race="Human|Priest" Unique="True" Cost="5" MightLevel="3" MagicLevel="3" Attack="2" Retaliate="0" HP="5" ID="57">
+        <Ability Type="ImmuneToRetaliate" />
+        <Description>At the beginning of your turn, heal all damage from all friendly creatures.</Description>
+        <Trigger Type="OnTurnBegin" Side="Friendly">
+            <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+                <Effect Type="Heal" Value="infinite" />
+            </Target>
+        </Trigger>
+    </Card>
+    <!--...............................................................................-->
+    <!-- Creatures - Inferno -->
+    <!--...............................................................................-->
+    <Card Rarity="Common" Type="Unit" Name="Cre_Inf_013" DisplayName="Maniac" Faction="Inferno" SubType="Melee" Cost="1" Race="Demon|Maniac" MightLevel="1" Attack="2" Retaliate="1" HP="2" ID="22" />
+    <Card Rarity="Common" Type="Unit" Name="Cre_Inf_016" DisplayName="Hell Hound" Faction="Inferno" SubType="Melee" Race="Demon|Hound" Cost="1" MightLevel="0" Attack="1" Retaliate="0" HP="2" ID="23">
+        <Ability Type="ImmuneToRetaliate" />
+        <Ability Type="SweepAttack" />
+		<Ability Type="Stackable" />
+    </Card>
+    <Card Rarity="Common" Type="Unit" Name="Cre_Inf_017" DisplayName="Succubus" Faction="Inferno" SubType="Magic|Shooter" Race="Demon|Succubus" Cost="2" MightLevel="2" MagicLevel="1" Attack="2" Retaliate="0" HP="4" ID="24">
+        <Ability Type="ImmuneToRetaliate" />
+    </Card>
+    <Card Rarity="Common" Type="Unit" Name="Cre_Inf_004" DisplayName="Gravid Breeder" Faction="Inferno" SubType="Magic|Shooter" Race="Demon|Breeder" Cost="2" MightLevel="1" MagicLevel="1" Attack="1" Retaliate="0" HP="3" ID="25" School="Fire">
+        <Ability Type="ImmuneToRetaliate" />
+        <Ability Type="MagicChannel" Value="1" />
+		<Ability Type="Stackable" />
+		<Ability Type="AreaBlast" Value="1" />
+    </Card>
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Inf_018" DisplayName="Tormentor" Faction="Inferno" School="Fire" SubType="Magic|Melee|Shooter" Race="Demon|Tormentor" Cost="3" MightLevel="3" MagicLevel="1" Attack="2" Retaliate="2" HP="5" ID="26">
+        <Ability Type="AreaBlast" Value="2" />
+    </Card>
+    <Card Rarity="Common" Type="Unit" Name="Cre_Inf_012" DisplayName="Juggernaut" Faction="Inferno" SubType="Melee" Race="Demon|Juggernaut" Cost="3" MightLevel="3" Attack="4" Retaliate="3" HP="4" ID="27" />
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Inf_015" DisplayName="Pit Fiend" Faction="Inferno" SubType="Melee" Race="Demon" Cost="4" MightLevel="4" Attack="3" Retaliate="2" HP="5" ID="28" School="Dark">
+        <Ability Type="AttackAnywhere" />
+    </Card>
+    <Card Rarity="Common" Type="Unit" Name="Cre_Inf_014" DisplayName="Demented" Faction="Inferno" SubType="Melee" Race="Demon|Maniac" Cost="2" MightLevel="2" Attack="2" Retaliate="0" HP="3" ID="29">
+        <Ability Type="ImmuneToRetaliate" />
+        <Ability Type="SweepAttack" />
+    </Card>
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Inf_005" DisplayName="Cerberus" Faction="Inferno" SubType="Melee" Race="Demon|Hound" Cost="3" MightLevel="3" Attack="3" Retaliate="1" HP="3" ID="30">
+        <Ability Type="ImmuneToRetaliate" />
+        <Ability Type="SweepAttack" />
+    </Card>
+    <Card Rarity="Common" Type="Unit" Name="Cre_Inf_011" DisplayName="Lilim" Faction="Inferno" SubType="Magic|Shooter" Race="Demon|Succubus" Cost="4" MightLevel="4" MagicLevel="1" Attack="3" Retaliate="1" HP="8" ID="31">
+        <Ability Type="ImmuneToRetaliate" />
+    </Card>
+    <Card  Rarity="Uncommon" Type="Unit" Name="Cre_Inf_010" DisplayName="Breeder Mother" Faction="Inferno" School="Fire" SubType="Magic|Shooter" Race="Demon|Breeder" Cost="4" MightLevel="3" MagicLevel="1" Attack="2" Retaliate="1" HP="6" ID="32">
+        <Ability Type="ImmuneToRetaliate" />
+        <Trigger Type="OnUnitDeath" Side="Friendly">
+			<CardFilter IncludeRaces="Breeder" ExcludeToken="True"/>
+			<Target Zone="BattlegroundPosition" Amount="FromTrigger">
+				<Effect Type="PopulateStack" CardID="902"/>
+			</Target>
+		</Trigger>
+        <Description>When a friendly non- token breeder dies, deploy a [1:ATK]/[0:RET]/[1:HEALTH] breeder melee shooter token on that position.</Description>
+		<DescriptionChinese>当本方非衍生物巢魔死亡时，在其位置上部署1个[1:ATK]/[0:RET]/[1:HEALTH]并有堆叠能力的近战射手巢魔衍生物。</DescriptionChinese>
+	</Card>
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Inf_008" DisplayName="Lacerator" Faction="Inferno" School="Fire" SubType="Magic|Melee|Shooter" Race="Demon|Tormentor" Cost="4" MightLevel="4" MagicLevel="1" Attack="3" Retaliate="2" HP="6" ID="33">
+        <Ability Type="AreaBlast" Value="3" />
+    </Card>
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Inf_006" DisplayName="Ravager" Faction="Inferno" SubType="Melee" Race="Demon|Juggernaut" Cost="4" MightLevel="4" Attack="6" Retaliate="4" HP="4" ID="34" />
+    <Card Rarity="Rare" Type="Unit" Name="Cre_Inf_003" DisplayName="Pit Lord" Faction="Inferno" SubType="Flyer" Race="Demon" Cost="6" MightLevel="5" Attack="4" Retaliate="3" HP="7" ID="35">
+        <Ability Type="AttackAnywhere" />
+    </Card>
+    <Card Rarity="Rare" Type="Unit" Name="Cre_Inf_009" DisplayName="Chaos Sorceress" Faction="Inferno" School="Fire" SubType="Magic|Shooter" Race="Human|Wizard" Cost="5" MightLevel="4" MagicLevel="2" Attack="4" Retaliate="2" HP="7" ID="36">
+        <Ability Type="ImmuneToRetaliate" />
+        <Ability Type="AreaBlast" Value="3" />
+    </Card>
+    <Card Rarity="Rare" Type="Unit" Name="Cre_Inf_007" DisplayName="Abyssal Lord" Faction="Inferno" SubType="Melee" Race="Demon" Cost="7" MightLevel="6" Attack="5" Retaliate="4" HP="9" ID="37" School="Dark">
+        <Ability Type="AttackAnywhere" />
+    </Card>
+    <Card Rarity="Epic" Type="Unit" Name="Cre_Inf_001" DisplayName="Chaos Imp" Faction="Inferno" SubType="Shooter" Race="Demon|Imp" Cost="4" MightLevel="1" DestinyLevel="3" Attack="1" Retaliate="0" HP="1" ID="38">
+        <Ability Type="ImmuneToRetaliate" />
+        <Description>Whenever opponent plays a card, they discard a card.</Description>
+        <Trigger Type="OnCardPlay" Side="Enemy">
+            <Target Zone="Hand" Side="Enemy" Amount="1" Cancelable="False">
+                <Effect Type="MoveCardTo" Destination="Graveyard" />
+            </Target>
+        </Trigger>
+    </Card>
+    <Card Rarity="Epic" Type="Unit" Name="Cre_Inf_002" DisplayName="Doom Bringer" Faction="Inferno" School="Fire" SubType="Magic|Melee" Race="Demon" Unique="True" Cost="5" MightLevel="5" MagicLevel="1" Attack="4" Retaliate="3" HP="6" ID="39">
+        <Description>When Doom Bringer dies, destroy all creatures.</Description>
+        <Trigger Type="OnThisCardDeath">
+            <Target Zone="Battleground" CardType="Unit" Amount="All">
+                <Effect Type="Kill" />
+            </Target>
+        </Trigger>
+    </Card>
+    <!--...............................................................................-->
+    <!-- Creatures - Necropolis -->
+    <!--...............................................................................-->
+    <Card Rarity="Common" Type="Unit" Name="Cre_Nec_015" DisplayName="Skeleton Spearman" Faction="Necropolis" SubType="Shooter" Race="Skeleton" Cost="1" MightLevel="1" Attack="1" Retaliate="0" HP="2" ID="58">
+        <Ability Type="ImmuneToRetaliate" />
+		<Ability Type="Stackable" />
+    </Card>
+    <Card Rarity="Common" Type="Unit" Name="Cre_Nec_008" DisplayName="Wretched Ghoul" Faction="Necropolis" SubType="Melee" Race="Ghoul" Cost="1" MightLevel="1" Attack="2" Retaliate="1" HP="2" ID="59" />
+    <Card Rarity="Common" Type="Unit" Name="Cre_Nec_006" DisplayName="Lingering Ghost" Faction="Necropolis" School="Prime" SubType="Magic|Flyer" Race="Ghost" Cost="2" MightLevel="2" MagicLevel="1" Attack="2" Retaliate="1" HP="3" ID="60">
+        <Ability Type="Incorporeal" />
+    </Card>
+    <Card Rarity="Common" Type="Unit" Name="Cre_Nec_010" DisplayName="Neophyte Lich" Faction="Necropolis" School="Dark" SubType="Magic|Shooter" Race="Lich" Cost="2" MightLevel="2" MagicLevel="1" Attack="2" Retaliate="0" HP="4" ID="61">
+        <Ability Type="ImmuneToRetaliate" />
+    </Card>
+    <Card Rarity="Common" Type="Unit" Name="Cre_Nec_009" DisplayName="Lamasu" Faction="Necropolis" SubType="Flyer" Race="Lamasu" Cost="3" MightLevel="3" Attack="2" Retaliate="2" HP="6" ID="62" />
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Nec_016" DisplayName="Vampire Knight" Faction="Necropolis" SubType="Flyer" Race="Vampire" Cost="3" MightLevel="3" Attack="2" Retaliate="0" HP="5" ID="63">
+        <Ability Type="ImmuneToRetaliate" />
+        <Ability Type="LifeDrain" Value="2" />
+    </Card>
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Nec_005" DisplayName="Fate Spinner" Faction="Necropolis" SubType="Melee" Race="Namtaru" Cost="4" MightLevel="4" Attack="2" Retaliate="2" HP="7" School="Prime" ID="64">
+        <Ability Type="Infect" Value="2" />
+    </Card>
+    <Card Rarity="Common" Type="Unit" Name="Cre_Nec_018" DisplayName="Plague Skeleton" Faction="Necropolis" SubType="Shooter" Race="Skeleton" Cost="2" MightLevel="2" Attack="1" Retaliate="0" HP="3" ID="65">
+        <Ability Type="ImmuneToRetaliate" />
+        <Ability Type="Infect" Value="1" />
+		<Ability Type="Stackable" />
+    </Card>
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Nec_014" DisplayName="Ravenous Ghoul" Faction="Necropolis" SubType="Melee|Shooter" Race="Ghoul" Cost="3" MightLevel="3" Attack="2" Retaliate="1" HP="5" ID="66" School="Earth">
+        <Ability Type="Regenerate" Value="1" />
+		<Ability Type="Infect" Value="1" />
+    </Card>
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Nec_013" DisplayName="Vengeful Spectre" Faction="Necropolis" School="Prime" SubType="Magic|Flyer" Race="Ghost" Cost="4" MightLevel="4" MagicLevel="1" Attack="3" Retaliate="2" HP="5" ID="67">
+        <Ability Type="Incorporeal" />
+    </Card>
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Nec_012" DisplayName="Archlich" Faction="Necropolis" School="Dark" SubType="Magic|Shooter" Race="Lich" Cost="4" MightLevel="4" MagicLevel="1" Attack="3" Retaliate="1" HP="6" ID="68">
+        <Ability Type="ImmuneToRetaliate" />
+        <Ability Type="LifeDrain" Value="2" />
+    </Card>
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Nec_011" DisplayName="Putrid Lamasu" Faction="Necropolis" SubType="Flyer" Race="Lamasu" Cost="5" MightLevel="5" Attack="3" Retaliate="2" HP="8" ID="69">
+        <Ability Type="Infect" Value="2" />
+    </Card>
+    <Card Rarity="Rare" Type="Unit" Name="Cre_Nec_004" DisplayName="Vampire Lord" Faction="Necropolis" SubType="Flyer" Race="Vampire" Cost="6" MightLevel="5" Attack="4" Retaliate="3" HP="8" ID="70">
+        <Ability Type="ImmuneToRetaliate" />
+        <Ability Type="LifeDrain" Value="3" />
+    </Card>
+    <Card Rarity="Rare" Type="Unit" Name="Cre_Nec_003" DisplayName="Fate Weaver" Faction="Necropolis" SubType="Melee" Race="Namtaru" Cost="6" MightLevel="5" Attack="4" Retaliate="4" HP="8" School="Prime" ID="71">
+        <Ability Type="Regenerate" Value="1" />
+        <Ability Type="Infect" Value="2" />
+    </Card>
+    <Card Rarity="Common" Type="Unit" Name="Cre_Nec_017" DisplayName="Plague Zombie" Faction="Necropolis" SubType="Melee" Race="Zombie" Cost="3" MightLevel="3" Attack="2" Retaliate="1" HP="6" ID="72">
+        <Ability Type="Infect" Value="1" />
+    </Card>
+    <Card Rarity="Rare" Type="Unit" Name="Cre_Nec_007" DisplayName="Ghost Dragon" Faction="Necropolis" School="Prime" SubType="Magic|Flyer" Race="Dragon|Ghost" Cost="7" MightLevel="6" MagicLevel="1" Attack="5" Retaliate="3" HP="7" ID="73">
+        <Ability Type="ImmuneToRetaliate" />
+        <Ability Type="Incorporeal" />
+        <Ability Type="LifeDrain" Value="2" />
+    </Card>
+    <Card Rarity="Epic" Type="Unit" Name="Cre_Nec_001" DisplayName="The Banshee" Faction="Necropolis" School="Dark" SubType="Magic|Melee" Race="Ghost" Cost="6" MightLevel="4" MagicLevel="4" Attack="2" Retaliate="0" HP="3" ID="74">
+        <Ability Type="Incorporeal" />
+        <Description>When The Banshee enters the battleground, destroy target enemy creature.</Description>
+        <Trigger Type="OnThisCardDeploy">
+            <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Enemy" Cancelable="False">
+                <Effect Type="Kill" />
+            </Target>
+        </Trigger>
+    </Card>
+    <Card Rarity="Epic" Type="Unit" Name="Cre_Nec_002" DisplayName="Atropos, Weaver of the Dead" Faction="Necropolis" SubType="Shooter" Race="Vampire" Unique="True" Cost="5" MightLevel="4" DestinyLevel="1" Attack="3" Retaliate="2" HP="7" ID="75">
+        <Ability Type="ImmuneToRetaliate" />
+        <Ability Type="LifeDrain" Value="2" />
+        <Description>When Atropos, Weaver of the Dead enters the battleground, take 2 target creature cards from your graveyard and put them into your hand.</Description>
+        <Trigger Type="OnThisCardDeploy">
+            <Target Zone="Graveyard" Side="Friendly" Amount="2" MinAmount="1" Cancelable="False">
+                <CardType Include="Unit" />
+                <Effect Type="MoveCardTo" Destination="Hand" />
+            </Target>
+        </Trigger>
+    </Card>
+    <!--...............................................................................-->
+    <!-- Creatures - Stronghold -->
+    <!--...............................................................................-->
+    <Card Rarity="Common" Type="Unit" Name="Cre_Str_016" DisplayName="Ranaar Mauler" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="1" MightLevel="1" Attack="0" Retaliate="0" HP="3" ID="76">
+        <Ability Type="Enrage" Value="1" />
+    </Card>
+    <Card Rarity="Common" Type="Unit" Name="Cre_Str_009" DisplayName="Goblin Scout" Faction="Stronghold" SubType="Shooter" Race="Goblin|Archer" Cost="1" MightLevel="1" Attack="2" Retaliate="0" HP="1" ID="77">
+        <Ability Type="ImmuneToRetaliate" />
+    </Card>
+    <Card Rarity="Common" Type="Unit" Name="Cre_Str_003" DisplayName="Ranaar Harpy" Faction="Stronghold" SubType="Flyer" Race="Harpy" Cost="2" MightLevel="2" Attack="2" Retaliate="1" HP="4" ID="78" />
+    <Card Rarity="Common" Type="Unit" Name="Cre_Str_005" DisplayName="Centaur Archer" Faction="Stronghold" SubType="Shooter" Race="Centaur|Archer" Cost="3" MightLevel="3" Attack="3" Retaliate="2" HP="4" ID="79">
+        <Ability Type="ImmuneToRetaliate" />
+    </Card>
+    <Card Rarity="Common" Type="Unit" Name="Cre_Str_007" DisplayName="Dreamwalker" Faction="Stronghold" SubType="Magic|Shooter" Race="Orc|Shaman" Cost="3" MightLevel="3" MagicLevel="1" Attack="2" Retaliate="0" HP="4" ID="80">
+        <Ability Type="ImmuneToRetaliate" />
+        <Ability Type="Enrage" Value="1" />
+    </Card>
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Str_012" DisplayName="Jaguar Warrior" Faction="Stronghold" School="Air|Earth" SubType="Melee" Race="Orc|Warrior" Cost="3" MightLevel="3" Attack="1" Retaliate="0" HP="5" ID="81">
+		<Ability Type="Enrage" Value="1" />
+		<Ability Type="Armor" Value="1" />
+        <Ability Type="Charge" />
+    </Card>
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Str_018" DisplayName="Cyclops Brawler" Faction="Stronghold" SubType="Melee" Race="Cyclops" Cost="4" MightLevel="4" Attack="2" Retaliate="2" HP="6" ID="82">
+        <Ability Type="DoubleAttack" />
+    </Card>
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Str_013" DisplayName="Crusher" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="4" MightLevel="4" Attack="2" Retaliate="1" HP="4" ID="83">
+        <Ability Type="MagicResist" />
+        <Ability Type="Enrage" Value="1" />
+    </Card>
+    <Card Rarity="Common" Type="Unit" Name="Cre_Str_017" DisplayName="Goblin Hunter" Faction="Stronghold" SubType="Shooter" Race="Goblin|Archer" Cost="2" MightLevel="2" Attack="2" Retaliate="1" HP="3" ID="84">
+        <Ability Type="ImmuneToRetaliate" />
+    </Card>
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Str_010" DisplayName="Striking Fury" Faction="Stronghold" School="Air" SubType="Flyer" Race="Harpy" Cost="4" MightLevel="4" Attack="3" Retaliate="1" HP="5" ID="85" >
+        <Ability Type="ImmuneToRetaliate" />
+        <Ability Type="Enrage" Value="1" />
+    </Card>
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Str_015" DisplayName="Centaur Marauder" Faction="Stronghold" SubType="Shooter" Race="Centaur|Archer" Cost="5" MightLevel="5" Attack="3" Retaliate="2" HP="5" ID="86">
+        <Ability Type="ImmuneToRetaliate" />
+        <Ability Type="AttackAnywhere" />
+		<Ability Type="Armor" Value="1" />
+    </Card>
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Str_011" DisplayName="Dreamreaver" Faction="Stronghold" SubType="Magic|Shooter" Race="Orc|Shaman" Cost="5" MightLevel="5" MagicLevel="1" Attack="3" Retaliate="3" HP="6" ID="87">
+        <Ability Type="ImmuneToRetaliate" />
+        <Ability Type="Enrage" Value="1" />
+    </Card>
+    <Card Rarity="Rare" Type="Unit" Name="Cre_Str_008" DisplayName="Panther Warrior" Faction="Stronghold" School="Air" SubType="Melee" Race="Orc|Warrior" Cost="6" MightLevel="6" Attack="3" Retaliate="3" HP="5" ID="88">
+        <Ability Type="QuickAttack" />
+        <Ability Type="Charge" />
+    </Card>
+    <Card Rarity="Rare" Type="Unit" Name="Cre_Str_006" DisplayName="Enraged Cyclops" Faction="Stronghold" SubType="Shooter" Race="Cyclops" Cost="7" MightLevel="6" Attack="4" Retaliate="2" HP="7" ID="89">
+        <Ability Type="ImmuneToRetaliate" />
+        <Ability Type="DoubleAttack" />
+    </Card>
+    <Card Rarity="Common" Type="Unit" Name="Cre_Str_014" DisplayName="Tainted Orc" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="4" MightLevel="4" Attack="4" Retaliate="3" HP="7" ID="90" />
+    <Card Rarity="Rare" Type="Unit" Name="Cre_Str_004" DisplayName="Raging Smasher" Faction="Stronghold" School="Air" SubType="Melee" Race="Orc|Warrior" Cost="6" MightLevel="6" Attack="4" Retaliate="2" HP="7" ID="91">
+        <Ability Type="ImmuneToRetaliate" />
+        <Ability Type="Charge" />
+        <Ability Type="Enrage" Value="2" />
+    </Card>
+    <Card Rarity="Epic" Type="Unit" Name="Cre_Str_001" DisplayName="Wyvern Rider" Faction="Stronghold" SubType="Flyer" Race="Orc|Rider" Cost="6" MightLevel="6" Attack="3" Retaliate="1" HP="7" ID="92">
+        <Ability Type="Enrage" Value="2" />
+        <Ability Type="MagicResist" />
+    </Card>
+    <Card Rarity="Epic" Type="Unit" Name="Cre_Str_002" DisplayName="Blood Caller" Faction="Stronghold" SubType="Magic|Melee" Race="Orc|Warrior" Unique="True" Cost="5" MightLevel="5" MagicLevel="1" Attack="0" Retaliate="0" HP="7" ID="93">
+        <Description>When Blood Caller enters the battleground, destroy 2 other target friendly creatures. Blood Caller's [ATK] and [RET] are both equal to the total remaining health of the destroyed creatures.</Description>
+        <Trigger Type="OnThisCardDeploy">
+            <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="2" Cancelable="False" CantTargetSelf="True">
+                <Effect Type="Kill" EpicEnrage="True" />
+            </Target>
+        </Trigger>
+    </Card>
+    <!--...............................................................................-->
+    <!-- Creatures - Neutral -->
+    <!--...............................................................................-->
+    <Card Rarity="Common" Type="Unit" Name="Cre_Neu_010" DisplayName="Pao Hunter" Faction="Neutral" SubType="Shooter" Race="Orc|Archer" Cost="2" MightLevel="1" Attack="1" Retaliate="0" HP="3" ID="112">
+        <Ability Type="ImmuneToRetaliate" />
+		<Ability Type="Stackable" />
+    </Card>
+    <Card Rarity="Common" Type="Unit" Name="Cre_Neu_012" DisplayName="Lesser Air Elemental" Faction="Neutral" School="Air" SubType="Magic|Flyer" Race="Spirit" Cost="4" MightLevel="3" MagicLevel="1" Attack="2" Retaliate="2" HP="6" ID="113" />
+    <Card Rarity="Common" Type="Unit" Name="Cre_Neu_013" DisplayName="Lesser Fire Elemental" Faction="Neutral" School="Fire" SubType="Magic|Shooter" Race="Spirit" Cost="4" MightLevel="3" MagicLevel="1" Attack="3" Retaliate="2" HP="4" ID="114">
+        <Ability Type="ImmuneToRetaliate" />
+    </Card>
+    <Card Rarity="Common" Type="Unit" Name="Cre_Neu_016" DisplayName="Wild Griffin" Faction="Neutral" SubType="Flyer" Race="Griffin" Cost="3" MightLevel="3" Attack="2" Retaliate="2" HP="3" ID="115" />
+    <Card Rarity="Common" Type="Unit" Name="Cre_Neu_003" DisplayName="Sea Elf Archer" Faction="Neutral" SubType="Shooter" Race="Elf|Archer" Cost="3" MightLevel="3" Attack="3" Retaliate="0" HP="3" ID="116">
+        <Ability Type="ImmuneToRetaliate" />
+    </Card>
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Neu_014" DisplayName="Lesser Earth Elemental" Faction="Neutral" School="Earth" SubType="Magic|Melee" Race="Spirit" Cost="5" MightLevel="4" MagicLevel="1" Attack="3" Retaliate="4" HP="7" ID="117" />
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Neu_011" DisplayName="Lesser Shadow Elemental" Faction="Neutral" School="Dark" SubType="Magic|Melee" Race="Spirit" Cost="3" MightLevel="2" MagicLevel="1" Attack="1" Retaliate="1" HP="3" ID="118">
+        <Ability Type="Incorporeal" />
+    </Card>
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Neu_015" DisplayName="Angry Wyvern" Faction="Neutral" SubType="Flyer" Race="Wyvern" Cost="5" MightLevel="5" Attack="3" Retaliate="3" HP="7" ID="119" />
+    <Card Rarity="Common" Type="Unit" Name="Cre_Neu_004" DisplayName="Rogue Mercenary" Faction="Neutral" SubType="Melee" Race="Human|Mercenary" Cost="2" MightLevel="2" Attack="2" Retaliate="1" HP="4" ID="120">
+        <Description>To attack with Rogue Mercenary, you must pay [1:RESOURCES].</Description>
+        <Ability Type="AttackCost" Value="1" />
+    </Card>
+    <Card Rarity="Epic" Type="Unit" Name="Cre_Neu_005" DisplayName="Dark Assassin" Faction="Neutral" SubType="Melee" Race="Human|Assassin" Cost="2" MightLevel="3" Attack="4" Retaliate="0" HP="2" ID="121">
+        <Description>Whenever Dark Assassin attacks, deal 1 damage to your hero.</Description>
+        <Trigger Type="OnThisPreAttack">
+            <Target Zone="Hero" Amount="All" Side="Friendly">
+                <Effect Type="Damage" Value="1" />
+            </Target>
+        </Trigger>
+    </Card>
+    <Card Rarity="Rare" Type="Unit" Name="Cre_Neu_006" DisplayName="Pao Deathseeker" Faction="Neutral" SubType="Melee" Race="Orc|Warrior" Cost="4" MightLevel="3" Attack="3" Retaliate="0" HP="1" ID="122">
+        <Ability Type="ImmuneToRetaliate" />
+        <Ability Type="QuickAttack" />
+        <Ability Type="KillOnTurnEnd" />
+        <Description>At the end of your turn, destroy Pao Deathseeker.</Description>
+    </Card>
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Neu_007" DisplayName="Wandering Bard" Faction="Neutral" SubType="Melee" Race="Human" Cost="2" MightLevel="1" DestinyLevel="2" Attack="1" Retaliate="0" HP="1" ID="123">
+        <Description>When Wandering Bard enters the battleground, search your library for a unique creature card and put it into your hand, then shuffle your library.</Description>
+        <Trigger Type="OnThisCardDeploy">
+            <Target Zone="Library" Side="Friendly" Amount="1" RevealToOther="True">
+                <CardFilter IncludeCardType="Unit" IncludeUnique="True" />
+                <Effect Type="MoveCardTo" Destination="Hand" />
+            </Target>
+            <Target Side="Friendly">
+                <Effect Type="Shuffle" CardHolder="Library" />
+            </Target>
+        </Trigger>
+    </Card>
+    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Neu_008" DisplayName="Helexian Librarian" Faction="Neutral" SubType="Melee" Race="Human" Cost="2" DestinyLevel="2" Attack="1" Retaliate="0" HP="1" ID="124">
+        <Description>When Helexian Librarian enters the battleground, draw a card.</Description>
+        <Trigger Type="OnThisCardDeploy">
+            <Target Zone="None" Side="Friendly" Cancelable="False">
+                <Effect Type="Draw" Value="1" />
+            </Target>
+        </Trigger>
+    </Card>
+    <Card Rarity="Rare" Type="Unit" Name="Cre_Neu_009" DisplayName="Moonsilk Spider" Faction="Neutral" School="Prime" SubType="Magic|Melee|Shooter" Race="Spider" Cost="4" MagicLevel="3" Attack="0" Retaliate="0" HP="1" ID="125">
+        <Ability Type="MagicShield" />
+        <Description>Your spells cost [1:RESOURCES] less to play.</Description>
+        <Target Zone="Hero" Amount="All" Side="Friendly">
+            <Effect Type="GlobalEffect" GlobalEffectType="ModifyCost" Value="-1">
+                <CardFilter IncludeCardType="Spell" />
+            </Effect>
+        </Target>
+    </Card>
+</Cards>

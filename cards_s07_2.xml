@@ -1,0 +1,422 @@
+<Cards>
+	<!--....................................................................-->
+	<!-- //	#####    ###    ####    #####   ##  #   #   #   #####   #####   -->
+	<!-- //	##      ##  #   #   #    ##     ##  #   ##  #   ##      ##      -->
+	<!-- //	####    ##  #   ####     ##     ##  #   # # #   ####    #####   -->
+	<!-- //	##      ##  #   ## #     ##     ##  #   #  ##   ##         ##   -->
+	<!-- //	##       ###    ##  #    ##     #####   #   #   #####   #####   -->
+	<!--....................................................................-->
+	<!--....................................................................-->
+	<!-- Fortune - Academy -->
+	<!--....................................................................-->
+	<Card Rarity="Common" Unique="False" Type="Fortune" Name="For_Aca_090" DisplayName="Void Trap" Faction="Academy" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="1" ID="951">
+		<Target Zone="Graveyard" Amount="2" Side="Friendly">
+			<CardFilter IncludeSchool="Prime"/>
+			<Effect Type="Banish"/>
+		</Target>
+		<Target Zone="None" Side="Friendly">
+			<Effect Type="Draw" Value="2"/>
+		</Target>
+		<Description>Banish 2 target prime cards in your graveyard, then draw 2 cards.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Fortune" Name="For_Aca_091" DisplayName="Shifting Fates" Faction="Academy" Cost="2" MightLevel="0" MagicLevel="1" DestinyLevel="2" ID="952">
+		<Target Zone="Graveyard" Amount="2" Side="Friendly" CardType="Unit">
+			<CardFilter IncludeSchool="Prime"/>
+			<Effect Type="MoveCardTo" Destination="Hand"/>
+		</Target>
+		<Description>Take 2 target prime creature cards from your graveyard and put them into your hand.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Fortune - Haven -->
+	<!--....................................................................-->
+	<Card Rarity="Common" Unique="False" Type="Fortune" Name="For_Hav_090" DisplayName="Supply Caravan" Faction="Haven" Cost="0" MightLevel="0" MagicLevel="0" DestinyLevel="2" ID="953">
+		<Variable Type="TargetCount">
+			<Target Zone="Battleground" Amount="All" Side="Friendly" CardType="Building"/>
+		</Variable>
+		<Target Zone="None" Side="Friendly">
+			<Effect Type="GainResources" Value="Variable"/>
+		</Target>
+		<Description>Gain [1:RESOURCES] for each friendly buildings on the battleground.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Fortune" Name="For_Hav_091" DisplayName="Construction" Faction="Haven" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="954">
+		<Target Zone="Library" Amount="1" CardType="Building" Side="Friendly">
+			<CardFilter BaseMaxCost="True" Value="3"/>
+			<Effect Type="Play" Free="True"/>
+		</Target>
+		<Description>Search your library for an Haven building card costing [3:RESOURCES] or less and play it for free.</Description>
+	</Card>
+	<!--...................................................................-->
+	<!-- Fortune - Inferno -->
+	<!--...................................................................-->
+	<Card Rarity="Uncommon" Unique="False" Type="Fortune" Name="For_Inf_090" DisplayName="Scarification" Faction="Inferno" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="955">
+		<Target Zone="Hero" Amount="All" Side="Friendly">
+			<Effect Type="Damage" Value="5"/>
+		</Target>
+		<Target Zone="None" Side="Friendly">
+			<Effect Type="Draw" Value="5"/>
+		</Target>
+		<Description>Deal 5 damages to your hero, then draw 5 cards.</Description>
+	</Card>
+	<Card Rarity="Common" Unique="False" Type="Fortune" Name="For_Inf_091" DisplayName="Ritual of the Dark Flame" Faction="Inferno" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="956">
+		<Ongoing Duration="UntilYourNextTurn"/>
+		<Variable Type="TargetCount">
+			<Target Zone="Graveyard" Amount="All" Side="Friendly">
+				<CardFilter IncludeSchool="Fire"/>
+			</Target>
+		</Variable>
+		<Target Zone="Battleground" Amount="All" CardType="Unit"/>
+		<!-- Hack to add a feedback on unit -->
+		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+			<Effect Type="ModifyAttack" Value="1"/>
+			<Effect Type="ModifyRetaliate" Value="1"/>
+		</Target>
+		<Variable2 Type="TargetCount">
+			<Target Zone="Graveyard" Amount="All" Side="Friendly">
+				<CardFilter IncludeSchool="Dark"/>
+			</Target>
+		</Variable2>
+		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Enemy">
+			<Condition Operator="GreaterThan" ValueA="Variable2" ValueB="0"/>
+			<Effect Type="ModifyAttack" Value="-1"/>
+			<Effect Type="ModifyRetaliate" Value="-1"/>
+		</Target>
+		<Description>Until your next turn:
+While you have a fire card in your graveyard, your creatures gains +[1:ATK] and +[1:RET].
+While you have a dark card in your graveyard, your opponent's creatures gains -[1:ATK] and -[1:RET].</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Fortune - Necropolis -->
+	<!--....................................................................-->
+	<Card Rarity="Common" Unique="False" Type="Fortune" Name="For_Nec_090" DisplayName="Ritual of Weakness" Faction="Necropolis" Cost="1" MightLevel="0" MagicLevel="0" DestinyLevel="1" ID="957">
+		<Target Zone="Battleground" Amount="1" CardType="Unit"/>
+		<Target Zone="Battleground" Amount="1" CardType="Unit" CantTargetPrevious="True">
+			<Effect Type="MoveCounter" Value="infinite" CounterType="Crippling"/>
+		</Target>
+		<Description>Move all crippling counters from target creature to another target creature.</Description>
+		<!-- S07 NEW STUFF : MoveCounter - Card effect to move counters from a target card to another one. This card effect must be used with 2 consecutive targets. The first one is the source, the second one the destination. -->
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Fortune" Name="For_Nec_091" DisplayName="The Shadow of Death" Faction="Necropolis" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="958">
+		<Target Zone="Battleground" Amount="All" CardType="Unit">
+			<Variable Type="CardAttack" UseCurrentTarget="True"/>
+			<Condition Operator="EqualTo" ValueA="Variable" ValueB="0"/>
+			<Effect Type="Kill"/>
+		</Target>
+		<Description>Destroy all creatures with [0:ATK].</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Fortune - Sanctuary -->
+	<!--....................................................................-->
+	<Card Rarity="Common" Unique="False" Type="Fortune" Name="For_San_090" DisplayName="Frozen Fists" Faction="Sanctuary" Cost="4" MightLevel="0" MagicLevel="0" DestinyLevel="2" ID="959">
+		<Ongoing Duration="Permanent"/>
+		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">F
+			<CardFilter IncludeRaces="Spirit"/>
+			<Effect Type="ModifyAttack" Value="1"/>
+		</Target>
+		<Description>Permanent:
+Friendly Spirits creatures gain +1 [ATK].</Description>
+	</Card>
+	<Card Rarity="Common" Unique="False" Type="Fortune" Name="For_San_091" DisplayName="Typhoon" Faction="Sanctuary" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="960">
+		<Ongoing Duration="UntilYourNextTurn"/>
+		<Target Zone="Battleground" Amount="All" Side="Enemy" CardType="Unit">
+			<Effect Type="ModifyAttack" Value="-2"/>
+		</Target>
+		<Description>Until your next turn:
+All enemy creatures gains -[2:ATK].</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Fortune" Name="For_San_092" DisplayName="Foreknowledge" Faction="Sanctuary" Cost="4" MightLevel="0" MagicLevel="0" DestinyLevel="4" ID="961">
+		<Target Zone="Library" Side="Friendly" Amount="3" AmountVisible="5">
+			<Effect Type="MoveCardTo" Destination="Hand"/>
+		</Target>
+		<Target Zone="Library" Side="Friendly" Amount="2" AutoTakeFirstInputs="True" InputOnExec="True">
+			<Effect Type="MoveCardTo" Destination="Graveyard"/>
+		</Target>
+		<Description>Look at the top 5 cards of your library. Put 3 of them into your hand and the rest into your graveyard.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Fortune - Stronghold -->
+	<!--....................................................................-->
+	<Card Rarity="Uncommon" Unique="False" Type="Fortune" Name="For_Str_090" DisplayName="Beastman Warcry" Faction="Stronghold" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="962">
+		<Target Zone="Battleground" Amount="1" CardType="Unit" ForceExecute="True" Persistent="True">
+			<CardFilter IncludeRaces="Centaur"/>
+			<Effect Type="ModifyAttack" Value="2" Duration="UntilEndOfTurn"/>
+		</Target>
+		<Target Zone="Battleground" Amount="1" CardType="Unit" ForceExecute="True" Persistent="True" AllowDuplicate="True">
+			<CardFilter IncludeRaces="Harpy"/>
+			<Effect Type="ModifyAttack" Value="2" Duration="UntilEndOfTurn"/>
+		</Target>
+		<Description>Until end of turn:
+Target Centaur creature and target Harpy creature gains +[2:ATK].</Description>
+	</Card>
+	<!--....................................................................-->
+	<!--  Fortune - Neutral -->
+	<!--....................................................................-->
+	<Card Rarity="Uncommon" Unique="False" Type="Fortune" Name="For_Neu_090" DisplayName="Magic Interdiction" Faction="Neutral" Cost="2" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="963">
+		<Ongoing Duration="UntilYourNextTurn"/>
+		<Target Zone="None" Side="Friendly">
+			<Effect Type="ChoiceOption"/>
+			<Subgroup>
+				<Target Zone="Hero" Side="Any" Amount="All">
+					<Option Value="0" DisplayText="Air"/>
+					<Effect Type="GlobalEffect" GlobalEffectType="CantPlay">
+						<CardFilter IncludeSchool="Air"/>
+					</Effect>
+				</Target>
+				<Target Zone="Hero" Side="Any" Amount="All">
+					<Option Value="1" DisplayText="Earth"/>
+					<Effect Type="GlobalEffect" GlobalEffectType="CantPlay">
+						<CardFilter IncludeSchool="Earth"/>
+					</Effect>
+				</Target>
+				<Target Zone="Hero" Side="Any" Amount="All">
+					<Option Value="2" DisplayText="Fire"/>
+					<Effect Type="GlobalEffect" GlobalEffectType="CantPlay">
+						<CardFilter IncludeSchool="Fire"/>
+					</Effect>
+				</Target>
+				<Target Zone="Hero" Side="Any" Amount="All">
+					<Option Value="3" DisplayText="Water"/>
+					<Effect Type="GlobalEffect" GlobalEffectType="CantPlay">
+						<CardFilter IncludeSchool="Water"/>
+					</Effect>
+				</Target>
+				<Target Zone="Hero" Side="Any" Amount="All">
+					<Option Value="4" DisplayText="Dark"/>
+					<Effect Type="GlobalEffect" GlobalEffectType="CantPlay">
+						<CardFilter IncludeSchool="Dark"/>
+					</Effect>
+				</Target>
+				<Target Zone="Hero" Side="Any" Amount="All">
+					<Option Value="5" DisplayText="Light"/>
+					<Effect Type="GlobalEffect" GlobalEffectType="CantPlay">
+						<CardFilter IncludeSchool="Light"/>
+					</Effect>
+				</Target>
+				<Target Zone="Hero" Side="Any" Amount="All">
+					<Option Value="6" DisplayText="Prime"/>
+					<Effect Type="GlobalEffect" GlobalEffectType="CantPlay">
+						<CardFilter IncludeSchool="Prime"/>
+					</Effect>
+				</Target>
+			</Subgroup>
+		</Target>
+		<Description>Until your next turn:
+Choose [0]Air[/0], [1]Earth[/1], [2]Fire[/2], [3]Water[/3], [4]Dark[/4], [5]Light[/5] or [6]Prime[/6]. Cards of the chosen school cannot be played.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Fortune" Name="For_Neu_091" DisplayName="Overwhelming Forces" Faction="Neutral" Cost="4" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="964">
+		<Ongoing Duration="UntilEndOfTurn"/>
+		<Target Zone="Battleground" CardType="Unit" Amount="All">
+			<CardFilter IncludeRaces="Mercenary"/>
+			<Variable Type="TargetCount" ValueModifier="-1">
+				<Target Zone="Battleground" CardType="Unit" Amount="All">
+					<CardFilter IncludeRaces="Mercenary"/>
+				</Target>
+			</Variable>
+			<Effect Type="ModifyAttack" Value="Variable"/>
+		</Target>
+		<Description>Until end of turn:
+All friendly mercenaries gain +[1:ATK] for each other friendly mercenaries on the battleground.</Description>
+		<!-- S07 NEW STUFF : ResourcesProduction - Variable to compute at runtime the resources production of a player. -->
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Fortune" Name="For_Neu_092" DisplayName="Magic Deal" Faction="Neutral" Cost="3" MightLevel="0" MagicLevel="1" DestinyLevel="2" ID="965">
+		<Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="1">
+			<CardFilter IncludeUnitType="Magic"/>
+			<Effect Type="Kill"/>
+		</Target>
+		<Target Zone="Battleground" Amount="1">
+			<CardFilter IncludeCardType="Fortune|Spell" IncludeOngoingType="Ongoing"/>
+			<Effect Type="Kill"/>
+		</Target>
+		<Description>Destroy target friendly magic creature. Destroy target ongoing spell or fortune.</Description>
+		<!-- S07 NEW STUFF : InPlaySchools - Variable containing a bitfield with all the schools present in play. -->
+		<!-- S07 NEW STUFF : IncludeSchoolVariable - With this card, we cannot use the standard IncludeSchool filter because the school dynamically computed are not supported.
+        IncludeSchoolVariable has the same behavior except that it supports the variable mechanism, it compares the school of the card with the school computed inside the variable. -->
+	</Card>
+	<!--....................................................................-->
+	<!--// ####    ##  #   ##   ##      ####    ##   #   #    #####   ##### -->
+	<!--// ##  #   ##  #   ##   ##      ##  #   ##   ##  #   ##       ##    -->
+	<!--// ####    ##  #   ##   ##      ##  #   ##   # # #   ## ###   ##### -->
+	<!--// ##  #   ##  #   ##   ##      ##  #   ##   #  ##   ##   ##     ## -->
+	<!--// ####     ###    ##   ######  ####    ##   #   #    ####    ##### -->
+	<!--....................................................................-->
+	<!-- Building - Academy -->
+	<!--....................................................................-->
+	<Card Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_Aca_090" DisplayName="Crimson Tower" Faction="Academy" Cost="3" MightLevel="1" MagicLevel="2" DestinyLevel="0" ID="966">
+		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
+			<Effect Type="ModifyAbility" Ability="SpellResist"/>
+		</Target>
+		<Variable Type="OccupantCount">
+			<CardFilter IncludeRaces="Wizard"/>
+		</Variable>
+		<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+			<CardFilter IncludeRaces="Beastmen"/>
+			<Effect Type="ModifyAbility" Ability="CannotTarget"/>
+		</Target>
+		<Description>Creatures at Crimson Tower gain Spell Resist.
+While a Wizard creature is at Crimson Tower, friendly Beastmen cannot be targerted.</Description>
+	</Card>
+	<Card Rarity="Common" Unique="False" Type="Building" Name="Bui_Aca_091" DisplayName="Portal of House Anima" Faction="Academy" Cost="1" MightLevel="0" MagicLevel="0" DestinyLevel="2" ID="967">
+		<Trigger Type="OnMoveAtThisBuilding">
+			<CardFilter IncludeRaces="Spirit"/>
+			<Target Zone="Battleground" Amount="FromTrigger" Side="Friendly" CardType="Unit">
+				<Effect Type="MoveCardTo" Destination="Hand"/>
+				<Effect Type="GainResources" Value="3"/>
+			</Target>
+		</Trigger>
+		<Description>Whenever a Spirit creature is moved at Portal of House Anima return it to its owner's hand, then gain [3:RESOURCES].</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Building" Name="Bui_Aca_092" DisplayName="Altar of Elemental Affinity" Faction="Academy" Cost="3" MightLevel="0" MagicLevel="3" DestinyLevel="0" ID="968">
+		<Variable Type="OccupantCount"/>
+		<Target Zone="Hand" Amount="All" Side="Friendly">
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+			<CardFilter ShareSchoolsWithOccupant="True"/>
+			<Effect Type="ModifyCost" Value="-1"/>
+		</Target>
+		<Description>Cards in your hand sharing a school type with the creature at Altar of Elemental Affinity cost [1:RESOURCES] less to play.</Description>
+		<!-- S07 NEW STUFF : ShareSchoolsWithOccupant - Filter to target all cards sharing a school with an occupant of a building. -->
+	</Card>
+	<!--....................................................................-->
+	<!-- Building - Haven -->
+	<!--....................................................................-->
+	<Card Rarity="Common" Unique="False" Type="Building" Name="Bui_Hav_090" DisplayName="Holy Lighthouse" Faction="Haven" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="969">
+		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
+			<CardFilter IncludeFaction="Haven"/>
+			<Effect Type="ModifyAbility" Ability="DarkWard"/>
+		</Target>
+		<Description>Haven creatures at Holy Lighthouse gains Dark Ward.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_Hav_091" DisplayName="Chapel of Elrath" Faction="Haven" Cost="1" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="970">
+		<Trigger Type="OnCardPlay" Side="Friendly">
+			<CardFilter IncludeSchool="Light"/>
+			<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
+				<Effect Type="Heal" Value="infinite"/>
+			</Target>
+		</Trigger>
+		<Description>When you play a light card, heal all damage from the creature at Chapel of Elrath.</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Building" Name="Bui_Hav_092" DisplayName="Angel's Temple" Faction="Haven" Cost="3" MightLevel="1" MagicLevel="1" DestinyLevel="0" ID="971">
+		<Variable Type="OccupantCount"/>
+		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+			<Effect Type="ModifyDamage" Value="0.0x" DamageIncludeFlags="Spell" Side="Enemy"/>
+		</Target>
+		<Target Zone="Hero" Amount="All" Side="Friendly">
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+			<Effect Type="ModifyDamage" Value="0.0x" DamageIncludeFlags="Spell" Side="Enemy"/>
+		</Target>
+		<Trigger Type="OnThisPreventDamage">
+			<Target Zone="Battleground" Amount="Occupant" CardType="Unit">
+				<Effect Type="Damage" Value="FromTrigger"/>
+			</Target>
+		</Trigger>
+		<Description>Whenever an enemy spell deals damage, prevent that damage and deal that much damage to the creature at Hall of Memories.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Building - Inferno -->
+	<!--....................................................................-->
+	<Card Rarity="Common" Unique="False" Type="Building" Name="Bui_Inf_090" DisplayName="Walls of Destruction" Faction="Inferno" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="2" ID="972">
+		<Trigger Type="OnThisPostAttacked">
+			<Target Zone="Battleground" CardType="Unit" Amount="FromTrigger">
+				<Effect Type="Damage" Value="3"/>
+			</Target>
+		</Trigger>
+		<Description>After the creature at Walls of Destruction is attacked, deal 3 damage to the attacking creature.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_Inf_091" DisplayName="Heretic Library" Faction="Inferno" Cost="2" MightLevel="0" MagicLevel="0" DestinyLevel="2" ID="973">
+		<Variable Type="OccupantCount">
+			<CardFilter IncludeSchool="Dark"/>
+		</Variable>
+		<Trigger Type="OnTurnBegin" Side="Friendly">
+			<Target Zone="Hero" Amount="All" Side="Enemy">
+				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+				<Effect Type="Damage" Value="1"/>
+			</Target>
+		</Trigger>
+		<Description>At the beginning of your turn, if there's a Dark creatures at Heretic Library, deal 1 damage to enemy hero.</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Building" Name="Bui_Inf_092" DisplayName="Throne of Ahribban" Faction="Inferno" Cost="4" MightLevel="2" MagicLevel="2" DestinyLevel="0" ID="974">
+		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
+			<CardFilter IncludeSchool="Fire"/>
+			<Effect Type="ModifyAbility" Ability="SweepAttack"/>
+			<Effect Type="ModifyAbility" Ability="AttackAnywhere"/>
+		</Target>
+		<Description>Fire creatures at Throne of Ahribban gains Sweep Attack and Attack Anywhere.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Building - Necropolis -->
+	<!--....................................................................-->
+	<Card Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_Nec_090" DisplayName="Statue of the Spider Godess" Faction="Necropolis" Cost="2" MightLevel="0" MagicLevel="1" DestinyLevel="0" ID="975">
+		<Variable Type="OccupantCount">
+			<CardFilter IncludeRaces="Namtaru"/>
+		</Variable>
+		<Trigger Type="OnTurnBegin" Side="Friendly">
+			<Target Zone="Graveyard" Amount="1" CardType="Spell" Side="Friendly" Random="True">
+				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+				<CardFilter IncludeCardType="Spell" IncludeOngoingType="Ongoing" IncludeEnchantUnit="True"/>
+				<Effect Type="AttachOnOccupant"/>
+			</Target>
+		</Trigger>
+		<Description>At the beginning of your turn, if there's a Namtaru at Statue of the Spider Godess, take a valid enchant creature spell card at random from your graveyard and enchant it to the creature at Statue of the Spider Godess.</Description>
+		<!-- S07 NEW STUFF : AttachOnOccupant - Card effect used to attach a target card on the occupant of a building. -->
+	</Card>
+	<!--....................................................................-->
+	<!-- Building - Sanctuary -->
+	<!--....................................................................-->
+	<Card Rarity="Common" Unique="False" Type="Building" Name="Bui_San_090" DisplayName="Shalassa's Temple" Faction="Sanctuary" Cost="2" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="976">
+		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
+			<CardFilter IncludeSchool="Water"/>
+			<Effect Type="ModifyAbility" Ability="FocusedBlast" Value="2"/>
+		</Target>
+		<Description>Water creatures at Shalassa's Temple gain Focused Blast 2.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_San_091" DisplayName="Torii of the Eternal Empress" Faction="Sanctuary" Cost="3" MightLevel="0" MagicLevel="2" DestinyLevel="0" ID="977">
+		<Trigger Type="OnDeployOnThis">
+			<Target Zone="Battleground" CardType="Unit" Amount="1" Side="Enemy">
+				<Effect Type="Relocate" Side="Enemy"/>
+			</Target>
+		</Trigger>
+		<Description>When a creature is deployed at Torii of the Eternal Empress, you may relocate target enemy creature.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Building - Stronghold -->
+	<!--....................................................................-->
+	<Card Rarity="Rare" Unique="False" Type="Building" Name="Bui_Str_090" DisplayName="Jungle Outpost" Faction="Stronghold" Cost="4" MightLevel="3" MagicLevel="0" DestinyLevel="2" ID="978">
+		<Trigger Type="OnThisPreAttackUnit">
+			<Target Zone="Battleground" Amount="Occupant">
+				<Variable Type="UnitAttackCount" UseCurrentTarget="True"/>
+				<Condition Operator="EqualTo" ValueA="Variable" ValueB="0"/>
+				<CardFilter IncludeRaces="Centaur"/>
+				<Effect Type="AdditionalAttack" Value="1"/>
+			</Target>
+		</Trigger>
+		<Description>The first time a Centaur creature at Jungle Outpost attacks a creature in a turn, it gains an additional attack.</Description>
+	</Card>
+	<!--....................................................................-->
+	<!-- Building - Neutral -->
+	<!--....................................................................-->
+	<Card Rarity="Common" Unique="False" Type="Building" Name="Bui_Neu_090" DisplayName="Mercenary Hill Fort" Faction="Neutral" Cost="2" MightLevel="2" MagicLevel="0" DestinyLevel="0" ID="979">
+		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
+			<CardFilter IncludeRaces="Mercenary"/>
+			<Effect Type="ModifyAbility" Ability="DoubleAttack"/>
+		</Target>
+		<Description>Mercenaries at Mercenary Hill Fort gain Double Attack.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_Neu_091" DisplayName="Free Mage Altar" Faction="Neutral" Cost="2" MightLevel="2" MagicLevel="2" DestinyLevel="0" ID="980">
+		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
+			<Variable Type="InPlaySchoolsCount" Side="Friendly">
+				<CardFilter IncludeCardType="Unit"/>
+			</Variable>
+			<Effect Type="ModifyAttack" Value="Variable"/>
+		</Target>
+		<Description>Creature at Free Mage Altar gains +[1:ATK] for each different school types on friendly creatures on the battleground.</Description>
+		<!-- S07 NEW STUFF : InPlaySchoolsCount - Variable to count the different school type on the battleground. -->
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Building" Name="Bui_Neu_092" DisplayName="Warding Pillars" Faction="Neutral" Cost="4" MightLevel="2" MagicLevel="2" DestinyLevel="0" ID="981">
+		<Target Zone="Battleground" CardType="Unit" Amount="Occupant">
+			<Effect Type="ModifyAbility" Ability="SpellResist"/>
+			<Effect Type="ModifyAbility" Ability="CannotTarget"/>
+		</Target>
+		<Description>Creatures at Warding Pillars gain Spell Resist and cannot be targeted.</Description>
+	</Card>
+</Cards>

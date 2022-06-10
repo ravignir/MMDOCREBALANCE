@@ -1,0 +1,407 @@
+<Cards>
+	<!--...............................................................................-->
+	<!-- //	 ####   ####    #####    ###    #####   ##  #   ####    #####   #####      -->
+	<!-- //	##      #   #   ##      ##  #    ##     ##  #   #   #   ##      ##         -->
+	<!-- //	##      ####    ####    #####    ##     ##  #   ####    ####    #####      -->
+	<!-- //	##      ## #    ##      ##  #    ##     ##  #   ## #    ##         ##      -->
+	<!-- //	 ####   ##  #   #####   ##  #    ##     #####   ##  #   #####   #####      -->
+	<!--...............................................................................-->
+	<!--...............................................................................-->
+	<!-- Token -->
+	<!--...............................................................................-->
+	<Card Rarity="NotPlayable" Unique="False" Type="Unit" Name="Tok_Inf_001" Token="True" DisplayName="Breeder" Faction="Inferno" SubType="Melee|Shooter" Race="Breeder" Cost="0" MightLevel="0" MagicLevel="0" DestinyLevel="0" Attack="1" Retaliate="0" HP="1" ID="902">
+		<Ability Type="Stackable"/>
+	</Card>
+	<Card Rarity="NotPlayable" Unique="False" Type="Unit" Name="Tok_Nec_001" Token="True" DisplayName="Skeleton" Faction="Necropolis" SubType="Melee|Shooter" Race="Skeleton" Cost="0" MightLevel="0" MagicLevel="0" DestinyLevel="0" Attack="1" Retaliate="0" HP="1" ID="903">
+		<Ability Type="Stackable"/>
+	</Card>
+	<Card Rarity="NotPlayable" Unique="False" Type="Unit" Name="Tok_Hav_001" Token="True" DisplayName="Human Soldier" Faction="Haven" SubType="Melee|Shooter" Race="Human|Soldier" Cost="0" MightLevel="0" MagicLevel="0" DestinyLevel="0" Attack="1" Retaliate="1" HP="1" ID="904">
+		<Ability Type="Stackable"/>
+	</Card>
+	<!--...............................................................................-->
+	<!-- Creatures - Academy -->
+	<!--...............................................................................-->
+	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Aca_080" DisplayName="Makeshift Golem" Faction="Academy" School="Prime" SubType="Magic|Melee|Shooter" Race="Construct|Golem" Cost="2" MightLevel="1" MagicLevel="1" DestinyLevel="1" Attack="1" Retaliate="1" HP="3" ID="808">
+		<Trigger Type="OnThisCardInGraveyard">
+			<Target Zone="Library" Amount="1" Side="Friendly" Random="True">
+				<CardFilter IncludeCardType="Unit" IncludeRaces="Construct"/>
+				<Effect Type="MoveCardTo" Destination="Hand"/>
+			</Target>
+			<Target Side="Friendly">
+				<Effect Type="Shuffle" CardHolder="Library"/>
+			</Target>
+		</Trigger>
+		<Description>When Makeshift Golem dies, take a construct creature card at random from your library and put it into your hand, then shuffle your library.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Aca_081" DisplayName="Djinn Warden" Faction="Academy" School="Prime" SubType="Magic|Flyer" Race="Spirit|Djinn" Cost="3" MightLevel="2" MagicLevel="2" DestinyLevel="0" Attack="2" Retaliate="1" HP="6" ID="809">
+		<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+			<CardFilter IncludeSchool="Prime"/>
+			<Effect Type="PlayEffect" PlayEffectType="CannotTarget">
+				<CardFilter IncludeCardType="Spell" Side="Enemy" IncludeOngoingType="Ongoing" IncludeEnchantUnit="True"/>
+			</Effect>
+		</Target>
+		<Description>Friendly Prime creatures cannot be enchanted by enemy spells.</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Aca_082" DisplayName="Generator Titan" Faction="Academy" School="Prime" SubType="Magic|Melee" Race="Construct|Titan" Cost="6" MightLevel="5" MagicLevel="5" DestinyLevel="0" Attack="4" Retaliate="4" HP="8" ID="810">
+		<Ability Type="Shockwave" Value="3"/>
+		<Trigger Type="OnUnitDeath" Side="Friendly">
+			<CardFilter IncludeRaces="Construct"/>
+			<Target Zone="BattlegroundColumn" CardType="Unit" Amount="FromTrigger" BattlegroundPositionState="DontCare">
+				<CardFilter ExcludeRaces="Construct"/>
+				<Effect Type="Damage" Value="4"/>
+			</Target>
+		</Trigger>
+		<Description>When Generator Titan or another friendly construct creature dies, it deals 4 damage to all non-construct creature of the same row.</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Aca_083" DisplayName="Masterpiece Titan" Faction="Academy" School="Prime" SubType="Magic|Melee" Race="Construct|Titan" Cost="5" MightLevel="4" MagicLevel="5" DestinyLevel="0" Attack="4" Retaliate="3" HP="7" ID="811">
+		<Ability Type="Shockwave" Value="3"/>
+		<Trigger Type="OnThisCardDeploy">
+			<Target Zone="Library" Side="Friendly" AmountVisible="3">
+				<Effect Type="Look"/>
+			</Target>
+			<Target Zone="Library" Side="Friendly" Amount="3" AmountVisible="3" AutoTakeFirstInputs="True" InputOnExec="True">
+				<CardFilter IncludeRaces="Construct"/>
+				<Effect Type="MoveCardTo" Destination="Hand"/>
+			</Target>
+		</Trigger>
+		<Description>When Masterpiece Titan enters the battleground, look at the top 3 cards of your library and put all Construct cards from among them into your hand.</Description>
+	</Card>
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Aca_084" DisplayName="Dervish Diva" Faction="Academy" SubType="Shooter" Race="Human|Dervish" Cost="5" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="3" HP="7" ID="812">
+		<Ability Type="ImmuneToRetaliate"/>
+		<Ability Type="RangeReflect" Value="2"/>
+	</Card>
+	<!--...............................................................................-->
+	<!-- Creatures - Haven -->
+	<!--...............................................................................-->
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Hav_080" DisplayName="Griffin Legionnaire" Faction="Haven" SubType="Melee" Race="Human|Soldier" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="1" Retaliate="2" HP="4" ID="813">
+		<Ability Type="Stackable"/>
+		<Trigger Type="OnThisCardDeploy">
+			<Target Zone="Library" Side="Friendly" CardType="Unit" Amount="1" RevealToOther="True">
+				<CardFilter IncludeCardID="Cre_Hav_080"/>
+				<Effect Type="MoveCardTo" Destination="Hand"/>
+			</Target>
+			<Target Side="Friendly">
+				<Effect Type="Shuffle" CardHolder="Library"/>
+			</Target>
+		</Trigger>
+		<Description>When Griffin Legionnaire enters the battleground, search your library for a card named Griffin Legionnaire, put it into your hand then shuffle your library.</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Hav_081" DisplayName="Benevolent Angel" Faction="Haven" School="Light" SubType="Magic|Flyer" Race="Angel" Cost="3" MightLevel="3" MagicLevel="2" DestinyLevel="0" Attack="2" Retaliate="1" HP="6" ID="814">
+		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
+			<CardFilter IncludeRaces="Human"/>
+			<Effect Type="ModifyAbility" Ability="CannotTarget"/>
+		</Target>
+		<Description>Friendly Human creatures cannot be targeted.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Hav_082" DisplayName="Angel Commander" Faction="Haven" School="Light" SubType="Magic|Flyer" Race="Angel" Cost="5" MightLevel="4" MagicLevel="1" DestinyLevel="0" Attack="4" Retaliate="3" HP="8" ID="815">
+		<Trigger Type="OnThisCardDeploy">
+			<Target Zone="Battleground" Amount="Self" ForceExecute="True">
+				<Effect Type="ModifyAbility" Ability="CannotTarget" Duration="UntilYourNextTurn"/>
+			</Target>
+		</Trigger>
+		<Description>Angel Commander cannot be targeted if it entered the battleground since your last turn.</Description>
+	</Card>
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Hav_083" DisplayName="Griffin Crossbowman" Faction="Haven" SubType="Shooter" Race="Human|Archer" Cost="2" MightLevel="2" MagicLevel="0" DestinyLevel="0" Attack="1" Retaliate="0" HP="3" ID="816">
+		<Ability Type="ImmuneToRetaliate"/>
+		<Ability Type="Stackable"/>
+		<Trigger Type="OnThisCardDeploy">
+			<Target Zone="Library" Side="Friendly" CardType="Unit" Amount="1" RevealToOther="True">
+				<CardFilter IncludeCardID="Cre_Hav_083"/>
+				<Effect Type="MoveCardTo" Destination="Hand"/>
+			</Target>
+			<Target Side="Friendly">
+				<Effect Type="Shuffle" CardHolder="Library"/>
+			</Target>
+		</Trigger>
+		<Description>When Griffin Crossbowman enters the battleground, search your library for a card named Griffin Crossbowman, put it into your hand, then shuffle your library.</Description>
+	</Card>
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Hav_084" DisplayName="Devout Priest" Faction="Haven" School="Light" SubType="Magic|Shooter" Race="Human|Priest" Cost="3" MightLevel="3" MagicLevel="1" DestinyLevel="0" Attack="1" Retaliate="1" HP="7" ID="817">
+		<Ability Type="ImmuneToRetaliate"/>
+		<Ability Type="Heal" Value="2"/>
+		<Target Zone="Battleground" CardType="Unit" Amount="Self" Shape="SelfAndAdjacent">
+			<CardFilter IncludeRaces="Human"/>
+			<Effect Type="PlayEffect" PlayEffectType="CannotTarget">
+				<CardFilter IncludeCardType="Spell" Side="Enemy" IncludeOngoingType="Ongoing" IncludeEnchantUnit="True"/>
+			</Effect>
+		</Target>
+		<Description>Devout Priest and all adjacent Humans creatures cannot be enchanted by enemy spells.</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Hav_085" DisplayName="Angel Protector" Faction="Haven" School="Light" SubType="Magic|Flyer" Race="Angel" Cost="4" MightLevel="4" MagicLevel="3" DestinyLevel="0" Attack="3" Retaliate="2" HP="7" ID="818">
+		<Trigger Type="OnThisCardDeploy">
+			<Target Zone="Battleground" Amount="1" CardType="Spell" Side="Enemy">
+				<Effect Type="Kill"/>
+			</Target>
+		</Trigger>
+		<Description>When Angel Protector enters the battleground, destroy target enemy ongoing spell.</Description>
+	</Card>
+	<!--...............................................................................-->
+	<!-- Creatures - Inferno -->
+	<!--...............................................................................-->
+	<Card Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Inf_080" DisplayName="Channeling Breeder" Faction="Inferno" SubType="Magic|Melee" Race="Demon|Breeder" Cost="4" MightLevel="4" MagicLevel="1" DestinyLevel="0" Attack="3" Retaliate="2" HP="6" ID="819">
+		<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+			<CardFilter IncludeRaces="Breeder" IncludeAbility="Stackable"/>
+			<Variable Type="CardStackSize" UseCurrentTarget="True"/>
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="3"/>
+			<Effect Type="ModifyAttack" Value="4"/>
+		</Target>
+		<Description>All friendly Breeder stack with a size of 4 or more gain +[4:ATK].</Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Inf_081" DisplayName="Osmotic Breeder" Faction="Inferno" SubType="Magic|Melee|Shooter" Race="Demon|Breeder" Cost="4" MightLevel="4" MagicLevel="1" DestinyLevel="0" Attack="3" Retaliate="2" HP="6" ID="820">
+		<Variable Type="CardPlayedCount">
+			<CardFilter IncludeCardType="Spell"/>
+		</Variable>
+		<Trigger Type="OnCardPlay" ExecuteOncePerTurn="True">
+			<Condition Operator="EqualTo" ValueA="Variable" ValueB="1"/>
+			<CardFilter IncludeCardType="Spell"/>
+			<Target Zone="BattlegroundPosition" Amount="1" Side="Friendly" BattlegroundPositionState="DontCare" Random="True">
+				<Effect Type="PopulateStack" Name="s06_Tok_Inf_001"/>
+			</Target>
+		</Trigger>
+		<Description>The first time a spell is played in a turn, deploy a Breeder melee-shooter token creature with [1:ATK]/[0:RET]/[1:HEALTH] and Stackable on a valid battleground position chosen at random.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Inf_082" DisplayName="Darkflame Fanatic" Faction="Inferno" School="Dark|Fire" SubType="Magic|Shooter" Race="Demon|Succubus" Cost="3" MightLevel="2" MagicLevel="2" DestinyLevel="0" Attack="2" Retaliate="0" HP="4" ID="821">
+		<Ability Type="ImmuneToRetaliate"/>
+		<Trigger Type="OnCardPlay" Side="Friendly">
+			<CardFilter IncludeCardType="Spell" ExcludeSchool="Dark|Fire"/>
+			<Target Zone="Hero" Amount="All" Side="Friendly">
+				<Effect Type="Damage" Value="1"/>
+			</Target>
+		</Trigger>
+		<Trigger Type="OnCardPlay" Side="Enemy">
+			<CardFilter IncludeCardType="Spell" ExcludeSchool="Dark|Fire"/>
+			<Target Zone="Hero" Amount="All" Side="Enemy">
+				<Effect Type="Damage" Value="1"/>
+			</Target>
+		</Trigger>
+		<Description>Whenever a spell from a school other than Dark or Fire is played, deal 1 damage to that spell's controller's Hero.</Description>
+	</Card>
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Inf_083" DisplayName="Breeder Matron" Faction="Inferno" SubType="Magic|Melee" Race="Demon|Breeder" Cost="5" MightLevel="3" MagicLevel="1" DestinyLevel="0" Attack="0" Retaliate="2" HP="8" ID="822">
+		<Variable Type="TargetCount">
+			<Target Zone="Battleground" Amount="All" Side="Friendly" CardType="Unit">
+				<CardFilter IncludeRaces="Breeder"/>
+			</Target>
+		</Variable>
+		<Target Zone="Battleground" Amount="Self">
+			<Effect Type="ModifyAttack" Value="Variable"/>
+		</Target>
+		<Description>Breeder Matron's [ATK] is equal to the number of friendly battleground positions with at least one Breeder.</Description>
+	</Card>
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Inf_084" DisplayName="Hatching Breeder" Faction="Inferno" SubType="Magic|Melee|Shooter" Race="Demon|Breeder" Cost="2" MightLevel="2" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="0" HP="4" ID="823">
+		<Trigger Type="OnThisCardDeath">
+			<Target Zone="BattlegroundPosition" Amount="FromTrigger">
+				<Effect Type="PopulateStack" Name="s06_Tok_Inf_001"/>
+			</Target>
+		</Trigger>
+		<Description>When Hatching Breeder dies, deploy a Breeder melee-shooter token creature with [1:ATK]/ [0:RET]/ [1:HEALTH] and Stackable at the same battleground position.</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Inf_085" DisplayName="Spellhungry Breeder" Faction="Inferno" SubType="Magic|Melee" Race="Demon|Breeder" Cost="3" MightLevel="2" MagicLevel="1" DestinyLevel="0" Attack="1" Retaliate="1" HP="3" ID="824">
+		<Ability Type="Stackable"/>
+		<Ability Type="MagicResist"/>
+		<Trigger Type="OnCardPlay" Side="Enemy">
+			<CardFilter IncludeCardType="Spell"/>
+			<Target Zone="Battleground" Amount="Self">
+				<Effect Type="IncreaseStackSize" Value="1"/>
+			</Target>
+		</Trigger>
+		<Trigger Type="OnCardPlay" Side="Enemy">
+			<CardFilter IncludeCardType="Spell"/>
+			<Target Zone="Hero" Amount="All" Side="Friendly">
+				<Effect Type="Damage" Value="1"/>
+			</Target>
+		</Trigger>
+		<Description>Whenever opponent plays a spell, increase Spellhungry Breeder stack by 1 and deal 1 damage to your hero.</Description>
+	</Card>
+	<!--...............................................................................-->
+	<!-- Creatures - Necropolis -->
+	<!--...............................................................................-->
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Nec_080" DisplayName="Spider Guard" Faction="Necropolis" SubType="Flyer" Race="Vampire" Cost="4" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="2" HP="6" ID="825">
+		<Ability Type="ImmuneToRetaliate"/>
+		<Ability Type="Crippling" Value="1"/>
+		<Ability Type="LifeDrain" Value="1"/>
+	</Card>
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Nec_081" DisplayName="Venom Soldier" Faction="Necropolis" SubType="Melee" Race="Skeleton" Cost="1" MightLevel="0" MagicLevel="0" DestinyLevel="0" Attack="1" Retaliate="0" HP="2" ID="826">
+		<Ability Type="Stackable"/>
+		<Ability Type="Infect" Value="1"/>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Nec_082" DisplayName="Lich Tactician" Faction="Necropolis" SubType="Melee|Shooter" Race="Lich" Cost="3" MightLevel="2" MagicLevel="0" DestinyLevel="1" Attack="2" Retaliate="1" HP="5" ID="827">
+		<Trigger Type="OnThisCardDeploy">
+			<Target Zone="Battleground" Amount="Self" CardType="Unit" Side="Friendly" Shape="AdjacentOnly">
+				<CardFilter IncludeAbility="Stackable"/>
+				<Effect Type="IncreaseStackSize" Value="1"/>
+			</Target>
+		</Trigger>
+		<Description>When Lich Tactician enters the battleground, increase the size of each friendly adjacent stacks by 1.</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Nec_083" DisplayName="Bone Setter" Faction="Necropolis" SubType="Magic|Melee|Shooter" Race="Human|Wizard" Cost="5" MightLevel="4" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="2" HP="7" ID="828">
+		<Trigger Type="OnThisCardDeploy">
+			<Target Zone="BattlegroundPosition" Amount="Self" Side="Friendly" Shape="AdjacentOnly">
+				<Effect Type="PopulateStack" Name="s06_Tok_Nec_001"/>
+			</Target>
+		</Trigger>
+		<Description>When Bone Setter enters the battleground, deploy a Skeleton melee-shooter token creature with [1:ATK]/[0:RET]/[1:HEALTH] and Stackable on all friendly battleground position adjacent to Bone Setter.</Description>
+	</Card>
+	<!--...............................................................................-->
+	<!-- Creatures - Sanctuary -->
+	<!--...............................................................................-->
+	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_San_080" DisplayName="Kabuki Seductress" Faction="Sanctuary" SubType="Magic|Melee|Shooter" Race="Naga|Spy" Cost="3" MightLevel="2" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="1" HP="5" ID="829" School="Water">
+		<Trigger Type="OnThisCardDeploy">
+			<Target Zone="Battleground" CardType="Unit" Amount="1" Side="Enemy" ForceExecute="True" Persistent="True" Cancelable="False">
+				<CardFilter IncludeColumn="True" Value="Variable">
+					<Variable Type="CardColumn"/>
+				</CardFilter>
+				<Effect Type="ModifyAbility" Ability="CannotAttack" Duration="UntilYourNextTurn"/>
+			</Target>
+		</Trigger>
+		<Description>When Kabuki Seductress enters the battleground, target enemy creature on the same row gain Cannot Attack until your next turn.</Description>
+	</Card>
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_San_081" DisplayName="Kabuki Sentry" Faction="Sanctuary" SubType="Magic|Shooter" Race="Naga|Priest" Cost="2" MightLevel="2" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="0" HP="4" ID="830">
+		<Ability Type="ImmuneToRetaliate"/>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_San_082" DisplayName="Kabuki Infiltrator" Faction="Sanctuary" SubType="Shooter" Race="Naga|Spy" Cost="3" MightLevel="2" MagicLevel="0" DestinyLevel="1" Attack="2" Retaliate="1" HP="4" ID="831">
+		<Ability Type="ImmuneToRetaliate"/>
+		<Trigger Type="OnDamageHero" Side="Enemy" ExecuteOncePerTurn="True">
+			<CardFilter IncludeCardType="Unit" IncludeRaces="Spy"/>
+			<Target Zone="Graveyard" Amount="1" CardType="Fortune" Side="Friendly" Cancelable="False">
+				<CardFilter IncludeFaction="Sanctuary"/>
+				<Effect Type="MoveCardTo" Destination="Hand"/>
+			</Target>
+		</Trigger>
+		<Description>The first time a Spy creature deals combat damage to enemy hero during your turn, take target Sanctuary fortune card from your graveyard and put it into your hand.</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Unit" Name="Cre_San_083" DisplayName="Blessed Lake Spirit" Faction="Sanctuary" SubType="Magic|Melee" Race="Spirit" Cost="2" MightLevel="2" MagicLevel="2" DestinyLevel="0" Attack="1" Retaliate="0" HP="4" ID="832" School="Water">
+		<Target Zone="Battleground" Amount="All" Side="Friendly" CardType="Unit">
+			<Effect Type="ModifyDamage" Value="0.0x" DamageIncludeFlags="Spell" Side="Enemy"/>
+		</Target>
+		<Trigger Type="OnThisPreventDamage" ExecuteOncePerTransaction="True">
+			<Target Zone="Battleground" Amount="Self">
+				<Effect Type="Damage" Value="2"/>
+			</Target>
+		</Trigger>
+		<Description>Whenever an enemy spell deals damage to friendly creatures, prevent that damage and deal 2 damage to Blessed Lake Spirit.</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Unit" Name="Cre_San_084" DisplayName="Kabuki Propagandist" Faction="Sanctuary" SubType="Melee|Shooter" Race="Naga|Spy" Cost="4" MightLevel="3" MagicLevel="0" DestinyLevel="2" Attack="2" Retaliate="2" HP="5" ID="833">
+		<Target Zone="Hero" Amount="All" Side="Enemy">
+			<Effect Type="GlobalEffect" GlobalEffectType="ModifyCost" Value="1">
+				<CardFilter IncludeCardType="Unit"/>
+			</Effect>
+		</Target>
+		<Description>Opponent's creatures cost [1:RESOURCES] more to play.</Description>
+	</Card>
+	<!--...............................................................................-->
+	<!-- Creatures - Stronghold -->
+	<!--...............................................................................-->
+	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Str_080" DisplayName="Bloodscar Ritualist" Faction="Stronghold" SubType="Magic|Melee" Race="Orc|Shaman" Cost="2" MightLevel="2" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="0" HP="4" ID="834">
+		<Target Zone="Battleground" Amount="All" Side="Friendly" CardType="Unit">
+			<Variable Type="CounterCount" CounterType="Enrage" UseCurrentTarget="True"/>
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="2"/>
+			<Effect Type="ModifyAbility" Ability="AttackEnrage" Value="1"/>
+		</Target>
+		<Description>Whenever a friendly creature with 3 or more Enrage counters attacks, put 1 Enrage counter on it at the end of the attack.</Description>
+	</Card>
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Str_081" DisplayName="Bloodscar Goblin" Faction="Stronghold" SubType="Melee" Race="Goblin|Warrior" Cost="2" MightLevel="2" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="0" HP="3" ID="835">
+		<Target Zone="BattlegroundColumn" CardType="Unit" Amount="Self" Side="Enemy">
+			<Effect Type="ModifyAbility" Ability="Berserk"/>
+		</Target>
+		<Description>Enemy creatures on the same row as Bloodscar Goblin gain Berserk.</Description>
+	</Card>
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Str_082" DisplayName="Bloodclaw Shaman" Faction="Stronghold" SubType="Magic|Shooter" Race="Orc|Shaman" Cost="3" MightLevel="3" MagicLevel="1" DestinyLevel="0" Attack="1" Retaliate="2" HP="6" ID="836">
+		<Ability Type="ImmuneToRetaliate"/>
+		<Ability Type="Bloodthirst" Value="1"/>
+		<Target Zone="Battleground" Amount="Self">
+			<Variable Type="CounterCount" CounterType="Enrage"/>
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="2"/>
+			<Effect Type="ModifyAbilityValue" Ability="Bloodthirst" Value="1"/>
+		</Target>
+		<Description>While there are 3 or more enrage counters on Bloodclaw Shaman, it gains Bloodthirst 1.</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Str_083" DisplayName="Bloodsnake Shaman" Faction="Stronghold" SubType="Magic|Shooter" Race="Orc|Shaman" Cost="4" MightLevel="4" MagicLevel="1" DestinyLevel="0" Attack="3" Retaliate="2" HP="5" ID="837">
+		<Ability Type="ImmuneToRetaliate"/>
+		<Ability Type="Bloodthirst" Value="1"/>
+		<Trigger Type="OnThisReceiveEnrageCounter" ExecuteOncePerTurn="True">
+			<Target Zone="BattlegroundColumn" CardType="Unit" Amount="Self" Side="Enemy" BattlegroundPositionState="DontCare">
+				<Effect Type="Damage" Value="1"/>
+			</Target>
+		</Trigger>
+		<Description>The first time an Enrage counter is put on Bloodsnake Shaman in a turn, it deals 1 damage to all enemy creatures on the same row.</Description>
+	</Card>
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Str_084" DisplayName="Bloodtiger Warrior" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="5" MightLevel="4" MagicLevel="0" DestinyLevel="0" Attack="3" Retaliate="2" HP="7" ID="838">
+		<Ability Type="Bloodthirst" Value="1"/>
+		<Target Zone="Battleground" Amount="Self">
+			<Variable Type="CounterCount" CounterType="Enrage"/>
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="2"/>
+			<Effect Type="ModifyAbility" Ability="Charge"/>
+		</Target>
+		<Description>While there are 3 or more enrage counters on Bloodtiger Warrior, it gains Charge.</Description>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Str_085" DisplayName="Bloodhydra Shaman" Faction="Stronghold" SubType="Magic|Shooter" Race="Orc|Shaman" Cost="5" MightLevel="4" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="2" HP="6" ID="839">
+		<Ability Type="ImmuneToRetaliate"/>
+		<Ability Type="AttackAnywhere"/>
+		<Ability Type="Bloodthirst" Value="1"/>
+	</Card>
+	<Card Rarity="Uncommon" Unique="False" Type="Unit" Name="Cre_Str_086" DisplayName="Bloodshark Warrior" Faction="Stronghold" SubType="Melee" Race="Orc|Warrior" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="1" HP="5" ID="840">
+		<Ability Type="Bloodthirst" Value="1"/>
+		<Trigger Type="OnThisCardDeath">
+			<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
+				<CardFilter IncludeAbility="Bloodthirst"/>
+				<Variable Type="CounterCount" CounterType="Enrage"/>
+				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="2"/>
+				<Effect Type="AddCounter" CounterType="Enrage" Value="1"/>
+			</Target>
+		</Trigger>
+		<Description>When Bloodshark Warrior dies, if there are 3 or more Enrage counters on it, put 1 Enrage counter on all friendly creatures with Bloodthirst.</Description>
+	</Card>
+	<Card Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Str_087" DisplayName="Bloodmask Shaman" Faction="Stronghold" SubType="Magic|Shooter" Race="Orc|Shaman" Cost="4" MightLevel="4" MagicLevel="1" DestinyLevel="0" Attack="2" Retaliate="2" HP="6" ID="841">
+		<Ability Type="ImmuneToRetaliate"/>
+		<Ability Type="Bloodthirst" Value="1"/>
+		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
+			<Variable Type="CounterCount" CounterType="Enrage" UseCurrentTarget="True"/>
+			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="2"/>
+			<Effect Type="ModifyAbility" Ability="CannotTarget"/>
+		</Target>
+		<Description>Friendly creatures with 3 or more Enrage counters cannot be targeted.</Description>
+	</Card>
+	<!--...............................................................................-->
+	<!-- Creatures - Neutral -->
+	<!--...............................................................................-->
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Neu_080" DisplayName="Rabid Dog" Faction="Neutral" SubType="Melee" Race="Hound" Cost="3" MightLevel="3" MagicLevel="0" DestinyLevel="0" Attack="3" Retaliate="3" HP="2" ID="842"/>
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Neu_081" DisplayName="Sellsword Thug" Faction="Neutral" SubType="Melee" Race="Human|Mercenary" Cost="3" MightLevel="2" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="1" HP="6" ID="843">
+		<Ability Type="AttackCost" Value="1"/>
+		<Description>To attack with Sellsword Thug, you must pay [1:RESOURCES].</Description>
+	</Card>
+	<Card Rarity="Common" Unique="False" Type="Unit" Name="Cre_Neu_082" DisplayName="Mercenary Archer" Faction="Neutral" SubType="Shooter" Race="Human|Mercenary" Cost="2" MightLevel="2" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="0" HP="4" ID="844">
+		<Ability Type="ImmuneToRetaliate"/>
+		<Ability Type="AttackCost" Value="1"/>
+		<Description>To attack with Mercenary Archer, you must pay [1:RESOURCES].</Description>
+	</Card>
+	<Card Rarity="Epic" Unique="True" Type="Unit" Name="Cre_Neu_083" DisplayName="Raya, Chosen of the Waves" Faction="Neutral" School="Water" SchoolsAligned="True" SubType="Magic|Shooter" Race="Naga|Priest" Cost="4" MightLevel="4" MagicLevel="1" DestinyLevel="0" Attack="3" Retaliate="2" HP="5" ID="845">
+		<Ability Type="WaterAligned"/>
+		<Ability Type="ImmuneToRetaliate"/>
+		<Ability Type="FortuneWard"/>
+		<Ability Type="FrozenTouch"/>
+		<Ability Type="Hypnotize"/>
+	</Card>
+	<Card Rarity="Epic" Unique="True" Type="Unit" Name="Cre_Neu_084" DisplayName="Hikyu, Chosen of the Flames" Faction="Neutral" School="Fire" SchoolsAligned="True" SubType="Magic|Melee" Race="Human|Warrior" Cost="6" MightLevel="5" MagicLevel="1" DestinyLevel="0" Attack="4" Retaliate="2" HP="7" ID="846">
+		<Ability Type="FireAligned"/>
+		<Target Zone="Battleground" Amount="All" CardType="Unit" Side="Friendly">
+			<Effect Type="ModifyAbility" Ability="AreaBlast" Value="2"/>
+		</Target>
+		<Trigger Type="OnTurnBegin">
+			<Target Zone="BattlegroundColumn" CardType="Unit" Amount="Self" Side="Enemy" BattlegroundPositionState="DontCare">
+				<Effect Type="Damage" Value="1"/>
+			</Target>
+		</Trigger>
+		<Description>Friendly creatures gain Area Blast 2.
+At the beginning of each turn, deal 1 damage to all enemy creatures in the same row as Hikyu, Chosen of the Flames.</Description>
+	</Card>
+	<Card Rarity="Epic" Unique="True" Type="Unit" Name="Cre_Neu_085" DisplayName="Hasafah, Chosen of the Shadows" Faction="Neutral" School="Dark" SchoolsAligned="True" SubType="Magic|Shooter" Race="Elf|Marksman" Cost="4" MightLevel="4" MagicLevel="2" DestinyLevel="0" Attack="2" Retaliate="2" HP="7" ID="847">
+		<Ability Type="DarkAligned"/>
+		<Ability Type="ImmuneToRetaliate"/>
+		<Ability Type="DarkWard"/>
+		<Trigger Type="OnThisPostDeadlyCombat">
+			<Target Zone="None" CardType="Unit" Amount="FromTrigger" Cancelable="False">
+				<Effect Type="Clone" Side="Friendly"/>
+			</Target>
+		</Trigger>
+		<Description>Whenever Hasafah, Chosen of the Shadows attacks and destroys a creature, deploy a token that's a copy of that creature under your control after the attack.</Description>
+	</Card>
+</Cards>
