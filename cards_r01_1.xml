@@ -26,14 +26,10 @@
 	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Aca_102" DisplayName="Power Blast Titan" Faction="Academy" School="Prime" SubType="Magic|Shooter" Race="Construct|Titan" Cost="4" MightLevel="4" MagicLevel="4" DestinyLevel="0" Attack="3" Retaliate="2" HP="6" ID="1008">
 		<Ability Type="ImmuneToRetaliate"/>
 		<Ability Type="Shockwave" Value="2" />
-		<Trigger Type="OnUnitKillUnit" DamageIncludeFlags="Splash" Side="Friendly" ExecuteOncePerTransaction="True">
+		<Target Zone="Battleground" Amount="All" Side="Friendly">
 			<CardFilter IncludeRaces="Construct"/>
-			<Target Zone="Battleground" Amount="FromTrigger" CardType="Unit" >
-				<Variable Type="UnitAttackCount" FromTrigger="True"/>
-				<Condition Operator="LesserThan" ValueA="Variable" ValueB="2"/>
-				<Effect Type="AdditionalAttack" Value="1"/>
-      </Target>
-		</Trigger>
+			<Effect Type="ModifyAbility" Ability="TitanAttackTwice"/>
+		</Target>
 		<Description>Whenever a friendly construct destory a enemy with blast damage for the first time in a turn, it gains an additional attack.</Description>
 	</Card>
 	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Aca_103" DisplayName="Crimson Wizard" Faction="Academy" SubType="Magic|Shooter" Race="Human|Wizard" Cost="4" MightLevel="4" MagicLevel="1" DestinyLevel="0" Attack="3" Retaliate="1" HP="6" ID="1009">
@@ -152,12 +148,10 @@
 	</Card>
 	<Card  Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Nec_101" DisplayName="Necromancer Reinforcer" Faction="Necropolis"  SubType="Magic|Shooter" Race="Human|Wizard" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="1" Attack="2" Retaliate="0" HP="6" ID="1019">
 		<Ability Type="ImmuneToRetaliate"/>
-		<Trigger Type="OnPreAttackUnit" Side="Friendly">
-			<CardFilter IncludeAbility="Stackable" />
-			<Target Zone="Battleground" Amount="FromTrigger" CardType="Unit" ForceExecute="True">
-				<Effect Type="IncreaseStackSize" Value="1"/>
-            </Target>
-		</Trigger>
+		<Target Zone="Battleground" Amount="All" Side="Friendly">
+			<CardFilter IncludeAbility="Stackable"/>
+			<Effect Type="ModifyAbility" Ability="NecromancerStack"/>
+		</Target>
 		<Description>Whenever a friendly creature with stackable attacks enemy creature, increase its' stack size by 1.</Description>
 	</Card>
 	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Nec_102" DisplayName="Namtaru Infector" Faction="Necropolis" SubType="Magic|Melee" Race="Namtaru" Cost="5" MightLevel="4" MagicLevel="2" DestinyLevel="0" Attack="4" Retaliate="3" HP="7" ID="1020" School="Prime">
@@ -206,10 +200,16 @@
 		<Description>Whenever a spy deal damage to enemy hero, next Sanctuary fortune cost 1 less to play.</Description>
 	</Card>
 	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_San_102" DisplayName="Shinobi Whisperer" Faction="Sanctuary" SubType="Shooter" Race="Naga|Spy" Cost="5" MightLevel="4" MagicLevel="0" DestinyLevel="2" Attack="3" Retaliate="3" HP="7" ID="1024">
-		<Ability Type="ImmuneToRetaliate"/>				
-		<Trigger Type="OnUnitKillUnit" DamageIncludeFlags="Attack" Side="Friendly">	
-			<CardFilter IncludeRaces="Spy" />
-			<Target Zone="Battleground" CardType="Unit" Amount="1" Side="Enemy" Cancelable="False">
+		<Ability Type="ImmuneToRetaliate"/>	
+		<Variable Type="TargetCount">
+            <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly" />
+        </Variable>
+        <Variable2 Type="TargetCount">
+            <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Enemy" />
+        </Variable2>
+		<Trigger Type="OnTurnBegin" Side="Friendly" ExecuteOncePerTurn="True">	
+		<Target Zone="Battleground" CardType="Unit" Amount="1" Side="Enemy" Cancelable="False">
+				<Condition Operator="LesserThan" ValueA="Variable" ValueB="Variable2" />
 				<Effect Type="MoveCardTo" Destination="Hand" />
 			</Target>
 		</Trigger>

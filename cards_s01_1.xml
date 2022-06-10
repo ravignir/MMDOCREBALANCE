@@ -186,7 +186,7 @@
     <!-- Creatures - Stronghold -->
     <!--...............................................................................-->
     <Card Rarity="Common" Type="Unit" Name="Cre_Str_020" DisplayName="Blackskull Warchanter" Faction="Stronghold" SubType="Melee" Race="Orc" Cost="1" MightLevel="1" Attack="0" Retaliate="0" HP="2" ID="276">
-        <Trigger Type="OnTurnEnd" Side="Friendly">
+        <Trigger Type="OnTurnBegin" Side="Friendly">
             <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
                 <CardFilter IncludeAbility="Enrage" />
                 <Effect Type="AddCounter" CounterType="Enrage" Value="1" />

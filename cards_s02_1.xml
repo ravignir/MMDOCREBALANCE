@@ -178,7 +178,7 @@ When Chaos Seer leaves the battleground during opponent's turn, they discard a c
     <!--...............................................................................-->
     <!-- Creatures - Stronghold -->
     <!--...............................................................................-->
-    <Card Rarity="Common" Type="Unit" Name="Cre_Str_040" DisplayName="Bramble Beast" Faction="Stronghold" School="Earth" SubType="Melee" Race="Plant" Cost="2" MightLevel="1" Attack="0" Retaliate="2" HP="5" ID="369">
+    <Card Rarity="Common" Type="Unit" Name="Cre_Str_040" DisplayName="Bramble Beast" Faction="Stronghold" School="Earth" SubType="Melee" Race="Plant" Cost="2" MightLevel="1" Attack="0" Retaliate="2" HP="4" ID="369">
         <Ability Type="Armor" Value="1" />
         <Ability Type="SpellResist" />
     </Card>
