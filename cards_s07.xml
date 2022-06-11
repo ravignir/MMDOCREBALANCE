@@ -30,11 +30,11 @@
 				<!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
 				<Target Zone="None" Side="Friendly">
 					<Variable Type="Resources" Side="Friendly"/>
-					<Condition Operator="GreaterThan" ValueA="Variable" ValueB="3"/>
-					<Option Value="4" DisplayText="[4:RESOURCE] Increase all stack by 1."/>
-					<Effect Type="GainResources" Value="-4" Duration="Immediate"/>
+					<Condition Operator="GreaterThan" ValueA="Variable" ValueB="1"/>
+					<Option Value="4" DisplayText="[2:RESOURCE] Increase 2 stack by 1."/>
+					<Effect Type="GainResources" Value="-2" Duration="Immediate"/>
 				</Target>
-				<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+				<Target Zone="Battleground" CardType="Unit" Amount="2" Side="Friendly">
 					<Option Value="4"/>
 					<CardFilter IncludeAbility="Stackable"/>
 					<Effect Type="IncreaseStackSize" Value="1" Duration="Immediate"/>

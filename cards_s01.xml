@@ -58,7 +58,7 @@
             </Subgroup>
         </Target>
     </Card>
-    <Card Rarity="Heroic" Type="Hero" Name="Her_San_003" DisplayName="Kaiko, Invoker of the Depths" Faction="Sanctuary" MightLevel="1" MagicLevel="2" DestinyLevel="0" HP="18" ID="16">
+    <Card Rarity="Heroic" Type="Hero" Name="Her_San_003" DisplayName="Kaiko, Invoker of the Depths" Faction="Sanctuary" MightLevel="0" MagicLevel="2" DestinyLevel="1" HP="18" ID="16">
         <School Name="Air" />
         <School Name="Light" />
         <School Name="Water" />
