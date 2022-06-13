@@ -127,19 +127,31 @@
     <Card Rarity="Heroic" Type="Hero" Name="Her_Inf_005" DisplayName="Phrias, Prince of Annihilation" Faction="Inferno" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="257">
         <School Name="Fire" />
         <School Name="Prime" />
-        <Description>Discard a card: Target friendly creature gains Sweep Attack until end of turn.</Description>
+        <Description>[2:RESOURCES]: Target friendly creature gains Sweep Attack or Attack Anywhere until end of turn.</Description>
         <Target Zone="None" Side="Friendly">
             <Effect Type="ChoiceOption" />
             <Subgroup>
                 <TemplateEffect Name="HeroAbilities" />
                 <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
-                <Target Zone="Hand" Amount="1" Side="Friendly">
-                  <Option Value="4" DisplayText="Discard: creature gains Sweep Attack." />
-                  <Effect Type="MoveCardTo" Destination="Graveyard" Duration="Immediate" />
+                <Target Zone="None" Side="Friendly">
+                    <Variable Type="Resources" Side="Friendly" />
+                    <Condition Operator="GreaterThan" ValueA="Variable" ValueB="1" />
+                    <Option Value="4" DisplayText="Discard: creature gains Sweep Attack." />
+                    <Effect Type="GainResources" Value="-2" Duration="Immediate" />
                 </Target>
                 <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="1" ForceExecute="True">
                     <Option Value="4" />
                     <Effect Type="ModifyAbility" Ability="SweepAttack" Duration="UntilEndOfTurn" />
+                </Target>
+				<Target Zone="None" Side="Friendly">
+                    <Variable Type="Resources" Side="Friendly" />
+                    <Condition Operator="GreaterThan" ValueA="Variable" ValueB="1" />
+                    <Option Value="5" DisplayText="Creature gains Attack Anywhere." />
+                    <Effect Type="GainResources" Value="-2" Duration="Immediate" />
+                </Target>
+                <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="1" ForceExecute="True">
+                    <Option Value="5" />
+                    <Effect Type="ModifyAbility" Ability="AttackAnywhere" Duration="UntilEndOfTurn" />
                 </Target>
             </Subgroup>
         </Target>

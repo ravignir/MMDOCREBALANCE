@@ -91,23 +91,18 @@
 			<Subgroup>
 				<TemplateEffect Name="HeroAbilities"/>
 				<!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
-				<Target Zone="None" Side="Friendly">
-					<Variable Type="Resources" Side="Friendly"/>
-					<Condition Operator="GreaterThan" ValueA="Variable" ValueB="1"/>
-					<Option Value="4" DisplayText="[2:RESOURCE]: Look at opponent's hand. Draw a card."/>
-					<Effect Type="GainResources" Value="-2" Duration="Immediate"/>
-				</Target>
-				<Target Zone="Hand" Amount="All" Side="Enemy">
-					<Option Value="4"/>
-					<Effect Type="Look" Duration="Immediate"/>
-				</Target>
-				<Target Zone="None" Side="Friendly">
-					<Option Value="4"/>
-					<Effect Type="Draw" Value="1" Duration="Immediate"/>
-				</Target>
+            <Target Zone="Hero" Amount="All" Side="Enemy">
+				<Variable Type="TargetCount">
+			<Target Zone="Battleground" Amount="All" Side="Friendly" CardType="Unit">
+				<CardFilter IncludeRaces="Spy"/>
+			</Target>
+				</Variable>			
+				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+                <Effect Type="GlobalEffect" GlobalEffectType="RevealHand"/>
+            </Target>
 			</Subgroup>
 		</Target>
-		<Description>[2:RESOURCES]: Look at opponent's hand. Draw a card.</Description>
+		<Description>Opponent plays with their hand revealed as long as you control a spy.</Description>
 	</Card>
 	<!--...............................................................................-->
 	<!-- Heroes Stronghold -->

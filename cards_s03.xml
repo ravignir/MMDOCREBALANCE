@@ -49,7 +49,7 @@
             </Subgroup>
         </Target>
     </Card>
-    <Card Rarity="Heroic" Type="Hero" Name="Her_Aca_003" DisplayName="Asalah, Invoker of Castigation" Faction="Academy" MightLevel="1" MagicLevel="2" DestinyLevel="0" HP="18" ID="446">
+    <Card Rarity="Heroic" Type="Hero" Name="Her_Aca_003" DisplayName="Asalah, Invoker of Castigation" Faction="Academy" MightLevel="0" MagicLevel="2" DestinyLevel="1" HP="18" ID="446">
         <School Name="Fire" />
         <School Name="Water" />
         <School Name="Light" />
