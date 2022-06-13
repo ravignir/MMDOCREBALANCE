@@ -249,8 +249,8 @@ Whenever Skeleton Servant attacks, move 1 crippling counter from Skeleton Servan
 		<Variable Type="CounterCount" CounterType="Crippling" UseCurrentTarget="True"/>
 		<Trigger Type="OnUnitDeath">
 			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
-			<Target Zone="Battleground" Amount="1">
-				<Effect Type="AddCounter" CounterType="Fierce" Value="Self"/>
+			<Target Zone="Battleground" Amount="Self">
+				<Effect Type="AddCounter" CounterType="Fierce" Value="1"/>
 			</Target>
 		</Trigger>
 		<Description>When a creature with a crippling counter dies, put a +[1:ATK] counter on Eternal Mentor.</Description>
