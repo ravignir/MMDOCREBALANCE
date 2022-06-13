@@ -249,7 +249,7 @@ Whenever Skeleton Servant attacks, move 1 crippling counter from Skeleton Servan
 		<Variable Type="CounterCount" CounterType="Crippling" UseCurrentTarget="True"/>
 		<Trigger Type="OnUnitDeath">
 			<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
-			<Target Zone="Battleground" Amount="Self">
+			<Target Zone="Battleground" Amount="1">
 				<Effect Type="AddCounter" CounterType="Fierce" Value="1"/>
 			</Target>
 		</Trigger>
@@ -267,7 +267,13 @@ Whenever Skeleton Servant attacks, move 1 crippling counter from Skeleton Servan
 		<Target Zone="Battleground" Amount="Self">
 			<Effect Type="ModifyAttack" Value="Variable"/>
 		</Target>
-		<Description>Eternal Archon gains +[1:ATK] for each creatures with at least 1 crippling counter.</Description>
+		<Variable2 Type="LastAliveCounterCount" CounterType="Crippling" FromTrigger="True"/>	
+		<Trigger Type="OnUnitDeath">
+			<Target Zone="Battleground" Amount="Variable2" CardType="Unit" Random="True" AllowDuplicate="True">
+				<Effect Type="AddCounter" CounterType="Crippling" Value="1"/>
+			</Target>
+		</Trigger>
+		<Description>Eternal Archon gains +[1:ATK] for each creatures with at least 1 crippling counter. Whenever a creature with crippling counters on it dies, put the same number of poison counters on other random creatures.</Description>
 	</Card>
 	<!--...............................................................................-->
 	<!-- Creatures - Sanctuary -->

@@ -814,7 +814,7 @@ When [THIS] dies with poison counters on it, put the same number of poison count
     <Description>Ambush: Deal 2 Fire damage to ambushed creature.
 (Ambush abilities trigger when an enemy creature is deployed in the same row as this creature.)</Description>
     </Card>
-    <Card Rarity="Common" Type="Unit" Name="Cre_Neu_051" DisplayName="Sahaar Bedouin" Faction="Neutral" SubType="Melee" Race="Human" Cost="3" MightLevel="3" Attack="2" Retaliate="2" HP="4" ID="523" />
+    <Card Rarity="Common" Type="Unit" Name="Cre_Neu_051" DisplayName="Sahaar Bedouin" Faction="Neutral" SubType="Melee" Race="Human" Cost="3" MightLevel="3" Attack="2" Retaliate="2" HP="4" ID="523"/>
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Neu_052" DisplayName="Soothsayer" Faction="Neutral" SubType="Melee" Race="Human" Cost="2" MightLevel="1" DestinyLevel="2" Attack="1" Retaliate="0" HP="1" ID="524">
         <Trigger Type="OnThisCardDeploy">
             <Target Zone="Library" Side="Friendly" Amount="1" RevealToOther="True">

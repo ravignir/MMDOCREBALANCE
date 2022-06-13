@@ -41,7 +41,7 @@
 				</Target>
 			</Subgroup>
 		</Target>
-		<Description>[4:RESOURCES]: Increase the size of all friendly stack by 1.</Description>
+		<Description>[2:RESOURCES]: Increase the size of two friendly stack by 1.</Description>
 	</Card>
 	<!--...............................................................................-->
 	<!-- Heroes Inferno -->

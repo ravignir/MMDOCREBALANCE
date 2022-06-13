@@ -44,31 +44,40 @@
 			<Subgroup>
 				<TemplateEffect Name="HeroAbilities"/>
 				<!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+				<Target Zone="None" Side="Friendly">
+					<Variable Type="Resources" Side="Friendly"/>
+					<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
+					<Option Value="4" DisplayText="[1:RESOURCES]: Put an +[1:ATK] counter on a Knight"/>
+					<Effect Type="GainResources" Value="-1" Duration="Immediate"/>
+				</Target>
+				<Target Zone="Battleground" CardType="Unit" Amount="1" Side="Any">
+					<Option Value="4"/>
+					<CardFilter IncludeRaces="Knight"/>
+					<Effect Type="AddCounter" CounterType="Fierce" Value="1" Duration="Immediate" />
+				</Target>
 			</Subgroup>
 		</Target>
+		<Description>[1:RESOURCES]: Put an +[1:ATK] counter on a Knight.</Description>
 	</Card>
 	<!--...............................................................................-->
 	<!-- Heroes Inferno -->
 	<!--...............................................................................-->
 	<Card NotLocalized="True" Rarity="Heroic" Type="Hero" Name="Her_Inf_009" DisplayName="Jezebeth" Faction="Inferno" School="Dark|Fire|Water" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="18" ID="804">
-    <Description>[1:RESOURCES]: Deploy a Breeder melee-shooter token creature with [1:ATK]/ [0:RET]/ [1:HEALTH] and Stackable.</Description>
+    <Description>If your [MAGIC] level is 5 or more, all non-ongoing spells you play deal 1 damage more.</Description>
     <Target Zone="None" Side="Friendly">
       <Effect Type="ChoiceOption"/>
       <Subgroup>
         <TemplateEffect Name="HeroAbilities"/>
         <!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
-        <Target Zone="None" Side="Friendly">
-          <Variable Type="Resources" Side="Friendly"/>
-          <Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
-          <Option Value="4" DisplayText="[1:RESOURCES]: Deploy a Breeder"/>
-          <Effect Type="GainResources" Value="-1" Duration="Immediate"/>
-        </Target>
-        <Target Zone="BattlegroundPosition" Amount="1" Side="Friendly" BattlegroundPositionState="DontCare" Chancelable="True">
-          <Option Value="4"/>
-          <Effect Type="PopulateStack" CardID="525190" Amount="1" Duration="Immediate"/>
-        </Target>
-      </Subgroup>
-    </Target>
+		</Subgroup>
+		</Target>
+		<Target Zone="Hero" Amount="All" Side="Friendly">       
+		<Variable Type="Level" Side="Friendly" LevelType="Magic" />
+		<Condition Operator="GreaterThan" ValueA="Variable" ValueB="4"/>
+		<Effect Type="GlobalEffect" GlobalEffectType="ModifyDamage" Value="1">
+		<CardFilter IncludeCardType="Spell" IncludeOngoingType="Immediate" />
+		</Effect>
+		</Target>		
 	</Card>
 	<!--...............................................................................-->
 	<!-- Heroes Necropolis -->
@@ -91,6 +100,8 @@
 			<Subgroup>
 				<TemplateEffect Name="HeroAbilities"/>
 				<!-- HeroAbilities template contains 4 options, so the value of the next one must be 4 -->
+				</Subgroup>
+        </Target>
             <Target Zone="Hero" Amount="All" Side="Enemy">
 				<Variable Type="TargetCount">
 			<Target Zone="Battleground" Amount="All" Side="Friendly" CardType="Unit">
@@ -100,8 +111,6 @@
 				<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
                 <Effect Type="GlobalEffect" GlobalEffectType="RevealHand"/>
             </Target>
-			</Subgroup>
-		</Target>
 		<Description>Opponent plays with their hand revealed as long as you control a spy.</Description>
 	</Card>
 	<!--...............................................................................-->

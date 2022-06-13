@@ -209,7 +209,7 @@
     <Card Rarity="Heroic" Type="Hero" Name="Her_Nec_007" DisplayName="Siham, Spirit Severer" Faction="Necropolis" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="453">
         <School Name="Dark" />
         <School Name="Earth" />
-        <Description>At the beginning of your turn, if your [MIGHT] level is 5 or more and your [DESTINY] level is 4 or more, destroy target creature with a cost of [2:RESOURCES] or less.</Description>
+        <Description>If your [MIGHT] level is 5 or more and your [DESTINY] level is 4 or more: At the beginning of your turn You may destroy target creature with a cost of [2:RESOURCES] or less. Heal 1 damage from your hero when the first enemy creature dies during a turn.</Description>
         <Target Zone="None" Side="Friendly">
             <Effect Type="ChoiceOption" />
             <Subgroup>
@@ -218,7 +218,7 @@
             </Subgroup>
         </Target>
         <Trigger Type="OnSupplyPhaseBegin" Side="Friendly">
-            <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Any" Cancelable="False">
+            <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Any" Cancelable="True">
                 <Variable Type="Level" Side="Friendly" LevelType="Might" />
                 <Variable2 Type="Level" Side="Friendly" LevelType="Destiny" />
                 <Condition Operator="And" ValueA="Condition" ValueB="Condition">
@@ -227,6 +227,17 @@
                 </Condition>
                 <CardFilter BaseMaxCost="True" Value="2" IncludeCardType="Unit" />
                 <Effect Type="Kill" />
+            </Target>
+        </Trigger>
+		<Trigger Type="OnUnitDeath" Side="Enemy" ExecuteOncePerTurn="True" >
+            <Target Zone="Hero" Amount="All" Side="Friendly">
+			    <Variable Type="Level" Side="Friendly" LevelType="Might" />
+                <Variable2 Type="Level" Side="Friendly" LevelType="Destiny" />
+                <Condition Operator="And" ValueA="Condition" ValueB="Condition">
+                    <Condition Operator="GreaterThan" ValueA="Variable" ValueB="4" />
+                    <Condition Operator="GreaterThan" ValueA="Variable2" ValueB="3" />
+                </Condition>
+                <Effect Type="Heal" Value="1" />
             </Target>
         </Trigger>
     </Card>
