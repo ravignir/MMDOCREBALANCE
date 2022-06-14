@@ -22,7 +22,7 @@
 	<!--...............................................................................-->
 	<!-- Heroes Haven -->
 	<!--...............................................................................-->
-	<Card Rarity="Heroic" Type="Hero" Name="Her_Hav_010" DisplayName="Anton" Faction="Haven" School="Air|Light" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="906">
+	<Card NotLocalized="True" Rarity="Heroic" Type="Hero" Name="Her_Hav_010" DisplayName="Anton" Faction="Haven" School="Air|Light" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="906">
 		<Target Zone="None" Side="Friendly">
 			<Effect Type="ChoiceOption"/>
 			<Subgroup>
@@ -31,7 +31,7 @@
 				<Target Zone="None" Side="Friendly">
 					<Variable Type="Resources" Side="Friendly"/>
 					<Condition Operator="GreaterThan" ValueA="Variable" ValueB="1"/>
-					<Option Value="4" DisplayText="[2:RESOURCE] Increase 2 stack by 1."/>
+					<Option Value="4" DisplayText="[2:RESOURCE] Increase two stack by 1."/>
 					<Effect Type="GainResources" Value="-2" Duration="Immediate"/>
 				</Target>
 				<Target Zone="Battleground" CardType="Unit" Amount="2" Side="Friendly">
