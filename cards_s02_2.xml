@@ -290,7 +290,7 @@ Whenever a friendly creature dies, increase your [MIGHT] level by 1.</Descriptio
         </Target>
         <Description>Reveal the top card of your library. If you meet its level requirements, play it for free.</Description>
     </Card>
-    <Card Rarity="Rare" Type="Fortune" Name="For_Neu_045" DisplayName="Turncoats" Faction="Neutral" Cost="2" DestinyLevel="3" ID="417">
+    <Card NotLocalized="True" Rarity="Rare" Type="Fortune" Name="For_Neu_045" DisplayName="Turncoats" Faction="Neutral" Cost="2" DestinyLevel="3" ID="417">
         <Target Zone="None" Side="Enemy">
             <Effect Type="GainResourcesProduction" Value="-1" />
         </Target>
