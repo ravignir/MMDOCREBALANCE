@@ -38,7 +38,7 @@
 	<!--...............................................................................-->
 	<!-- Heroes Haven -->
 	<!--...............................................................................-->
-	<Card Rarity="Heroic" Type="Hero" Name="Her_Hav_009" DisplayName="Slava" Faction="Haven" School="Air|Fire|Light" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="803">
+	<Card NotLocalized="True" Rarity="Heroic" Type="Hero" Name="Her_Hav_009" DisplayName="Slava" Faction="Haven" School="Air|Fire|Light" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="803">
 		<Target Zone="None" Side="Friendly">
 			<Effect Type="ChoiceOption"/>
 			<Subgroup>
@@ -47,7 +47,7 @@
 				<Target Zone="None" Side="Friendly">
 					<Variable Type="Resources" Side="Friendly"/>
 					<Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
-					<Option Value="4" DisplayText="[1:RESOURCES]: Put an +[1:ATK] counter on a Knight"/>
+					<Option Value="4" DisplayText="[1:RESOURCES]: Put +[1:ATK] counter on a Knight"/>
 					<Effect Type="GainResources" Value="-1" Duration="Immediate"/>
 				</Target>
 				<Target Zone="Battleground" CardType="Unit" Amount="1" Side="Any">
@@ -57,13 +57,13 @@
 				</Target>
 			</Subgroup>
 		</Target>
-		<Description>[1:RESOURCES]: Put an +[1:ATK] counter on a Knight.</Description>
+		<Description>[1:RESOURCES]: Put +[1:ATK] counter on a Knight.</Description>
 	</Card>
 	<!--...............................................................................-->
 	<!-- Heroes Inferno -->
 	<!--...............................................................................-->
 	<Card NotLocalized="True" Rarity="Heroic" Type="Hero" Name="Her_Inf_009" DisplayName="Jezebeth" Faction="Inferno" School="Dark|Fire|Water" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="18" ID="804">
-    <Description>If your [MAGIC] level is 5 or more, all non-ongoing spells you play deal 1 damage more.</Description>
+    <Description>If your [MIGHT] level is 4 or more and your [MAGIC] level is 5 or more, all non-ongoing spells you play deal 1 damage more.</Description>
     <Target Zone="None" Side="Friendly">
       <Effect Type="ChoiceOption"/>
       <Subgroup>
@@ -72,8 +72,12 @@
 		</Subgroup>
 		</Target>
 		<Target Zone="Hero" Amount="All" Side="Friendly">       
-		<Variable Type="Level" Side="Friendly" LevelType="Magic" />
-		<Condition Operator="GreaterThan" ValueA="Variable" ValueB="4"/>
+		<Variable Type="Level" Side="Friendly" LevelType="Might" />
+		<Variable2 Type="Level" Side="Friendly" LevelType="Magic" />
+		<Condition Operator="And" ValueA="Condition" ValueB="Condition" >
+		<Condition Operator="GreaterThan" ValueA="Variable" ValueB="3"/>
+		<Condition Operator="GreaterThan" ValueA="Variable2" ValueB="4"/>
+		</Condition>
 		<Effect Type="GlobalEffect" GlobalEffectType="ModifyDamage" Value="1">
 		<CardFilter IncludeCardType="Spell" IncludeOngoingType="Immediate" />
 		</Effect>
@@ -94,7 +98,7 @@
 	<!--...............................................................................-->
 	<!-- Heroes Sanctuary -->
 	<!--...............................................................................-->
-	<Card Rarity="Heroic" Type="Hero" Name="Her_San_009" DisplayName="Mukao" Faction="Sanctuary" School="Dark|Water" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="806">
+	<Card NotLocalized="True" Rarity="Heroic" Type="Hero" Name="Her_San_009" DisplayName="Mukao" Faction="Sanctuary" School="Dark|Water" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="806">
 		<Target Zone="None" Side="Friendly">
 			<Effect Type="ChoiceOption"/>
 			<Subgroup>
