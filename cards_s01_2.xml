@@ -281,8 +281,9 @@ Two target enemy creatures gain Cannot Attack.</Description>
     <!--....................................................................-->
     <!-- Fortune - Stronghold -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Fortune" Name="For_Str_030" DisplayName="Ritual of the Blood Feathers" Faction="Stronghold" Cost="1" DestinyLevel="2" ID="297">
+    <Card NotLocalized="True" Rarity="Common" Type="Fortune" Name="For_Str_030" DisplayName="Ritual of the Blood Feathers" Faction="Stronghold" Cost="1" DestinyLevel="2" ID="297">
         <Target Zone="Battleground" Side="Friendly" CardType="Unit" Amount="1">
+		<CardFilter IncludeCounter="Any" />
             <Variable Type="CounterCount" CounterType="Any" UseCurrentTarget="True" />
             <Effect Type="Heal" Value="Infinite" />
             <Effect Type="RemoveCounter" CounterType="Any" Value="Variable" />
@@ -290,7 +291,7 @@ Two target enemy creatures gain Cannot Attack.</Description>
 		<Target Zone="None" Side="Friendly">
             <Effect Type="Draw" Value="1" />
         </Target>
-        <Description>Remove all counters from target friendly creature. Heal that creature for an amount of damage equal to the number of counters removed this way.</Description>
+        <Description>Remove all counters from target friendly creature. Heal that creature from all damage. Draw a card.</Description>
     </Card>
     <Card  Rarity="Common" Type="Fortune" Name="For_Str_032" DisplayName="Call of the Bloodhorn" Faction="Stronghold" Cost="2" DestinyLevel="2" ID="299">
         <Ongoing Duration="Permanent" />
@@ -383,13 +384,7 @@ During their supply phase, opponent only produce half of their [RESOURCES] produ
                 <Target Side="Friendly">
                     <Effect Type="Shuffle" CardHolder="Events" />
                 </Target>
-		<Trigger Type="OnCardPlay" Side="Friendly" Location="Graveyard">
-            <CardFilter IncludeCardID="For_Neu_034" />
-            <Target Zone="Graveyard" Amount="Self">
-                <Effect Type="MoveCardTo" Destination="Hand" />
-            </Target>
-        </Trigger>
-        <Description>Shuffle all event cards and draw 2 new ones. Then pay [1:RESOURCES].</Description>
+        <Description>Shuffle all event cards and draw 2 new ones.</Description>
     </Card>
     <Card Rarity="Rare" Type="Fortune" Name="For_Neu_035" DisplayName="Cosmic Realignment" Faction="Neutral" Cost="4" DestinyLevel="4" ID="305">
         <Target Zone="Hand" Side="Any" Amount="AllOther">
