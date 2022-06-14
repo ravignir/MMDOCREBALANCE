@@ -234,7 +234,7 @@ When Chaos Seer leaves the battleground during opponent's turn, they discard a c
         <Ability Type="Towering" />
         <Ability Type="Anchored" />
     </Card>
-    <Card Rarity="Rare" Type="Unit" Name="Cre_Neu_045" DisplayName="Void Keeper" Faction="Neutral" School="Prime" SubType="Magic|Shooter" Race="Human|Wizard" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="2" Attack="2" Retaliate="1" HP="5" ID="380">
+    <Card NotLocalized="True" Rarity="Rare" Type="Unit" Name="Cre_Neu_045" DisplayName="Void Keeper" Faction="Neutral" School="Prime" SubType="Magic|Shooter" Race="Human|Wizard" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="2" Attack="2" Retaliate="1" HP="5" ID="380">
         <Ability Type="ImmuneToRetaliate" />
 		<Target Zone="Battleground" CardType="Unit" Amount="AllOther">
             <Effect Type="PlayEffect" PlayEffectType="BanishOnDie" />
