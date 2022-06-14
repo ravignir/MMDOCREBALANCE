@@ -63,7 +63,7 @@
 	<!-- Heroes Inferno -->
 	<!--...............................................................................-->
 	<Card NotLocalized="True" Rarity="Heroic" Type="Hero" Name="Her_Inf_009" DisplayName="Jezebeth" Faction="Inferno" School="Dark|Fire|Water" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="18" ID="804">
-    <Description>If your [MIGHT] level is 4 or more and your [MAGIC] level is 5 or more, all non-ongoing spells you play deal 1 damage more.</Description>
+    <Description>If your [MIGHT] level is 4 or more and your [MAGIC] level is 5 or more, all instant spells you play deal 1 damage more.</Description>
     <Target Zone="None" Side="Friendly">
       <Effect Type="ChoiceOption"/>
       <Subgroup>
