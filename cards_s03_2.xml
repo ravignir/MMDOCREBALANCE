@@ -415,12 +415,15 @@ At the beginning of your turn, return Eternal Battlefield to its owner's hand.</
             <Effect Type="Kill" />
         </Target>
         <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Enemy">
-            <Variable Type="BaseCardCost" UseCurrentTarget="True" />
-            <Variable2 Type="BaseCardCost" UseLastTarget="True" />
-            <Condition Operator="LesserOrEqual" ValueA="Variable" ValueB="Variable2" />
             <Effect Type="Kill" />
         </Target>
-        <Description>Destroy target friendly creature. Destroy target enemy creature of equal or lower cost.</Description>
+		<Target Zone="None" Side="Friendly">
+		            <Variable Type="BaseCardCost" UseCurrentTarget="True" />
+            <Variable2 Type="BaseCardCost" UseLastTarget="True" />
+            <Condition Operator="LesserOrEqual" ValueA="Variable" ValueB="Variable2" />
+			<Effect Type="GainResources" Value="1" Duration="Immediate" />
+		</Target>	
+        <Description>Destroy target friendly creature. Destroy target enemy creature. If it had equal or lower cost gain [1:RESOURCES].</Description>
     </Card>
     <!--....................................................................-->
     <!-- Fortune - Sanctuary -->
@@ -479,35 +482,26 @@ All Sanctuary creatures gain Honor 1.</Description>
                 <Effect Type="MoveCardTo" Destination="Hand" />
             </Target>
         </Trigger>
-        <Target Zone="Battleground" CardType="Unit" Amount="All">
-            <!-- This Target is used only to display the correct feedback -->
-            <CardFilter IncludeAbility="Enrage|Bloodthirst" />
-        </Target>
-        <Target Zone="Battleground" CardType="Unit" Amount="All">
-            <CardFilter IncludeAbility="Enrage" />
-            <Effect Type="ModifyAbilityValue" Ability="Enrage" Value="1" />
-        </Target>
-        <Target Zone="Battleground" CardType="Unit" Amount="All">
-            <CardFilter IncludeAbility="Bloodthirst" />
-            <Effect Type="ModifyAbilityValue" Ability="Bloodthirst" Value="1" />
-        </Target>
+		<Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
+				<CardFilter IncludeCounter="Enrage" />
+				<Effect Type="RemoveCounter" CounterType="Enrage" Value="Infinite" Duration="Immediate" />
+			<Effect Type="ModifyAbility" Ability="Fear" DontShowIcon="True" Value="999"/>
+		</Target>
         <Description>Permanent:
-All creatures with Enrage gain +1 to their Enrage value.
-All creatures with Bloodthirst gain +1 to their Bloodthirst value.
+Friendly creatures with Enrage counters can't be attacked by enemy creatures.
 At the beginning of your turn, return Outraging Vision to its owner's hand.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Str_051" DisplayName="Ancestral Guidance" Faction="Stronghold" Cost="2" DestinyLevel="2" ID="563">
-        <Ongoing Duration="UntilEndOfTurn" />
-        <Target Zone="Battleground" CardType="Unit" Amount="1">
-            <Variable Type="TargetCount" ValueModifier="1">
+    <Card Rarity="Common" Type="Fortune" Name="For_Str_051" DisplayName="Ancestral Guidance" Faction="Stronghold" Cost="3" DestinyLevel="3" ID="563">
+        <Target Zone="Battleground" CardType="Unit" Amount="All">
+			<Variable Type="TargetCount" ValueModifier="1">
                 <Target Zone="Graveyard" Side="Friendly" Amount="All">
                     <CardFilter IncludeCardID="For_Str_051" />
                 </Target>
             </Variable>
-            <Effect Type="ModifyAttack" Value="Variable" />
+            <Effect Type="Damage" Value="Variable" />
         </Target>
-        <Description>Until end of turn:
-Target creature gains +[X:ATK], where X is equal to 1 plus the number of cards named Ancestral Guidance in your graveyard.</Description>
+        <Description>
+Deal X damage to all creatures, where X is equal to 1 plus the number of cards named Ancestral Guidance in your graveyard.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Fortune" Name="For_Str_052" DisplayName="Desperate Assault" Faction="Stronghold" Cost="2" DestinyLevel="4" ID="564">
         <Ongoing Duration="UntilEndOfTurn" />

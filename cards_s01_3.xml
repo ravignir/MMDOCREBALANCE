@@ -230,11 +230,14 @@ Fire and earth spells deal half damage, rounded down.</Description>
         </Target>
         <Description>[3:RESOURCES]: The next creature you deploy this turn gains +[2:RET]</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Event" Name="Eve_Neu_021" DisplayName="Week of the Tamed Spirits" Faction="Neutral" Cost="2" ID="329">
+    <Card Rarity="Uncommon" Type="Event" Name="Eve_Neu_021" DisplayName="Week of the Tamed Spirits" Faction="Neutral" Cost="3" ID="329">
         <Ongoing Duration="UntilYourNextTurn" />
         <Target Zone="Battleground" Amount="All" CardType="Unit" NeedActivation="True" Persistent="True">
             <CardFilter IncludeUnitType="Magic" />
-            <Effect Type="ModifyAttack" Value="-1" />
+            <Effect Type="ModifyAttack" Value="-2" />
+        </Target>
+		<Target Zone="Battleground" Amount="All" CardType="Unit" NeedActivation="True" Persistent="True">
+            <Effect Type="ModifyAttack" Value="1" />
         </Target>
         <Description>[2:RESOURCES]: Until your next turn, magic creatures gain -[1:ATK].</Description>
     </Card>
@@ -276,11 +279,11 @@ Fire and earth spells deal half damage, rounded down.</Description>
         <Ongoing Duration="Permanent" />
 	    <Target Zone="Battleground" Amount="All" />
 		<Trigger Type="OnDeploy">
-            <Target Zone="Battleground" Amount="FromTrigger" Persistent="True" ForceExecute="True">
+            <Target Zone="Battleground" Amount="FromTrigger" Persistent="True" ForceExecute="True" >
 				<Effect Type="ModifyAbility" Ability="CannotTarget" Duration="UntilYourNextTurn"/>
             </Target>
         </Trigger>
-        <Description>Ongoing: Creatures that entered the battleground cannot be targeted until your next turn.</Description>
+        <Description>Ongoing: First Creature that enters the battleground cannot be targeted until your next turn.</Description>
 		<DescriptionChinese>持续：进入战场的生物不能被指定，直到本方下回合开始。</DescriptionChinese>
 	</Card>
 </Cards>

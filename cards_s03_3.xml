@@ -258,27 +258,14 @@ Friendly creatures cannot be prevented from attacking and are unaffected by Bers
         <Description>[2:RESOURCES]: Until your next turn, target creature gains Magic Shield.</Description>
 		<DescriptionChinese>[2:RESOURCES]: 持续到本方下回合开始，指定生物获得魔法护盾能力。</DescriptionChinese>
 	</Card>
-    <Card NotLocalized="True" Rarity="Rare" Type="Event" Name="Eve_Neu_052" DisplayName="Graduation Day" Cost="0" Faction="Neutral" ID="596">
+    <Card Rarity="Rare" Type="Event" Name="Eve_Neu_052" DisplayName="Graduation Day" Cost="1" Faction="Neutral" ID="596">
         <Ongoing Duration="UntilEndOfTurn" />
         <Target Zone="Hero" Amount="All" Side="Friendly" NeedActivation="True" Persistent="True">
-            <Effect Type="GlobalEffect" GlobalEffectType="RevealLibraryTop" />
-        </Target>
-        <Target Zone="Hero" Amount="All" Side="Friendly" NeedActivation="True" Persistent="True">
-            <Variable Type="LibraryTopCard" Side="Friendly">
-              <CardFilter IncludeCardType="Spell" />
-            </Variable>
-            <Variable2 Type="CardPlayedCount" Side="Friendly">
-              <CardFilter IncludeCardType="Spell" />
-            </Variable2>
-            <Condition Operator="And" ValueA="Condition" ValueB="Condition">
-              <Condition Operator="GreaterThan" ValueA="Variable" ValueB="0"/>
-              <Condition Operator="LesserThan" ValueA="Variable2" ValueB="1"/>
-            </Condition>
             <Effect Type="GlobalEffect" GlobalEffectType="ModifyCost" Value="-1">
                 <CardFilter IncludeCardType="Spell" />
             </Effect>
         </Target>
-        <Description>[0:RESOURCES]: Until end of turn, play with the top card of your library revealed. While that card is a spell card, your first spell cost [1:RESOURCES] less to play.</Description>
+        <Description>[1:RESOURCES]: Your spells cost [1:RESOURCES] less to play.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Event" Name="Eve_Neu_053" DisplayName="Rise of the Nethermancer" Cost="1" Faction="Neutral" ID="597">
         <Target Zone="None" Side="Friendly" ForceExecute="True">

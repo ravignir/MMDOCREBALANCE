@@ -656,12 +656,12 @@ Enchanted creature gains Magic Shield.</Description>
     <!-- //	##      ##  #   ##      #  ##    ##        ## -->
     <!-- //	#####     ##    #####   #   #    ##     ##### -->
     <!--...............................................................................-->
-    <Card Rarity="Rare" Type="Event" Name="Eve_Neu_002" DisplayName="Market of Wonders" Faction="Neutral" Cost="5" ID="243">
-        <Target Zone="Library" Side="Friendly" Amount="1" AmountVisible="3">
+    <Card Rarity="Rare" Type="Event" Name="Eve_Neu_002" DisplayName="Market of Wonders" Faction="Neutral" Cost="6" ID="243">
+		<Target Zone="Library" Side="Friendly" Amount="1">
             <Effect Type="MoveCardTo" Destination="Hand" />
         </Target>
-        <Target Zone="Library" Side="Friendly" Amount="2" AutoTakeFirstInputs="True" InputOnExec="True">
-            <Effect Type="MoveCardTo" Destination="Graveyard" />
+        <Target Side="Friendly">
+            <Effect Type="Shuffle" CardHolder="Library" />
         </Target>
         <Description>[5:RESOURCES]: Look at the top three cards of your library. Put one of them into your hand and the rest into your graveyard.</Description>
     </Card>
@@ -773,7 +773,7 @@ Enchanted creature gains Magic Shield.</Description>
         </Target>
         <Description>[1:RESOURCES], Destroy target friendly creature: Gain [RESOURCES] equal to half destroyed creature's cost, rounded down.</Description>
     </Card>
-    <Card Rarity="Common" Type="Event" Name="Eve_Neu_009" DisplayName="Week of Knowledge" Faction="Neutral" ID="252">
+    <Card Rarity="Common" Type="Event" Name="Eve_Neu_009" DisplayName="Week of Knowledge" Faction="Neutral" Cost="1" ID="252">
         <Variable Type="CardPlayedCount" />
         <PlayabilityCondition Operator="LesserThan" ValueA="Variable" ValueB="1" />
         <Ongoing Duration="UntilEndOfTurn" />

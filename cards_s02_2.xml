@@ -137,7 +137,10 @@ Players cannot draw cards outside of their supply phase.</Description>
         <Target Zone="Battleground" Side="Any" CardType="Unit" Amount="1" CantTargetPrevious="True">
             <Effect Type="Heal" Value="infinite" />
         </Target>
-        <Description>Destroy target friendly creature. Heal all damage from another target creature.</Description>
+		<Target Zone="None" Side="Friendly">
+            <Effect Type="Draw" Value="1" />
+        </Target>
+        <Description>Destroy target friendly creature. Heal all damage from another target creature. Draw a card.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Fortune" Name="For_Nec_042" DisplayName="Early Grave" Faction="Necropolis" Cost="2" DestinyLevel="3" ID="402">
         <Target Zone="Library" Side="Friendly" Amount="1">
