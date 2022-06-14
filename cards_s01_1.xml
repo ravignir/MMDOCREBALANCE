@@ -185,14 +185,14 @@
     <!--...............................................................................-->
     <!-- Creatures - Stronghold -->
     <!--...............................................................................-->
-    <Card Rarity="Common" Type="Unit" Name="Cre_Str_020" DisplayName="Blackskull Warchanter" Faction="Stronghold" SubType="Melee" Race="Orc" Cost="1" MightLevel="1" Attack="0" Retaliate="0" HP="2" ID="276">
+    <Card NotLocalized="True" Rarity="Common" Type="Unit" Name="Cre_Str_020" DisplayName="Blackskull Warchanter" Faction="Stronghold" SubType="Melee" Race="Orc" Cost="1" MightLevel="1" Attack="0" Retaliate="0" HP="2" ID="276">
         <Trigger Type="OnTurnBegin" Side="Friendly">
             <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly">
                 <CardFilter IncludeAbility="Enrage" />
                 <Effect Type="AddCounter" CounterType="Enrage" Value="1" />
             </Target>
         </Trigger>
-        <Description>At the end of your turn, put 1 enrage counter on all friendly creatures with Enrage.</Description>
+        <Description>At the start of your turn, put 1 enrage counter on all friendly creatures with Enrage.</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Str_021" DisplayName="Blackskull Goblin" Faction="Stronghold" SubType="Shooter" Race="Goblin|Archer" Cost="2" MightLevel="2" Attack="3" Retaliate="3" HP="4" ID="277">
         <Ability Type="ImmuneToRetaliate" />
