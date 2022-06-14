@@ -190,7 +190,7 @@ At the beginning of your turn, take a non-unique creature card at random from yo
         </Trigger>
         <Description>
           Enchant Row. Permanent:
-          At the beginning of the his turn, each player banish target creature on this row if he want.</Description>
+          At the beginning of each turn, each player may banish target creature on this row.</Description>
     </Card>
     <!--....................................................................-->
     <!-- Spells - Water -->
