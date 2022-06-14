@@ -130,7 +130,7 @@ Players cannot draw cards outside of their supply phase.</Description>
         </Target>
         <Description>Destroy target friendly creature. Heal 3 damage from your hero.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Nec_041" DisplayName="Rite of Necromantic Restoration" Faction="Necropolis" Cost="1" DestinyLevel="1" ID="401">
+    <Card NotLocalized="True" Rarity="Common" Type="Fortune" Name="For_Nec_041" DisplayName="Rite of Necromantic Restoration" Faction="Necropolis" Cost="1" DestinyLevel="1" ID="401">
         <Target Zone="Battleground" Side="Friendly" CardType="Unit" Amount="1">
             <Effect Type="Kill" />
         </Target>
