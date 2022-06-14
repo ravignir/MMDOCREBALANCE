@@ -14,7 +14,7 @@
 		<Ability Type="Shockwave" Value="2" />
 		<Ability Type="FocusedBlast" Value="1" />
 	</Card>
-	<Card  Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Aca_101" DisplayName="Manastorm Titan" Faction="Academy" SubType="Magic|Melee" Race="Construct|Titan" Cost="4" MightLevel="3" MagicLevel="3" DestinyLevel="0" Attack="2" Retaliate="2" HP="7" ID="1007" School="Prime">
+	<Card Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Aca_101" DisplayName="Manastorm Titan" Faction="Academy" SubType="Magic|Melee" Race="Construct|Titan" Cost="4" MightLevel="3" MagicLevel="3" DestinyLevel="0" Attack="2" Retaliate="2" HP="7" ID="1007" School="Prime">
 		<Ability Type="Shockwave" Value="2" />
 		<Trigger Type="OnThisCardDeath">
 			<Target Zone="None" Side="Friendly">
@@ -23,14 +23,14 @@
 		</Trigger>
 		<Description>When [THIS] dies, increase your [MAGIC] level by 1.</Description>
 	</Card>
-	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Aca_102" DisplayName="Power Blast Titan" Faction="Academy" School="Prime" SubType="Magic|Shooter" Race="Construct|Titan" Cost="4" MightLevel="4" MagicLevel="4" DestinyLevel="0" Attack="3" Retaliate="2" HP="6" ID="1008">
+	<Card NotLocalized="True" Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Aca_102" DisplayName="Power Blast Titan" Faction="Academy" School="Prime" SubType="Magic|Shooter" Race="Construct|Titan" Cost="4" MightLevel="4" MagicLevel="4" DestinyLevel="0" Attack="3" Retaliate="2" HP="6" ID="1008">
 		<Ability Type="ImmuneToRetaliate"/>
 		<Ability Type="Shockwave" Value="2" />
 		<Target Zone="Battleground" Amount="All" Side="Friendly">
 			<CardFilter IncludeRaces="Construct"/>
 			<Effect Type="ModifyAbility" Ability="TitanAttackTwice"/>
 		</Target>
-		<Description>Whenever a friendly construct destory a enemy with blast damage for the first time in a turn, it gains an additional attack.</Description>
+		<Description>When a friendly construct destory a enemy with blast damage for the first time in a turn, it can attack for the second time.</Description>
 	</Card>
 	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Aca_103" DisplayName="Crimson Wizard" Faction="Academy" SubType="Magic|Shooter" Race="Human|Wizard" Cost="4" MightLevel="4" MagicLevel="1" DestinyLevel="0" Attack="3" Retaliate="1" HP="6" ID="1009">
 		<Ability Type="ImmuneToRetaliate"/>
@@ -146,13 +146,13 @@
         </Trigger>
 		<Description>When [THIS] attacks, deploy a Skeleton melee-shooter token with 1/0/1 and Stackable on target friendly battleground position</Description>
 	</Card>
-	<Card  Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Nec_101" DisplayName="Necromancer Reinforcer" Faction="Necropolis"  SubType="Magic|Shooter" Race="Human|Wizard" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="1" Attack="2" Retaliate="0" HP="6" ID="1019">
+	<Card NotLocalized="True" Rarity="Rare" Unique="False" Type="Unit" Name="Cre_Nec_101" DisplayName="Necromancer Reinforcer" Faction="Necropolis"  SubType="Magic|Shooter" Race="Human|Wizard" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="1" Attack="2" Retaliate="0" HP="6" ID="1019">
 		<Ability Type="ImmuneToRetaliate"/>
 		<Target Zone="Battleground" Amount="All" Side="Friendly">
 			<CardFilter IncludeAbility="Stackable"/>
 			<Effect Type="ModifyAbility" Ability="NecromancerStack"/>
 		</Target>
-		<Description>Whenever a friendly creature with stackable attacks enemy creature, increase its' stack size by 1.</Description>
+		<Description>When a friendly creature with stackable attacks enemy creature, increase its' stack size by 1 (This ability does not stack).</Description>
 	</Card>
 	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Nec_102" DisplayName="Namtaru Infector" Faction="Necropolis" SubType="Magic|Melee" Race="Namtaru" Cost="5" MightLevel="4" MagicLevel="2" DestinyLevel="0" Attack="4" Retaliate="3" HP="7" ID="1020" School="Prime">
 		<Ability Type="Infect" Value="1"/>	
@@ -199,7 +199,7 @@
 		</Trigger>
 		<Description>Whenever a spy deal damage to enemy hero, next Sanctuary fortune cost 1 less to play.</Description>
 	</Card>
-	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_San_102" DisplayName="Shinobi Whisperer" Faction="Sanctuary" SubType="Shooter" Race="Naga|Spy" Cost="5" MightLevel="4" MagicLevel="0" DestinyLevel="2" Attack="3" Retaliate="3" HP="7" ID="1024">
+	<Card NotLocalized="True" Rarity="Epic" Unique="False" Type="Unit" Name="Cre_San_102" DisplayName="Shinobi Whisperer" Faction="Sanctuary" SubType="Shooter" Race="Naga|Spy" Cost="5" MightLevel="4" MagicLevel="0" DestinyLevel="2" Attack="3" Retaliate="3" HP="7" ID="1024">
 		<Ability Type="ImmuneToRetaliate"/>	
 		<Variable Type="TargetCount">
             <Target Zone="Battleground" CardType="Unit" Amount="All" Side="Friendly" />
@@ -213,7 +213,7 @@
 				<Effect Type="MoveCardTo" Destination="Hand" />
 			</Target>
 		</Trigger>
-		<Description>Whenever a spy attacks and destory a creature, return target enemy creature to its owner's hand.</Description>
+		<Description>At the start of your turn, if enemy controls more creatures than you, return target enemy creature to its owner's hand.</Description>
 	</Card>
 	<Card  Rarity="Epic" Unique="False" Type="Unit" Name="Cre_San_103" DisplayName="Shinobi Gunshi" Faction="Sanctuary" SubType="Magic|Melee|Shooter" Race="Naga|Spy" Cost="4" MightLevel="3" MagicLevel="1" DestinyLevel="2" Attack="3" Retaliate="2" HP="6" ID="1025" School="Water">
 		<Trigger Type="OnCardReturnToHandFromPlay" Side="Enemy">
