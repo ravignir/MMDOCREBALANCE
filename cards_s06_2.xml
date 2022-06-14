@@ -172,7 +172,7 @@ At the beginning of opponent's turn, they must choose one creature they control 
 	<!--....................................................................-->
 	<!-- Fortune - Stronghold -->
 	<!--....................................................................-->
-	<Card Rarity="Epic" Unique="True" Type="Fortune" Name="For_Str_080" DisplayName="Bloodscar Totem" Faction="Stronghold" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="862">
+	<Card NotLocalized="True" Rarity="Epic" Unique="True" Type="Fortune" Name="For_Str_080" DisplayName="Bloodscar Totem" Faction="Stronghold" Cost="3" MightLevel="0" MagicLevel="0" DestinyLevel="3" ID="862">
         <Ongoing Duration="Permanent" />
         <Target Zone="Battleground" CardType="Unit" Amount="All">
             <!-- This Target is used only to display the correct feedback -->
@@ -190,10 +190,6 @@ At the beginning of opponent's turn, they must choose one creature they control 
 All Friendly creatures with Enrage gain +1 to their Enrage value.
 All Friendly creatures with Bloodthirst gain +1 to their Bloodthirst value.
 </Description>
-        <DescriptionEnglish>Permanent:
-All Friendly creatures with Enrage gain +1 to their Enrage value.
-All Friendly creatures with Bloodthirst gain +1 to their Bloodthirst value.
-</DescriptionEnglish>
 	</Card>
 	<!--....................................................................-->
 	<!--  Fortune - Neutral -->
