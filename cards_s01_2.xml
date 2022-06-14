@@ -128,7 +128,7 @@ While no friendly melee creature has attacked in a turn, all friendly creatures 
         </Target>
         <Description>Discard a creature card. Take target creature card from your graveyard and put it into your hand.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Fortune" Name="For_Nec_032" DisplayName="Altar of the Spider Goddess" Faction="Necropolis" Cost="3" DestinyLevel="2" ID="293">
+    <Card Rarity="Uncommon" Type="Fortune" Name="For_Nec_032" DisplayName="Altar of the Spider Goddess" Faction="Necropolis" Cost="2" DestinyLevel="2" ID="293">
         <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="1">
             <Effect Type="Kill" />
         </Target>
@@ -281,13 +281,17 @@ Two target enemy creatures gain Cannot Attack.</Description>
     <!--....................................................................-->
     <!-- Fortune - Stronghold -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Fortune" Name="For_Str_030" DisplayName="Ritual of the Blood Feathers" Faction="Stronghold" Cost="1" DestinyLevel="2" ID="297">
+    <Card NotLocalized="True" Rarity="Common" Type="Fortune" Name="For_Str_030" DisplayName="Ritual of the Blood Feathers" Faction="Stronghold" Cost="1" DestinyLevel="2" ID="297">
         <Target Zone="Battleground" Side="Friendly" CardType="Unit" Amount="1">
+		<CardFilter IncludeCounter="Any" />
             <Variable Type="CounterCount" CounterType="Any" UseCurrentTarget="True" />
-            <Effect Type="Heal" Value="Variable" />
+            <Effect Type="Heal" Value="Infinite" />
             <Effect Type="RemoveCounter" CounterType="Any" Value="Variable" />
         </Target>
-        <Description>Remove all counters from target friendly creature. Heal that creature for an amount of damage equal to the number of counters removed this way.</Description>
+		<Target Zone="None" Side="Friendly">
+            <Effect Type="Draw" Value="1" />
+        </Target>
+        <Description>Remove all counters from target friendly creature. Heal that creature from all damage. Draw a card.</Description>
     </Card>
     <Card  Rarity="Common" Type="Fortune" Name="For_Str_032" DisplayName="Call of the Bloodhorn" Faction="Stronghold" Cost="2" DestinyLevel="2" ID="299">
         <Ongoing Duration="Permanent" />
@@ -376,10 +380,10 @@ Inheritance can only be played if you have [0:RESOURCES] left.</Description>
         <Description>Until your next turn:
 During their supply phase, opponent only produce half of their [RESOURCES] production, rounded down.</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Fortune" Name="For_Neu_034" DisplayName="Monastery of Helexia" Faction="Neutral" Cost="1" DestinyLevel="1" ID="304">
-        <Target Side="Friendly">
-            <Effect Type="Shuffle" CardHolder="Events" />
-        </Target>
+    <Card Rarity="Uncommon" Type="Fortune" Name="For_Neu_034" DisplayName="Monastery of Helexia" Faction="Neutral" Cost="0" DestinyLevel="1" ID="304">
+                <Target Side="Friendly">
+                    <Effect Type="Shuffle" CardHolder="Events" />
+                </Target>
         <Description>Shuffle all event cards and draw 2 new ones.</Description>
     </Card>
     <Card Rarity="Rare" Type="Fortune" Name="For_Neu_035" DisplayName="Cosmic Realignment" Faction="Neutral" Cost="4" DestinyLevel="4" ID="305">

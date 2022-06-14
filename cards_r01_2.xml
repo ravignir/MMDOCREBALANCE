@@ -6,6 +6,8 @@
     <!-- //	##      ##  #   ## #     ##     ##  #   #  ##   ##         ##   -->
     <!-- //	##       ###    ##  #    ##     #####   #   #   #####   #####   -->
     <!--....................................................................-->
+	<ExistingCard Name="For_Aca_001" Rarity="Common" />
+    <!-- s03 - Shifting Sands -->
     <ExistingCard Name="For_Aca_003" Rarity="Common" />
     <!-- s03 - Arcane Research -->
     <ExistingCard Name="For_Aca_011" Rarity="Common" />

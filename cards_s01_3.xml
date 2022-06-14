@@ -230,13 +230,16 @@ Fire and earth spells deal half damage, rounded down.</Description>
         </Target>
         <Description>[3:RESOURCES]: The next creature you deploy this turn gains +[2:RET]</Description>
     </Card>
-    <Card Rarity="Uncommon" Type="Event" Name="Eve_Neu_021" DisplayName="Week of the Tamed Spirits" Faction="Neutral" Cost="2" ID="329">
+    <Card NotLocalized="True" Rarity="Uncommon" Type="Event" Name="Eve_Neu_021" DisplayName="Week of the Tamed Spirits" Faction="Neutral" Cost="3" ID="329">
         <Ongoing Duration="UntilYourNextTurn" />
         <Target Zone="Battleground" Amount="All" CardType="Unit" NeedActivation="True" Persistent="True">
             <CardFilter IncludeUnitType="Magic" />
-            <Effect Type="ModifyAttack" Value="-1" />
+            <Effect Type="ModifyAttack" Value="-2" />
         </Target>
-        <Description>[2:RESOURCES]: Until your next turn, magic creatures gain -[1:ATK].</Description>
+		<Target Zone="Battleground" Amount="All" CardType="Unit" NeedActivation="True" Persistent="True">
+            <Effect Type="ModifyAttack" Value="1" />
+        </Target>
+        <Description>[3:RESOURCES]: Until your next turn, magic creatures gain -[1:ATK] and non-magic creatures gain +[1:ATK].</Description>
     </Card>
     <Card Rarity="Uncommon" Type="Event" Name="Eve_Neu_022" DisplayName="Week of the Wild Spirits" Faction="Neutral" Cost="3" ID="330">
         <Ongoing Duration="UntilEndOfTurn" />
