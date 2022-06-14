@@ -255,7 +255,7 @@ Whenever Skeleton Servant attacks, move 1 crippling counter from Skeleton Servan
 		</Trigger>
 		<Description>When a creature with a crippling counter dies, put a +[1:ATK] counter on Eternal Mentor.</Description>
 	</Card>
-	<Card Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Nec_096" DisplayName="Eternal Archon" Faction="Necropolis" SubType="Flyer" Race="Vampire" Cost="5" MightLevel="5" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="3" HP="8" ID="932" School="Dark">
+	<Card NotLocalized="True" Rarity="Epic" Unique="False" Type="Unit" Name="Cre_Nec_096" DisplayName="Eternal Archon" Faction="Necropolis" SubType="Flyer" Race="Vampire" Cost="5" MightLevel="5" MagicLevel="0" DestinyLevel="0" Attack="2" Retaliate="3" HP="8" ID="932" School="Dark">
 		<Ability Type="ImmuneToRetaliate"/>
 		<Ability Type="Crippling" Value="1"/>
 		<Variable Type="TargetCount">
@@ -273,7 +273,7 @@ Whenever Skeleton Servant attacks, move 1 crippling counter from Skeleton Servan
 				<Effect Type="AddCounter" CounterType="Crippling" Value="1"/>
 			</Target>
 		</Trigger>
-		<Description>Eternal Archon gains +[1:ATK] for each creatures with at least 1 crippling counter. Whenever a creature with crippling counters on it dies, put the same number of poison counters on other random creatures.</Description>
+		<Description>Eternal Archon gains +[1:ATK] for each creatures with at least 1 crippling counter. Whenever a creature with crippling counters on it dies, put the same number of crippling counters on other random creatures.</Description>
 	</Card>
 	<!--...............................................................................-->
 	<!-- Creatures - Sanctuary -->
