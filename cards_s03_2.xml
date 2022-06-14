@@ -487,7 +487,8 @@ All Sanctuary creatures gain Honor 1.</Description>
 				<Effect Type="RemoveCounter" CounterType="Enrage" Value="Infinite" Duration="Immediate" />
 			<Effect Type="ModifyAbility" Ability="Fear" DontShowIcon="True" Value="999"/>
 		</Target>
-        <Description>Permanent:
+        <Description>When Outraging Vision is played, remove all Enrage counters from friendly creatures.
+Permanent:
 Friendly creatures with Enrage counters can't be attacked by enemy creatures.
 At the beginning of your turn, return Outraging Vision to its owner's hand.</Description>
     </Card>
