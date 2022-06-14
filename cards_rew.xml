@@ -124,7 +124,7 @@
     <!--...............................................................................-->
     <!-- Heros - Inferno -->
     <!--...............................................................................-->
-    <Card Rarity="Heroic" Type="Hero" Name="Her_Inf_005" DisplayName="Phrias, Prince of Annihilation" Faction="Inferno" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="257">
+    <Card NotLocalized="True" Rarity="Heroic" Type="Hero" Name="Her_Inf_005" DisplayName="Phrias, Prince of Annihilation" Faction="Inferno" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="257">
         <School Name="Fire" />
         <School Name="Prime" />
         <Description>[2:RESOURCES]: Target friendly creature gains Sweep Attack or Attack Anywhere until end of turn.</Description>
@@ -136,7 +136,7 @@
                 <Target Zone="None" Side="Friendly">
                     <Variable Type="Resources" Side="Friendly" />
                     <Condition Operator="GreaterThan" ValueA="Variable" ValueB="1" />
-                    <Option Value="4" DisplayText="Discard: creature gains Sweep Attack." />
+                    <Option Value="4" DisplayText="[2:RESOURCES]: creature gains Sweep Attack." />
                     <Effect Type="GainResources" Value="-2" Duration="Immediate" />
                 </Target>
                 <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="1" ForceExecute="True">
@@ -146,7 +146,7 @@
 				<Target Zone="None" Side="Friendly">
                     <Variable Type="Resources" Side="Friendly" />
                     <Condition Operator="GreaterThan" ValueA="Variable" ValueB="1" />
-                    <Option Value="5" DisplayText="Creature gains Attack Anywhere." />
+                    <Option Value="5" DisplayText="[2:RESOURCES]: Creature gains Attack Anywhere." />
                     <Effect Type="GainResources" Value="-2" Duration="Immediate" />
                 </Target>
                 <Target Zone="Battleground" CardType="Unit" Side="Friendly" Amount="1" ForceExecute="True">
