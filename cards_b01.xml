@@ -203,7 +203,7 @@
             </Subgroup>
         </Target>
     </Card>
-    <Card Rarity="Heroic" Type="Hero" Name="Her_Nec_001" DisplayName="Nergal, Lord of Pestilence" Faction="Necropolis" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="11">
+    <Card NotLocalized="True" Rarity="Heroic" Type="Hero" Name="Her_Nec_001" DisplayName="Nergal, Lord of Pestilence" Faction="Necropolis" MightLevel="1" MagicLevel="1" DestinyLevel="1" HP="20" ID="11">
         <School Name="Earth" />
         <School Name="Prime" />
         <Description>[1:RESOURCES]: Double poison counters on target creature.</Description>
