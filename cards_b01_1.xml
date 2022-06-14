@@ -381,8 +381,8 @@ At the beginning of your turn, heal all damage from all friendly creatures.</Des
     <Card Rarity="Uncommon" Type="Unit" Name="Cre_Neu_011" DisplayName="Lesser Shadow Elemental" Faction="Neutral" School="Dark" SubType="Magic|Melee" Race="Spirit" Cost="3" MightLevel="2" MagicLevel="1" Attack="1" Retaliate="1" HP="3" ID="118">
         <Ability Type="Incorporeal" />
     </Card>
-    <Card Rarity="Uncommon" Type="Unit" Name="Cre_Neu_015" DisplayName="Angry Wyvern" Faction="Neutral" SubType="Flyer" Race="Wyvern" Cost="5" MightLevel="5" Attack="3" Retaliate="3" HP="7" ID="119" >
-	    <Description>At the beginning of your turn You may destroy target creature to completely heal Angry Wyvern.</Description>
+    <Card NotLocalized="True" Rarity="Uncommon" Type="Unit" Name="Cre_Neu_015" DisplayName="Angry Wyvern" Faction="Neutral" SubType="Flyer" Race="Wyvern" Cost="5" MightLevel="5" Attack="3" Retaliate="3" HP="7" ID="119" >
+	    <Description>At the beginning of your turn You may destroy target friendly creature. If you do, heal Angry Wyvern from all damage and it gains +[1:ATK], +[1:RET] until your next turn.</Description>
 			<Trigger Type="OnSupplyPhaseBegin" Side="Friendly">
             <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Friendly" Cancelable="True">
                 <Effect Type="Kill" />
@@ -391,7 +391,8 @@ At the beginning of your turn, heal all damage from all friendly creatures.</Des
 		<Trigger Type="OnThisKillUnit" Side="Friendly" ExecuteOncePerTurn="True" >
             <Target Zone="Battleground" Amount="Self">
                 <Effect Type="Heal" Value="Infinite" />
-				<Effect Type="ModifyAttack" Value="1" Duration="Permanent" />
+				<Effect Type="ModifyAttack" Value="1" Duration="UntilYourNextTurn" />
+		    <Effect Type="ModifyRetaliation" Value="1" Duration="UntilYourNextTurn" />
             </Target>
         </Trigger>
 	</Card>
