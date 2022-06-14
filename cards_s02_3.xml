@@ -123,12 +123,12 @@ Damage dealt to friendly melee creatures in the front line is halved, rounded do
         <Description>Enchant creature. Permanent:
 Enchanted creature gains +[1:ATK] and Berserk.</Description>
     </Card>
-    <Card Rarity="Epic" Unique="True" Type="Spell" Name="Spe_Fir_042" DisplayName="The Forbidden Flame" School="Fire" Cost="5" MagicLevel="3" ID="429">
+    <Card NotLocalized="True" Rarity="Epic" Unique="True" Type="Spell" Name="Spe_Fir_042" DisplayName="The Forbidden Flame" School="Fire" Cost="5" MagicLevel="3" ID="429">
         <Target Zone="Battleground" Side="Any" Amount="All" CardType="Unit">
             <Variable Type="Level" LevelType="Magic" ValueModifier="2.0x" Side="Friendly" />
             <Effect Type="Damage" Value="Variable" DamageFlags="Spell|Fire|Magic|Enforced" />
         </Target>
-        <Description>Deal damage to all creatures equal to double your [MAGIC] level.</Description>
+        <Description>Deal damage to all creatures equal to double your [MAGIC] level. This damage cannot be prevented or reduced.</Description>
     </Card>
     <!--....................................................................-->
     <!-- Spells - Light -->
