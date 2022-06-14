@@ -656,14 +656,14 @@ Enchanted creature gains Magic Shield.</Description>
     <!-- //	##      ##  #   ##      #  ##    ##        ## -->
     <!-- //	#####     ##    #####   #   #    ##     ##### -->
     <!--...............................................................................-->
-    <Card Rarity="Rare" Type="Event" Name="Eve_Neu_002" DisplayName="Market of Wonders" Faction="Neutral" Cost="6" ID="243">
+    <Card NotLocalized="True" Rarity="Rare" Type="Event" Name="Eve_Neu_002" DisplayName="Market of Wonders" Faction="Neutral" Cost="6" ID="243">
 		<Target Zone="Library" Side="Friendly" Amount="1">
             <Effect Type="MoveCardTo" Destination="Hand" />
         </Target>
         <Target Side="Friendly">
             <Effect Type="Shuffle" CardHolder="Library" />
         </Target>
-        <Description>[5:RESOURCES]: Look at the top three cards of your library. Put one of them into your hand and the rest into your graveyard.</Description>
+        <Description>[6:RESOURCES]: Search your library for any card and put it into your hand. Shuffle your library.</Description>
     </Card>
     <Card Rarity="Rare" Type="Event" Name="Eve_Neu_011" DisplayName="Week of the Mercenaries" Faction="Neutral" Cost="3" ID="244">
         <Ongoing Duration="UntilEndOfTurn" />
