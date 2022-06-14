@@ -410,7 +410,7 @@ At the beginning of your turn, return Eternal Battlefield to its owner's hand.</
         </Target>
         <Description>Take target non-unique card from each player's graveyard and put it on top of their library.</Description>
     </Card>
-    <Card Rarity="Rare" Type="Fortune" Name="For_Nec_053" DisplayName="A Life for a Life" Faction="Necropolis" Cost="4" DestinyLevel="4" ID="557">
+    <Card NotLocalized="True" Rarity="Rare" Type="Fortune" Name="For_Nec_053" DisplayName="A Life for a Life" Faction="Necropolis" Cost="4" DestinyLevel="4" ID="557">
         <Target Zone="Battleground" CardType="Unit" Amount="1" Side="Friendly">
             <Effect Type="Kill" />
         </Target>
@@ -422,7 +422,7 @@ At the beginning of your turn, return Eternal Battlefield to its owner's hand.</
             <Variable2 Type="BaseCardCost" UseLastTarget="True" />
             <Condition Operator="LesserOrEqual" ValueA="Variable" ValueB="Variable2" />
 			<Effect Type="GainResources" Value="1" Duration="Immediate" />
-		</Target>	
+		</Target>
         <Description>Destroy target friendly creature. Destroy target enemy creature. If it had equal or lower cost gain [1:RESOURCES].</Description>
     </Card>
     <!--....................................................................-->
@@ -475,7 +475,7 @@ All Sanctuary creatures gain Honor 1.</Description>
     <!--....................................................................-->
     <!-- Fortune - Stronghold -->
     <!--....................................................................-->
-    <Card Rarity="Common" Type="Fortune" Name="For_Str_050" DisplayName="Outraging Vision" Faction="Stronghold" Cost="5" DestinyLevel="3" ID="562">
+    <Card NotLocalized="True" Rarity="Common" Type="Fortune" Name="For_Str_050" DisplayName="Outraging Vision" Faction="Stronghold" Cost="5" DestinyLevel="3" ID="562">
         <Ongoing Duration="Permanent" />
         <Trigger Type="OnTurnBegin" Side="Friendly">
             <Target Zone="Battleground" Amount="Self">
@@ -491,7 +491,7 @@ All Sanctuary creatures gain Honor 1.</Description>
 Friendly creatures with Enrage counters can't be attacked by enemy creatures.
 At the beginning of your turn, return Outraging Vision to its owner's hand.</Description>
     </Card>
-    <Card Rarity="Common" Type="Fortune" Name="For_Str_051" DisplayName="Ancestral Guidance" Faction="Stronghold" Cost="3" DestinyLevel="3" ID="563">
+    <Card NotLocalized="True" Rarity="Common" Type="Fortune" Name="For_Str_051" DisplayName="Ancestral Guidance" Faction="Stronghold" Cost="3" DestinyLevel="3" ID="563">
         <Target Zone="Battleground" CardType="Unit" Amount="All">
 			<Variable Type="TargetCount" ValueModifier="1">
                 <Target Zone="Graveyard" Side="Friendly" Amount="All">
