@@ -244,7 +244,7 @@ When Chaos Seer leaves the battleground during opponent's turn, they discard a c
 			<Effect Type="ModifyMaxHp" Value="1" />		
 		</Target>
         </Trigger>
-        <Description>Whenever another creature dies, banish it instead and Void Keeper gains +1[HP].</Description>
+        <Description>Whenever another creature dies, banish it instead and Void Keeper gains [1:HEALTH].</Description>
     </Card>
     <!--...............................................................................-->
     <!-- Creatures - Other -->
