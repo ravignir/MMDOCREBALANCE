@@ -9,7 +9,7 @@
 	<!--...............................................................................-->
 	<!-- Heroes Academy -->
 	<!--...............................................................................-->
-	<Card Rarity="Heroic" Type="Hero" Name="Her_Aca_008" DisplayName="Masfar, Father of Titans" Faction="Academy" School="Prime|Water" MightLevel="2" MagicLevel="0" DestinyLevel="1" HP="20" ID="700">
+	<Card NotLocalized="True" Rarity="Heroic" Type="Hero" Name="Her_Aca_008" DisplayName="Masfar, Father of Titans" Faction="Academy" School="Prime|Water" MightLevel="2" MagicLevel="0" DestinyLevel="1" HP="20" ID="700">
 		<Description>[0:RESOURCES]: Construct creatures in your hand have no level requirements until end of turn.</Description>
 		<Target Zone="None" Side="Friendly">
 			<Effect Type="ChoiceOption"/>
